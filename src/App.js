@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import Header from "./components/Header/Header";
+import Test from "./components/Test";
+import GlobalStyle from "./styles/GlobalStyle";
 
 function App() {
+  useEffect(() => {
+    document.documentElement.className = "light-theme";
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+        <div className="App">start</div>
+      <Test />
+    </>
   );
 }
 
