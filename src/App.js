@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
-import Test from "./components/Test";
-import GlobalStyle from "./styles/GlobalStyle";
+import Main from "./components/Main";
 
 function App() {
   useEffect(() => {
@@ -10,9 +9,11 @@ function App() {
 
   return (
     <>
+      {/* <Tooltip /> */}
+      
       <Header />
-        <div className="App">start</div>
-      <Test />
+      <Main />
+      {/* <Test /> */}
     </>
   );
 }

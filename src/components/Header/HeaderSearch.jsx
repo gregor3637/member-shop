@@ -73,7 +73,7 @@ const HeaderSearchStyled = styled.div`
     flex: 1;
     border: var(--line);
     border-radius: 5px;
-    background-color: var(--background-dark-color);
+    background-color: var(--background-light-color);
 
     &--focused {
       border: var(--border-primary);
@@ -96,7 +96,7 @@ const HeaderSearchStyled = styled.div`
       padding-right: 10px;
       flex: 1;
       height: 65%;
-      background-color: var(--background-dark-color);
+      background-color: var(--background-light-color);
       border: none;
       padding: 1rem 1rem;
 
