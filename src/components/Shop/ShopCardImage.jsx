@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import TooltipSticker from "./TooltipSticker";
-import Favorite from "./Favorite";
+import TooltipSticker from "../TooltipSticker";
+import Favorite from "../Favorite";
 
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import PanoramaOutlinedIcon from "@material-ui/icons/PanoramaOutlined";
 
-const PreviewCardImage = (props) => {
+const ShopCardImage = (props) => {
   const [favoriteCount, setFavoriteCount] = useState(+props.favorites);
   const [isFavorite, setIsFavorite] = useState(false);
   let viewType = <PanoramaOutlinedIcon />;
@@ -24,7 +24,7 @@ const PreviewCardImage = (props) => {
     "sticker image-favorites" + (isFavorite ? " favorite" : "");
 
   return (
-    <CardViewStyled width={props.width} height={props.height}> 
+    <ShopCardImageStyled width={props.width} height={props.height}> 
       <img src={props.imgUrl} alt="" />
       <div className="sticker image-type">
         <TooltipSticker message={props.type}>
@@ -36,11 +36,11 @@ const PreviewCardImage = (props) => {
           <Favorite className={"center"} count={favoriteCount} />
         </TooltipSticker>
       </div>
-    </CardViewStyled>
+    </ShopCardImageStyled>
   );
 };
 
-const CardViewStyled = styled.div`
+const ShopCardImageStyled = styled.div`
   width: ${(props) => props.width};
   height: ${(props) => props.width};
   position: relative;
@@ -84,4 +84,4 @@ const CardViewStyled = styled.div`
   }
 `;
 
-export default PreviewCardImage;
+export default ShopCardImage;

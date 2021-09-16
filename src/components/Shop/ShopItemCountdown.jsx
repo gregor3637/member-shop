@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import PreviewCardImage from "./PreviewCardImage";
-import Timer from "./Timer";
-import TimerSimple from "./TimerSimple";
+import ShopCardImage from "./ShopCardImage";
+import Timer from "../Timer";
+import TimerSimple from "../TimerSimple";
 
-const PreviewCountdown = (props) => {
+const ShopItemCountdown = (props) => {
   return (
-    <PreviewCountdownStyled>
-      <PreviewCardImage
+    <ShopItemCountdownStyled>
+      <ShopCardImage
         width="35rem"
         height="35rem"
         imgUrl="https://public.nftstatic.com/static/nft/zipped/316b937f6ce043ca885aef2908984df9_zipped.png"
@@ -26,11 +26,11 @@ const PreviewCountdown = (props) => {
           <TimerSimple countDownDate={"Dec 30, 2021 23:45:00"}></TimerSimple>
         </div>
       </div>
-    </PreviewCountdownStyled>
+    </ShopItemCountdownStyled>
   );
 };
 
-const PreviewCountdownStyled = styled.div`
+const ShopItemCountdownStyled = styled.div`
   width: 35rem;
   height: 40rem;
   border-radius: 1rem;
@@ -70,4 +70,4 @@ const PreviewCountdownStyled = styled.div`
   }
 `;
 
-export default PreviewCountdown;
+export default ShopItemCountdown;

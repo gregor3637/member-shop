@@ -1,12 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import ShopItem from "./Shop/ShopItem";
 
+import ShopItem from "./Shop/ShopItem";
 import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
 import AcUnitOutlinedIcon from "@material-ui/icons/AcUnitOutlined";
 import Tooltip from "./Tooltip";
-import PreviewCountdown from "./PreviewCountdown";
-import Timer from "./Timer";
+import ShopItemCountdown from "./Shop/ShopItemCountdown";
 
 const Main = (props) => {
   const cardCollectionBadge = (
@@ -22,7 +21,7 @@ const Main = (props) => {
       <div className="featured">
         <div className="featured__right">
 
-        <PreviewCountdown></PreviewCountdown>
+        <ShopItemCountdown></ShopItemCountdown>
         
 
           {/* <ShopItem

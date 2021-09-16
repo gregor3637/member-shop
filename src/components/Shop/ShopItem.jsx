@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import PreviewCardImage from "../PreviewCardImage";
+import ShopCardImage from "./ShopCardImage";
 
 import Tooltip from "../Tooltip";
 
@@ -13,7 +13,7 @@ const ShopItem = (props) => {
 
   return (
     <ShopItemStyled onClick={onOverHandler}>
-      <PreviewCardImage
+      <ShopCardImage
         imgUrl="https://public.nftstatic.com/static/nft/zipped/316b937f6ce043ca885aef2908984df9_zipped.png"
         type={props.type}
         favorites={props.favorite}
