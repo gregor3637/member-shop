@@ -58,11 +58,12 @@ const MainStyled = styled.main`
     display: flex;
 
     &__left {
+      background-color: red;
       width: 100%;
       height: 100%;
-      background-color: red;
     }
     &__right {
+      background-color: white;
       width: 100%;
       height: 100%;
 
@@ -72,12 +73,6 @@ const MainStyled = styled.main`
 
       border: 1px solid blue;
     }
-  }
-
-  .test {
-    width: 100%;
-    height: 100vh;
-    background-color: yellowgreen;
   }
 `;
 

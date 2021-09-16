@@ -9,6 +9,8 @@ const GlobalStyle = createGlobalStyle`
         --bp-small: 37.5em;    // 600px;
 
         --font-primary: "Poppins";
+        --font-countdownTimer: 'B612 Mono';
+        --font-countdownTimerSecond: 'monospace';
 
         //#FF0000
         --primary-color: #007bff;

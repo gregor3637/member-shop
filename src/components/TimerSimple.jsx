@@ -30,15 +30,15 @@ const TimerSimple = (props) => {
         if (days > 0) {
           t = makeMeTwoDigits(days) + "d ";
         }
-        if (hours > 0) {
+        if (hours > 0 || days) {
           t += makeMeTwoDigits(hours) + "h ";
         }
-        if (minutes > 0) {
+        if (minutes > 0 || days || hours) {
           t += makeMeTwoDigits(minutes) + "m ";
         }
 
         t += makeMeTwoDigits(seconds) + "s";
-        
+
         setLeftTime(t);
       }
     }, 1000);
@@ -55,9 +55,9 @@ const TimerSimple = (props) => {
 };
 
 const TimerSimpleStyled = styled.div`
-    font-family: 'B612 Mono', monospace;
-    font-size: 1.2rem;
-    font-weight: 700;
+  font-family: var(--font-countdownTimer), var(--font-countdownTimerSecond);
+  font-size: 1.2rem;
+  font-weight: 700;
 `;
 
 export default TimerSimple;
