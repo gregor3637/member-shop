@@ -16,12 +16,15 @@ const GlobalStyle = createGlobalStyle`
         --primary-color: #007bff;
         --primary-color-light: #057FFF;
         --secondary-color: #ff7675;
+        --button-black: #000;
         --background-dark-color: #10121A;
         --background-dark-grey: #e4e4e4;
-        --background-light-color: #F1F1F1;
+        /* --background-light-color: #F1F1F1; */
+        --background-light-color: #fffdd9;
         --background-light-color-2: rgba(3,127,255,.3);
         --border-color: #cbced8;
         --white-color: #FFF;
+        --black-color: #000;
         --font-light-color: #313131;
         --font-dark-color: #313131;
         --font-dark-color-2: #151515;
@@ -75,7 +78,7 @@ const GlobalStyle = createGlobalStyle`
         
     body {
         font-family:  var(--font-primary);
-        background-color: var(--background-dark-color);
+        background-color: var(--white-color);
         color: var(--font-light-color);
         font-weight: 300;
         line-height: 1.6;

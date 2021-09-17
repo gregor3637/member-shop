@@ -9,7 +9,7 @@ const ShopItemCountdown = (props) => {
   return (
     <ShopItemCountdownStyled>
       <ShopCardImage
-        width="35rem"
+        width="45rem"
         height="35rem"
         imgUrl="https://public.nftstatic.com/static/nft/zipped/316b937f6ce043ca885aef2908984df9_zipped.png"
         type={props.type}
@@ -31,7 +31,7 @@ const ShopItemCountdown = (props) => {
 };
 
 const ShopItemCountdownStyled = styled.div`
-  width: 35rem;
+  width: 45rem;
   height: 40rem;
   border-radius: 1rem;
   background-color: var(--background-dark-color);

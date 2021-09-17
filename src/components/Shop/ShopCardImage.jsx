@@ -42,14 +42,18 @@ const ShopCardImage = (props) => {
 
 const ShopCardImageStyled = styled.div`
   width: ${(props) => props.width};
-  height: ${(props) => props.width};
+  height: ${(props) => props.height};
   position: relative;
+  text-align: center;
 
   img {
+    /* max-width: 100%;
+    max-height: 100%; */
     width: 100%;
     height: 100%;
     object-fit: cover;
     overflow: hidden;
+    
   }
 
   .favorite {
