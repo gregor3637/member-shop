@@ -19,59 +19,89 @@ const Main = (props) => {
     <MainStyled>
       {/* <Tooltip /> */}
       <div className="featured">
-        <div className="featured__right">
-
-        <ShopItemCountdown></ShopItemCountdown>
-        
-
-          {/* <ShopItem
-            type="img"
-            favorite="125"
-            collection="Bored Ape Yacht Club"
-            collectionBadges={cardCollectionBadge}
-            name="#5012"
-            priceCurrency="ETH"
-            priceValue="40.4"
-            collectionSupply="322/5000"
-            bidValue="38"
-            annotations={cardAnnotations}
-          /> */}
+        <div className="featured__title">
+          <h1>Discover, collect, and sell extraordinary NFTs</h1>
+          <span>on the world's first & largest NFT marketplace</span>
+          <div className="button-container">
+            <button>Explore</button>
+            <button>Create</button>
+          </div>
         </div>
-        <div className="featured__left"></div>
+        <div className="featured__project">
+          <ShopItemCountdown></ShopItemCountdown>
+        </div>
       </div>
+      <div className="alternative"></div>
     </MainStyled>
   );
 };
 
 const MainStyled = styled.main`
-  max-width: 100vw;
+  width: 100%;
+  max-width: min(120rem, 100% - 4rem);
+  margin: 0 auto;
+  height: calc(100vh - 7rem);
 
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .featured {
-    width: calc(100% - 20rem);
-    margin: 0 10rem;
-    height: calc(100vh - 7rem);
+    background-color: red;
+    width: 100%;
+    height: 60%;
 
     display: flex;
 
-    &__left {
-      background-color: red;
-      width: 100%;
+    &__title {
+      background-color: blueviolet;
       height: 100%;
+
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      h1 {
+        font-size: 4.5rem;
+        line-height: 5rem;
+        text-align: center;
+      }
+
+      span {
+        padding-top: 3rem;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+
+      .button-container {
+        background-color: red;
+        padding-top: 3rem;
+
+        display: flex;
+        justify-content: center;
+
+        button:first-of-type {
+          margin-right: 4rem;
+        }
+      }
     }
-    &__right {
-      background-color: white;
-      width: 100%;
-      height: 100%;
+
+    &__project {
+      background-color: greenyellow;
+      flex: 1;
 
       display: flex;
       align-items: center;
       justify-content: center;
-
-      border: 1px solid blue;
     }
+  }
+
+  .alternative {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 40%;
   }
 `;
 
