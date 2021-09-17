@@ -10,6 +10,8 @@ import ButtonMain from "./Buttons/ButtonMain";
 import LinkButton from "./Buttons/LinkButton";
 import Curosel from "../img/CUROSEL.png";
 import Creator from "../img/CREATOR.png";
+import UserProfileCard from "./UserProfileCard";
+import TimerSimple from "./TimerSimple";
 
 const Main = (props) => {
   const cardCollectionBadge = (
@@ -30,18 +32,22 @@ const Main = (props) => {
           />
         </div>
         <div className="featured__info">
-          <div className="artist">
-            <img src={Creator} alt="" />
+          <div>
+            <UserProfileCardModified />
           </div>
-          <h2>Methril: Dragon slayer and skeleton champion</h2>
+          <FeaturedNameLink href="https://www.abv.bg">
+            <h2>Methril: Dragon slayer and skeleton champion</h2>
+          </FeaturedNameLink>
           <ProjectDetailsStyled>
             <div className="bid">
               <span>Current bid</span>
               <div>0.13 ETH</div>
             </div>
             <div className="timer">
-              <span>Auction starts in</span>
-              <div>12d 13h 14m 33s</div>
+              <span>Ending in</span>
+              <TimerSimple
+                countDownDate={"Dec 30, 2021 23:45:00"}
+              ></TimerSimple>
             </div>
           </ProjectDetailsStyled>
           <ButtonContainerStyled>
@@ -69,22 +75,26 @@ const MainStyled = styled.main`
   align-items: flex-start;
 
   .featured {
-    /* background-color: red; */
     width: 100%;
     height: 60%;
-
     display: flex;
 
     &__info {
-      /* background-color: blueviolet; */
       height: 100%;
       text-align: left;
-
       flex: 1;
+
+      & > :first-child {
+        display: flex;
+      }
 
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      .UserProfileCard {
+        padding-bottom: 5rem;
+      }
 
       h2 {
         font-size: 5rem;
@@ -97,8 +107,6 @@ const MainStyled = styled.main`
     }
 
     &__image {
-      /* background-color: greenyellow; */
-      /* flex-basis: 40%; */
       flex: 1;
 
       display: flex;
@@ -113,7 +121,6 @@ const MainStyled = styled.main`
   }
 
   .alternative {
-    /* background-color: whitesmoke; */
     width: 100%;
     height: 40%;
 
@@ -126,12 +133,26 @@ const MainStyled = styled.main`
   }
 `;
 
+const FeaturedNameLink = styled.a`
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
+
 const ProjectDetailsStyled = styled.div`
   margin: 2rem 0;
 
   display: flex;
   text-align: start;
   justify-content: flex-start;
+
+  span {
+    font-size: 1.1rem;
+  }
 
   .bid {
     padding-right: 2rem;
@@ -162,6 +183,10 @@ const ButtonContainerStyled = styled.div`
   button:first-of-type {
     margin-right: 4rem;
   }
+`;
+
+const UserProfileCardModified = styled(UserProfileCard)`
+  margin-bottom: 1rem;
 `;
 
 export default Main;

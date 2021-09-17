@@ -43,6 +43,7 @@ const HeaderNavStyled = styled.nav`
   display: flex;
   height: 100%;
   font-size: 2rem;
+  font-weight: 600;
 
   ul {
     display: flex;
