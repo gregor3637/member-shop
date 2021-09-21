@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Header from "./components/Header/Header";
 import Main from "./components/Main";
+import Resizable from "./components/Resizable";
 
 function App() {
   useEffect(() => {
@@ -13,6 +14,7 @@ function App() {
       
       <Header />
       <Main />
+      {/* <Resizable /> */}
       {/* <Test /> */}
     </>
   );
