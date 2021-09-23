@@ -44,8 +44,6 @@ const ShopCardImage = (props) => {
 };
 
 const ShopCardImageStyled = styled.div`
-  /* width: ${(props) => props.width};
-  height: ${(props) => props.height}; */
   position: relative;
   text-align: center;
   background-color: red;
