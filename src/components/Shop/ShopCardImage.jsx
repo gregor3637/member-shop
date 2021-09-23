@@ -7,12 +7,14 @@ import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import PanoramaOutlinedIcon from "@material-ui/icons/PanoramaOutlined";
 
 const ShopCardImage = (props) => {
-  const [favoriteCount, setFavoriteCount] = useState(+props.favorites);
+  const [favoriteCount, setFavoriteCount] = useState(+props.favorite);
   const [isFavorite, setIsFavorite] = useState(false);
-  let viewType = <PanoramaOutlinedIcon />;
+
+  let type = props.type || "Img";
+  let typeIcon = <PanoramaOutlinedIcon />;
 
   if (props.type === "gif") {
-    viewType = <PlayArrowIcon />;
+    typeIcon = <PlayArrowIcon />;
   }
 
   const onClickHandler = () => {
@@ -24,11 +26,12 @@ const ShopCardImage = (props) => {
     "sticker image-favorites" + (isFavorite ? " favorite" : "");
 
   return (
-    <ShopCardImageStyled width={props.width} height={props.height}> 
+    // <ShopCardImageStyled width={props.width} height={props.height}>
+    <ShopCardImageStyled>
       <img src={props.imgUrl} alt="" />
       <div className="sticker image-type">
-        <TooltipSticker message={props.type}>
-          <div className="center">{viewType}</div>
+        <TooltipSticker message={type}>
+          <div className="center">{typeIcon}</div>
         </TooltipSticker>
       </div>
       <div className={favoriteClass} onClick={onClickHandler}>
@@ -41,19 +44,18 @@ const ShopCardImage = (props) => {
 };
 
 const ShopCardImageStyled = styled.div`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  /* width: ${(props) => props.width};
+  height: ${(props) => props.height}; */
   position: relative;
   text-align: center;
+  background-color: red;
+  width: 100%;
+  height: 70%;
 
   img {
-    /* max-width: 100%;
-    max-height: 100%; */
     width: 100%;
     height: 100%;
     object-fit: cover;
-    overflow: hidden;
-    
   }
 
   .favorite {
