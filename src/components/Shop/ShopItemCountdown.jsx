@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import ShopCardImage from "./ShopCardImage";
-import Timer from "../Timer";
 import TimerSimple from "../TimerSimple";
 
 const ShopItemCountdown = (props) => {

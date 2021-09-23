@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import TooltipSticker from "../TooltipSticker";
-import Favorite from "../Favorite";
 
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import PanoramaOutlinedIcon from "@material-ui/icons/PanoramaOutlined";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
 const ShopCardImage = (props) => {
   const [favoriteCount, setFavoriteCount] = useState(+props.favorite);
@@ -22,23 +22,20 @@ const ShopCardImage = (props) => {
     setIsFavorite(!isFavorite);
   };
 
-  let favoriteClass =
-    "sticker image-favorites" + (isFavorite ? " favorite" : "");
-
   return (
-    // <ShopCardImageStyled width={props.width} height={props.height}>
     <ShopCardImageStyled>
       <img src={props.imgUrl} alt="" />
-      <div className="sticker image-type">
-        <TooltipSticker message={type}>
-          <div className="center">{typeIcon}</div>
+
+      <TypeStyled>
+        <TooltipSticker content={type}>{typeIcon}</TooltipSticker>
+      </TypeStyled>
+
+      <LikedStyled clicked={isFavorite} onClick={onClickHandler}>
+        <TooltipSticker content="Favorite">
+          <FavoriteBorderIcon />
+          <span>{favoriteCount}</span>
         </TooltipSticker>
-      </div>
-      <div className={favoriteClass} onClick={onClickHandler}>
-        <TooltipSticker message="Favorites">
-          <Favorite className={"center"} count={favoriteCount} />
-        </TooltipSticker>
-      </div>
+      </LikedStyled>
     </ShopCardImageStyled>
   );
 };
@@ -46,44 +43,47 @@ const ShopCardImage = (props) => {
 const ShopCardImageStyled = styled.div`
   position: relative;
   text-align: center;
-  background-color: red;
   width: 100%;
   height: 70%;
 
   img {
+    border-radius: 1rem;
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+`;
 
-  .favorite {
+const TypeStyled = styled.div`
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+
+  color: white;
+
+  svg {
+    display: flex;
+  }
+`;
+
+const LikedStyled = styled.div`
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+
+  color: white;
+
+  span {
+    padding-left: 0.5rem;
+  }
+
+  svg {
+    color: ${(props) => (props.clicked ? "red" : "white")};
+  }
+
+  &:hover {
     svg {
       color: red;
-    }
-  }
-
-  .sticker {
-    display: flex;
-    position: absolute;
-  }
-
-  .center {
-    display: flex;
-  }
-
-  .image-type {
-    left: 1rem;
-    top: 1rem;
-  }
-
-  .image-favorites {
-    right: 1rem;
-    top: 1rem;
-
-    &:hover {
-      svg {
-        color: red;
-      }
     }
   }
 `;

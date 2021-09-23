@@ -52,29 +52,11 @@ const ShopItemNew = (props) => {
         </div>
         <div className="info--bottom">
           <div className="annotations-icons">
-            <Tooltip content="Ice">{props.annotations} </Tooltip>
-            <Tooltip content="Ice">{props.annotations} </Tooltip>
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
-            {showElements && (
-              <Tooltip content="Ice">{props.annotations} </Tooltip>
-            )}
+            {props.annotations.map((el, i) => (
+              <Tooltip content="Ice" key={i}>
+                {el}
+              </Tooltip>
+            ))}
           </div>
           <div className="collection-supply">{props.collectionSupply}</div>
           <div className="bid">
@@ -102,8 +84,6 @@ const ShopItemStyled = styled.div`
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     /* box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px; */
   }
-
-  
 
   .debug__image {
     width: 100%;
@@ -142,9 +122,8 @@ const ShopItemStyled = styled.div`
           &__name {
             text-overflow: ellipsis;
             overflow: hidden;
+            padding-right: 0.5rem;
           }
-
-         
         }
 
         .card-name {
