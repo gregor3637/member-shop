@@ -1,26 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 import PolymerOutlinedIcon from "@material-ui/icons/PolymerOutlined";
 
 const HeaderLogo = (props) => {
   return (
-    <HeaderLogoStyled>
+    <LinkX to="/">
       <PolymerOutlinedIcon />
       <span>Member</span>
-    </HeaderLogoStyled>
+    </LinkX>
   );
 };
 
-const HeaderLogoStyled = styled.div`
+const LinkX = styled(Link)`
   display: flex;
   align-items: center;
   padding-right: 15rem;
 
   font-size: 3rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
 
   span {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
   svg {
     font-size: 3rem;

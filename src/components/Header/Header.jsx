@@ -1,11 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import HeaderLogo from "./HeaderLogo";
 
 import HeaderNav from "./HeaderNav";
 import HeaderSearch from "./HeaderSearch";
 
-const Header = (props) => {
+const HeaderStyled = styled.header`
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 7rem;
+  padding: 0 2rem;
+
+  z-index: 800;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #fff;
+  border-bottom: var(--line);
+`;
+
+const Header = () => {
   return (
     <HeaderStyled>
       <HeaderLogo />
@@ -14,20 +31,5 @@ const Header = (props) => {
     </HeaderStyled>
   );
 };
-
-const HeaderStyled = styled.header`
-  height: 7rem;
-  max-width: 100vw;
-  position: sticky;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  background-color: #fff;
-  border-bottom: var(--line);
-
-  
-`;
 
 export default Header;

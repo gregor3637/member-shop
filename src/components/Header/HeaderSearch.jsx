@@ -1,64 +1,48 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
+import MainPageInputStyled from "../Inputs/MainPageInput";
+
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 
-const HeaderSearch = (props) => {
-  const [showClearButton, setShowClearButton] = useState(false);
-  const [searchStyle, setSearchStyle] = useState("");
-  const [query, setQuery] = useState("");
+const Container = styled.div`
+  position: relative;
+  max-width: 700px;
+  flex: 1;
 
-  useEffect(() => {
-    setShowClearButton(query ? true : false);
-  }, [query]);
+  overflow: hidden;
 
-  let onFocusHandler = () => {
-    setSearchStyle("search--focused");
-  };
+  display: flex;
+  align-items: center;
+`;
 
-  let onBlurHandler = () => {
-    setSearchStyle("");
-  };
+const SearchDiv = styled.div`
+  position: absolute;
+  display: flex;
 
-  let onChangeHandler = (ev) => {
-    setQuery(ev.target.value);
-  };
+  svg {
+    font-size: 2.5rem;
+  }
 
-  let onClearInputHandler = (ev) => {
-    console.log("clicked clear button");
-    ev.preventDefault();
-    setQuery("");
-  };
+  left: 1.2rem;
+`;
 
-  let closeIcon = <CancelOutlinedIcon />;
+const ButtonClear = styled.button`
+  position: absolute;
+  right: 1rem;
 
-  return (
-    <HeaderSearchStyled className={"search " + searchStyle}>
-      <div className={"search " + searchStyle}>
-        <div className="search__inner-container">
-          <div className="search__icon">
-            <SearchOutlinedIcon />
-          </div>
-          <input
-            type="text"
-            className="search__input"
-            placeholder="Search items, collections and accounts"
-            onFocus={onFocusHandler}
-            onBlur={onBlurHandler}
-            onChange={onChangeHandler}
-            value={query}
-          />
-          {showClearButton && (
-            <button className="search__button" onClick={onClearInputHandler}>
-              {closeIcon}
-            </button>
-          )}
-        </div>
-      </div>
-    </HeaderSearchStyled>
-  );
-};
+  z-index: 10;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  background-color: var(--color-white);
+
+  svg {
+    font-size: 3rem;
+  }
+`;
 
 const HeaderSearchStyled = styled.div`
   width: 100%;
@@ -66,62 +50,52 @@ const HeaderSearchStyled = styled.div`
 
   display: flex;
   align-items: center;
-
-  .search {
-    width: 100%;
-    max-width: 70rem;
-    flex: 1;
-    border: var(--line);
-    border-radius: 5px;
-    background-color: var(--background-light-color);
-
-    &--focused {
-      border: var(--border-primary);
-    }
-
-    &__inner-container {
-      padding: 0 1rem;
-      display: flex;
-      align-items: center;
-    }
-
-    &__icon {
-      svg {
-        font-size: 2.5rem;
-        display: flex;
-      }
-    }
-
-    &__input {
-      padding-right: 10px;
-      flex: 1;
-      height: 65%;
-      background-color: var(--background-light-color);
-      border: none;
-      padding: 1rem 1rem;
-
-      font-family: inherit;
-      font-size: 1.6rem;
-      color: inherit;
-      transition: all 0.2s;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    &__button {
-      z-index: 10;
-      border: none;
-      cursor: pointer;
-
-      display: flex;
-
-      svg {
-        font-size: 3rem;
-      }
-    }
-  }
 `;
+
+const HeaderSearch = (props) => {
+  const [showClearButton, setShowClearButton] = useState(false);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    setShowClearButton(query ? true : false);
+  }, [query]);
+
+  let onFocusHandler = () => {};
+
+  let onBlurHandler = () => {};
+
+  let onChangeHandler = (ev) => {
+    setQuery(ev.target.value);
+  };
+
+  let onClearInputHandler = (ev) => {
+    ev.preventDefault();
+    setQuery("");
+  };
+
+  let closeIcon = <CancelOutlinedIcon />;
+
+  return (
+    <HeaderSearchStyled className={"search "}>
+      <Container>
+        <SearchDiv>
+          <SearchOutlinedIcon />
+        </SearchDiv>
+        <MainPageInputStyled
+          style={{ paddingLeft: "4rem", paddingRight: "3rem" }}
+          type="text"
+          placeholder="Search items, collections and accounts"
+          onFocus={onFocusHandler}
+          onBlur={onBlurHandler}
+          onChange={onChangeHandler}
+          value={query}
+        />
+        {showClearButton && (
+          <ButtonClear onClick={onClearInputHandler}>{closeIcon}</ButtonClear>
+        )}
+      </Container>
+    </HeaderSearchStyled>
+  );
+};
 
 export default HeaderSearch;
