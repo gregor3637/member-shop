@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import PseudoCheckbox from "./PseudoCheckbox";
 
-const CheckboxButton = ({ onClick, label}) => {
+const CheckboxButton = ({ onClick, label }) => {
   return (
     <Styled data-label={label} onClick={onClick}>
       <PseudoCheckbox />

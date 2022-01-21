@@ -1,4 +1,6 @@
+import axios from "axios";
 import trendingData from "../data/trendingData";
+import collectionsDummy from "./Collections";
 
 export async function getPageItems(page, itemsPerPage) {
   // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
@@ -51,7 +53,7 @@ export async function getIDsOfRelatedItems(searchedId) {
     throw new Error(data.message || "Could not get comments.");
   }
 
-  console.log('++++++++++++++++ searchedId = ' + searchedId);
+  console.log("++++++++++++++++ searchedId = " + searchedId);
   let searchedItem = trendingData.find((x) => +x.id === +searchedId);
   const related = searchedItem.more;
   const relatedIds = related.map((x) => x.id);
@@ -164,4 +166,96 @@ export async function getCollectionsBySubstr(inputValue) {
     .catch((error) => {
       return error;
     });
+}
+
+export async function getMarketplaceCollectionsBySubstr(
+  inputValue = "",
+  page = 0,
+  itemsPerPage = 8
+) {
+  return new Promise((resolve, rej) => {
+    let filtered = collectionsDummy.filter((el) => {
+      return el.label.toLowerCase().includes(inputValue.toLowerCase());
+    });
+
+    const startIndex = page * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
+
+    const chunck = filtered.slice(startIndex, endIndex);
+    const hasMore = chunck[chunck.length - 1] !== filtered[filtered.length - 1];
+
+    resolve({ data: chunck, hasMore });
+  });
+
+  // return fetch("https://swapi.dev/api/planets")
+  //   .then((res) => res.json())
+  //   .then((data) => {
+
+  //     let filtered = collections.filter((el) => {
+  //       return el.label.toLowerCase().includes(inputValue.toLowerCase());
+  //     });
+
+  //     return filtered;
+  //   })
+  //   .catch((error) => {
+  //     return error;
+  //   });
+}
+
+export async function getMarketplaceCollectionsBySubstrAtPage(
+  query = "",
+  controller,
+  page = 0,
+  itemsPerPage = 8
+) {
+ return new Promise((resolve, rej) => {
+    //below code is used cause we are mocking 'res'/'CollectionDummy'
+    //when we have real server, this 'then' is removed
+    //and real server returns { data, hasMore }
+    const filtered = collectionsDummy.filter((el) => {
+      return el.label.toLowerCase().includes(query.toLowerCase());
+    });
+
+    const startIndex = page * itemsPerPage;
+    const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
+
+    const chunck = filtered.slice(startIndex, endIndex);
+
+    const hasMore = chunck[chunck.length - 1] !== filtered[filtered.length - 1];
+
+    resolve({ data: chunck, hasMore });
+  });
+
+  // return axios({
+  //   method: "GET",
+  //   url: "http://openlibrary.org/search.json",
+  //   // params: { q: query, page: pageNumber },
+  //   params: { q: "LOTR", page: 1 },
+  //   signal: controller.signal,
+  // }).then((res) => {
+  //   console.log("api res | completed");
+  //   console.log("api res | query >" + query + "<");
+  //   console.log("api res | query ", query);
+  //   console.log("api res | page", page);
+
+  //   //below code is used cause we are mocking 'res'/'CollectionDummy'
+  //   //when we have real server, this 'then' is removed
+  //   //and real server returns { data, hasMore }
+  //   const filtered = collectionsDummy.filter((el) => {
+  //     return el.label.toLowerCase().includes(query.toLowerCase());
+  //   });
+
+  //   const startIndex = page * itemsPerPage;
+  //   const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
+
+  //   const chunck = filtered.slice(startIndex, endIndex);
+
+  //   const hasMore = chunck[chunck.length - 1] !== filtered[filtered.length - 1];
+
+  //   console.log("api res | hasMore", hasMore);
+  //   console.log("api res | data", chunck);
+  //   return { data: chunck, hasMore };
+  // });
+
+ 
 }

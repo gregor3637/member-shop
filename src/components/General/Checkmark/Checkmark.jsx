@@ -16,7 +16,7 @@ const Styled = styled.div`
     position: absolute;
     width: 3px;
     height: 14px;
-    background-color: var(--button-color-blue);
+    background-color: var(--color-white);
     /* left: 19px;
     top: 13px; */
 
@@ -32,7 +32,7 @@ const Styled = styled.div`
     position: absolute;
     width: 6px;
     height: 3px;
-    background-color: var(--button-color-blue);
+    background-color: var(--color-white);
     /* left: 14px;
     top: 18px; */
 

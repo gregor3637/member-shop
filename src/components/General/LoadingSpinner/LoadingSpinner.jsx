@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const LoadingSpinner = (props) => {
-  return <Styled className={props.className}/>;
+  return <Styled className={props.className} />;
 };
 
 const Styled = styled.div`
@@ -10,12 +10,15 @@ const Styled = styled.div`
   width: 80px;
   height: 80px;
 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   &:after {
     content: " ";
     display: block;
     width: 64px;
     height: 64px;
-    margin: 8px;
     border-radius: 50%;
     border: 6px solid teal;
     border-color: teal transparent teal transparent;

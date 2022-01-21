@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import useMarketFilters from "../../../../../hooks/Market/useMarketFilters";
+import useMarketFiltersContext from "../../../../../hooks/Market/useMarketFiltersContext";
 
 import useToggle from "../../../../../hooks/useToggle";
 import DropdownArrow from "../../../../General/Arrow/DropdownArrow";
@@ -15,7 +15,7 @@ const styleByVisibility = (isVisible) => {
 };
 
 const FilterDropDownContext = ({ label, style }) => {
-  const { state, dispatch: updateMarkedFilters } = useMarketFilters();
+  const { state, dispatch: updateMarkedFilters } = useMarketFiltersContext();
 
   const statusObj = state[label];
   const rankArr = state["rank"];

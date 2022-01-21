@@ -15,7 +15,6 @@ const Styled = styled.div`
   /* background-color: green; */
 
   max-width: 100%;
-  padding: 1rem 2rem;
 
   display: flex:
   justify-content: center;

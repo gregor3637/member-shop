@@ -23,12 +23,12 @@ const AuctionItem = (props) => {
           <Description>
             <h6>{props.title}</h6>
             <DivP>{props.description}</DivP>
-            <Chain>
+            <ChainX>
               <span>Chain:</span>
               {props.chain.map((c, i) => {
                 return <span key={i}>{c}</span>;
               })}
-            </Chain>
+            </ChainX>
           </Description>
           <TimerDiv>
             <Timer
@@ -180,7 +180,7 @@ const DivP = styled.p`
   flex: 1;
 `;
 
-const Chain = styled.div`
+const ChainX = styled.div`
   span {
     margin-right: 1rem;
   }

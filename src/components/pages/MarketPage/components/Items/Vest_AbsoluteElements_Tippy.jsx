@@ -32,17 +32,6 @@ const Vest_AbsoluteElements_Tippy = (props) => {
   );
 };
 
-const FinX = styled.div`
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background-color: red;
-  top: 100%;
-  /* box-sizing: border-box; */
-  left: 0;
-  border: 2px solid var(--color-black);
-`;
-
 const DivX = styled.div`
   height: 100px;
   width: 300px;

@@ -6,7 +6,53 @@ import MainPageInputStyled from "../Inputs/MainPageInput";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
 
-const Container = styled.div`
+const HeaderSearch = (props) => {
+  const [showClearButton, setShowClearButton] = useState(false);
+  const [query, setQuery] = useState("");
+
+  useEffect(() => {
+    setShowClearButton(query ? true : false);
+  }, [query]);
+
+  let onFocusHandler = () => {};
+
+  let onBlurHandler = () => {};
+
+  let onChangeHandler = (ev) => {
+    setQuery(ev.target.value);
+  };
+
+  let onClearInputHandler = (ev) => {
+    ev.preventDefault();
+    setQuery("");
+  };
+
+  let closeIcon = <CancelOutlinedIcon />;
+
+  return (
+    <HeaderSearchStyled className={"search "}>
+      <ContainerX>
+        <SearchDivX>
+          <SearchOutlinedIcon />
+        </SearchDivX>
+        <MainPageInputStyled
+          style={{ paddingLeft: "4rem", paddingRight: "3rem" }}
+          type="text"
+          placeholder="Search items, collections and accounts"
+          onFocus={onFocusHandler}
+          onBlur={onBlurHandler}
+          onChange={onChangeHandler}
+          value={query}
+        />
+        {showClearButton && (
+          <ButtonClear onClick={onClearInputHandler}>{closeIcon}</ButtonClear>
+        )}
+      </ContainerX>
+    </HeaderSearchStyled>
+  );
+};
+
+const ContainerX = styled.div`
   position: relative;
   max-width: 700px;
   flex: 1;
@@ -17,7 +63,7 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const SearchDiv = styled.div`
+const SearchDivX = styled.div`
   position: absolute;
   display: flex;
 
@@ -51,51 +97,5 @@ const HeaderSearchStyled = styled.div`
   display: flex;
   align-items: center;
 `;
-
-const HeaderSearch = (props) => {
-  const [showClearButton, setShowClearButton] = useState(false);
-  const [query, setQuery] = useState("");
-
-  useEffect(() => {
-    setShowClearButton(query ? true : false);
-  }, [query]);
-
-  let onFocusHandler = () => {};
-
-  let onBlurHandler = () => {};
-
-  let onChangeHandler = (ev) => {
-    setQuery(ev.target.value);
-  };
-
-  let onClearInputHandler = (ev) => {
-    ev.preventDefault();
-    setQuery("");
-  };
-
-  let closeIcon = <CancelOutlinedIcon />;
-
-  return (
-    <HeaderSearchStyled className={"search "}>
-      <Container>
-        <SearchDiv>
-          <SearchOutlinedIcon />
-        </SearchDiv>
-        <MainPageInputStyled
-          style={{ paddingLeft: "4rem", paddingRight: "3rem" }}
-          type="text"
-          placeholder="Search items, collections and accounts"
-          onFocus={onFocusHandler}
-          onBlur={onBlurHandler}
-          onChange={onChangeHandler}
-          value={query}
-        />
-        {showClearButton && (
-          <ButtonClear onClick={onClearInputHandler}>{closeIcon}</ButtonClear>
-        )}
-      </Container>
-    </HeaderSearchStyled>
-  );
-};
 
 export default HeaderSearch;

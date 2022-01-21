@@ -10,7 +10,7 @@ import Stats from "./components/submenu/Stats";
 import Marketplace from "./components/submenu/Marketplace";
 import Resources from "./components/submenu/Resources";
 
-const HeaderNav = (props) => {
+const HeaderNav = () => {
   return (
     <HeaderNavStyled>
       <ul>

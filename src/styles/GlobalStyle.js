@@ -20,6 +20,58 @@ const GlobalStyle = createGlobalStyle`
 
         --margin-section-bottom: 10rem;
 
+        //--------------------------------------------------------------
+        //--------------------------------------------------------------
+        //-------------------------market-filters-----------------------
+        //--------------------------------------------------------------
+        //--------------------------------------------------------------
+        --market-filters--outerWrapper-radius: 0.3rem;
+        --market-itemsWrapper-header-elements-border-radius: 0.9rem;
+        
+        
+        --market-filters--button-dropdown--bgColor-hover: #f2f2f2;
+        --market-filters--button-dropdown--border-radius: 0.6rem;
+        
+        //----------------------button-action
+        //bgColor
+        --market-filters--button-action--bgColor-enabled: var(--color-none);
+        --market-filters--button-action--bgColor-disabled: #e6e6e6;
+        --market-filters--button-action--bgColor-active: #2081e2;
+        --market-filters--button-action--bgColor-hover: #2081e2;
+        //color
+        --market-filters--button-action--color-active: #2081e2;
+        --market-filters--button-action--color-hover: var(--color-white);
+        --market-filters--button-action--color-disabled: var(--button-disabled);
+        //rad
+        --market-filters--button-action--border-radius: 1rem;
+
+        //----------------------button-toggle
+        //bgColor
+        --market-filters--button-toggle--bgColor-enabled:  var(--color-none);
+        --market-filters--button-toggle--bgColor-disabled:  #b9dcff;
+        --market-filters--button-toggle--bgColor-active:  #2081e2;//
+        --market-filters--button-toggle--bgColor-hover:  #b9dcff;
+        //color
+        --market-filters--button-toggle--color: var(--color-black);
+        --market-filters--button-toggle--color-active:  var(--color-white);
+        //rad
+        --market-filters--button-toggle--border-radius: 1rem;
+
+        
+        //----------------------button-collection
+        //bgColor
+        --market-filters--button-collection--bgColor-enabled:  var(--color-none);
+        --market-filters--button-collection--bgColor-hover:  #f2f2f2;
+        //color
+        --market-filters--button-collection--color: var(--color-black);
+        --market-filters--button-collection--color-active:  var(--color-white);
+        //rad
+        --market-filters--button-collection--border-radius: 1rem;
+
+        //-------------------------------
+        //-------------------------------
+        //-------------------------------
+
         //#FF0000
         --primary-color: #007bff;
         --primary-color-light: #057FFF;
@@ -37,15 +89,29 @@ const GlobalStyle = createGlobalStyle`
         --color-text-disabled: #ccc;
         --color-none: rgba(0,0,0,0);
 
-        --button-color-blue: #2081e2;
-        
-        --border-color: #cbced8;
+        --button-color-blue: #2081e2;//1890ff
+        --button-color-blue-light: #b9dcff;//1890ff
+        --button-disabled: #7c7c7c;
         --button-black: #000;
+
+        --background-search: #f5f5f5;
+        --background-search-focused: #e5e5e5;
+
+        /* --marketplace-button-background: #e4e6eb; */
+        --marketplace-button-background: #e4e6eb;
+        --marketplace-button-grey-light: #f2f2f2;
+        --marketplace-background: #fff;
+
+        --fb-button-secondary-hover: #e4e6e9;
+        --fb-button-secondary-active: #d8d9dc;
+
+        /* --marketplace-button-background: #fff;
+        --marketplace-background: #e4e6eb; */
+        
         --background-dark-color: #10121A;
         --background-dark-grey: #e4e4e4;
         --color-button-dark-inactive: #9b9b9b;
         --color-button-dark-hover: #000;
-        --button-disabled: #7c7c7c;
         --color-link-blue: #2080df;
         --color-scrollbar: #808080;
         /* --background-light-color: #F1F1F1; */
@@ -60,6 +126,7 @@ const GlobalStyle = createGlobalStyle`
         --scrollbar-track-color: #383838;
 
         --line: 1px solid var(--border-color);
+        --border-color: #cbced8;
         --border-primary: 1px solid var(--primary-color);
 
         --anchorTag-color-link: #555;

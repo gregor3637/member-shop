@@ -5,10 +5,8 @@ import EthereumImg from "../../../../../../img/currency/Ether.png";
 import KlaytnImg from "../../../../../../img/currency/klaytn.png";
 import PolygonImg from "../../../../../../img/currency/polygon.svg";
 
-import useMarketFilters from "../../../../../../hooks/Market/useMarketFilters";
-import useToggle from "../../../../../../hooks/useToggle";
-import DropdownArrow from "../../../../../General/Arrow/DropdownArrow";
-import Checkmark from "../../../../../General/Checkmark/Checkmark";
+import useMarketFiltersContext from "../../../../../../hooks/Market/useMarketFiltersContext";
+import ToggleButton from "../../Common/ToggleButton";
 
 const chainsData = {
   Ethereum: {
@@ -22,10 +20,9 @@ const chainsData = {
   },
 };
 
-const Chain = ({ label, style }) => {
-  const { state, dispatch: updateMarkedFilters } = useMarketFilters();
-  const [isOpen, toggleIsOpen] = useToggle();
-  const buttonClickHandle = useCallback(
+const Chain = () => {
+  const { state, dispatch: updateMarkedFilters } = useMarketFiltersContext();
+  const handleClick = useCallback(
     (event) => {
       updateMarkedFilters({
         type: "chains",
@@ -37,34 +34,24 @@ const Chain = ({ label, style }) => {
 
   const selectedChains = state["chains"];
 
-  const buttons = Object.keys(chainsData).map((key) => {
-    return (
-      <ButtonX
-        key={key}
-        data-label={key}
-        onClick={buttonClickHandle}
-        className={selectedChains.includes(key) ? "active" : ""}
-      >
-        <CircleHolderX>
-          {chainsData[key].img}
-          <Checkmark />
-        </CircleHolderX>
-
-        <span>{key}</span>
-      </ButtonX>
-    );
-  });
-
   return (
-    <Styled style={style}>
-      <SpanX onClick={toggleIsOpen}>
-        <div>{label}</div>
-        <DropdownArrowX isOpen={isOpen} />
-      </SpanX>
-      <MenuOptionsContainerX className={isOpen ? "open" : ""}>
-        <div>{buttons}</div>
-      </MenuOptionsContainerX>
-    </Styled>
+    <Wrapper>
+      {Object.keys(chainsData).map((key) => {
+        return (
+          <ToggleButton
+            key={key}
+            label={key}
+            isActive={selectedChains.includes(key)}
+            onClick={handleClick}
+          >
+            <ButtonContentX>
+              <CircleHolderX>{chainsData[key].img}</CircleHolderX>
+              <span>{key}</span>
+            </ButtonContentX>
+          </ToggleButton>
+        );
+      })}
+    </Wrapper>
   );
 };
 
@@ -80,23 +67,15 @@ const CircleHolderX = styled.div`
   border: 1px solid var(--color-border);
   border-radius: 50%;
   overflow: hidden;
-  transform: scale(0.9);
 
   img {
     height: 100%;
     width: 100%;
     background-color: var(--color-white);
   }
-
-  &:hover {
-    transform: scale(1);
-  }
 `;
 
-const ButtonX = styled.button`
-  padding-right: 1rem;
-  margin: 0 auto 0.5rem 0;
-
+const ButtonContentX = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -119,61 +98,15 @@ const ButtonX = styled.button`
     img {
       display: none;
     }
-
-    & > div {
-      border: 1px solid var(--color-border);
-    }
   }
 `;
 
-const DropdownArrowX = styled(DropdownArrow)`
-  padding-right: 1rem;
-`;
-
-const MenuOptionsContainerX = styled.div`
-  display: block;
-  height: 0;
-
-  padding-bottom: 0.5rem;
-  overflow: hidden;
-
-  border-bottom: 1px solid var(--color-border);
-
-  &.open {
-    padding-bottom: 3rem;
-    height: auto;
-    overflow: visible;
-    border-bottom: none;
-  }
-
-  & > div {
-    margin-top: 1rem;
-
-    display: flex;
-    flex-direction: column;
-  }
-`;
-
-const SpanX = styled.span`
-  padding-bottom: 0.5rem;
+const Wrapper = styled.div`
+  padding: 2rem 0;
 
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  cursor: pointer;
-
-  & > div {
-    font-size: 1.6rem;
-    font-weight: 400;
-  }
-`;
-
-const Styled = styled.div`
-  width: 100%;
-
-  border-top: 1px solid var(--color-border);
-  padding-top: 1rem;
+  flex-direction: column;
+  grid-gap: 1rem;
 `;
 
 export default Chain;

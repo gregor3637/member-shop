@@ -1,12 +1,9 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import Select from "react-select";
-import { Formik, Form } from "formik";
 
 import useQuery from "../../../hooks/useQuery";
 import RequestControl from "./RequestControl";
-import FormButton from "../../General/Buttons/FormButton";
-// import FormikControl from '../../General/Formik/FormikControl';
 
 const selectOptions = {
   default: { value: "default", label: "-" },
@@ -39,14 +36,14 @@ const RequestsPage = (props) => {
     setFormData(RequestControl(selectedOpts.value));
   };
 
-  const onSubmit = (value, onSubmitProps) => {
-    console.log("---------OnSubmit --> ", value);
-    // const wholeFormData = { ...value, reportType };
+  // const onSubmit = (value, onSubmitProps) => {
+  //   console.log("---------OnSubmit --> ", value);
+  //   // const wholeFormData = { ...value, reportType };
 
-    setTimeout(() => {
-      onSubmitProps.setSubmitting(false);
-    }, 2000);
-  };
+  //   setTimeout(() => {
+  //     onSubmitProps.setSubmitting(false);
+  //   }, 2000);
+  // };
 
   return (
     <Styled>
@@ -64,8 +61,6 @@ const RequestsPage = (props) => {
     </Styled>
   );
 };
-
-const FormButtonX = styled(FormButton)``;
 
 const Styled = styled.div`
   background-color: var(--background-light-color);
@@ -112,6 +107,7 @@ const Styled = styled.div`
     }
   }
 `;
+
 const DivX = styled.div`
   width: 100%;
   align-self: center;
