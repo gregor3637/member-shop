@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-const useOnClickOutside = (watchElements, handler) => {
+const useOnClickOutside = (watchElements, handler, isListening = true) => {
   const watchElementsRef = useRef(watchElements);
 
   useEffect(() => {
@@ -16,12 +16,14 @@ const useOnClickOutside = (watchElements, handler) => {
       }
     };
 
-    document.addEventListener("mousedown", checkIfClickedOutside);
+    if (isListening) {
+      document.addEventListener("mousedown", checkIfClickedOutside);
+    }
 
     return () => {
       document.removeEventListener("mousedown", checkIfClickedOutside);
     };
-  }, [handler]);
+  }, [handler, isListening]);
 };
 
 export default useOnClickOutside;

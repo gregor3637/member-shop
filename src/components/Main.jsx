@@ -7,10 +7,7 @@ import RequestsPage from "./pages/RequestsPage/RequestsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import MarketplacePage from "./pages/MarketPage/MarketplacePage";
-import MarketplacePage_2 from "./pages/MarketPage/MarketplacePage_2";
-import MarketplacePage_3 from "./pages/MarketPage/MarketplacePage_3";
-import MarketplacePage_4_Tab from "./pages/MarketPage/MarketplacePage_4_Tab";
+import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
 
 
 const Main = (props) => {
@@ -38,10 +35,7 @@ const Main = (props) => {
         </Route>
 
         <Route path="/marketplace">
-          {/* <MarketplacePage /> */}
-          {/* <MarketplacePage_2 /> */}
-          {/* <MarketplacePage_3 /> */}
-          <MarketplacePage_4_Tab />
+          <MarketplacePage />
         </Route>
 
         <Route path="*">

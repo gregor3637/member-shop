@@ -8,7 +8,16 @@ const emptyState = {
   },
   collections: [],
   chains: [],
-  options: [],
+  blockchain: {
+    Ethereum: false,
+    Polygon: true,
+    Klaytn: false,
+  },
+  options: {
+    "Verified only": false,
+    "Show NSFW": false,
+    "Show lazy minted": false,
+  },
   category: {
     Art: false,
     Sports: false,
@@ -25,9 +34,18 @@ const dummyState = {
   },
   collections: ["cloneX"],
   chains: ["Ethereum", "Polygon", "Klaytn"],
-  options: [],
+  blockchain: {
+    Ethereum: false,
+    Polygon: true,
+    Klaytn: false,
+  },
+  options: {
+    "Verified only": false,
+    "Show NSFW": true,
+    "Show lazy minted": false,
+  },
   category: {
-    art: false,
+    art: true,
     sports: false,
   },
 };
@@ -117,13 +135,13 @@ const reducer = (state, action) => {
       return toggleItemInArray(state, action);
 
     case "options":
-      return toggleItemInArray(state, action);
+      return toggleBoolInObject(state, action);
 
     case "category":
       return toggleBoolInObject(state, action);
 
-    case "chains":
-      return toggleItemInArray(state, action);
+    case "blockchain":
+      return toggleBoolInObject(state, action);
 
     case "price":
       return setPrice(state, action);

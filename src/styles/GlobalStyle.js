@@ -25,6 +25,9 @@ const GlobalStyle = createGlobalStyle`
         //-------------------------market-filters-----------------------
         //--------------------------------------------------------------
         //--------------------------------------------------------------
+        --market-filters--border--color-enabled: #cbced8;
+        --market-filters--border--color-disabled: #cbced8;
+        
         --market-filters--outerWrapper-radius: 0.3rem;
         --market-itemsWrapper-header-elements-border-radius: 0.9rem;
         
@@ -35,14 +38,14 @@ const GlobalStyle = createGlobalStyle`
         //----------------------button-action
         //bgColor
         --market-filters--button-action--bgColor-enabled: var(--color-none);
-        --market-filters--button-action--bgColor-disabled: #e6e6e6;
+        --market-filters--button-action--bgColor-disabled: #e6e6e6;//e6e6e6
         --market-filters--button-action--bgColor-active: #2081e2;
         --market-filters--button-action--bgColor-hover: #2081e2;
         //color
         --market-filters--button-action--color-active: #2081e2;
         --market-filters--button-action--color-hover: var(--color-white);
-        --market-filters--button-action--color-disabled: var(--button-disabled);
-        //rad
+        --market-filters--button-action--color-disabled: #5e5e5e;
+        //border
         --market-filters--button-action--border-radius: 1rem;
 
         //----------------------button-toggle
@@ -53,20 +56,45 @@ const GlobalStyle = createGlobalStyle`
         --market-filters--button-toggle--bgColor-hover:  #b9dcff;
         //color
         --market-filters--button-toggle--color: var(--color-black);
-        --market-filters--button-toggle--color-active:  var(--color-white);
-        //rad
+        --market-filters--button-toggle--color-active: var(--color-white);
+        //border
         --market-filters--button-toggle--border-radius: 1rem;
 
         
         //----------------------button-collection
         //bgColor
-        --market-filters--button-collection--bgColor-enabled:  var(--color-none);
-        --market-filters--button-collection--bgColor-hover:  #f2f2f2;
+        --market-filters--collection--button--bgColor-enabled:  var(--color-none);
+        --market-filters--collection--button--bgColor-hover:  #f2f2f2;
         //color
-        --market-filters--button-collection--color: var(--color-black);
-        --market-filters--button-collection--color-active:  var(--color-white);
-        //rad
-        --market-filters--button-collection--border-radius: 1rem;
+        --market-filters--collection--button--color: var(--color-black);
+        --market-filters--collection--button--color-active:  var(--color-white);
+        //border
+        --market-filters--collection--button--border-radius: 1rem;
+        
+
+        //----------------------filter-Price
+        //---currency--bgColor
+        --market-filters--price--currency-select--bgColor: var(--color-white);
+        //---currency--border
+        --market-filters--price--currency-select--border-color: var(--color-border);
+        --market-filters--price--currency-select--border-color-focus: var(--button-color-blue);
+        --market-filters--price--currency-select--border-color-hover: var(--button-color-blue);
+        //---currency-rad
+        --market-filters--price--currency-select--border-radius: 1rem;
+        
+        //---price--placeholder
+        --market-filters--price--input-price--placeholder-color:  var(--color-black);
+        //---price--border-color
+        --market-filters--price--input-price--border-color: var(--color-border);
+        --market-filters--price--input-price--border-color-focus: var(--button-color-blue);
+        --market-filters--price--input-price--border-color-hover: var(--button-color-blue);
+        //---price--border-rad
+        --market-filters--price--input-price--border-radius: 1rem;
+
+
+
+
+
 
         //-------------------------------
         //-------------------------------
