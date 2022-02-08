@@ -1,10 +1,10 @@
 import React from "react";
-import MarketFilterContext from "../../store/MarketFilters/MarketFilterContext";
+import FiltersContext from "../../store/Marketplace/Filters/FiltersContext";
 
 export default function useMarketFiltersContext() {
-  const context = React.useContext(MarketFilterContext);
+  const context = React.useContext(FiltersContext);
   if (context === undefined) {
-    throw new Error("useCount must be used within a CountProvider");
+    throw new Error("No such Context");
   }
   return context;
 }

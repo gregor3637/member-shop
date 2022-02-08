@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const index = ({ text, isDisabled, onClick }) => {
+const ActionButton = ({ text, onClick, isDisabled = false }) => {
   return (
     <Wrapped onClick={onClick} disabled={isDisabled}>
       <span>{text}</span>
@@ -39,4 +39,4 @@ const Wrapped = styled.button`
   }
 `;
 
-export default index;
+export default ActionButton;

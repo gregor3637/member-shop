@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
-
+import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import { printify } from "../../../helpers/PrintifyNumbers";
-
-const SpanX = styled.span`
-  font-family: var(--font-countdownTimer), var(--font-countdownTimerSecond);
-`;
 
 const LikesButton = (props) => {
   const [isFavorite, setIsFavorite] = useState(false);
   const [favoriteCount, setFavoriteCount] = useState(+props.favorite);
-  const [pritifiedFavorite, setPritifiedFavorite] = useState(123);
+  const [pritifiedFavorite, setPritifiedFavorite] = useState(favoriteCount);
 
   useEffect(() => {
     setPritifiedFavorite(printify(favoriteCount));
@@ -24,34 +19,47 @@ const LikesButton = (props) => {
   };
 
   return (
-    <Styled className={props.className} onClick={onClickHandler}>
-      <FavoriteBorderIcon className={!isFavorite ? "" : "clicked"} />
+    <Wrapper className={props.className} onClick={onClickHandler}>
+      <SVGWrapperX>
+        <FavoriteBorderOutlinedIcon className={!isFavorite ? "" : "clicked"} />
+      </SVGWrapperX>
       <SpanX>{pritifiedFavorite}</SpanX>
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.div`
+const SpanX = styled.span`
+  padding-left: 1px;
+  font-size: 1.2rem;
+  font-family: var(--font-countdownTimer), var(--font-countdownTimerSecond);
+`;
+
+const SVGWrapperX = styled.div`
   display: flex;
+`;
+
+const Wrapper = styled.button`
+  display: flex;
+  align-items: center;
+
+  outline: none;
+  border: 0;
+  background-color: var(--color-none);
+  cursor: pointer;
 
   color: black;
 
-  span {
-    padding-left: 0.5rem;
-  }
-
   svg {
-    color: var(--color-white);
-    transition: all 0.2s ease;
-
     &.clicked {
-      color: var(--color-red-pale);
+      fill: var(--color-red-bright);
+      stroke: var(--color-none);
     }
   }
 
   &:hover {
     svg {
-      color: red;
+      fill: var(--color-red-pale);
+      stroke: var(--color-none);
     }
   }
 `;

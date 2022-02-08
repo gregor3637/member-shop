@@ -5,12 +5,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import FilterChoices from "./FilterChoices/FilterChoices";
 import ActiveFilters from "./ActiveFilters/ActiveFilters";
+import useMarketFiltersContext from "../../../../hooks/Market/useMarketFiltersContext";
 
 const FilterMenu = (props) => {
+  const { state, dispatch } = useMarketFiltersContext();
+
   return (
     <STabs
       selectedTabClassName="is-selected"
       selectedTabPanelClassName="is-selected"
+      forceRenderTabPanel
     >
       <STabList>
         <STab>
@@ -19,7 +23,7 @@ const FilterMenu = (props) => {
         <STab>
           <div>
             Active Filters
-            <span>13</span>
+            {state.count > 0 && <span>{state.count}</span>}
           </div>
         </STab>
       </STabList>
@@ -27,7 +31,7 @@ const FilterMenu = (props) => {
         <FilterChoices />
       </STabPanel>
       <STabPanel>
-        <ActiveFilters />
+        <ActiveFilters state={state} dispatch={dispatch} />
       </STabPanel>
     </STabs>
   );
@@ -35,7 +39,8 @@ const FilterMenu = (props) => {
 
 const STabs = styled(Tabs)`
   width: 100%;
-  height: 74rem;
+  /* height: 60rem; */
+  flex: 1;
 
   display: flex;
   flex-direction: column;
@@ -93,8 +98,9 @@ const STab = styled(Tab)`
     color: var(--font-dark-color);
 
     line-height: 100%;
-    border-radius: 0.4rem;
+    /* border-radius: var(--market-filters--outerWrapper-radius); */
     padding: 0.2rem 0.4rem;
+    background-color: var(--color-red-bright);
   }
 `;
 
@@ -106,11 +112,11 @@ const STabList = styled(TabList)`
   display: flex;
 
   ${STab}:first-of-type {
-    border-top-left-radius: 0.4rem;
+    border-top-left-radius: var(--market-filters--outerWrapper-radius);
     border-left: 1px solid var(--color-border);
   }
   ${STab}:last-of-type {
-    border-top-right-radius: 0.4rem;
+    border-top-right-radius: var(--market-filters--outerWrapper-radius);
     border-right: 1px solid var(--color-border);
   }
 `;
@@ -126,10 +132,9 @@ const STabPanel = styled(TabPanel)`
   height: 0px;
 
   border: 1px solid var(--color-border);
-  border-bottom-left-radius: 0.4rem;
-  border-bottom-right-radius: 0.4rem;
+  border-bottom-left-radius: var(--market-filters--outerWrapper-radius);
+  border-bottom-right-radius: var(--market-filters--outerWrapper-radius);
   margin-top: -5px;
-  padding: 1rem 0;
 
   &.is-selected {
     display: block;

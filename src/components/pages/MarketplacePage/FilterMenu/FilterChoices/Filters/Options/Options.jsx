@@ -7,16 +7,17 @@ import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
 const Options = (props) => {
   const {
     state: { options },
-    dispatch: updateMarkedFilters,
+    dispatch,
   } = useMarketFiltersContext();
+  
   const buttonClickHandle = useCallback(
     (event) => {
-      updateMarkedFilters({
+      dispatch({
         type: "options",
         value: event.currentTarget.dataset.label,
       });
     },
-    [updateMarkedFilters]
+    [dispatch]
   );
 
   return (

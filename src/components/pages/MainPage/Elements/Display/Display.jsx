@@ -238,7 +238,7 @@ const Display = (props) => {
                     fontSize: "2rem",
                     borderRadius: "1rem",
                   }}
-                  countDownDate={"Dec 30, 2021 23:45:00"}
+                  countDownDate={"Dec 30, 2022 23:45:00"}
                 />
               </div>
             </ProjectDetails>

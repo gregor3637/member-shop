@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 import CollapsibleFilter from "./CollapsibleFilter/CollapsibleFilter";
 import Price from "./Filters/Price/Price";
-import Status from "./Filters/Status/Status";
+import SaleType from "./Filters/Status/SaleType";
 import Options from "./Filters/Options/Options";
 import Category from "./Filters/Category/Category";
 import Blockchain from "./Filters/Blockchain/Blockchain";
@@ -14,7 +16,7 @@ const menus = {
   Collections: <CollectionsNew />,
   Blockchain: <Blockchain />,
   Category: <Category />,
-  "Sale Type": <Status />,
+  "Sale Type": <SaleType />,
   Price: <Price />,
 };
 
@@ -27,49 +29,31 @@ const Filters = (props) => {
 
   return (
     <Wrapper>
-      {Object.keys(menus).map((name) => {
-        return (
-          <CollapsibleFilter
-            label={name}
-            key={name}
-            onClick={clickHandler}
-            isOpen={name === openMenuLabel}
-          >
-            {menus[name]}
-          </CollapsibleFilter>
-        );
-      })}
+      <ScrollbarX forceVisible="y" autoHide={false}>
+        {Object.keys(menus).map((name) => {
+          return (
+            <CollapsibleFilter
+              label={name}
+              key={name}
+              onClick={clickHandler}
+              isOpen={name === openMenuLabel}
+            >
+              {menus[name]}
+            </CollapsibleFilter>
+          );
+        })}
+      </ScrollbarX>
     </Wrapper>
   );
 };
 
+const ScrollbarX = styled(SimpleBar)`
+  height: 100%;
+  padding: 1rem;
+`;
+
 const Wrapper = styled.div`
   height: 100%;
-
-  margin-left: 1rem;
-  margin-right: 0.5rem;
-  /* overflow-y: scroll; */
-
-  &::-webkit-scrollbar {
-    width: 0.7rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    border-left: 0;
-    border-right: 0;
-    background-color: var(--color-none);
-  }
-
-  &:hover {
-    &::-webkit-scrollbar-thumb {
-      background-color: var(--color-scrollbar);
-    }
-  }
 `;
 
 export default Filters;

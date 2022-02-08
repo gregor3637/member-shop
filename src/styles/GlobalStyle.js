@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
         --market-filters--border--color-enabled: #cbced8;
         --market-filters--border--color-disabled: #cbced8;
         
-        --market-filters--outerWrapper-radius: 0.3rem;
+        --market-filters--outerWrapper-radius: 0.4rem;
         --market-itemsWrapper-header-elements-border-radius: 0.9rem;
         
         
@@ -93,7 +93,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 
-
+        
 
 
         //-------------------------------
@@ -106,6 +106,10 @@ const GlobalStyle = createGlobalStyle`
         --secondary-color: #ff7675;
         --color-white: #fff;
         --color-black: #000;
+        --color-grey10: #f2f2f2;
+        --color-grey20: #e1e1e1;
+        --color-grey50: #777;
+        --color-grey70: #505050;
         --color-red-pale: #f67d7d;
         --color-red-bright: #ff0000;
         --color-pageMain-headings: #585858;
@@ -223,8 +227,51 @@ const GlobalStyle = createGlobalStyle`
         font-weight: 300;
         line-height: 1.6;
         height:100%;
+
+        
     }
 
+    .slick-slider-fadeee .slick-track {
+        -webkit-transform: none!important;
+        -moz-transform: none!important;
+        -ms-transform: none!important;
+        -o-transform: none!important;
+        transform: none!important;
+
+        /* opacity: 0.511; */
+    }
+
+    @keyframes fade-out {
+        0%   {opacity: 1;}
+        100% {opacity: 0;}
+    }
+    @keyframes fade-in {
+        0%   {opacity: 0;}
+        100% {opacity: 1;}
+    }
+
+    .slick-item--fade-in { 
+        animation: fade-in 1s;
+        /* animation-name: fade-in; */
+        /* animation-duration: 2s; */
+        opacity: 1;
+
+        /* .auction-item {
+        } */
+    }
+
+    .slick-item--fade-out { 
+        animation: fade-out 1s;
+        /* animation-name: fade-out; */
+        /* animation-duration: 1s; */
+        opacity: 0; // ,<<<<<<--- has to be here because after transtion ends, opacity is set ot 1
+
+        /* .auction-item {
+            opacity: 0;
+            animation-name: fade-out;
+            animation-duration: 0.2s;
+        } */
+    }
 `;
 
 export default GlobalStyle;

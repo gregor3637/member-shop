@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import VerifiedIcon from "../../../../../../../../../img/currency/VerifiedIcon.svg";
 
-const index = (props, ref) => {
+const FilteredButton = (props, ref) => {
   const { data, handleElementClick } = props;
 
   if (ref) {
@@ -11,7 +11,7 @@ const index = (props, ref) => {
   }
 
   return (
-    <Wrapped
+    <Wrapper
       ref={ref}
       key={data.label}
       onClick={() => handleElementClick(data.label)}
@@ -23,7 +23,7 @@ const index = (props, ref) => {
       {data.isVerified && (
         <img src={VerifiedIcon} alt="" style={{ width: "2rem" }} />
       )}
-    </Wrapped>
+    </Wrapper>
   );
 };
 
@@ -48,7 +48,7 @@ const CircleHolderX = styled.div`
   }
 `;
 
-const Wrapped = styled.button`
+const Wrapper = styled.button`
   width: 100%;
   padding-left: 1rem;
   /* background-color: red; */
@@ -71,4 +71,4 @@ const Wrapped = styled.button`
   }
 `;
 
-export default React.forwardRef(index);
+export default React.forwardRef(FilteredButton);

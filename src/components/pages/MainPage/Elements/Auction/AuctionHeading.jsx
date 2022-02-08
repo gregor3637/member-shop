@@ -4,13 +4,7 @@ import styled from "styled-components";
 import SectionHeadingLink from "../SectionHeadingLink";
 import DropDownTest from "../../../DropDownTest.jsx";
 
-const Styled = styled.div`
-  margin: "0";
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 0.2s ease;
-`;
+
 
 const formatDropdownData = (x) => {
   return { label: x, value: x };
@@ -37,14 +31,22 @@ const AuctionHeading = ({ itemCurrencies, itemTypes, onSelectedChain }) => {
   };
 
   return (
-    <Styled>
+    <Wrapper>
       <DropDownTest
         groupedOptions={groupOptions}
         onFilterSelect={onFilterHandler}
       />
       <SectionHeadingLink text="See More" url="abv.bg" />
-    </Styled>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  margin: "0";
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.2s ease;
+`;
 
 export default AuctionHeading;

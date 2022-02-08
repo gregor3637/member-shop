@@ -7,21 +7,23 @@ const TooltipSticker = (props) => {
 
   return (
     <Tooltip content={props.content}>
-      <TooltipStickerStyled style={vision}>
-        {props.children}
-      </TooltipStickerStyled>
+      <Wrapper style={vision}>{props.children}</Wrapper>
     </Tooltip>
   );
 };
 
-const TooltipStickerStyled = styled.div`
-  border-radius: 1rem;
-
+const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: black;
+  cursor: pointer;
+  border-radius: 1rem;
+  /* background-color: var(--color-white); */
+
+  &:hover .toggle {
+    background-color: var(--color-border);
+  }
 `;
 
 export default TooltipSticker;

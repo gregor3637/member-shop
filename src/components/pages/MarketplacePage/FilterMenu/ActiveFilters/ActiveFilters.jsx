@@ -1,49 +1,82 @@
 import React from "react";
 import styled from "styled-components";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 import Filters from "./Filters/Filters";
-import useMarketFiltersContext from "../../../../../hooks/Market/useMarketFiltersContext";
+import ActionButton from "../../CommonElements/ActionButton/ActionButton";
 
-const ActiveFilters = (props) => {
-  const { state, dispatch } = useMarketFiltersContext();
+const ActiveFilters = ({ state, dispatch }) => {
+  const handleClearAll = () => {
+    dispatch({ type: "reset" });
+  };
+
+  const panelContent =
+    state.count === 0 ? (
+      <AbsentX>
+        <span>No filters have been selected</span>
+      </AbsentX>
+    ) : (
+      <ScrollbarX>
+        <Filters state={state} dispatch={dispatch} />
+      </ScrollbarX>
+    );
 
   return (
-    <>
-      <Filters state={state} dispatch={dispatch} />
+    <Wrapper>
+      <MainWrapperX>{panelContent}</MainWrapperX>
       <FooterX>
-        <ButtonX
-          style={{ marginRight: "1rem" }}
-          onClick={() => {
-            dispatch({ type: "reset" });
-          }}
-        >
-          Clear All
-        </ButtonX>
+        <ButtonWrapper>
+          <ActionButton
+            text={"Clear All"}
+            onClick={handleClearAll}
+            isDisabled={state.count === 0}
+          />
+        </ButtonWrapper>
       </FooterX>
-    </>
+    </Wrapper>
   );
 };
 
-const ButtonX = styled.button`
-  padding: 0.2rem 1.4rem;
-  width: max-content;
+const AbsentX = styled.div`
+  /* background: red; */
+  height: 100%;
+  width: 100%;
 
-  border-radius: 1rem;
-  background-color: var(--marketplace-button-background);
-  border: none;
-  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-align: center;
+`;
+
+const ScrollbarX = styled(SimpleBar)`
+  height: 100%;
+`;
+
+const MainWrapperX = styled.div`
+  flex: 1;
+  overflow: hidden;
+`;
+
+const ButtonWrapper = styled.div`
+  width: 15rem;
+  margin: 0 auto;
 `;
 
 const FooterX = styled.div`
   padding: 1rem 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   border-top: 1px solid var(--color-border);
+`;
+
+const Wrapper = styled.div`
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
 `;
 
 export default ActiveFilters;

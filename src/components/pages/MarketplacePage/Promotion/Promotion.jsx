@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-
-
 const Promotion = (props) => {
   return (
-    <Styled>
+    <Wrapper>
       <HeaderX>
         <span>Recurring buys</span>
         <a href="">Add new</a>
@@ -15,7 +13,7 @@ const Promotion = (props) => {
         <ContentX></ContentX>
         <RightArrow></RightArrow>
       </BodyX>
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -47,15 +45,14 @@ const ContentX = styled.div``;
 const RightArrow = styled.div``;
 const BodyX = styled.div``;
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
 
   width: 100%;
-  height: 14rem;
-  margin-top: 3rem;
+  flex: 0 0 14rem;
 
-  border-radius: 0.3rem;
+  border-radius: var(--market-filters--outerWrapper-radius);
 `;
 
 export default Promotion;

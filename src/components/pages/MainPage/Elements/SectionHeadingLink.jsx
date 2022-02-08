@@ -1,9 +1,19 @@
 import React from "react";
 import styled from "styled-components";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight } from "@fortawesome/free-solid-svg-icons";
 
-const Styled = styled.a`
+const SectionHeadingLink = (props) => {
+  return (
+    <Wrapper href={props.url}>
+      <div>{props.text}</div>
+      <FontAwesomeIcon icon={faCaretRight} className="icon" />
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.a`
   display: flex;
   justify-content: center;
 
@@ -32,15 +42,5 @@ const Styled = styled.a`
     color: inherit;
   }
 `;
-
-const SectionHeadingLink = (props) => {
-  return (
-    <Styled href={props.url}>
-      <div>{props.text}</div>
-      <FontAwesomeIcon icon={faCaretRight} className="icon"></FontAwesomeIcon>
-    </Styled>
-  );
-};
-
 
 export default SectionHeadingLink;

@@ -19,7 +19,6 @@ const Header = () => {
 
 const Styled = styled.header`
   /* opacity: 0.1; */
-  background-color: gold;
   flex: 0 0 8rem;
   width: 100%;
 

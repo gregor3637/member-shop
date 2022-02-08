@@ -3,8 +3,12 @@ import styled from "styled-components";
 
 import Timer from "../../../../General/Timer/Timer";
 import AttentionDot from "../../../../General/AttentionDot/AttentionDot";
+import { useState } from "react";
+import LoadingSpinner from "../../../../General/LoadingSpinner/LoadingSpinner";
 
 const AuctionItem = (props) => {
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
   const Dot = (
     <AttentionDot
       margin="0 0.5rem 0 0"
@@ -13,16 +17,21 @@ const AuctionItem = (props) => {
     />
   );
 
+  const handleImgLoadCompleted = (props) => {
+    setIsImageLoaded(true);
+  };
+
   return (
-    <Styled>
-      <ContainerDiv>
-        <ImageDiv>
-          <img src={props.imgSrc} alt="" />
-        </ImageDiv>
-        <Div>
+    <Wrapper className="zzzzzzzzzzzzzzzzz">
+      <ContainerDivX>
+        <ImageDivX className={!isImageLoaded ? "loading-img" : ""}>
+          {!isImageLoaded && <LoadingSpinnerX />}
+          <img src={props.imgSrc} onLoad={handleImgLoadCompleted} alt="" />
+        </ImageDivX>
+        <DivX>
           <Description>
             <h6>{props.title}</h6>
-            <DivP>{props.description}</DivP>
+            <DivPX>{props.description}</DivPX>
             <ChainX>
               <span>Chain:</span>
               {props.chain.map((c, i) => {
@@ -30,7 +39,7 @@ const AuctionItem = (props) => {
               })}
             </ChainX>
           </Description>
-          <TimerDiv>
+          <TimerDivX>
             <Timer
               style={{
                 fontSize: "2rem",
@@ -38,31 +47,30 @@ const AuctionItem = (props) => {
               }}
               countDownDate={props.countdownEnd}
             />
-            <TimerDescription>
+            <TimerDescriptionX>
               {Dot}
-              <TimerMessage>
+              <TimerMessageX>
                 {props.countdownToStart
                   ? "Auction starts in"
                   : "Auction ends in"}
-              </TimerMessage>
-            </TimerDescription>
-          </TimerDiv>
-        </Div>
-      </ContainerDiv>
-    </Styled>
+              </TimerMessageX>
+            </TimerDescriptionX>
+          </TimerDivX>
+        </DivX>
+      </ContainerDivX>
+    </Wrapper>
   );
 };
 
-const Styled = styled.div`
-  width: 100%;
-  padding: 1.5rem 1rem;
-  height: 55rem;
+const LoadingSpinnerX = styled(LoadingSpinner)`
+  position: absolute;
+  top: 50%;
+  left: 50%;
 
-  cursor: pointer;
-  text-align: center;
+  transform: translate(-50%, -50%);
 `;
 
-const ContainerDiv = styled.div`
+const ContainerDivX = styled.div`
   height: 100%;
   width: 100%;
   border-radius: 1rem;
@@ -78,11 +86,16 @@ const ContainerDiv = styled.div`
   }
 `;
 
-const ImageDiv = styled.div`
+const ImageDivX = styled.div`
+  position: relative;
   width: 100%;
   height: 60%;
   overflow: hidden;
   border: 1 solid rgba(255, 255, 255, 0);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   /* border-top-left-radius: 1rem 1rem;
   border-top-right-radius: 1rem 1rem; */
 
@@ -90,15 +103,21 @@ const ImageDiv = styled.div`
     object-fit: cover;
     width: 100%;
     height: 100%;
-    transition: all 0.5s ease;
+    /* transition: all 0.5s ease;
 
     &:hover {
       transform: scale(1.05);
+    } */
+  }
+
+  &.loading-img {
+    img {
+      visibility: hidden;
     }
   }
 `;
 
-const Div = styled.div`
+const DivX = styled.div`
   position: relative;
   flex: 1;
 
@@ -130,7 +149,7 @@ const Div = styled.div`
   }
 `;
 
-const TimerDiv = styled.div`
+const TimerDivX = styled.div`
   position: absolute;
   transform: translateY(-50%);
 
@@ -164,9 +183,9 @@ const Description = styled.div`
     font-size: 1.3rem;
   }
 `;
-const TimerMessage = styled.div``;
+const TimerMessageX = styled.div``;
 
-const TimerDescription = styled.div`
+const TimerDescriptionX = styled.div`
   margin-top: 0.5rem;
 
   position: absolute;
@@ -176,7 +195,7 @@ const TimerDescription = styled.div`
   align-items: center;
 `;
 
-const DivP = styled.p`
+const DivPX = styled.p`
   flex: 1;
 `;
 
@@ -184,6 +203,18 @@ const ChainX = styled.div`
   span {
     margin-right: 1rem;
   }
+`;
+
+const Wrapper = styled.div`
+  opacity: 0;
+  animation: fade-out 1s; // animation must not be longer than slide transition 
+
+  width: 100%;
+  padding: 1.5rem 1rem;
+  height: 55rem;
+
+  cursor: pointer;
+  text-align: center;
 `;
 
 export default AuctionItem;

@@ -6,9 +6,8 @@ import BitcoinImg from "../../../../../../../img/currency/BTC.svg";
 import USDTImg from "../../../../../../../img/currency/USDT.svg";
 
 import useMarketFiltersContext from "../../../../../../../hooks/Market/useMarketFiltersContext";
-import PriceInput from "./PriceInput/PriceInput";
 import ActionButton from "../../../../CommonElements/ActionButton/ActionButton";
-
+import PriceInput from "./PriceInput/PriceInput";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
 
 //TODO: this will come from server ???
@@ -49,10 +48,16 @@ const Price = () => {
   }, [price]);
 
   const handleApply = () => {
+
+
+    console.log('currency ', currency);
+    console.log('minPrice ', minPrice);
+    console.log('maxPrice ', maxPrice);
+
     dispatchNewPriceInfo({
       type: "price",
       selected: {
-        currency: currency.value,
+        currency,
         min: minPrice,
         max: maxPrice,
       },
@@ -122,7 +127,6 @@ const PriceInputWrapper = styled.div`
 `;
 
 const Wrapper = styled.div`
-  background: Gold;
   padding: 2rem 1rem;
   width: 100%;
 

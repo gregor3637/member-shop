@@ -5,32 +5,39 @@ import GeneralGroup from "./GeneralGroup/GeneralGroup";
 import PriceGroup from "./PriceGroup/PriceGroup";
 
 const Filters = ({
-  state: { count, status, price, chains, collections },
+  state: { options, blockchain, category, saleType, price, collections },
   dispatch,
 }) => {
   return (
     <Wrapper>
-      {count === 0 && (
-        <CointainerX>
-          <span>You have not selected any filters</span>
-        </CointainerX>
-      )}
       <GeneralGroup
-        context={status}
-        contextName="status"
-        label="Status"
+        context={Object.keys(options).filter((x) => options[x])}
+        contextName="options"
+        label="Options"
         dispatch={dispatch}
       />
       <GeneralGroup
-        context={chains}
-        contextName="chains"
-        label="Chains"
+        context={Object.keys(blockchain).filter((x) => blockchain[x])}
+        contextName="blockchain"
+        label="Blockchain"
+        dispatch={dispatch}
+      />
+      <GeneralGroup
+        context={Object.keys(category).filter((x) => category[x])}
+        contextName="category"
+        label="Category"
+        dispatch={dispatch}
+        />
+      <GeneralGroup
+        context={Object.keys(saleType).filter((x) => saleType[x])}
+        contextName="saleType"
+        label="Sale Type"
         dispatch={dispatch}
       />
       <GeneralGroup
         context={collections}
         contextName="collections"
-        label="Collectionssssssz"
+        label="Collections"
         dispatch={dispatch}
       />
       <PriceGroup
@@ -43,38 +50,9 @@ const Filters = ({
   );
 };
 
-const CointainerX = styled.div`
-  height: 100%;
-
-  display: flex;
-  align-items: center;
-
-  font-size: 1.6rem;
-  font-weight: 600;
-  text-align: center;
-`;
-
 const Wrapper = styled.div`
   height: 100%;
   margin: 2rem;
-  padding-right: 1rem;
-
-  overflow-y: scroll;
-
-  &::-webkit-scrollbar {
-    width: 0.7rem;
-  }
-
-  &::-webkit-scrollbar-track {
-    background-color: none;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 100px;
-    border-left: 0;
-    border-right: 0;
-    background-color: var(--color-scrollbar);
-  }
 
   color: var(--color-black);
 `;
