@@ -1,5 +1,5 @@
 import React from "react";
-import FiltersContext from "../../store/Marketplace/Filters/FiltersContext";
+import FiltersContext from "./FiltersContext";
 
 export default function useMarketFiltersContext() {
   const context = React.useContext(FiltersContext);

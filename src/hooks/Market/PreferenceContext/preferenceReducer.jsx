@@ -4,9 +4,9 @@ const emptyState = {
 };
 
 const dummyState = {
-    searchQuery: "test",
-    sortingOption: "Sort Byy",
-  };
+  searchQuery: "",
+  sortingOption: "",
+};
 
 const reducer = (state, action) => {
   switch (action.type) {

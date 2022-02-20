@@ -64,7 +64,6 @@ export function useCollectionSearch_3333(query, pageNumber) {
   );
 
   const directReq = (q, abort, page) => {
-    console.log("--------- Req Direct");
     return getMarketplaceCollectionsBySubstrAtPage(q, abort, page);
   };
 
@@ -75,11 +74,8 @@ export function useCollectionSearch_3333(query, pageNumber) {
 
     let serverReq = pageNumber === 0 && !firstTime ? debouncedReq : directReq;
 
-    console.log("query = ", query);
     serverReq(query, controller, pageNumber)
       .then(({ data, hasMore }) => {
-        console.log("serverReq res", data);
-
         if (pageNumber === 0) setItems(data);
         else setItems((old) => [...old, ...data]);
 
@@ -92,7 +88,6 @@ export function useCollectionSearch_3333(query, pageNumber) {
           return;
         }
 
-        console.log("serverReq err =", err);
         setError(true);
       });
 

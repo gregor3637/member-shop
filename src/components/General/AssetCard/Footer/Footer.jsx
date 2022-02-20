@@ -1,31 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-import CurrencyView from "../AssetCardInfo/CurrencyView/CurrencyView";
+import CurrencyView from "../AssetCardInfo/CurrencyView/CurrencyIcon";
 import LastBoughtPrice from "./LastBoughtPrice/LastBoughtPrice";
 import CollectionData from "./CollectionData/CollectionData";
 import Button from "./Button/Button";
 
 const Footer = ({ data, className }) => {
-  // return <Wrapper className={className}></Wrapper>;
-console.log('ata.bids.isAllowed ', !data.bids.isAllowed);
-
   return (
     <Wrapper className={"asset-card--footer " + className}>
       <PaddingX>
         <InfoX className="asset-card--footer-info">
           <IconsX>
-            <CurrencyView currency={data.price.currencyChain} />
+            {data.price && <CurrencyView currency={data.price.currency} />}
             <CollectionData items={data.items} />
           </IconsX>
-          <LastBoughtPrice
-            boughtPrices={data.boughtPrices}
-            CurrencyView={<CurrencyView currency="ETH" />}
-          />
+          <LastBoughtPrice data={data} />
         </InfoX>
         <ButtonsX className="asset-card--footer-buttons">
           <Button label={"Bid"} isDisabled={!data.bids.isAllowed} />
-          <Button label={"Buy"} />
+          <Button label={"Buy"} isDisabled={!data.price} />
         </ButtonsX>
       </PaddingX>
     </Wrapper>
@@ -59,7 +53,7 @@ const ButtonsX = styled.div`
   gap: 2rem;
   justify-content: space-between;
   align-items: center;
-  
+
   visibility: hidden;
 
   //'ButtonsContainerX display' is changed in 'AssetCard' on hover

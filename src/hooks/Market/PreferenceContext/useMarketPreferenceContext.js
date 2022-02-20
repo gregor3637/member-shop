@@ -1,5 +1,5 @@
 import React from "react";
-import PreferenceContext from "../../store/Marketplace/Preferences/PreferenceContext";
+import PreferenceContext from "./PreferenceContext";
 
 export default function useMarketPreferenceContext() {
   const context = React.useContext(PreferenceContext);

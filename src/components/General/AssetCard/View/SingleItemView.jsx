@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const SingleItemView = (props) => {
-  console.log("props.data ", props.data);
-
   return (
     <Wrapper>
       <img src={props.data.src} alt="avatar" />

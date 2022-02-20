@@ -14,6 +14,10 @@ const emptyState = {
     Art: false,
     Sports: false,
   },
+  assetType: {
+    Bundles: false,
+    SingleItems: false,
+  },
   saleType: {
     "Has Offers": false,
     New: false,
@@ -45,6 +49,10 @@ const dummyState = {
   category: {
     art: true,
     sports: false,
+  },
+  assetType: {
+    Bundles: false,
+    SingleItems: false,
   },
   saleType: {
     "Has Offers": false,
@@ -142,6 +150,28 @@ const replaceCollections = (state, action) => {
   return toggleItemInArray(state, action);
 };
 
+const chooseOneInObject = (state, action) => {
+  let subState = state[action.type];
+  let keys = Object.keys(state[action.type]);
+  console.log(" **** keys ", keys);
+
+  let hadSelectedValueBefore = keys.find((x) => subState[x]) !== undefined;
+  console.log(" **** hadSelectedValueBefore ", hadSelectedValueBefore);
+
+  const resetSubstate = keys.reduce((p, c) => {
+    p[c] = false;
+    return p;
+  }, {});
+
+  resetSubstate[action.value] = true;
+
+  return {
+    ...state,
+    count: state.count + (hadSelectedValueBefore ? 0 : 1),
+    [action.type]: resetSubstate,
+  };
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "reset":
@@ -156,6 +186,10 @@ const reducer = (state, action) => {
 
     case "category":
       return toggleBoolInObject(state, action);
+
+    //this must not be visible in 'Active Filters'
+    case "assetType":
+      return chooseOneInObject(state, action);
 
     case "blockchain":
       return toggleBoolInObject(state, action);

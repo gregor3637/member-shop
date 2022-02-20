@@ -1,6 +1,7 @@
 import React from "react";
 
-import { filtersReducer as reducer } from "./filtersReducer";
+// import { filtersReducer as reducer } from "./FiltersReducer";
+import { filtersReducer as reducer } from "./FiltersReducerNew";
 
 const FiltersContext = React.createContext({
   state: reducer.initialState,

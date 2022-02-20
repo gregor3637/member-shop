@@ -5,7 +5,7 @@ import EthereumImg from "../../../../../../../img/currency/Ether.png";
 import KlaytnImg from "../../../../../../../img/currency/klaytn.png";
 import PolygonImg from "../../../../../../../img/currency/polygon.svg";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/useMarketFiltersContext";
+import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
 
 const chainsData = {

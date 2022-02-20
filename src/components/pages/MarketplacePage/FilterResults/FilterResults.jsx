@@ -3,22 +3,18 @@ import styled from "styled-components";
 
 import AssetsView from "./AssetsView/AssetsView";
 import PreferenceSettings from "./PreferenceSettings/PreferenceSettings";
-import useOnScrollHandler from "../../../../hooks/useOnScrollHandler";
-import { PreferenceContextProvider } from "../../../../store/Marketplace/Preferences/PreferenceContext";
+import { PreferenceContextProvider } from "../../../../hooks/Market/PreferenceContext/PreferenceContext";
+import AssetsViewTable from "./AssetsViewTable/AssetsViewTable";
 
 const FilterResults = () => {
-  const [isLargeDisplay, setIsLargeDisplay] = useState(true);
-  const [isScrollingDown] = useOnScrollHandler(true);
-
+  const [testComponent, setTestComponent] = useState(null);
   return (
     <WrapperX>
       <PreferenceContextProvider>
-        <PreferenceSettings
-          version={isScrollingDown ? "moved-down" : "moving-up"}
-          isLargeDisplay={isLargeDisplay}
-          setIsLargeDisplay={setIsLargeDisplay}
-        />
-        <AssetsView />
+        <PreferenceSettings />
+        {/* <AssetsView /> */}
+        <div>{testComponent}</div>
+        <AssetsViewTable setTestComponent={setTestComponent} />
       </PreferenceContextProvider>
     </WrapperX>
   );

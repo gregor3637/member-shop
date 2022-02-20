@@ -2,40 +2,32 @@ import React from "react";
 import styled from "styled-components";
 
 import AuctionTime from "./AuctionTime/AuctionTime";
-import BestOffer from "./BestOffer/BestOffer";
+import PriceLabelBlock from "./PriceLabelBlock/PriceLabelBlock";
 
-const dummyAnnotationBadges = ["unique", "apparel", "accessory", "companion"];
-
-const AssetCardFooter = ({ className, data }) => {
+const AssetCardInfo = ({ className, data }) => {
   return (
     <Wrapper className={className}>
       <MainX>
         <TitleContainerX>
           <TitleX>{data.general.name}</TitleX>
         </TitleContainerX>
-        {data.auction && <AuctionTime dateEnd={data.auction} />}
-        <BestOffer offers={data.bids} />
-        
+        <InfoX>
+          <PriceLabelBlock data={data} />
+          {data.auction && <AuctionTime dateEnd={data.auction} />}
+        </InfoX>
       </MainX>
     </Wrapper>
   );
 };
 
-// const TestX = styled.h4`
-//   width: 300px;
-//   display: -webkit-box;
-//   -webkit-box-orient: vertical;
-//   -webkit-line-clamp: 1;
-//   overflow: hidden;
-// `;
+const InfoX = styled.div``;
 
 const TitleX = styled.p`
-  /* background: red; */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
-  
+
   font-size: 1.2rem;
   font-weight: 500;
 `;
@@ -62,4 +54,4 @@ const Wrapper = styled.div`
   overflow: hidden;
 `;
 
-export default AssetCardFooter;
+export default AssetCardInfo;

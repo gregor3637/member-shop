@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { FiltersContextProvider } from "../../../store/Marketplace/Filters/FiltersContext";
+import { FiltersContextProvider } from "../../../hooks/Market/FiltersContext/FiltersContext";
 import FilterOptions from "./FilterMenu/FilterMenu";
 import Promotion from "./Promotion/Promotion";
 import FilterResults from "./FilterResults/FilterResults";

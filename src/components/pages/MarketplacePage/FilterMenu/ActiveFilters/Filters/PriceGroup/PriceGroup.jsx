@@ -16,9 +16,6 @@ const currencyImageByName = {
 };
 
 const PriceGroup = ({ context, contextName, label, dispatch }) => {
-  console.log("context.min ", context.min);
-  console.log("context.max ", context.max);
-
   if (context.min || context.max) {
     const prefixSign = context.min ? (context.max ? "" : ">") : "<";
     const middleSign = context.min && context.max ? "-" : "";

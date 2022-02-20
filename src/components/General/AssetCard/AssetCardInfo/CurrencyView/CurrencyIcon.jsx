@@ -10,8 +10,9 @@ const currencyImages = {
   MATIC: <Polygon />,
 };
 
-const CurrencyView = ({ currency }) => {
+//TODO: rename this to 'CurrencyIcon
+const CurrencyIcon = ({ currency }) => {
   return currencyImages[currency];
 };
 
-export default CurrencyView;
+export default CurrencyIcon;

@@ -1,11 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import AssetTypeGroup from "./AssetTypeGroup/AssetTypeGroup";
 
 import GeneralGroup from "./GeneralGroup/GeneralGroup";
 import PriceGroup from "./PriceGroup/PriceGroup";
 
 const Filters = ({
-  state: { options, blockchain, category, saleType, price, collections },
+  state: {
+    options,
+    blockchain,
+    category,
+    assetType,
+    saleType,
+    price,
+    collections,
+  },
   dispatch,
 }) => {
   return (
@@ -27,7 +36,7 @@ const Filters = ({
         contextName="category"
         label="Category"
         dispatch={dispatch}
-        />
+      />
       <GeneralGroup
         context={Object.keys(saleType).filter((x) => saleType[x])}
         contextName="saleType"
@@ -44,6 +53,12 @@ const Filters = ({
         context={price}
         contextName="price"
         label="Price"
+        dispatch={dispatch}
+      />
+      <AssetTypeGroup
+        context={Object.keys(assetType).filter((x) => assetType[x])}
+        contextName="assetType"
+        label="AssetType"
         dispatch={dispatch}
       />
     </Wrapper>

@@ -3,21 +3,10 @@ import styled from "styled-components";
 
 import Button from "./Button/Button";
 
-const sortingOptions = [
-  "Recently sold",
-  "Recently added",
-  "Recently created",
-  "Oldest",
-  "Auction ending soon",
-  "Price: High to Low",
-  "Price: Low to High",
-  "Highest last sale",
-];
-
-const Options = ({ selectedOption, onOptionSelect }) => {
+const Options = ({ selectedOption, onOptionSelect, options }) => {
   return (
     <Wrapper>
-      {sortingOptions.map((option) => {
+      {options.map((option) => {
         return (
           <Button
             key={option}

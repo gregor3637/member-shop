@@ -9,6 +9,17 @@ import DropdownArrow from "../../../../General/Arrow/DropdownArrow";
 import DropDown from "../../CommonElements/DropDown/DropDown";
 import Options from "./Options/Options";
 
+const sortingOptions = [
+  "Recently sold",
+  "Recently added",
+  "Recently created",
+  "Oldest",
+  "Auction ending soon",
+  "Price: High to Low",
+  "Price: Low to High",
+  "Highest last sale",
+];
+
 const SortBy = ({ selectedOption, onOptionSelect }) => {
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
@@ -29,12 +40,13 @@ const SortBy = ({ selectedOption, onOptionSelect }) => {
         <IconWrapperX>
           <SortSVG />
         </IconWrapperX>
-        <span>{selectedOption}</span>
+        <span>{selectedOption ? selectedOption : "SortByzzz"}</span>
         <DropdownArrow isOpen={isShown} />
         <DropDown isOpen={isShown} ref={dropdownRef}>
           <Options
             selectedOption={selectedOption}
             onOptionSelect={onOptionSelect}
+            options={sortingOptions}
           />
         </DropDown>
       </ButtonX>

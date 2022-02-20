@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
 import { useCollectionSearch_3333 } from "../../../../../../../hooks/Market/useCollectionSearch";
-import useMarketFiltersContext from "../../../../../../../hooks/Market/useMarketFiltersContext";
+import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import InputSearch from "../../../../CommonElements/InputSearch/InputSearch";
 import ActionButton from "../../../../CommonElements/ActionButton/ActionButton";
 import Chosen from "./Chosen/Chosen";

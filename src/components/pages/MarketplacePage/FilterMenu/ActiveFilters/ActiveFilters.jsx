@@ -5,14 +5,15 @@ import "simplebar/dist/simplebar.min.css";
 
 import Filters from "./Filters/Filters";
 import ActionButton from "../../CommonElements/ActionButton/ActionButton";
+import filtersData from "../../../../../store/Marketplace/Filters/FiltersData";
 
-const ActiveFilters = ({ state, dispatch }) => {
+const ActiveFilters = ({ state, dispatch, activeFiltersCount }) => {
   const handleClearAll = () => {
     dispatch({ type: "reset" });
   };
 
   const panelContent =
-    state.count === 0 ? (
+    activeFiltersCount === 0 ? (
       <AbsentX>
         <span>No filters have been selected</span>
       </AbsentX>
@@ -30,7 +31,7 @@ const ActiveFilters = ({ state, dispatch }) => {
           <ActionButton
             text={"Clear All"}
             onClick={handleClearAll}
-            isDisabled={state.count === 0}
+            isDisabled={activeFiltersCount === 0}
           />
         </ButtonWrapper>
       </FooterX>

@@ -9,11 +9,11 @@ function App() {
     document.documentElement.className = "light-theme";
   }, []);
 
+
   return (
     <Styled>
       <Header />
       <Main />
-
 
       {/* <ContainerX>
         <HeaderX>header</HeaderX>

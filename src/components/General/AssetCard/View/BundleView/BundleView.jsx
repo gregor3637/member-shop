@@ -48,4 +48,6 @@ const Wrapper = styled.div`
   position: relative;
 `;
 
+
+
 export default BundleView;

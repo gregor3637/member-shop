@@ -5,10 +5,16 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import FilterChoices from "./FilterChoices/FilterChoices";
 import ActiveFilters from "./ActiveFilters/ActiveFilters";
-import useMarketFiltersContext from "../../../../hooks/Market/useMarketFiltersContext";
+import useMarketFiltersContext from "../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import filtersData from "../../../../store/Marketplace/Filters/FiltersData";
 
-const FilterMenu = (props) => {
+const FilterMenu = () => {
   const { state, dispatch } = useMarketFiltersContext();
+
+  const activeFiltersCount = Object.keys(state).reduce((acc, cur) => {
+    const count = filtersData[cur].getActiveSubfiltersCount(state[cur]);
+    return acc + count;
+  }, 0);
 
   return (
     <STabs
@@ -23,7 +29,7 @@ const FilterMenu = (props) => {
         <STab>
           <div>
             Active Filters
-            {state.count > 0 && <span>{state.count}</span>}
+            {activeFiltersCount > 0 && <span>{activeFiltersCount}</span>}
           </div>
         </STab>
       </STabList>
@@ -31,7 +37,11 @@ const FilterMenu = (props) => {
         <FilterChoices />
       </STabPanel>
       <STabPanel>
-        <ActiveFilters state={state} dispatch={dispatch} />
+        <ActiveFilters
+          state={state}
+          dispatch={dispatch}
+          activeFiltersCount={activeFiltersCount}
+        />
       </STabPanel>
     </STabs>
   );

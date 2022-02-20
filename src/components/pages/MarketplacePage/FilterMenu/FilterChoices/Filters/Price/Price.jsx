@@ -5,7 +5,7 @@ import EthereumImg from "../../../../../../../img/currency/Ether.png";
 import BitcoinImg from "../../../../../../../img/currency/BTC.svg";
 import USDTImg from "../../../../../../../img/currency/USDT.svg";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/useMarketFiltersContext";
+import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import ActionButton from "../../../../CommonElements/ActionButton/ActionButton";
 import PriceInput from "./PriceInput/PriceInput";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
@@ -48,12 +48,6 @@ const Price = () => {
   }, [price]);
 
   const handleApply = () => {
-
-
-    console.log('currency ', currency);
-    console.log('minPrice ', minPrice);
-    console.log('maxPrice ', maxPrice);
-
     dispatchNewPriceInfo({
       type: "price",
       selected: {
@@ -69,7 +63,9 @@ const Price = () => {
     setMaxPrice("");
   };
 
-  const areButtonsDisabled = !(minPrice || maxPrice);
+  const areButtonsDisabled =
+    !(minPrice || maxPrice) ||
+    (minPrice === price.min && maxPrice === price.max);
 
   return (
     <Wrapper>

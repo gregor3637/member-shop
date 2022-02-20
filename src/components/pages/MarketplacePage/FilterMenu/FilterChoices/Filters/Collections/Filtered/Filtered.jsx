@@ -9,10 +9,8 @@ const Index = ({
   hasMore,
   setPageNumber,
 }) => {
-  console.log("elementsData ", elementsData);
-
   const observer = useRef();
-  
+
   const lastBookElementRef = useCallback(
     (node) => {
       if (loading) return;

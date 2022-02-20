@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const LastBoughtPrice = ({ boughtPrices, CurrencyView }) => {
-  let lastBoughtPrice =
-    boughtPrices &&
-    boughtPrices.length > 0 &&
-    boughtPrices[boughtPrices.length - 1];
+import CurrencyView from "../../AssetCardInfo/CurrencyView/CurrencyIcon";
+
+const LastBoughtPrice = ({ data: { boughtPrices } }) => {
+  let lastBoughtPrice = boughtPrices?.[boughtPrices.length - 1];
 
   return (
     <>
       {lastBoughtPrice && (
         <Wrapper>
           Last
-          {CurrencyView}
-          {lastBoughtPrice}
+          <CurrencyView currency={lastBoughtPrice.currency} />
+          {lastBoughtPrice.amount}
         </Wrapper>
       )}
     </>

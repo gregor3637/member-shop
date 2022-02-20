@@ -6,10 +6,6 @@ import VerifiedIcon from "../../../../../../../../../img/currency/VerifiedIcon.s
 const FilteredButton = (props, ref) => {
   const { data, handleElementClick } = props;
 
-  if (ref) {
-    console.log("ref != null", data);
-  }
-
   return (
     <Wrapper
       ref={ref}

@@ -1,0 +1,30 @@
+// Object for testing
+const x = { y: { z: { a: 1, b: 2} } }
+const { y, y: { z: { b } } } = x;
+
+console.log(b); // 2
+console.log(y); // {z: {…}}
+
+
+
+//------------------------
+const data = {
+    category: "motoring",
+    articles: [],
+    categories: {
+      motoring: {},
+      fishing: {},
+      sports: {}
+    },
+    user: {
+      name: "...",
+      bio: "...",
+      avatar: {},
+    }    
+  };
+
+  const { 
+    articles, 
+    categories: { [data.category] } : category, 
+    user: { name }    
+  } = data;

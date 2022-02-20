@@ -6,17 +6,12 @@ import LoadingSpinner from "../../../../LoadingSpinner/LoadingSpinner";
 const ImageView = ({ imgSrc }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
-  const handleImgLoadCompleted = () => {
-    console.log("***********handleImgLoadCompleted************");
-    setIsImageLoaded(true);
-  };
-
   const cls = "slick-image " + (!isImageLoaded ? "loading-img" : "");
 
   return (
     <Wrapper className={cls}>
       {!isImageLoaded && <LoadingSpinnerX />}
-      <img src={imgSrc} onLoad={handleImgLoadCompleted} alt="" />
+      <img src={imgSrc} onLoad={() => setIsImageLoaded(true)} alt="" />
     </Wrapper>
   );
 };
@@ -39,12 +34,6 @@ const Wrapper = styled.div`
   overflow: hidden;
 
   img {
-    /* object-fit: contain;
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-    height: auto; */
-
     width: 100%;
     height: 100%;
 

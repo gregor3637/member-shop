@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import useMarketPreferenceContext from "../../../../../hooks/Market/useMarketPreferenceContext";
+import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
+import useOnScrollHandler from "../../../../../hooks/useOnScrollHandler";
 import InputSearch from "../../CommonElements/InputSearch/InputSearch";
 import DisplayTypes from "../DisplayTypes/DisplayTypes";
 import SortBy from "../SortBy/SortBy";
+import VisibleColumns from "./VisibleColumns/VisibleColumns";
 
-const PreferenceSettings = ({ version, isLargeDisplay, setIsLargeDisplay }) => {
+const PreferenceSettings = () => {
+  const [isLargeDisplay, setIsLargeDisplay] = useState(true);
+  const [isScrollingDown] = useOnScrollHandler(true);
   const {
     state: { searchQuery, sortingOption },
     dispatch,
   } = useMarketPreferenceContext();
 
   return (
-    <Wrapper className={version}>
+    <Wrapper className={isScrollingDown ? "moved-down" : "moving-up"}>
       <InputWrapper>
         <InputSearch
           inputVal={searchQuery}
@@ -28,6 +32,7 @@ const PreferenceSettings = ({ version, isLargeDisplay, setIsLargeDisplay }) => {
           selectedOption={sortingOption}
           onOptionSelect={(v) => dispatch({ type: "sortingOption", value: v })}
         />
+        <VisibleColumns />
 
         <DisplayTypes
           isLargeDisplay={isLargeDisplay}

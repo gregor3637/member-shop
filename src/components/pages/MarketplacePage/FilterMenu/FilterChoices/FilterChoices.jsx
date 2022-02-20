@@ -10,12 +10,14 @@ import Options from "./Filters/Options/Options";
 import Category from "./Filters/Category/Category";
 import Blockchain from "./Filters/Blockchain/Blockchain";
 import CollectionsNew from "./Filters/Collections/Collections";
+import AssetType from "./Filters/AssetType/AssetType";
 
 const menus = {
   Options: <Options />,
   Collections: <CollectionsNew />,
   Blockchain: <Blockchain />,
   Category: <Category />,
+  "Asset Type": <AssetType />,
   "Sale Type": <SaleType />,
   Price: <Price />,
 };

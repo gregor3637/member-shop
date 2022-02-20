@@ -30,7 +30,6 @@ const useOnScrollHandler = (initialScrollingDirectionDown = true) => {
     };
 
     window.addEventListener("scroll", onScroll);
-    console.log("scrollDir ", isScrollingDown);
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [isScrollingDown]);

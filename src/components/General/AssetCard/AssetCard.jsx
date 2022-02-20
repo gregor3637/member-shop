@@ -7,10 +7,11 @@ import BundleOutlook from "./BundleOutlook/BundleOutlook";
 import View from "./View/View";
 import Footer from "./Footer/Footer";
 
-const AssetCard = ({ version, data }) => {
+const AssetCard = ({ data }) => {
   let isBundle = data.items && data.items.length > 0;
+
   return (
-    <Wrapper className={version}>
+    <Wrapper>
       <BundleOutlook isHidden={!isBundle} />
       <AssetCardWrapperX>
         <PaddingX>
@@ -20,19 +21,9 @@ const AssetCard = ({ version, data }) => {
         </PaddingX>
         <FooterX data={data} />
       </AssetCardWrapperX>
-
-      {/* <TestX>{data.general.name}</TestX> */}
     </Wrapper>
   );
 };
-
-const TestX = styled.h4`
-  width: 300px;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-  overflow: hidden;
-`;
 
 const HeaderX = styled(AssetCardHeader)`
   /* flex: 0 0 6.4rem; */

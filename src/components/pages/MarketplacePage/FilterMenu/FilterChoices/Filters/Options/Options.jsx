@@ -1,7 +1,7 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/useMarketFiltersContext";
+import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
 
 const Options = (props) => {
