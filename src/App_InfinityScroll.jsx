@@ -65,7 +65,7 @@ const App_InfinityScroll = (props) => {
 };
 
 const Styled = styled.div`
-background: gold;
+/* background: gold; */
 flex: 1;
 
 overflow-y: auto;

@@ -4,7 +4,7 @@ import Slider from "react-slick";
 
 import ImageView from "../ImageView/ImageView";
 
-const ImageSlider = ({ data, page, setPage, setInTransition }) => {
+const ImageSlider = ({ bundleItems, page, setPage, setInTransition }) => {
   const sliderRef = useRef();
 
   useEffect(() => {
@@ -33,8 +33,8 @@ const ImageSlider = ({ data, page, setPage, setInTransition }) => {
         beforeChange={beforeChange}
         afterChange={afterChange}
       >
-        {data.items.map((el) => (
-          <ImageView key={el.id} imgSrc={el.imgSrc} />
+        {bundleItems.map((el) => (
+          <ImageView key={el.id} imgSrc={el.src} />
         ))}
       </Slider>
     </Wrapper>

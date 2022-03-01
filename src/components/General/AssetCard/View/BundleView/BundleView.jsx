@@ -6,9 +6,9 @@ import Pagination from "./Pagination/Pagination";
 
 let firstActionViewTransition = true;
 
-const BundleView = (props) => {
+const BundleView = ({ data }) => {
   const [page, setPage] = useState(0);
-  const totalCount = props.data.items.length - 1;
+  const totalCount = data.bundleItems.length - 1;
   const [inTransition, setInTransition] = useState(false);
 
   const handlePrevClick = () => {
@@ -27,7 +27,7 @@ const BundleView = (props) => {
   return (
     <Wrapper>
       <ImageSlider
-        data={props.data}
+        bundleItems={data.bundleItems}
         page={page}
         setPage={setPage}
         setInTransition={setInTransition}
@@ -47,7 +47,5 @@ const Wrapper = styled.div`
   height: 100%;
   position: relative;
 `;
-
-
 
 export default BundleView;

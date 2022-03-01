@@ -1,23 +1,17 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
+import useMarketPreferenceContext from "../../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
 import useOnClickOutsideHandler from "../../../../../../hooks/useOnClickOutsideHandler";
 import useToggle from "../../../../../../hooks/useToggle";
-import SortSVG from "../../../../../../img/currency/SortSVG";
 import DropdownArrow from "../../../../../General/Arrow/DropdownArrow";
 import DropDown from "../../../CommonElements/DropDown/DropDown";
-import Options from "../../SortBy/Options/Options";
+import StateButton from "./StateButton/StateButton";
 
-const sortingOptions = [
-  "Toggle All",
-  "Name",
-  "Project Name",
-  "Socials",
-];
-
-const VisibleColumns = (props) => {
-  const options = [];
-  const selectHandler = () => {};
+const VisibleColumns = () => {
+  const {
+    state: { tableColumns },
+  } = useMarketPreferenceContext();
 
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
@@ -35,34 +29,34 @@ const VisibleColumns = (props) => {
   return (
     <WrapperX>
       <ButtonX onClick={dropdownClickHandle} ref={outsideRef}>
-        <IconWrapperX>
-          <SortSVG />
-        </IconWrapperX>
         <span>Visible Columns</span>
         <DropdownArrow isOpen={isShown} />
         <DropDown isOpen={isShown} ref={dropdownRef}>
-          <Options
-            selectedOption={options}
-            onOptionSelect={selectHandler}
-            options={sortingOptions}
-          />
+          <OptionsX>
+            {tableColumns.map((column) => {
+              if (!column.canHideColumn) return null;
+              return (
+                <StateButton
+                  key={column.id}
+                  label={column.Header}
+                  onClick={column.toggleHidden}
+                />
+              );
+            })}
+          </OptionsX>
         </DropDown>
       </ButtonX>
     </WrapperX>
   );
 };
 
-const IconWrapperX = styled.div`
-  height: 100%;
-  margin-right: 0.8rem;
-
-  svg {
-    transform: scale(1.2);
-  }
-
+const OptionsX = styled.div`
+  padding: 1rem 1rem;
+  width: 100%;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+
+  color: var(--color-black);
 `;
 
 const ButtonX = styled.span`

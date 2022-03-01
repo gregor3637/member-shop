@@ -8,7 +8,7 @@ import View from "./View/View";
 import Footer from "./Footer/Footer";
 
 const AssetCard = ({ data }) => {
-  let isBundle = data.items && data.items.length > 0;
+  let isBundle = data.bundleItems?.length > 0;
 
   return (
     <Wrapper>

@@ -10,6 +10,8 @@ const ItemAdditionalOptions = (props) => {
   const [showReport, setShowReport] = useState(false);
   const [showShare, setShowShare] = useState(false);
 
+  console.log('instance ', instance);
+
   const closeReport = () => {
     setShowReport(false);
   };

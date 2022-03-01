@@ -47,7 +47,7 @@ const Main = (props) => {
 };
 
 const Styled = styled.main`
-  background-color: gold;
+  background-color: white;
   flex: 1;
   flex-grow: 1;
 

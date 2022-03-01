@@ -1,16 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-import Check from "../../../../../../../img/svg/Check";
-
-const Button = ({ isSelected, label, onClick }) => {
+const DropdownCheckButton = ({
+  isSelected,
+  label,
+  onClick,
+  ActiveIcon,
+  InactiveIcon,
+}) => {
   return (
     <Wrapper
       className={!isSelected ? "" : "selected"}
       onClick={() => onClick(label)}
     >
       <span>{label}</span>
-      <Check />
+      {isSelected ? ActiveIcon : InactiveIcon}
     </Wrapper>
   );
 };
@@ -34,11 +38,12 @@ const Wrapper = styled.button`
   cursor: pointer;
 
   svg {
-    color: var(--color-none);
+    /* color: var(--color-none); */
+    /* color: red; */
   }
 
   &.selected svg {
-    color: var(--button-color-blue);
+    /* color: var(--button-color-blue); */
   }
 
   &:hover {
@@ -46,4 +51,4 @@ const Wrapper = styled.button`
   }
 `;
 
-export default Button;
+export default DropdownCheckButton;

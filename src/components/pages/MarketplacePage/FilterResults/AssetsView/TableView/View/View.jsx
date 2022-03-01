@@ -5,7 +5,6 @@ const View = ({ src, count }) => {
   return (
     <Wrapper>
       <ImageHolderX>
-        {/* das */}
         <img src={src} alt="nft view" />
       </ImageHolderX>
       {count && <CountX>x {count}</CountX>}
@@ -24,8 +23,8 @@ const CountX = styled.div`
 `;
 
 const ImageHolderX = styled.div`
-  height: 70px;
-  width: 70px;
+  height: 60px;
+  width: 60px;
 
   img {
     width: 100%;

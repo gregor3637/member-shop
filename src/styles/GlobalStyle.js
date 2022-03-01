@@ -100,6 +100,16 @@ const GlobalStyle = createGlobalStyle`
         //-------------------------------
         //-------------------------------
 
+        
+        /* --test-g: #fff;
+        --test-y: #fff;
+        --test-r: #fff; */
+
+        --test-g: #008000;
+        --test-y: #ffff00;
+        --test-r: #ff0000;
+
+
         //#FF0000
         --primary-color: #007bff;
         --primary-color-light: #057FFF;
@@ -108,10 +118,13 @@ const GlobalStyle = createGlobalStyle`
         --color-black: #000;
         --color-grey10: #f2f2f2;
         --color-grey20: #e1e1e1;
+        --color-grey40: #9e9e9e;
         --color-grey50: #777;
         --color-grey70: #505050;
         --color-red-pale: #f67d7d;
         --color-red-bright: #ff0000;
+        --color-blue: #2081e2;
+        --color-blue-light: #b9dcff;//1890ff
         --color-pageMain-headings: #585858;
         --color-border: #cbced8;
         --color-border-light: #e6e7eb;

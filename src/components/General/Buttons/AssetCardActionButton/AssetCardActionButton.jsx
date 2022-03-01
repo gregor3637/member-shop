@@ -1,9 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-const Button = ({ label, isDisabled = false }) => {
+const AssetCardActionButton = ({
+  label,
+  className,
+  onClick,
+  isDisabled = false,
+}) => {
   return (
-    <Wrapper disabled={isDisabled}>
+    <Wrapper className={className} disabled={isDisabled} onClick={onClick}>
       <span>{label}</span>
     </Wrapper>
   );
@@ -18,8 +23,7 @@ const Wrapper = styled.button`
   justify-content: center;
 
   text-align: center;
-  text-transform: uppercase;
-  color: white;
+  color: var(--color-black);
 
   outline: none;
   border: none;
@@ -27,23 +31,16 @@ const Wrapper = styled.button`
 
   cursor: pointer;
   background-size: 200% auto;
-  background-color: #4158d0;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
+  background-color: var(--color-none);
 
   span {
     font-size: 1.4rem;
     font-weight: 500;
   }
 
-  &:disabled {
-    background-color: #4158d0;
-    background-image: linear-gradient(43deg, #9d9d9d 0%, #ffffff 100%);
+  &:hover {
+    background-color: var(--color-grey20);
   }
 `;
 
-export default Button;
+export default AssetCardActionButton;

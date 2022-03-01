@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import AssetsView from "./AssetsView/AssetsView";
 import PreferenceSettings from "./PreferenceSettings/PreferenceSettings";
 import { PreferenceContextProvider } from "../../../../hooks/Market/PreferenceContext/PreferenceContext";
-import AssetsViewTable from "./AssetsViewTable/AssetsViewTable";
 
 const FilterResults = () => {
-  const [testComponent, setTestComponent] = useState(null);
+
   return (
     <WrapperX>
       <PreferenceContextProvider>
         <PreferenceSettings />
-        {/* <AssetsView /> */}
-        <div>{testComponent}</div>
-        <AssetsViewTable setTestComponent={setTestComponent} />
+        <AssetsView />
       </PreferenceContextProvider>
     </WrapperX>
   );

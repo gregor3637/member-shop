@@ -1,19 +1,34 @@
 const emptyState = {
+  displayType: "",
   searchQuery: "",
   sortingOption: "",
+  tableColumns: {},
+  favorites: [],
 };
 
 const dummyState = {
+  displayType: "Table",
   searchQuery: "",
   sortingOption: "",
+  tableColumns: [],
+  favorites: [],
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case "displayType":
+      return { ...state, [action.type]: action.value };
+
     case "searchQuery":
       return { ...state, [action.type]: action.value };
 
     case "sortingOption":
+      return { ...state, [action.type]: action.value };
+
+    case "tableColumns":
+      return { ...state, [action.type]: action.value };
+
+    case "favorites":
       return { ...state, [action.type]: action.value };
 
     default: {

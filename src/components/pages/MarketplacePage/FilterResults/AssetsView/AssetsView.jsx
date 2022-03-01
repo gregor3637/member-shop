@@ -1,16 +1,15 @@
 import React from "react";
-import styled from "styled-components";
 
-import useWindowDimensions from "../../../../../hooks/useWindowDimensions";
-import AssetCard from "../../../../General/AssetCard/AssetCard";
-import assetsAPI from "../../../../../lib/MarketplaceAssetsAPI";
 import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
-import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import { sortByType } from "../../../../../lib/HelperFuncs/Sort";
+import assetsAPI from "../../../../../lib/MarketplaceAssetsAPI";
+import CardsView from "./CardsView/CardsView";
+import TableView from "./TableView/TableView";
 import {
   filterAssetCards,
   markSelectedFilters,
 } from "../../../../../lib/HelperFuncs/Filter_2";
+import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import { sortByType } from "../../../../../lib/HelperFuncs/Sort";
 
 const hasQueryInAssetNameOrProjectName = (asset, query) => {
   return (
@@ -19,21 +18,16 @@ const hasQueryInAssetNameOrProjectName = (asset, query) => {
   );
 };
 
-const AssetsView = (props) => {
-  // const { height, width } = useWindowDimensions();
-  const { width } = useWindowDimensions();
-  const { state: preferenceState, dispatch } = useMarketPreferenceContext();
-  const { state: filtersState, dispatch: filterDispatch } =
-    useMarketFiltersContext();
+const AssetsView = () => {
+  const { state: preferenceState } = useMarketPreferenceContext();
+  const { state: filtersState } = useMarketFiltersContext();
+
   const searchQueryToLowerCase = preferenceState.searchQuery.toLowerCase();
 
   let assetCards = [];
   // arr = [assetsAPI[0]];
   // arr = [...assetsAPI, ...assetsAPI, ...assetsAPI, ...assetsAPI, ...assetsAPI];
   assetCards = assetsAPI;
-
-  const gridTemplateColumnStyle =
-    props.className + (1500 > width ? " small-grid" : " large-grid");
 
   assetCards = assetCards.filter((x) =>
     hasQueryInAssetNameOrProjectName(x, searchQueryToLowerCase)
@@ -47,46 +41,16 @@ const AssetsView = (props) => {
   );
   filteredAssetCards.sort(sortByType[preferenceState.sortingOption]);
 
+  const { displayType } = preferenceState;
+
   return (
-    <Wrapper>
-      <ContentX className={gridTemplateColumnStyle}>
-        {filteredAssetCards.map((data) => {
-          return <AssetCard key={data.id} data={data} />;
-        })}
-      </ContentX>
-    </Wrapper>
+    <>
+      {(displayType === "Card" || displayType === "") && (
+        <CardsView data={filteredAssetCards} />
+      )}
+      {displayType === "Table" && <TableView  data={filteredAssetCards} />}
+    </>
   );
 };
-
-const ContentX = styled.div`
-  padding: 2rem 1rem;
-
-  /* background-color: var(--color-white); */
-  /* background-color: red; */
-  flex: 1;
-  width: 100%;
-  height: 100%;
-
-  overflow: auto;
-
-  display: grid;
-  justify-content: space-between;
-  justify-content: space-between;
-  justify-items: center;
-  gap: 2rem;
-
-  &.small-grid {
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
-  }
-
-  &.large-grid {
-    grid-template-columns: repeat(5, minmax(100px, 1fr));
-  }
-`;
-
-const Wrapper = styled.div`
-  /* background-color: green; */
-  flex: 1;
-`;
 
 export default AssetsView;

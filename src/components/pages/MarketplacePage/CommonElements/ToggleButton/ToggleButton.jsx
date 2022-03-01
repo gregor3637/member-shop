@@ -16,6 +16,7 @@ const ToggleButton = ({ isActive, dataLabel, onClick, children }) => {
 const Wrapper = styled.button`
   width: 100%;
 
+
   padding: 1rem 0;
 
   display: flex;

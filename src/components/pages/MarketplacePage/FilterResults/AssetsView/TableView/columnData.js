@@ -1,5 +1,3 @@
-import assetsAPI from "../../../../../lib/MarketplaceAssetsAPI";
-
 const getItemsData = (items, source) => {
   let res = items.map(({ itemSourceId, count }) => {
     const item = source.find((x) => x.id === itemSourceId);
@@ -14,14 +12,12 @@ const getItemsData = (items, source) => {
   return res;
 };
 
-export default function makeData() {
-  const data = [...assetsAPI, ...assetsAPI,...assetsAPI];
-
+export default function metamorphoseToTableData(data) {
   const subRowsData = data.map((item) => {
     if (item.items) {
       return {
         ...item,
-        ["subRows"]: getItemsData(item.items, data),
+        // ["subRows"]: item.items,
       };
     }
 

@@ -1,4 +1,4 @@
-const MarketplaceAssetsAPI = [
+const singleItems = [
   //single item #1
   //https://opensea.io/assets/0xc631164b6cb1340b5123c9162f8558c866de1926/3639
   {
@@ -660,88 +660,8 @@ const MarketplaceAssetsAPI = [
     ],
   },
 
-  //BUNDLE item #1 option #1
   {
     id: 4,
-    src: "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
-
-    general: {
-      // name: "2x top 1000 rarity s",
-      name: "2x top 1000 rarity SAVE POLARBEAR SAVE GASssssssssssssssssssssssssss adsdadsaeqwe sdqwe eqw s",
-      isNSFW: false,
-      isLazyMinted: false,
-      project: {
-        name: "Crypto Punks",
-        isVerified: true,
-        link: "link to site",
-      },
-      owner: {
-        name: "C0B7ED1",
-        link: "link to owner", //link to account inside site, that shows other items he has listed
-      },
-      socials: {
-        favorites: 30,
-        views: 5096,
-      },
-    },
-
-    summary: {
-      description: {
-        creator: "C0B7ED1", //link to account inside site, that shows other items he has listed
-        info: "rarity 800 something and 900 something",
-      },
-      category: ["Art", "Sports"],
-      details: {
-        contractAddress: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
-        blockchain: "Polygon",
-      },
-    },
-
-    auction: "Sep 30, 2022 23:45:00",
-
-    price: null, //"Buy Now" is decided on this
-
-    boughtPrices: [],
-
-    bids: {
-      isAllowed: false,
-      active: [],
-      history: [],
-    },
-
-    listings: [
-      {
-        amount: 11.2,
-        currency: "ETH",
-        expiration: "6 months",
-        addDate: "Dec 10, 2019 23:45:00",
-        from: "Noon3", //link to account inside site, that shows other items he has listed
-      },
-    ],
-
-    items: [
-      {
-        itemSourceId: 0, //before it was just 'id'
-        count: 1,
-        imgSrc:
-          "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
-      },
-      {
-        itemSourceId: 1, //before it was just 'id'
-        count: 1,
-        imgSrc:
-          "https://media.sketchfab.com/models/86fd6cec31e347289571a039852c02ed/thumbnails/d5826ebcceac4a36a2e2c1382506ab39/5da9b4d3987f4c7396a4ffe179a149bf.jpeg",
-      },
-      {
-        itemSourceId: 2, //before it was just 'id'
-        count: 1,
-        imgSrc:
-          "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
-      },
-    ],
-  },
-  {
-    id: 5,
     src: "https://lh3.googleusercontent.com/oAWRhYA67_O0Udeo1KfzFGDFACQPrzZr8j1FEVo5BGJ2WH3RFGfkC1IKpWPUIyLMYim-R3uTW-UuFMym_lAD1vVHT5AVcnY3guA47Q=w286",
 
     general: {
@@ -918,7 +838,98 @@ const MarketplaceAssetsAPI = [
   },
 ];
 
-let singleBundleData = MarketplaceAssetsAPI;
+export const Bundles = [
+  //BUNDLE item #1 option #1
+  {
+    id: 104,
+    src: "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
+
+    general: {
+      // name: "2x top 1000 rarity s",
+      name: "2x top 1000 rarity SAVE POLARBEAR SAVE GASssssssss",
+      isNSFW: false,
+      isLazyMinted: false,
+      project: {
+        name: "Crypto Punks",
+        isVerified: true,
+        link: "link to site",
+      },
+      owner: {
+        name: "C0B7ED1",
+        link: "link to owner", //link to account inside site, that shows other items he has listed
+      },
+      socials: {
+        favorites: 30,
+        views: 5096,
+      },
+    },
+
+    summary: {
+      description: {
+        creator: "C0B7ED1", //link to account inside site, that shows other items he has listed
+        info: "rarity 800 something and 900 something",
+      },
+      category: ["Art", "Sports"],
+      details: {
+        contractAddress: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
+        blockchain: "Polygon",
+      },
+    },
+
+    auction: "Sep 30, 2022 23:45:00",
+
+    price: null, //"Buy Now" is decided on this
+
+    boughtPrices: [],
+
+    bids: {
+      isAllowed: false,
+      active: [],
+      history: [],
+    },
+
+    listings: [
+      {
+        amount: 11.2,
+        currency: "ETH",
+        expiration: "6 months",
+        addDate: "Dec 10, 2019 23:45:00",
+        from: "Noon3", //link to account inside site, that shows other items he has listed
+      },
+    ],
+
+    bundleItems: [
+      {
+        count: 1,
+        ...singleItems[0],
+        // itemSourceId: 0, //before it was just 'id'
+        // imgSrc:
+        //   "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
+      },
+      {
+        count: 1,
+        ...singleItems[1],
+        // itemSourceId: 1, //before it was just 'id'
+        // imgSrc:
+        //   "https://media.sketchfab.com/models/86fd6cec31e347289571a039852c02ed/thumbnails/d5826ebcceac4a36a2e2c1382506ab39/5da9b4d3987f4c7396a4ffe179a149bf.jpeg",
+      },
+      {
+        count: 1,
+        ...singleItems[2],
+        // itemSourceId: 2, //before it was just 'id'
+        // count: 1,
+        // imgSrc:
+        //   "https://lh3.googleusercontent.com/GcdkvDosi5tTJEK6pfP-1tIMLsburKAXKmzKhlPRxcaG-6BkohlzL2LfmcC8GnbUw6k0VehaYuHu8EohbqX2ziF17ctH3WjKEqm6=w128",
+      },
+    ],
+  },
+];
+
+let singleBundleData = [];
+singleBundleData = [...singleItems, ...Bundles, ...singleItems];
+// singleBundleData = [...singleItems, ...Bundles];
+
+console.log("singleBundleData ", singleBundleData);
 //  singleBundleData = [MarketplaceAssetsAPI[MarketplaceAssetsAPI.length - 1]];
 
 export default singleBundleData;

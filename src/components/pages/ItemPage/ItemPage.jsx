@@ -89,7 +89,7 @@ const InnerX = styled.div`
 `;
 
 const OuterX = styled.div`
-  background: red;
+  /* background: red; */
   position: fixed;
   width: calc(100% - 60rem);
   height: calc(100% - 27rem); //7rem from parent and (top + bot-margin)

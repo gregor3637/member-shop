@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
 import useOnScrollHandler from "../../../../../hooks/useOnScrollHandler";
 import InputSearch from "../../CommonElements/InputSearch/InputSearch";
-import DisplayTypes from "../DisplayTypes/DisplayTypes";
-import SortBy from "../SortBy/SortBy";
+import DisplayTypes from "./DisplayTypes/DisplayTypes";
+import SortBy from "./SortBy/SortBy";
+import SwitchController from "./SwitchController/SwitchController";
 import VisibleColumns from "./VisibleColumns/VisibleColumns";
 
 const PreferenceSettings = () => {
-  const [isLargeDisplay, setIsLargeDisplay] = useState(true);
   const [isScrollingDown] = useOnScrollHandler(true);
   const {
-    state: { searchQuery, sortingOption },
+    state: { searchQuery, sortingOption, displayType },
     dispatch,
   } = useMarketPreferenceContext();
 
@@ -28,16 +28,17 @@ const PreferenceSettings = () => {
         />
       </InputWrapper>
       <RightX>
-        <SortBy
-          selectedOption={sortingOption}
-          onOptionSelect={(v) => dispatch({ type: "sortingOption", value: v })}
-        />
-        <VisibleColumns />
-
-        <DisplayTypes
-          isLargeDisplay={isLargeDisplay}
-          setIsLargeDisplay={setIsLargeDisplay}
-        />
+        {(displayType === "" || displayType === "Card") && (
+          <SortBy
+            selectedOption={sortingOption}
+            onOptionSelect={(v) =>
+              dispatch({ type: "sortingOption", value: v })
+            }
+          />
+        )}
+        {displayType === "Table" && <VisibleColumns />}
+        <SwitchController />
+        <DisplayTypes />
       </RightX>
     </Wrapper>
   );

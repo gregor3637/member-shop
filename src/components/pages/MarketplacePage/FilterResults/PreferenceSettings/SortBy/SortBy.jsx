@@ -1,13 +1,13 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
-import useOnClickOutsideHandler from "../../../../../hooks/useOnClickOutsideHandler";
-import useToggle from "../../../../../hooks/useToggle";
+import useOnClickOutsideHandler from "../../../../../../hooks/useOnClickOutsideHandler";
+import useToggle from "../../../../../../hooks/useToggle";
 
-import SortSVG from "../../../../../img/currency/SortSVG";
-import DropdownArrow from "../../../../General/Arrow/DropdownArrow";
-import DropDown from "../../CommonElements/DropDown/DropDown";
-import Options from "./Options/Options";
+import SortSVG from "../../../../../../img/currency/SortSVG";
+import DropdownArrow from "../../../../../General/Arrow/DropdownArrow";
+import DropDown from "../../../CommonElements/DropDown/DropDown";
+import TickButton from "./TickButton/TickButton";
 
 const sortingOptions = [
   "Recently sold",
@@ -43,16 +43,32 @@ const SortBy = ({ selectedOption, onOptionSelect }) => {
         <span>{selectedOption ? selectedOption : "SortByzzz"}</span>
         <DropdownArrow isOpen={isShown} />
         <DropDown isOpen={isShown} ref={dropdownRef}>
-          <Options
-            selectedOption={selectedOption}
-            onOptionSelect={onOptionSelect}
-            options={sortingOptions}
-          />
+          <OptionsX>
+            {sortingOptions.map((option) => {
+              return (
+                <TickButton
+                  key={option}
+                  isSelected={option === selectedOption}
+                  label={option}
+                  onClick={onOptionSelect}
+                />
+              );
+            })}
+          </OptionsX>
         </DropDown>
       </ButtonX>
     </WrapperX>
   );
 };
+
+const OptionsX = styled.div`
+  padding: 1rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-black);
+`;
 
 const IconWrapperX = styled.div`
   height: 100%;
