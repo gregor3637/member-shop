@@ -1,21 +1,12 @@
 import useLocalStorage from "../../../../../../hooks/useLocalStorage";
 
 import BundleButton from "./BundleButton/BundleButton";
-import MoreButton from "./MoreButton/MoreButton";
+import MoreButton from "../../../../../General/Buttons/MoreButton/MoreButton";
 import View from "./View/View";
 import Watched from "./Watch/Watch";
 
 const columns = (tableData) => {
   return [
-    {
-      Header: "Watch",
-      // accessor: "general.socials.favorites",
-      id: "watch",
-      className: "watch-column",
-      canHideColumn: true,
-      canResize: false,
-      Cell: (tableProps) => <Watched tableProps={tableProps} />,
-    },
     {
       Header: "",
       id: "bundle",
@@ -43,6 +34,7 @@ const columns = (tableData) => {
       canResize: false,
       Cell: (tableProps) => (
         <View
+          id={tableProps.row.original.id}
           src={tableProps.row.original.src}
           count={tableProps.row.original.count}
         />
@@ -93,15 +85,23 @@ const columns = (tableData) => {
       //   return format(new Date(value), "dd/MM/yyyy");
       // },
     },
-    // {
-    //   Header: "Watch",
-    //   // accessor: "general.socials.favorites",
-    //   id: "watch",
-    //   className: "watch-column",
-    //   canHideColumn: true,
-    //   canResize: false,
-    //   Cell: (tableProps) => <Watched tableProps={tableProps} />,
-    // },
+    {
+      Header: "Watch",
+      // accessor: "general.socials.favorites",
+      id: "watch",
+      className: "watch-column",
+      canHideColumn: true,
+      canResize: false,
+      Cell: (tableProps) => {
+        const isBundleItem = tableProps.row.original.count;
+        return !isBundleItem ? (
+          <Watched
+            id={tableProps.row.original.id}
+            favoritesCount={tableProps.row.original.general.socials.favorites}
+          />
+        ) : null;
+      },
+    },
     {
       Header: "",
       id: "more",
@@ -111,7 +111,11 @@ const columns = (tableData) => {
       Cell: (tableProps) => {
         const isBundleItem = tableProps.row.original.count;
         const component = !isBundleItem ? (
-          <MoreButton tableProps={tableProps} />
+          <MoreButton
+            id={tableProps.row.original.id}
+            isBidActive={tableProps.row.original.bids.isAllowed}
+            isBuyActive={tableProps.row.original.price}
+          />
         ) : null;
         return component;
       },

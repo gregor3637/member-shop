@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
+
 import ItemDescriptionFooter from "./ItemDescriptionFooter";
 import ItemDescriptionHeading from "./ItemDescriptionHeading";
 import ItemDescriptionMain from "./ItemDescriptionMain";

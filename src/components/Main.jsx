@@ -8,6 +8,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
+import ItemPage2 from "./pages/ItemPage/ItemPage2";
 
 
 const Main = (props) => {
@@ -24,6 +25,10 @@ const Main = (props) => {
 
         <Route path="/item/:quoteId">
           <ItemPage />
+        </Route>
+
+        <Route path="/itemTest/:quoteId">
+          <ItemPage2 />
         </Route>
 
         <Route path="/requests/:data">

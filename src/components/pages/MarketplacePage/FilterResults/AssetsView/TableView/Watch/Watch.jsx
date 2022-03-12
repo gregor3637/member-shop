@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import useLocalStorage from "../../../../../../../hooks/useLocalStorage";
 import StarSVG from "../../../../../../../img/svg/StarSVG";
 
-const Watched = ({ tableProps }) => {
-  let id = tableProps.row.original.id;
+const Watched = ({ id, favoritesCount, className: version }) => {
   // const [favorites, setFavorites] = useLocalStorage("favorites", []);
+  // console.log("favoritesCount ", favoritesCount);
+  console.log("favoritesCount ", favoritesCount);
+
   const [isSelected, setIsSelected] = useState(() => {
     const favorites = window.localStorage.getItem("favorites");
 
@@ -23,11 +24,11 @@ const Watched = ({ tableProps }) => {
 
     const favorites = window.localStorage.getItem("favorites");
     const parsedFavorites = favorites ? JSON.parse(favorites) : [];
-    console.log("favorites ", favorites);
+    // console.log("favorites ", favorites);
 
     var index = parsedFavorites.indexOf(id);
     const isFavorite = index > -1;
-    console.log("isFavorite ", isFavorite);
+    // console.log("isFavorite ", isFavorite);
 
     if (isFavorite) {
       parsedFavorites.splice(index, 1);
@@ -41,20 +42,19 @@ const Watched = ({ tableProps }) => {
   return (
     <Wrapper
       onClick={handleClick}
-      className={isSelected ? "favorite-item" : ""}
+      className={isSelected ? version + " favorite-item" : version}
     >
       {/* {isSelected && <StarRoundedIcon />}
       {!isSelected && <StarBorderRoundedIcon />} */}
 
       <StarSVG />
-      <span>123</span>
+      <span>{favoritesCount}</span>
     </Wrapper>
   );
 };
 
 const Wrapper = styled.div`
   /* background: var(--test-g); */
-  padding: 1rem 0.5rem;
 
   display: flex;
   flex-direction: row;

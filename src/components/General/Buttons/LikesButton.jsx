@@ -23,7 +23,7 @@ const LikesButton = (props) => {
       <SVGWrapperX>
         <FavoriteBorderOutlinedIcon className={!isFavorite ? "" : "clicked"} />
       </SVGWrapperX>
-      <SpanX>{pritifiedFavorite}</SpanX>
+      <SpanX>{pritifiedFavorite} das</SpanX>
     </Wrapper>
   );
 };

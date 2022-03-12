@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const View = ({ src, count }) => {
+const View = ({ id, src, count }) => {
   return (
-    <Wrapper>
+    <Wrapper to={`itemTest/${id}`}>
       <ImageHolderX>
         <img src={src} alt="nft view" />
       </ImageHolderX>
@@ -35,7 +36,8 @@ const ImageHolderX = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+// const Wrapper = styled.div`
+const Wrapper = styled(Link)`
   margin: auto;
 
   display: flex;

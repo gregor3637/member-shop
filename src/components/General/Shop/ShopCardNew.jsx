@@ -35,7 +35,7 @@ const ShopCardNew = ({ data }) => {
                 <div className="collection-data__annotations">
                   {collectionBadges.map((badgeName, i) => (
                     <Tooltip content={badgeName} key={i}>
-                      {/* <Badge type="Collection" name={badgeName} /> */}
+                      <Badge type="Collection" name={badgeName} />
                     </Tooltip>
                   ))}
                 </div>

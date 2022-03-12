@@ -4,41 +4,34 @@ import Tippy from "@tippyjs/react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
-import AssetCardActionButton from "../../../../../../General/Buttons/AssetCardActionButton/AssetCardActionButton";
-import ColorfulButton from "../../../../../../General/Buttons/AssetCardActionButton/ColorfulButton/ColorfulButton";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import AssetCardActionButton from "../../../../../General/Buttons/AssetCardActionButton/AssetCardActionButton";
 
-const MoreButton = ({ tableProps }) => {
+const MoreButtonContent = ({ className, isBuyActive, isBidActive }) => {
   const [instance, setInstance] = useState(null);
   const [isTippyOpen, setIsTippyOpen] = useState(false);
 
   const onReportHandler = () => {
     instance.hide();
+    setIsTippyOpen(false);
     // setShowReport(true);
   };
 
   const onShareHandler = () => {
     instance.hide();
+    setIsTippyOpen(false);
     // setShowShare(true);
 
     console.log("instance ", instance);
   };
 
+  const version = className;
+
   return (
     <TippyX
       content={
         <TippyContentX>
-          <ColorfulButton
-            label="Buy"
-            isDisabled={!tableProps.row.original.price}
-          />
-          <ColorfulButtonX
-            label="Bid"
-            isDisabled={!tableProps.row.original.bids.isAllowed}
-          />
-          <SeparatorX>
-            <div></div>
-          </SeparatorX>
-
           <AssetCardActionButton onClick={onShareHandler} label={"Share"} />
           <AssetCardActionButton onClick={onShareHandler} label={"Report"} />
         </TippyContentX>
@@ -48,23 +41,19 @@ const MoreButton = ({ tableProps }) => {
       arrow={false}
       interactive
       appendTo="parent"
-      placement="bottom-start"
+      placement="bottom-end"
       trigger="click"
       hideOnClick
     >
       <MoreX
-        className={isTippyOpen ? "more-opened" : ""}
+        className={isTippyOpen ? version + " more-opened" : version}
         onClick={() => setIsTippyOpen((old) => !old)}
       >
-        <FontAwesomeIcon icon={faEllipsisH}></FontAwesomeIcon>
+        <MoreHorizIcon />
       </MoreX>
     </TippyX>
   );
 };
-
-const ColorfulButtonX = styled(ColorfulButton)`
-  margin-top: 0.5rem;
-`;
 
 const MoreX = styled.div`
   width: 3rem;
@@ -76,7 +65,8 @@ const MoreX = styled.div`
   justify-content: center;
 
   color: var(--color-black);
-  border: 1px solid var(--border-color);
+  border: 1px solid var(--color-none);
+  /* border: 1px solid var(--border-color); */
   border-radius: 0.6rem;
   cursor: pointer;
 
@@ -96,17 +86,6 @@ const MoreX = styled.div`
 
 //-------------------------
 
-const SeparatorX = styled.div`
-  width: 100%;
-  padding: 1rem 1rem;
-
-  div {
-    max-width: 100%;
-    height: 1px;
-    background-color: var(--color-border);
-  }
-`;
-
 const TippyContentX = styled.div`
   padding: 1rem 0.5rem;
   display: flex;
@@ -123,4 +102,4 @@ const TippyX = styled(Tippy)`
   border-radius: 1rem;
 `;
 
-export default MoreButton;
+export default MoreButtonContent;

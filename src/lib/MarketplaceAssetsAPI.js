@@ -19,7 +19,7 @@ const singleItems = [
         link: "link to owner", //link to account inside site, that shows other items he has listed
       },
       socials: {
-        favorites: 16,
+        favorites: 11111111,
         views: 1112,
       },
     },
@@ -716,7 +716,7 @@ const singleItems = [
       },
     },
 
-    auction: "Jun 30, 2022 23:45:00",
+    auction: null,
 
     price: {
       //"Buy Now" is decided on this

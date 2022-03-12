@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import CollectionsSVG from "../../../../../../img/currency/CollectionsSVG";
 import DropdownArrow from "../../../../../General/Arrow/DropdownArrow";
+import ArrowForwardIosRoundedIcon from '@mui/icons-material/ArrowForwardIosRounded';
 
 const CollapsibleFilter = (props) => {
   return (
@@ -14,7 +15,8 @@ const CollapsibleFilter = (props) => {
           </SvgWrapperX>
           <span>{props.label}</span>
         </InfoX>
-        <DropdownArrowX isOpen={props.isOpen} />
+        {/* <DropdownArrowX isOpen={props.isOpen} /> */}
+        <ArrowForwardIosRoundedIcon />
       </LabelX>
       <ContentWrapperX className={props.isOpen ? "open" : ""}>
         {props.children}

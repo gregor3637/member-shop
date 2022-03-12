@@ -21,7 +21,7 @@ const Options = (props) => {
   );
 
   return (
-    <Styled>
+    <Wrapper>
       {Object.keys(options).map((key) => {
         return (
           <ToggleButton
@@ -34,11 +34,11 @@ const Options = (props) => {
           </ToggleButton>
         );
       })}
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   padding: 2rem 0;
 
   display: flex;

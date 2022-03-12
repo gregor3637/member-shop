@@ -1,5 +1,6 @@
 import axios from "axios";
 import trendingData from "../data/trendingData";
+import assetCardsData from "./MarketplaceAssetsAPI";
 import collectionsDummy from "./Collections";
 
 export async function getPageItems(page, itemsPerPage) {
@@ -43,15 +44,17 @@ export async function getElementsById(ids) {
 export async function getIDsOfRelatedItems(searchedId) {
   // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
 
-  const response = await fetch(
-    `https://randomuser.me/api/?page=${1}&results=10`
-  );
+  // const response = await fetch(
+  //   `https://randomuser.me/api/?page=${1}&results=10`
+  // );
 
-  const data = await response.json();
+  // const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(data.message || "Could not get comments.");
-  }
+  // if (!response.ok) {
+  //   throw new Error(data.message || "Could not get comments.");
+  // }
+
+  await new Promise((res) => setTimeout(res, 500));
 
   console.log("++++++++++++++++ searchedId = " + searchedId);
   let searchedItem = trendingData.find((x) => +x.id === +searchedId);
@@ -61,7 +64,7 @@ export async function getIDsOfRelatedItems(searchedId) {
   return relatedIds;
 }
 
-export async function getSingleCard(id) {
+export async function getSingleCard(id, oldway = false) {
   const response = await fetch(
     `https://randomuser.me/api/?page=${1}&results=10`
   );
@@ -72,7 +75,13 @@ export async function getSingleCard(id) {
     throw new Error(data.message || "Could not get comments.");
   }
 
-  let searchedItem = trendingData.find((x) => +x.id === +id);
+  let searchedItem = null;
+
+  if (oldway) {
+    searchedItem = trendingData.find((x) => +x.id === +id);
+  } else {
+    searchedItem = assetCardsData.find((x) => +x.id === +id);
+  }
 
   return searchedItem;
 }
@@ -208,7 +217,7 @@ export async function getMarketplaceCollectionsBySubstrAtPage(
   page = 0,
   itemsPerPage = 8
 ) {
- return new Promise((resolve, rej) => {
+  return new Promise((resolve, rej) => {
     //below code is used cause we are mocking 'res'/'CollectionDummy'
     //when we have real server, this 'then' is removed
     //and real server returns { data, hasMore }
@@ -256,6 +265,4 @@ export async function getMarketplaceCollectionsBySubstrAtPage(
   //   console.log("api res | data", chunck);
   //   return { data: chunck, hasMore };
   // });
-
- 
 }

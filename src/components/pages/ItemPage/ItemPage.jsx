@@ -19,7 +19,8 @@ const ItemPage = (props) => {
   const { quoteId } = params;
 
   useEffect(() => {
-    sendRequest(quoteId);
+    // sendRequest(quoteId);
+    sendRequest("5", true);
   }, [sendRequest, quoteId]);
 
   useEffect(() => {
@@ -48,10 +49,10 @@ const ItemPage = (props) => {
           <InnerX>
             <div>
               <img
-                // src="https://static.turbosquid.com/Preview/2019/11/16__17_52_47/CoverImage.jpg9988E0CD-074F-4988-BD5A-8A75FB46C8F3Large.jpg"
+                src="https://static.turbosquid.com/Preview/2019/11/16__17_52_47/CoverImage.jpg9988E0CD-074F-4988-BD5A-8A75FB46C8F3Large.jpg"
                 // src="https://img.rarible.com/prod/image/upload/t_big/prod-itemImages/0x26fd3e176c260e7fef019966622419dabfebb299:147/b2947afd"
                 // src="https://media.sketchfab.com/models/86fd6cec31e347289571a039852c02ed/thumbnails/d5826ebcceac4a36a2e2c1382506ab39/5da9b4d3987f4c7396a4ffe179a149bf.jpeg"
-                src={loadedCard.imgSrc}
+                // src={loadedCard.imgSrc}
                 alt=""
               />
             </div>
