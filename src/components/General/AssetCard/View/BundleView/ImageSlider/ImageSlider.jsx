@@ -34,7 +34,7 @@ const ImageSlider = ({ bundleItems, page, setPage, setInTransition }) => {
         afterChange={afterChange}
       >
         {bundleItems.map((el) => (
-          <ImageView key={el.id} imgSrc={el.src} />
+          <ImageView key={el.id} imgSrc={el.general.src} />
         ))}
       </Slider>
     </Wrapper>

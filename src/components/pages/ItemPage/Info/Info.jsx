@@ -3,14 +3,14 @@ import styled from "styled-components";
 
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
-import Navigation from "./Navigation/Navigation";
+import Main from "./Main/Main";
 
-const Info = ({ assetData }) => {
+const Info = () => {
   return (
     <Wrapper>
-      <Header assetData={assetData} />
-      <Navigation />
-      <Footer assetData={assetData} />
+      <Header />
+      <Main />
+      <Footer />
     </Wrapper>
   );
 };

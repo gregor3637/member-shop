@@ -35,7 +35,7 @@ const columns = (tableData) => {
       Cell: (tableProps) => (
         <View
           id={tableProps.row.original.id}
-          src={tableProps.row.original.src}
+          src={tableProps.row.original.general.src}
           count={tableProps.row.original.count}
         />
       ),
@@ -64,7 +64,7 @@ const columns = (tableData) => {
     {
       Header: "Last Price",
       accessor: (data) =>
-        data.boughtPrices[data.boughtPrices.length - 1]?.amount,
+        data.price.history[data.price.history.length - 1]?.amount,
       canHideColumn: true,
     },
     {
@@ -97,7 +97,7 @@ const columns = (tableData) => {
         return !isBundleItem ? (
           <Watched
             id={tableProps.row.original.id}
-            favoritesCount={tableProps.row.original.general.socials.favorites}
+            favoritesCount={tableProps.row.original.socialMedia.stats.favorites}
           />
         ) : null;
       },
@@ -114,7 +114,7 @@ const columns = (tableData) => {
           <MoreButton
             id={tableProps.row.original.id}
             isBidActive={tableProps.row.original.bids.isAllowed}
-            isBuyActive={tableProps.row.original.price}
+            isBuyActive={tableProps.row.original.price.currency !== ""}
           />
         ) : null;
         return component;

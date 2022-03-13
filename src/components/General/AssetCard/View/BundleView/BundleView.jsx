@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import ImageSlider from "./ImageSlider/ImageSlider";
@@ -26,18 +27,20 @@ const BundleView = ({ data }) => {
 
   return (
     <Wrapper>
-      <ImageSlider
-        bundleItems={data.bundleItems}
-        page={page}
-        setPage={setPage}
-        setInTransition={setInTransition}
-      />
-      <Pagination
-        curremtPage={page}
-        totalPages={totalCount}
-        onPrev={handlePrevClick}
-        onNext={handleNextClick}
-      />
+      <Link to={`itemTest/${data.id}`}>
+        <ImageSlider
+          bundleItems={data.bundleItems}
+          page={page}
+          setPage={setPage}
+          setInTransition={setInTransition}
+        />
+        <Pagination
+          curremtPage={page}
+          totalPages={totalCount}
+          onPrev={handlePrevClick}
+          onNext={handleNextClick}
+        />
+      </Link>
     </Wrapper>
   );
 };

@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-const Buy = ({ buyData }) => {
-  if (buyData === undefined || buyData === null) {
+const Buy = ({ priceData }) => {
+  if (priceData.currency === "") {
     return null;
   }
 
@@ -10,7 +10,7 @@ const Buy = ({ buyData }) => {
     <Wrapper>
       <span>Buy Price</span>
       <div>
-        {buyData.currency} {buyData.amount}
+        {priceData.currency} {priceData.amount}
       </div>
     </Wrapper>
   );
@@ -33,7 +33,6 @@ const Wrapper = styled.div`
     font-size: 1rem;
     font-weight: 600;
   }
-
 `;
 
 export default Buy;

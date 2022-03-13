@@ -1,32 +1,34 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
+import ItemCardContext2 from "../../../../../store/Item/ItemCardContext2";
 import ActionButton from "../../../MarketplacePage/CommonElements/ActionButton/ActionButton";
+import CountdownTimer from "./CountdownTimer/CountdownTimer";
 import Bid from "./Bid/Bid";
 import Buy from "./Buy/Buy";
-import CountdownTimer from "./CountdownTimer/CountdownTimer";
 
-const Footer = ({ assetData }) => {
+const Footer = () => {
+  const itemCtx = useContext(ItemCardContext2);
   const buyHandle = () => {};
   const bidHandle = () => {};
 
   return (
     <Wrapper>
       <InfoContainerX>
-        <Bid bidData={assetData.bids} />
-        <Buy buyData={assetData.price} />
-        <CountdownTimer timeData={assetData.auction} />
+        <Bid bidData={itemCtx.bids} />
+        <Buy priceData={itemCtx.price} />
+        <CountdownTimer timeData={itemCtx.auction} />
       </InfoContainerX>
       <ButtonContainerX>
         <ActionButton
           text={"Bid"}
           onClick={bidHandle}
-          isDisabled={!assetData.bids.isAllowed}
+          isDisabled={!itemCtx.bids.isAllowed}
         />
         <ActionButton
           text={"Buy"}
           onClick={buyHandle}
-          isDisabled={!assetData.price}
+          isDisabled={!itemCtx.price}
         />
       </ButtonContainerX>
     </Wrapper>

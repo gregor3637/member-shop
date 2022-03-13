@@ -17,8 +17,11 @@ const Tab = (props) => {
 };
 
 const Wrapper = styled.div`
-  /* background: var(--test-y); */
   height: 100%;
+
+  a:first-child {
+    margin-bottom: 1rem;
+  }
 `;
 
 export default Tab;

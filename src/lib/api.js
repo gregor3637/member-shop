@@ -1,6 +1,6 @@
 import axios from "axios";
-import trendingData from "../data/trendingData";
-import assetCardsData from "./MarketplaceAssetsAPI";
+import trendingData from "../data/dbTrendingDataMock";
+import assetCardsData from "../data/dbDataMock";
 import collectionsDummy from "./Collections";
 
 export async function getPageItems(page, itemsPerPage) {

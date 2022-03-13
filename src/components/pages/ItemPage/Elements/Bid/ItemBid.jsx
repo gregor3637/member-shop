@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const ItemBid = ({ className, user, time, value, currency }) => {
   let passedTime = time;
-  const {name, avatar} = user;
+  const { name, avatar } = user;
 
   return (
-    <Styled className={className}>
+    <Wrapper className={className}>
       <img src={avatar} alt="" />
       <span>
-        <a href="user.profile">{name}</a> placed a bid
+        <Link to={`user/${name}`}>{name}</Link>
       </span>
       <PriceX>
         {value} {currency}
@@ -18,7 +19,7 @@ const ItemBid = ({ className, user, time, value, currency }) => {
       <TimeX>
         <span>At: {passedTime} </span>
       </TimeX>
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -32,11 +33,15 @@ const TimeX = styled.div`
   grid-column: 2 / span 1;
   font-size: 1.2rem;
 `;
-const Styled = styled.div`
-  padding-bottom: 2rem;
-  padding: 1rem 0 1rem 0rem;
+
+const Wrapper = styled.div`
+  /* background: var(--test-r); */
+  /* height: 4rem; */
+  /* padding-bottom: 2rem; */
+  /* padding: 1rem 0; */
   z-index: 1;
-  margin-top: 0.1rem;
+  margin-top: 1.1rem;
+  /* border-bottom: 1px solid black; */
 
   flex: 1;
 
@@ -46,7 +51,12 @@ const Styled = styled.div`
   align-items: center;
   position: relative;
 
-  border-radius: 1rem;
+  /* border-radius: 1rem; */
+
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 
   img {
     grid-column: 1 / span 1;
@@ -63,7 +73,7 @@ const Styled = styled.div`
     width: 0.6rem;
     height: 0.6rem;
     position: absolute;
-    left: -2.4rem;
+    left: -2.1rem;
     top: calc(50% -4rem);
     top: 50%;
     z-index: 5;

@@ -7,6 +7,7 @@ import { getSingleCard } from "../../../lib/api";
 import Promotion from "../MarketplacePage/Promotion/Promotion";
 import ItemView from "./ItemView/ItemView";
 import Info from "./Info/Info";
+import ItemCardContext2 from "../../../store/Item/ItemCardContext2";
 
 const ItemPage2 = (props) => {
   const { quoteId } = useParams();
@@ -29,18 +30,17 @@ const ItemPage2 = (props) => {
     return <p>{error}</p>;
   }
 
-  console.log("loadedCard ====================");
-  console.log(loadedAssetCardData);
-
   return (
-    <Wrapper>
-      <LeftPanelX>
-        <Info assetData={loadedAssetCardData} />
-        {/* <Promotion /> */}
-      </LeftPanelX>
+    <ItemCardContext2.Provider value={loadedAssetCardData}>
+      <Wrapper>
+        <LeftPanelX>
+          <Info assetData={loadedAssetCardData} />
+          {/* <Promotion /> */}
+        </LeftPanelX>
 
-      <ItemView imgSrc={loadedAssetCardData.src} />
-    </Wrapper>
+        <ItemView imgSrc={loadedAssetCardData.general.src} />
+      </Wrapper>
+    </ItemCardContext2.Provider>
   );
 };
 

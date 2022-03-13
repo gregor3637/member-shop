@@ -4,16 +4,16 @@ import styled from "styled-components";
 import useWindowDimensions from "../../../../../../hooks/useWindowDimensions";
 import AssetCard from "../../../../../General/AssetCard/AssetCard";
 
-const CardsView = (props) => {
+const CardsView = ({ data, className }) => {
   const { width } = useWindowDimensions();
 
   const gridTemplateColumnStyle =
-    props.className + (1500 > width ? " small-grid" : " large-grid");
+    className + (1500 > width ? " small-grid" : " large-grid");
 
   return (
     <Wrapper>
       <ContentX className={gridTemplateColumnStyle}>
-        {props.data.map((data) => {
+        {data.map((data) => {
           return <AssetCard key={data.id} data={data} />;
         })}
       </ContentX>

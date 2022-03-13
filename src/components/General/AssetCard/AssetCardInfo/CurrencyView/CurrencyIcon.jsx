@@ -12,6 +12,10 @@ const currencyImages = {
 
 //TODO: rename this to 'CurrencyIcon
 const CurrencyIcon = ({ currency }) => {
+  if (currency === "") {
+    return null;
+  }
+
   return currencyImages[currency];
 };
 

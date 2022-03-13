@@ -58,7 +58,6 @@ const AssetCardWrapperX = styled.div`
 
   border-radius: 1.6rem;
   overflow: hidden;
-  cursor: pointer;
 `;
 
 const Wrapper = styled.div`

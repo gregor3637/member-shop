@@ -1,13 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Watched from "../../../pages/MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
 
 import LikesButton from "../../Buttons/LikesButton";
 
 const AssetCardHeader = ({
   data: {
-    general: {
-      project: { name: projectName },
-      socials: { favorites },
+    id,
+    project: { name: projectName },
+    socialMedia: {
+      stats: { favorites },
+    },
+    contract: {
+      creator: { avatar },
+      owner: { name: ownerName },
     },
   },
   className,
@@ -15,17 +22,14 @@ const AssetCardHeader = ({
   return (
     <Wrapper className={className}>
       <InnerWrapperX>
-        <DescriptionX>
+        <LinkX to={`user/${ownerName}`}>
           <ImgWrapperX>
-            <img
-              src="https://lh3.googleusercontent.com/YLakJPj0dPFefWeWUnbX34_WNh0sedXHO0DLzrfR87UCvXUv4jc2f1bMBvYvXZ1psywbwkDgaZZyRZsNkDvl2OSqhy6ZEIVYPqIv=s64"
-              alt="avatar"
-            />
+            <img src={avatar} alt="avatar" />
           </ImgWrapperX>
           <h2>{projectName}</h2>
-        </DescriptionX>
+        </LinkX>
 
-        <LikesButtonX favorite={favorites} />
+        <Watched id={id} favoritesCount={favorites} />
       </InnerWrapperX>
     </Wrapper>
   );
@@ -46,7 +50,7 @@ const ImgWrapperX = styled.div`
   }
 `;
 
-const DescriptionX = styled.a`
+const LinkX = styled(Link)`
   flex: 1;
 
   display: flex;
@@ -54,6 +58,9 @@ const DescriptionX = styled.a`
   gap: 0.5rem;
 
   overflow: hidden; // min-width: 0;
+
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit;
 
   h2 {
     white-space: nowrap;

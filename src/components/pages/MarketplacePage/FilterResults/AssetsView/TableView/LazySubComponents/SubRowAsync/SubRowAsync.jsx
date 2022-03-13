@@ -1,5 +1,5 @@
 import React from "react";
-import { Bundles } from "../../../../../../../../lib/MarketplaceAssetsAPI";
+import { Bundles } from "../../../../../../../../data/dbDataMock";
 
 function SubRows({ row, rowProps, visibleColumns, data, loading }) {
   if (loading) {

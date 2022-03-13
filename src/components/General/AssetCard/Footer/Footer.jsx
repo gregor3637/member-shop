@@ -7,19 +7,21 @@ import CollectionData from "./CollectionData/CollectionData";
 import Button from "../../Buttons/AssetCardActionButton/ColorfulButton/ColorfulButton";
 
 const Footer = ({ data, className }) => {
+  console.log("data.price.currency ", data.price.currency);
+
   return (
     <Wrapper className={"asset-card--footer " + className}>
       <PaddingX>
         <InfoX className="asset-card--footer-info">
           <IconsX>
             {data.price && <CurrencyView currency={data.price.currency} />}
-            <CollectionData items={data.items} />
+            <CollectionData items={data.bundleItems} />
           </IconsX>
           <LastBoughtPrice data={data} />
         </InfoX>
         <ButtonsX className="asset-card--footer-buttons">
           <Button label={"Bid"} isDisabled={!data.bids.isAllowed} />
-          <Button label={"Buy"} isDisabled={!data.price} />
+          <Button label={"Buy"} isDisabled={data.price.currency === ""} />
         </ButtonsX>
       </PaddingX>
     </Wrapper>

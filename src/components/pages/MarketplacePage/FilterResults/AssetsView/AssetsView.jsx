@@ -1,7 +1,7 @@
 import React from "react";
 
 import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
-import assetsAPI from "../../../../../lib/MarketplaceAssetsAPI";
+import assetsAPI from "../../../../../data/dbDataMock";
 import CardsView from "./CardsView/CardsView";
 import TableView from "./TableView/TableView";
 import {
@@ -24,10 +24,7 @@ const AssetsView = () => {
 
   const searchQueryToLowerCase = preferenceState.searchQuery.toLowerCase();
 
-  let assetCards = [];
-  // arr = [assetsAPI[0]];
-  // arr = [...assetsAPI, ...assetsAPI, ...assetsAPI, ...assetsAPI, ...assetsAPI];
-  assetCards = assetsAPI;
+  let assetCards = assetsAPI;
 
   assetCards = assetCards.filter((x) =>
     hasQueryInAssetNameOrProjectName(x, searchQueryToLowerCase)
@@ -48,7 +45,7 @@ const AssetsView = () => {
       {(displayType === "Card" || displayType === "") && (
         <CardsView data={filteredAssetCards} />
       )}
-      {displayType === "Table" && <TableView  data={filteredAssetCards} />}
+      {displayType === "Table" && <TableView data={filteredAssetCards} />}
     </>
   );
 };

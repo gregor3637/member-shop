@@ -5,7 +5,7 @@ import ItemBid from "../Bid/ItemBid";
 
 const Tab_Bids = ({ bids }) => {
   return (
-    <Styled>
+    <WrapperX>
       <HighestBidX>
         <ItemBidXOverride {...bids[bids.length - 1]} />
       </HighestBidX>
@@ -19,13 +19,13 @@ const Tab_Bids = ({ bids }) => {
           })}
         </BidsX>
       </BidsContainerX>
-    </Styled>
+    </WrapperX>
   );
 };
 
 const ItemBidXOverride = styled(ItemBid)``;
 
-const Styled = styled.div`
+const WrapperX = styled.div`
   position: relative;
   flex: 1;
   display: flex;
@@ -35,6 +35,7 @@ const Styled = styled.div`
 
 const BidsX = styled.div`
   width: 100%;
+  /* background: var(--test-g); */
 
   ${ItemBidXOverride} {
     margin-left: auto;
@@ -81,7 +82,7 @@ const Timeline = styled.div`
     top: 0;
     left: 24px;
     width: 0;
-    height: calc(100% - 2rem);
+    height: calc(100% - 2.2rem);
     border: 1px dotted #aaaaaa;
     border-style: dashed;
   }

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import AuctionTime from "./AuctionTime/AuctionTime";
@@ -9,7 +10,9 @@ const AssetCardInfo = ({ className, data }) => {
     <Wrapper className={className}>
       <MainX>
         <TitleContainerX>
-          <TitleX>{data.general.name}</TitleX>
+          <Link to={`itemTest/${data.id}`}>
+            <TitleX>{data.general.name}</TitleX>
+          </Link>
         </TitleContainerX>
         <InfoX>
           <PriceLabelBlock data={data} />
@@ -35,6 +38,11 @@ const TitleX = styled.p`
 const TitleContainerX = styled.div`
   flex: 1;
   min-width: 0;
+
+  a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit;
+  }
 `;
 
 const MainX = styled.div`

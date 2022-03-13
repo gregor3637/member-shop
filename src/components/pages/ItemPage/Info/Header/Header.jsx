@@ -1,18 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 
 import MoreButtonContent from "./MoreButtonContent/MoreButtonContent";
 import Watched from "../../../MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
 import { printify } from "../../../../../helpers/PrintifyNumbers";
+import ItemCardContext2 from "../../../../../store/Item/ItemCardContext2";
 
-const Header = ({ assetData }) => {
-  const favCount = printify(assetData.general.socials.favorites);
+const Header = () => {
+  const itemCtx = useContext(ItemCardContext2);
+  const favCount = printify(itemCtx.socialMedia.stats.favorites);
 
   console.log("favCount ", favCount);
   return (
     <Wrapper>
       <TopX>
-        <WatchedX id={assetData.id} favoritesCount={favCount} />
+        <WatchedX id={itemCtx.id} favoritesCount={favCount} />
         <MoreButtonX isBidActive={false} isBuyActive={false} />
       </TopX>
       <BottomX>
@@ -28,7 +30,7 @@ const WatchedX = styled(Watched)`
 `;
 
 const MoreButtonX = styled(MoreButtonContent)`
-  border-color:  var(--color-none);
+  border-color: var(--color-none);
 `;
 
 const TopX = styled.div`

@@ -7,7 +7,8 @@ const emptyState = {
 };
 
 const dummyState = {
-  displayType: "Table",
+  // displayType: "Table",
+  displayType: "Card",
   searchQuery: "",
   sortingOption: "",
   tableColumns: [],

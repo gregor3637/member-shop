@@ -6,7 +6,7 @@ import CurrencyView from "../CurrencyView/CurrencyIcon";
 const PriceLabelBlock = ({ data }) => {
   let label, currency, amount;
 
-  if (data.price) {
+  if (data.price.currency !== "") {
     label = "Price";
     amount = data.price.amount;
     currency = data.price.currency;

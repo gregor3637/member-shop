@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const CreditBlock = ({ title, user, annotations = null }) => {
-  const { name, avatar } = user;
+const CreditBlock = ({ title, user: { name, avatar }, annotations = null }) => {
   return (
-    <Styled>
+    <Wrapper>
       <TopX>
         <TitleX>{title}</TitleX>
         {annotations && <AnnotationX>{annotations}</AnnotationX>}
@@ -13,7 +12,7 @@ const CreditBlock = ({ title, user, annotations = null }) => {
         <img src={avatar} alt="" />
         <a href="user.profile">{name}</a>
       </BottomX>
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -54,7 +53,7 @@ const BottomX = styled.div`
   }
 `;
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   width: 50%;
 `;
 

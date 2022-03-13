@@ -1,15 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const SingleItemView = (props) => {
+const SingleItemView = ({ data }) => {
   return (
-    <Wrapper>
-      <img src={props.data.src} alt="avatar" />
-    </Wrapper>
+    <LinkX to={`itemTest/${data.id}`}>
+      <img src={data.general.src} alt="avatar" />
+    </LinkX>
   );
 };
 
-const Wrapper = styled.div`
+const LinkX = styled(Link)`
   width: 100%;
   height: 100%;
   display: flex;

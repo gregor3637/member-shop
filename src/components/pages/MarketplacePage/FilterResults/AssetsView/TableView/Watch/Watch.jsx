@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { printify } from "../../../../../../../helpers/PrintifyNumbers";
 
 import StarSVG from "../../../../../../../img/svg/StarSVG";
 
 const Watched = ({ id, favoritesCount, className: version }) => {
-  // const [favorites, setFavorites] = useLocalStorage("favorites", []);
-  // console.log("favoritesCount ", favoritesCount);
   console.log("favoritesCount ", favoritesCount);
+  favoritesCount = printify(favoritesCount);
 
   const [isSelected, setIsSelected] = useState(() => {
     const favorites = window.localStorage.getItem("favorites");
