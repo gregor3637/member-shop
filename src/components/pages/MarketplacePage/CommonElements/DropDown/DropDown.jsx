@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const DropDown = (props, ref) => {
+  let version = (props.isOpen ? "sorting-open " : "") + props.className;
   return (
-    <Wrapper ref={ref} className={props.isOpen ? "sorting-open" : ""}>
+    <Wrapper ref={ref} className={version}>
       {props.children}
     </Wrapper>
   );
@@ -15,7 +16,6 @@ const Wrapper = styled.div`
   right: 0;
   margin: 0.5rem 0;
   height: auto;
-  width: max-content;
 
   background-color: var(--color-white);
 

@@ -11,55 +11,6 @@ import { faHandPaper } from "@fortawesome/free-solid-svg-icons";
 import { faHandRock } from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "../../../../General/Tooltip/Tooltip";
 
-// TODO: is this used ?!
-// const historyData = [
-//   {
-//     id: 1,
-//     event: "Mint",
-//     price: 1234567890123456789,
-//     currency: "ETH",
-//     from: "B323234965412365412541294311289541625131628541269",
-//     to: "Crypto-Kitties-Auction",
-//     date: "2 years ago41536214391",
-//   },
-//   {
-//     id: 2,
-//     event: "Transfer",
-//     price: 12,
-//     currency: "ETH",
-//     from: "B32323",
-//     to: "Crypto-Kitties-Auction",
-//     date: "2 years ago",
-//   },
-//   {
-//     id: 3,
-//     event: "List",
-//     price: 12,
-//     currency: "ETH",
-//     from: "B32323",
-//     to: "Crypto-Kitties-Auction",
-//     date: "2 years ago",
-//   },
-//   {
-//     id: 3,
-//     event: "Sale",
-//     price: 12,
-//     currency: "ETH",
-//     from: "B32323",
-//     to: "Crypto-Kitties-Auction1876d46asdsa",
-//     date: "2 years ago",
-//   },
-//   {
-//     id: 3,
-//     event: "Bid",
-//     price: 12,
-//     currency: "ETH",
-//     from: "B32323",
-//     to: "Crypto-Kitties-Auction",
-//     date: "2 years ago",
-//   },
-// ];
-
 const map = {
   Mint: faBabyCarriage,
   Transfer: faExchangeAlt,

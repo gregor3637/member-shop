@@ -160,7 +160,127 @@ const singleItems = [
         {
           id: 6,
           user: {
-            name: "HyperStudio111111111111azzzzzzsd55",
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 7,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 8,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 9,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 10,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 11,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 12,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 13,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 14,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 15,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
+            avatar:
+              "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
+          },
+          type: "bid",
+          time: "5/12/2021 13:30:23",
+          value: "50.99",
+          currency: "BUSD",
+        },
+        {
+          id: 16,
+          user: {
+            name: "HyperStudio1111111hhhhhhhhhhhhhhhh11111azzzzzzsd55",
             avatar:
               "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
           },
@@ -206,49 +326,276 @@ const singleItems = [
       },
     ],
 
-    itemActivity: [
+    itemHistory: [
       {
-        type: "mint",
-        amount: null,
-        currency: "MATIC",
+        type: "Mint",
+        cost: null,
         from: null, //link to account inside site, that shows other items he has listed
-        to: "EBF90A", //link to account inside site, that shows other items he has listed
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
         date: "Dec 15, 2015 23:45:00", //link transaction on EtherScan
-        transaction: "EtherScanID:12313", //link transaction on EtherScan
+        transaction: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link transaction on EtherScan
       },
       {
-        type: "sale",
-        amount: 0.53,
-        currency: "MATIC",
-        from: "EBF90A", //link to account inside site, that shows other items he has listed
-        to: "EpicNFTvillage", //link to account inside site, that shows other items he has listed
+        type: "Sale",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
         date: "Dec 11, 2021 23:45:00", //link transaction on EtherScan
-        transaction: "EtherScanID:12313", //link transaction on EtherScan
+        transaction: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link transaction on EtherScan
       },
       {
-        type: "transfer",
-        amount: null,
-        currency: "MATIC",
-        from: "EpicNFTvillage", //link to account inside site, that shows other items he has listed
-        to: "tshirttimemachine", //link to account inside site, that shows other items he has listed
-        date: "Dec 12, 2021 23:45:00",
-        transaction: "EtherScanID:12313", //link transaction on EtherScan
+        type: "Transfer",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x123656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x321656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 12, 2021111 23:45:00",
+        transaction: "0x71C7656EC7ab88b098defB751B7401B5f6d8976Fzzzzzzzzzz", //link transaction on EtherScan
       },
       {
-        type: "offer",
-        amount: 9.2,
-        currency: "MATIC",
-        from: "672A5F", //link to account inside site, that shows other items he has listed
-        to: "", //link to account inside site, that shows other items he has listed
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
         date: "Dec 13, 2021 23:45:00", //link transaction on EtherScan
         transaction: "",
       },
       {
-        type: "offer",
-        amount: 9.6,
-        currency: "MATIC",
-        from: "DZE311", //link to account inside site, that shows other items he has listed
-        to: "", //link to account inside site, that shows other items he has listed
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
+        transaction: "",
+      },
+      {
+        type: "Bid",
+        cost: {
+          amount: 0.53,
+          currency: "MATIC",
+          usdEquivalent: 13,
+        },
+        from: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
+        to: {
+          name: "user123",
+          src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
+          address: "0x71C7656EC7ab88b098defB751B7401B5f6d8976F", //link to account inside site, that shows other items he has listed}
+        },
         date: "Dec 15, 2021 23:45:00", //link transaction on EtherScan
         transaction: "",
       },
@@ -431,7 +778,7 @@ export const Bundles = [
       },
     ],
 
-    itemActivity: [],
+    itemHistory: [],
 
     bundleItems: [
       {

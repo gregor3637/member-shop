@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
 import ItemCardContext2 from "../../../../../../../../store/Item/ItemCardContext2";
 import InfoProp from "./InfoProp/InfoProp";
@@ -109,13 +111,10 @@ const InfoPropX = styled(InfoProp)`
   /* background-color: var(--color-grey20); */
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled(SimpleBar)`
+height: 100%;
   ${InfoPropX}:nth-child(even) {
     background-color: var(--color-grey10);
-  }
-
-  & > div {
-    /* margin-bottom: 1rem; */
   }
 `;
 

@@ -22,7 +22,7 @@ const Filters = ({
       <GeneralGroup
         context={Object.keys(options).filter((x) => options[x])}
         contextName="options"
-        label="Options"
+        label="Optionssz"
         dispatch={dispatch}
       />
       <GeneralGroup

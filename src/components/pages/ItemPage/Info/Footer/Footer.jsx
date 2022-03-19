@@ -55,6 +55,8 @@ const Wrapper = styled.div`
   /* background: var(--test-y); */
   padding: 1.6rem 2rem;
 
+  flex-basis: min-content;
+
   display: flex;
   flex-direction: column;
   gap: 1rem;

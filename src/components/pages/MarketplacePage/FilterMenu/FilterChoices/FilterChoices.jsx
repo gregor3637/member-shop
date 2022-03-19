@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
-import CollapsibleFilter from "./CollapsibleFilter/CollapsibleFilter";
+import CollapsibleFilter from "../../../../General/Drawer/Drawer";
 import Price from "./Filters/Price/Price";
 import SaleType from "./Filters/Status/SaleType";
 import Options from "./Filters/Options/Options";
@@ -11,6 +11,7 @@ import Category from "./Filters/Category/Category";
 import Blockchain from "./Filters/Blockchain/Blockchain";
 import CollectionsNew from "./Filters/Collections/Collections";
 import AssetType from "./Filters/AssetType/AssetType";
+import CollectionsSVG from "../../../../../img/currency/CollectionsSVG";
 
 const menus = {
   Options: <Options />,
@@ -36,6 +37,7 @@ const Filters = (props) => {
           return (
             <CollapsibleFilter
               label={name}
+              icon={<CollectionsSVG />}
               key={name}
               onClick={clickHandler}
               isOpen={name === openMenuLabel}

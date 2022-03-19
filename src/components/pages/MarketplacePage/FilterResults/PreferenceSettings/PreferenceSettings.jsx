@@ -5,7 +5,7 @@ import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceCo
 import useOnScrollHandler from "../../../../../hooks/useOnScrollHandler";
 import InputSearch from "../../CommonElements/InputSearch/InputSearch";
 import DisplayTypes from "./DisplayTypes/DisplayTypes";
-import SortBy from "./SortBy/SortBy";
+import SortBy from "./../../../../General/SortBy/SortBy";
 import SwitchController from "./SwitchController/SwitchController";
 import VisibleColumns from "./VisibleColumns/VisibleColumns";
 

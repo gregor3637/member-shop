@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useRouteMatch } from "react-router-dom";
 
-import NavigationButton from "../NavigationButton/NavigationButton";
+import NavigationButton from "../../NavigationButton/NavigationButton";
 
-const TabHome = () => {
+const TabNavigationButtons = () => {
   let { url } = useRouteMatch();
 
   return (
@@ -15,9 +15,6 @@ const TabHome = () => {
         </li>
         <li>
           <NavigationButton urlPath={`${url}/bids`} label={"Bids"} />
-        </li>
-        <li>
-          <NavigationButton urlPath={`${url}/owners`} label={"Owners"} />
         </li>
         <li>
           <NavigationButton urlPath={`${url}/history`} label={"History"} />
@@ -44,4 +41,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default TabHome;
+export default TabNavigationButtons;

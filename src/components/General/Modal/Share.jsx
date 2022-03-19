@@ -7,7 +7,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Share = (props) => {
   return (
-    <Styled>
+    <Wrapper>
       <div>Share this NFT</div>
       <CloseButtonX onClick={props.onClose}>
         <FAIcon icon={faTimes}></FAIcon>
@@ -18,18 +18,18 @@ const Share = (props) => {
         <SocialLink style={{ marginRight: "1rem" }} icon="in" iconSize="3" />
         <SocialLink style={{ marginRight: "1rem" }} icon="email" iconSize="3" />
       </ContainerX>
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   padding: 2rem 2rem;
   top: 50%;
   right: 50%;
   z-index: 999;
   transform: translate(50%, -50%);
-  background-color: white;
+  background-color: var(--color-white);
 
   display: flex;
   flex-direction: column;

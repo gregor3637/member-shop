@@ -8,7 +8,10 @@ const ItemBid = ({ className, user, time, value, currency }) => {
 
   return (
     <Wrapper className={className}>
-      <img src={avatar} alt="" />
+      <Link to={`user/${name}`}>
+        <img src={avatar} alt="" />
+      </Link>
+
       <span>
         <Link to={`user/${name}`}>{name}</Link>
       </span>
@@ -35,13 +38,8 @@ const TimeX = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* background: var(--test-r); */
-  /* height: 4rem; */
-  /* padding-bottom: 2rem; */
-  /* padding: 1rem 0; */
+  width: 100%;
   z-index: 1;
-  margin-top: 1.1rem;
-  /* border-bottom: 1px solid black; */
 
   flex: 1;
 
@@ -51,36 +49,34 @@ const Wrapper = styled.div`
   align-items: center;
   position: relative;
 
-  /* border-radius: 1rem; */
+  span {
+    padding-left: 1rem;
+    padding-right: 2rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
   a {
     color: inherit;
     text-decoration: inherit;
   }
 
-  img {
+  & > a {
     grid-column: 1 / span 1;
     grid-row: 1 / span 2;
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
 
-    border-radius: 50%;
-  }
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
-  &:before {
-    content: "";
-    width: 0.6rem;
-    height: 0.6rem;
-    position: absolute;
-    left: -2.1rem;
-    top: calc(50% -4rem);
-    top: 50%;
-    z-index: 5;
+    img {
+      width: 3rem;
+      height: 3rem;
 
-    background-color: black;
-    border: 1px solid #000000;
-    border-radius: 50%;
+      border-radius: 50%;
+    }
   }
 `;
 

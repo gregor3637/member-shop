@@ -1,26 +1,15 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
 
-import useOnClickOutsideHandler from "../../../../../../hooks/useOnClickOutsideHandler";
-import useToggle from "../../../../../../hooks/useToggle";
+import useOnClickOutsideHandler from "../../../hooks/useOnClickOutsideHandler";
+import useToggle from "../../../hooks/useToggle";
 
-import SortSVG from "../../../../../../img/currency/SortSVG";
-import DropdownArrow from "../../../../../General/Arrow/DropdownArrow";
-import DropDown from "../../../CommonElements/DropDown/DropDown";
+import SortSVG from "../../../img/currency/SortSVG";
+import DropdownArrow from "../Arrow/DropdownArrow";
+import DropDown from "../../pages/MarketplacePage/CommonElements/DropDown/DropDown";
 import TickButton from "./TickButton/TickButton";
 
-const sortingOptions = [
-  "Recently sold",
-  "Recently added",
-  "Recently created",
-  "Oldest",
-  "Auction ending soon",
-  "Price: High to Low",
-  "Price: Low to High",
-  "Highest last sale",
-];
-
-const SortBy = ({ selectedOption, onOptionSelect }) => {
+const SortBy2 = ({ options, selectedOption, onOptionSelect }) => {
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
     toggleShown();
@@ -34,6 +23,11 @@ const SortBy = ({ selectedOption, onOptionSelect }) => {
     if (!isDropdownClicked) toggleShown();
   };
 
+  const optionButtonClickHandler = (label) => {
+    onOptionSelect(label);
+    toggleShown();
+  };
+
   return (
     <WrapperX>
       <ButtonX onClick={dropdownClickHandle} ref={outsideRef}>
@@ -42,24 +36,28 @@ const SortBy = ({ selectedOption, onOptionSelect }) => {
         </IconWrapperX>
         <span>{selectedOption ? selectedOption : "SortByzzz"}</span>
         <DropdownArrow isOpen={isShown} />
-        <DropDown isOpen={isShown} ref={dropdownRef}>
+        <DropDownX isOpen={isShown} ref={dropdownRef}>
           <OptionsX>
-            {sortingOptions.map((option) => {
+            {options.map((option) => {
               return (
                 <TickButton
                   key={option}
                   isSelected={option === selectedOption}
                   label={option}
-                  onClick={onOptionSelect}
+                  onClick={optionButtonClickHandler}
                 />
               );
             })}
           </OptionsX>
-        </DropDown>
+        </DropDownX>
       </ButtonX>
     </WrapperX>
   );
 };
+
+const DropDownX = styled(DropDown)`
+  width: 100%;
+`;
 
 const OptionsX = styled.div`
   padding: 1rem 1rem;
@@ -85,7 +83,7 @@ const IconWrapperX = styled.div`
 
 const ButtonX = styled.span`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 
   height: 3.6rem;
@@ -107,8 +105,11 @@ const ButtonX = styled.span`
 `;
 
 const WrapperX = styled.div`
+  z-index: 999;
+  /* background: var(--color-white); */
   position: relative;
   width: max-content;
+  width: 100%;
 `;
 
-export default SortBy;
+export default SortBy2;
