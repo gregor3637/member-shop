@@ -7,6 +7,7 @@ import TabNavigationButtons from "./Tab/Tabs/TabNavigation/TabNavigationButtons"
 import TabDetails from "./Tab/Tabs/TabDetails/TabDetails";
 import ItemCardContext2 from "../../../../../store/Item/ItemCardContext2";
 import TabHistory from "./Tab/Tabs/TabHistory/TabHistory";
+import TabMore from "./Tab/Tabs/TabMore/TabMore";
 
 const Main = () => {
   const { path } = useRouteMatch();
@@ -28,7 +29,7 @@ const Main = () => {
           <TabHistory history={ctx.itemHistory} />
         </Route>
         <Route path={`${path}/more`} exact>
-          {"hhhhhhhhhhhzzzzzzzzzzz"}
+          <TabMore assetCardsId={ctx.more.map((x) => x.id)} />
         </Route>
       </Switch>
     </Wrapper>

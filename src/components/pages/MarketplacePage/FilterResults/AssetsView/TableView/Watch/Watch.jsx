@@ -5,17 +5,22 @@ import { printify } from "../../../../../../../helpers/PrintifyNumbers";
 import StarSVG from "../../../../../../../img/svg/StarSVG";
 
 const Watched = ({ id, favoritesCount, className: version }) => {
-  console.log("favoritesCount ", favoritesCount);
   favoritesCount = printify(favoritesCount);
 
   const [isSelected, setIsSelected] = useState(() => {
-    const favorites = window.localStorage.getItem("favorites");
+    const favorites = JSON.parse(window.localStorage.getItem("favorites"));
 
     let isInLocalStorage = false;
 
     if (favorites !== null) {
-      isInLocalStorage = favorites.indexOf(id) > -1;
+      const index = favorites.indexOf(id);
+      console.log('index ', index);
+      isInLocalStorage = index > -1;
     }
+
+    console.log("id   ", id);
+    console.log("favorites   ", favorites);
+    console.log("isInLocalStorage  ", isInLocalStorage);
     return isInLocalStorage;
   });
 

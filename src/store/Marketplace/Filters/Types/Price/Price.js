@@ -9,24 +9,39 @@ const value = {
 const assetCardConditionFulfilled = (assetCard, filterState) => {
   if (!assetCard.price) return false;
 
-  const isSameCurrency = assetCard.price.currency === filterState.currency;
-  const isAssetCardAmountAboveMin = assetCard.price.amount >= filterState.min;
-  const isAssetCardAmountBelowMax = assetCard.price.amount <= filterState.max;
-
+  const isSameCurrency = assetCard.price.currency === filterState.price.currency;
+  const isAmountEntered = Boolean(filterState.price.min) || Boolean(filterState.price.max)
+  const isSatisfyingMinCondition = filterState.price.min = "" || assetCard.price.amount >= filterState.price.min;
+  const isSatisfyingMaxCondition = filterState.price.max = "" || assetCard.price.amount <= filterState.price.max;
+  
   return (
-    isSameCurrency && isAssetCardAmountAboveMin && isAssetCardAmountBelowMax
+    isSameCurrency && isAmountEntered && (isSatisfyingMinCondition || isSatisfyingMaxCondition)
   );
 };
 
 const reducerFn = (state, action) => {
-  return {
+
+  console.log('reducerFn action ', action);
+  console.log('reducerFn action.type ', action.type);
+  console.log('reducerFn action.value.min ', action.value.min);
+  console.log('reducerFn action.value.max ', action.value.max);
+
+  let data = {
     ...state,
-    [action.type]: {
-      currency: action.selected.currency,
-      min: action.selected.min,
-      max: action.selected.max,
-    },
+    // [action.type]: {
+    //   currency: action.value.currency,
+    //   min: action.value.min,
+    //   max: action.value.max,
+    // },
   };
+
+  data.price.currency =  action.value.currency;
+  data.price.min = action.value.min;
+  data.price.max = action.value.max;
+  
+  console.log('reducerFn data ', data);
+
+  return data
 };
 
 const data = getFilterDataObject(

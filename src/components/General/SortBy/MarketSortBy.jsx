@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 
 import SortBy2 from "./SortBy2";
 
@@ -13,14 +12,14 @@ const sortingOptions = [
 ];
 
 const MarketSortBy = (props) => {
-  const [selectedOption, setselectedOption] = useState(sortingOptions[0]);
+  const [selectedOption, setSelectedOption] = useState(sortingOptions[0]);
 
   return (
     <>
       <SortBy2
         options={sortingOptions}
         selectedOption={selectedOption}
-        onOptionSelect={(val) => setselectedOption(val)}
+        onOptionSelect={(val) => setSelectedOption(val)}
       />
     </>
   );

@@ -7,8 +7,6 @@ import CollectionData from "./CollectionData/CollectionData";
 import Button from "../../Buttons/AssetCardActionButton/ColorfulButton/ColorfulButton";
 
 const Footer = ({ data, className }) => {
-  console.log("data.price.currency ", data.price.currency);
-
   return (
     <Wrapper className={"asset-card--footer " + className}>
       <PaddingX>

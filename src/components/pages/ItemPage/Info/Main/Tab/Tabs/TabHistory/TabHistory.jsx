@@ -25,8 +25,6 @@ const TabHistory = ({ history }) => {
       );
     });
 
-  console.log("elements ", elements);
-
   return (
     <Wrapper>
       {selectedData && (

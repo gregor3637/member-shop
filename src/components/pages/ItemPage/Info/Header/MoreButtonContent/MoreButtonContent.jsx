@@ -7,21 +7,37 @@ import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AssetCardActionButton from "../../../../../General/Buttons/AssetCardActionButton/AssetCardActionButton";
+import ReportModal from "../../../../../General/Modal/Report/ReportModal";
+import ShareModalOverlay from "../../../../../General/Modal/ShareModalOverlay";
+
+// import ReportModal from "../../../General/Modal/Report/ReportModal";
+// import ShareModalOverlay from "../../../General/Modal/ShareModalOverlay";
 
 const MoreButtonContent = ({ className, isBuyActive, isBidActive }) => {
   const [instance, setInstance] = useState(null);
   const [isTippyOpen, setIsTippyOpen] = useState(false);
 
+  const [showReport, setShowReport] = useState(false);
+  const [showShare, setShowShare] = useState(false);
+
+  const closeReport = () => {
+    setShowReport(false);
+  };
+
+  const closeShare = () => {
+    setShowShare(false);
+  };
+
   const onReportHandler = () => {
     instance.hide();
     setIsTippyOpen(false);
-    // setShowReport(true);
+    setShowReport(true);
   };
 
   const onShareHandler = () => {
     instance.hide();
     setIsTippyOpen(false);
-    // setShowShare(true);
+    setShowShare(true);
 
     console.log("instance ", instance);
   };
@@ -29,29 +45,34 @@ const MoreButtonContent = ({ className, isBuyActive, isBidActive }) => {
   const version = className;
 
   return (
-    <TippyX
-      content={
-        <TippyContentX>
-          <AssetCardActionButton onClick={onShareHandler} label={"Share"} />
-          <AssetCardActionButton onClick={onShareHandler} label={"Report"} />
-        </TippyContentX>
-      }
-      onCreate={setInstance}
-      onClickOutside={() => setIsTippyOpen(false)}
-      arrow={false}
-      interactive
-      appendTo="parent"
-      placement="bottom-end"
-      trigger="click"
-      hideOnClick
-    >
-      <MoreX
-        className={isTippyOpen ? version + " more-opened" : version}
-        onClick={() => setIsTippyOpen((old) => !old)}
+    <>
+      {showReport && <ReportModal onClose={closeReport} />}
+      {showShare && <ShareModalOverlay onClose={closeShare} />}
+
+      <TippyX
+        content={
+          <TippyContentX>
+            <AssetCardActionButton onClick={onShareHandler} label={"Share"} />
+            <AssetCardActionButton onClick={onReportHandler} label={"Report"} />
+          </TippyContentX>
+        }
+        onCreate={setInstance}
+        onClickOutside={() => setIsTippyOpen(false)}
+        arrow={false}
+        interactive
+        appendTo="parent"
+        placement="bottom-end"
+        trigger="click"
+        hideOnClick
       >
-        <MoreHorizIcon />
-      </MoreX>
-    </TippyX>
+        <MoreX
+          className={isTippyOpen ? version + " more-opened" : version}
+          onClick={() => setIsTippyOpen((old) => !old)}
+        >
+          <MoreHorizIcon />
+        </MoreX>
+      </TippyX>
+    </>
   );
 };
 

@@ -6,7 +6,7 @@ import useOnScrollHandler from "../../../../../hooks/useOnScrollHandler";
 import InputSearch from "../../CommonElements/InputSearch/InputSearch";
 import DisplayTypes from "./DisplayTypes/DisplayTypes";
 import SortBy from "./../../../../General/SortBy/SortBy";
-import SwitchController from "./SwitchController/SwitchController";
+import Favorites from "./Favorites/Favorites";
 import VisibleColumns from "./VisibleColumns/VisibleColumns";
 
 const PreferenceSettings = () => {
@@ -37,7 +37,8 @@ const PreferenceSettings = () => {
           />
         )}
         {displayType === "Table" && <VisibleColumns />}
-        <SwitchController />
+        
+        <Favorites /> 
         <DisplayTypes />
       </RightX>
     </Wrapper>

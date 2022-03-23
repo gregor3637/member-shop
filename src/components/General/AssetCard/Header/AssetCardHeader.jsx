@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Watched from "../../../pages/MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
 
+import Watched from "../../../pages/MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
 import LikesButton from "../../Buttons/LikesButton";
 
 const AssetCardHeader = ({

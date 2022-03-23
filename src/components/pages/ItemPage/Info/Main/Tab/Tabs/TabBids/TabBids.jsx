@@ -1,23 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
-import MarketSortBy from "../../../../../../../General/SortBy/MarketSortBy";
+import SortBy2 from "../../../../../../../General/SortBy/SortBy2";
 import ItemBid from "../../../../../Elements/Bid/ItemBid";
+import { sortMethods } from "../../../../../../../../helpers/ItemBidsTabSortingMethods";
+
+let firstTime = true;
 
 const TabBids = ({ bids }) => {
+  const [selectedOption, setSelectedOption] = useState();
+  const [bidEntries, setBidEntries] = useState([...bids]);
+
+  useEffect(() => {
+    if (firstTime === false) {
+      setBidEntries((old) => [...old].sort(sortMethods[selectedOption]));
+    }
+
+    firstTime = false;
+  }, [selectedOption]);
+
   return (
     <Wrapper>
       <SortingContainerX>
-        <MarketSortBy />
+        <SortBy2
+          options={Object.keys(sortMethods)}
+          selectedOption={selectedOption}
+          onOptionSelect={(val) => setSelectedOption(val)}
+        />
       </SortingContainerX>
       <DivX>
         <ScrollbarX forceVisible="y" autoHide={true}>
-          {bids.map((_, idx, arr) => {
-            return (
-              <ItemBidXOverride key={idx} {...arr[arr.length - 1 - idx]} />
-            );
+          {bidEntries.map((bid, idx) => {
+            return <ItemBidXOverride key={idx} data={bid} />;
           })}
         </ScrollbarX>
       </DivX>

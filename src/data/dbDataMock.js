@@ -19,7 +19,7 @@ const singleItems = [
       contractAddress: "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB",
       tokenID: 9650,
       tokenStandard: "ERC0721",
-      blockchain: "Polygon", //******* filter 'Blockchain' depends ot his prop
+      blockchain: "Ethereum", //******* filter 'Blockchain' depends ot his prop
       owner: {
         name: "F3BED4",
         link: "link to owner", //link to account inside site, that shows other items he has listed
@@ -52,7 +52,7 @@ const singleItems = [
     summary: {
       isNSFW: false, //******* filter 'Options.NFTW' depends ot his prop
       isLazyMinted: false, //******* filter 'Options.Show Lazy Minted' depends ot his prop
-      category: ["Football"], //******* filter Category depends ot his prop
+      category: ["Sports", "Football"], //******* filter Category depends ot his prop
       properties: {
         accessory: ["3D Glasses", "Hot Lipstick", "Wild Blonde"],
         type: ["Female"],
@@ -81,7 +81,7 @@ const singleItems = [
     price: {
       //******* filter 'Sale Type.Buy Now'  depends on this prop (if object is null/undefined -> filter condition not met)
       amount: 105, //******* filter 'Price.From' & 'Price.To'  depends on this prop
-      currency: "", //******* filter 'Price.Currency' depends on this prop
+      currency: "ETH", //******* filter 'Price.Currency' depends on this prop
       history: [
         {
           amount: 3,
@@ -105,8 +105,8 @@ const singleItems = [
               "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
           },
           type: "bid",
-          time: "1/12/2021 13:38:55",
-          value: "10.6",
+          time: "1/12/2019 13:38:55",
+          amount: "10.6",
           currency: "BUSD",
         },
         {
@@ -117,8 +117,8 @@ const singleItems = [
               "https://img.rarible.com/prod/image/upload/t_avatar_big/prod-users/0xee63d9ca6ecaa334ba0c3311b3dbd5de0132ba4c/avatar/QmZQcqw38q6z7yKGXZx86o6Mn2mnUPF4CoscnMbCTXqboQ",
           },
           type: "bid",
-          time: "2/12/2021 13:37:00",
-          value: "20",
+          time: "2/02/2022 13:37:00",
+          amount: "20",
           currency: "BUSD",
         },
         {
@@ -130,7 +130,7 @@ const singleItems = [
           },
           type: "bid",
           time: "3/12/2021 13:35:00",
-          value: "30.9",
+          amount: "30.9",
           currency: "BUSD",
         },
         {
@@ -142,7 +142,7 @@ const singleItems = [
           },
           type: "bid",
           time: "4/12/2021 13:33:23",
-          value: "40.9",
+          amount: "40.9",
           currency: "BUSD",
         },
         {
@@ -154,7 +154,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -166,7 +166,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -178,7 +178,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -190,7 +190,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -202,7 +202,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -214,7 +214,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -226,7 +226,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -238,7 +238,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -250,7 +250,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -262,7 +262,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -274,7 +274,7 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
+          amount: "50.99",
           currency: "BUSD",
         },
         {
@@ -286,8 +286,8 @@ const singleItems = [
           },
           type: "bid",
           time: "5/12/2021 13:30:23",
-          value: "50.99",
-          currency: "BUSD",
+          amount: "50.99",
+          currency: "BUSDD",
         },
       ],
       history: [
@@ -601,6 +601,22 @@ const singleItems = [
       },
     ],
 
+    more: [
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+    ],
+
     //******* filter 'AssetType'
     ////if object doesnt have 'items' prop -> 'AssetType' is 'Single Items'
   },
@@ -618,6 +634,7 @@ export const Bundles = [
 
     project: {
       name: "Crypto Punks", //******* filter 'Collections' depends ot his prop
+      isNSFW: false,
       isVerified: true, //******* filter 'Options.Verified only' depends ot his prop
       link: "link to site",
     },
@@ -793,6 +810,20 @@ export const Bundles = [
         count: 1,
         ...singleItems[0],
       },
+    ],
+
+    more: [
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
+      { id: 0 },
     ],
   },
 ];

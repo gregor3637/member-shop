@@ -16,7 +16,7 @@ const CurrencyIcon = ({ currency }) => {
     return null;
   }
 
-  return currencyImages[currency];
+  return currencyImages[currency] || null;
 };
 
 export default CurrencyIcon;

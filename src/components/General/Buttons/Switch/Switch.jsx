@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 const Switch = ({ isChecked }) => {
+  const [checked, setChecked] = useState(true);
+
+  console.log("isChecked ", isChecked);
   return (
     <Wrapper>
       <label className="switch">
-        <input type="checkbox" checked={isChecked} />
+        <input type="checkbox" checked={isChecked} onChange={() => {}} />
         <span className="slider round"></span>
       </label>
     </Wrapper>

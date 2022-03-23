@@ -15,8 +15,9 @@ const HistoryEvent = ({ data, onClose }) => {
       <HeaderX>
         <h1>{capitalizeFirstLetter(data.type)}</h1>
         <CloseButtonX onClick={onClose}>
-          <FAIcon icon={faTimes}></FAIcon>
-          {/* <CloseRoundedIcon /> */}
+          <div>
+            <FAIcon icon={faTimes}></FAIcon>
+          </div>
         </CloseButtonX>
       </HeaderX>
       <MainX>
@@ -79,6 +80,20 @@ const HistoryEvent = ({ data, onClose }) => {
 const CloseButtonX = styled.button`
   background-color: transparent;
   border: none;
+
+  & > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: transparent;
+
+    &:hover {
+      background-color: var(--color-grey20);
+    }
+  }
 
   cursor: pointer;
 `;

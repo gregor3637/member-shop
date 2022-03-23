@@ -2,10 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-const ItemBid = ({ className, user, time, value, currency }) => {
-  let passedTime = time;
-  const { name, avatar } = user;
-
+const ItemBid = ({
+  className,
+  data: {
+    user: { name, avatar },
+    time,
+    amount,
+    currency,
+  },
+}) => {
   return (
     <Wrapper className={className}>
       <Link to={`user/${name}`}>
@@ -16,11 +21,11 @@ const ItemBid = ({ className, user, time, value, currency }) => {
         <Link to={`user/${name}`}>{name}</Link>
       </span>
       <PriceX>
-        {value} {currency}
+        {amount} {currency}
       </PriceX>
 
       <TimeX>
-        <span>At: {passedTime} </span>
+        <span>At: {time} </span>
       </TimeX>
     </Wrapper>
   );

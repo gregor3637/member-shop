@@ -15,9 +15,9 @@ const optionKeys = Object.keys(options);
 
 const assetCardConditionFulfilled = (assetCard, filterState) => {
   const filterTypes = {
-    "Verified only": (assetCard) => assetCard.general.project.isVerified,
-    "Show NSFW": (assetCard) => assetCard.general.isAdultContent,
-    "Show lazy minted": (assetCard) => assetCard.general.isLazyMinted,
+    "Verified only": (assetCard) => assetCard.project.isVerified,
+    "Show NSFW": (assetCard) => assetCard.project.isNSFW,
+    "Show lazy minted": (assetCard) => assetCard.summary.isLazyMinted,
   };
 
   let selectedOptions = optionKeys.filter((x) => filterState.options[x]);

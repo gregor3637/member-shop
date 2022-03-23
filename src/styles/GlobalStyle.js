@@ -137,6 +137,17 @@ const GlobalStyle = createGlobalStyle`
         --color-text-disabled: #ccc;
         --color-none: rgba(0,0,0,0);
 
+        //----------- action button
+        --action-button--background--active:#2081e2;
+        --action-button--background--hover:#014cec;
+        --action-button--background--disabled:#e5e5e5;
+
+        --action-button--color--active: var(--color-white);
+        --action-button--color--disabled: #909090;
+
+        --action-button--border-radius: 1rem;
+        //--------------------------------
+
         --button-color-blue: #2081e2;//1890ff
         --button-color-blue-light: #b9dcff;//1890ff
         --button-disabled: #7c7c7c;

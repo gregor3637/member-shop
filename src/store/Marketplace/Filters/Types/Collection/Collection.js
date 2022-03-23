@@ -6,7 +6,7 @@ const value = [];
 
 const assetCardConditionFulfilled = (assetCard, filterState) => {
   let isMinCriteriaMet = filterState.collections.includes(
-    assetCard.general.project.name
+    assetCard.project.name
   );
 
   return isMinCriteriaMet;

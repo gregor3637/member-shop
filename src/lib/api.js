@@ -40,6 +40,25 @@ export async function getElementsById(ids) {
 
   return newEntries;
 }
+export async function getElementsById_inDbMockData(ids) {
+  // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
+  await new Promise((res) => setTimeout(res, 500));
+  // const response = await fetch(
+  //   `https://randomuser.me/api/?page=${1}&results=10`
+  // );
+
+  // const data = await response.json();
+
+  // if (!response.ok) {
+  //   throw new Error(data.message || "Could not get comments.");
+  // }
+
+  const newEntries = ids.map((searchedId) =>
+    assetCardsData.find((x) => x.id === searchedId)
+  );
+  
+  return newEntries;
+}
 
 export async function getIDsOfRelatedItems(searchedId) {
   // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);

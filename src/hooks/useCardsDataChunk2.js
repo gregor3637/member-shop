@@ -48,7 +48,7 @@ const useCardsDataChunk2 = (initPage, itemsPerPage, idOfRelatedTo) => {
   }, [loadedRelatedItems]);
 
   //3: on every page change
-  useEffect(() => {
+ useEffect(() => {
     if (page !== 0 && isAllLoaded === false) {
       const startIndex = page * itemsPerPage;
       const endIntex = startIndex + itemsPerPage;
@@ -61,7 +61,6 @@ const useCardsDataChunk2 = (initPage, itemsPerPage, idOfRelatedTo) => {
       }
     }
   }, [page, idOfRelatedItems, sendRequest, isAllLoaded, itemsPerPage]); //only page should change
-
   return {
     setPage,
     isAllLoaded,

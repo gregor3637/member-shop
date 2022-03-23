@@ -51,7 +51,7 @@ const SvgWrapperX = styled.div`
     border: 1px solid var(--color-none);
 
     svg {
-      color: var(--color-white);
+      fill: var(--color-white);
     }
   }
 `;
@@ -63,7 +63,7 @@ const DropdownArrowX = styled(DropdownArrow)`
 const ContentX = styled.div`
   /* background: var(--test-y); */
 
-  padding: 0 0 1rem 6rem;
+  padding: 0 2rem 1rem 3rem;
   z-index: 5;
 
   display: block;
@@ -117,32 +117,6 @@ const ViewX = styled.span`
 
 const Wrapper = styled.div`
   width: 100%;
-
-  position: relative;
-
-  &:before {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 3rem;
-    width: 0;
-    height: 3rem;
-    border: 1px solid #aaaaaa;
-    border-style: solid;
-  }
-
-  &:after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    width: 0;
-    height: calc(100% - 3rem);
-    border: 1px solid #aaaaaa;
-    border-style: solid;
-  }
 `;
 
 export default Drawer;

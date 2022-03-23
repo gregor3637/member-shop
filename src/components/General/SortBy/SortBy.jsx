@@ -76,7 +76,6 @@ const OptionsX = styled.div`
 
 const IconWrapperX = styled.div`
   height: 100%;
-  margin-right: 0.8rem;
 
   svg {
     transform: scale(1.2);
@@ -87,15 +86,18 @@ const IconWrapperX = styled.div`
   align-items: center;
 `;
 
-const ButtonX = styled.span`
+const ButtonX = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 
   height: 3.6rem;
   padding: 0 1.6rem;
 
   background-color: var(--color-white);
+  width: max-content;
+
   border: 1px solid var(--color-border);
   border-radius: var(--market-itemsWrapper-header-elements-border-radius);
 
@@ -106,7 +108,14 @@ const ButtonX = styled.span`
 
   span {
     margin-right: 1.6rem;
+
     font-weight: 600;
+  }
+
+  @media (max-width: 960px) {
+    & > span {
+      display: none;
+    }
   }
 `;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useMemo } from "react";
 
 import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
 import assetsAPI from "../../../../../data/dbDataMock";
@@ -10,11 +10,14 @@ import {
 } from "../../../../../lib/HelperFuncs/Filter_2";
 import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import { sortByType } from "../../../../../lib/HelperFuncs/Sort";
+import useLocalStorage2 from "../../../../../hooks/useLocalStorage2";
+import useLocalStorage_Event from "../../../../../hooks/useLocalStorage_Event";
+import useLocalStorageNonString from "../../../../../hooks/useLocalStorageNonString";
 
 const hasQueryInAssetNameOrProjectName = (asset, query) => {
   return (
     asset.general.name.toLowerCase().includes(query) ||
-    asset.general.project.name.toLowerCase().includes(query)
+    asset.project.name.toLowerCase().includes(query)
   );
 };
 
@@ -24,7 +27,13 @@ const AssetsView = () => {
 
   const searchQueryToLowerCase = preferenceState.searchQuery.toLowerCase();
 
-  let assetCards = assetsAPI;
+  const { storedValue, setStoredValue } = useLocalStorage_Event("favorites");
+
+  let assetCards = useMemo(() => {
+    return !preferenceState.showFavoritesOnly
+      ? assetsAPI
+      : assetsAPI.filter((card) => storedValue.includes(card.id));
+  }, [storedValue, preferenceState.showFavoritesOnly]);
 
   assetCards = assetCards.filter((x) =>
     hasQueryInAssetNameOrProjectName(x, searchQueryToLowerCase)
@@ -36,6 +45,7 @@ const AssetsView = () => {
     activeFilters,
     filtersState
   );
+  
   filteredAssetCards.sort(sortByType[preferenceState.sortingOption]);
 
   const { displayType } = preferenceState;

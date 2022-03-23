@@ -8,6 +8,7 @@ const PriceInput = ({ value, onChange, placeholder }) => {
     onChange(value);
   };
 
+
   return (
     <InputX value={value} onChange={handleChange} placeholder={placeholder} />
   );

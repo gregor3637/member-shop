@@ -7,15 +7,15 @@ import getFilterDataObject from "../../FilterDataObject";
 
 const options = {
   Bundles: false,
-  SingleItems: false,
+  "Single Items": false,
 };
 
 const optionKeys = Object.keys(options);
 
 const assetCardConditionFulfilled = (assetCard, filterState) => {
   const filterTypes = {
-    Bundles: (assetCard) => Boolean(assetCard.items) === true,
-    SingleItems: (assetCard) => Boolean(assetCard.items) === false,
+    Bundles: (assetCard) => Boolean(assetCard.bundleItems) === true,
+    "Single Items": (assetCard) => Boolean(assetCard.bundleItems) === false,
   };
 
   let selectedType = optionKeys.find((o) => filterState.assetType[o]);

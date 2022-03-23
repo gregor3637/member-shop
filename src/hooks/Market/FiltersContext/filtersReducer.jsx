@@ -52,7 +52,7 @@ const dummyState = {
   },
   assetType: {
     Bundles: false,
-    SingleItems: false,
+    "Single Items": false,
   },
   saleType: {
     "Has Offers": false,

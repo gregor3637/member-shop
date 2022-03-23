@@ -30,10 +30,8 @@ const currencyOptions = {
 };
 
 const Price = () => {
-  const {
-    state: { price },
-    dispatch: dispatchNewPriceInfo,
-  } = useMarketFiltersContext();
+  const { state, dispatch: dispatchNewPriceInfo } = useMarketFiltersContext();
+  const { price } = state;
 
   const [currency, setCurrency] = useState(Object.keys(currencyOptions)[0]);
   const [minPrice, setMinPrice] = useState("");
@@ -43,6 +41,7 @@ const Price = () => {
     if (!price.min && !price.max) {
       setCurrency(Object.keys(currencyOptions)[0]);
     }
+
     setMinPrice(price.min);
     setMaxPrice(price.max);
   }, [price]);
@@ -50,7 +49,7 @@ const Price = () => {
   const handleApply = () => {
     dispatchNewPriceInfo({
       type: "price",
-      selected: {
+      value: {
         currency,
         min: minPrice,
         max: maxPrice,

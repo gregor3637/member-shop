@@ -3,7 +3,7 @@ const emptyState = {
   searchQuery: "",
   sortingOption: "",
   tableColumns: {},
-  favorites: [],
+  showFavoritesOnly: false,
 };
 
 const dummyState = {
@@ -12,7 +12,7 @@ const dummyState = {
   searchQuery: "",
   sortingOption: "",
   tableColumns: [],
-  favorites: [],
+  showFavoritesOnly: false,
 };
 
 const reducer = (state, action) => {
@@ -29,7 +29,7 @@ const reducer = (state, action) => {
     case "tableColumns":
       return { ...state, [action.type]: action.value };
 
-    case "favorites":
+    case "showFavoritesOnly":
       return { ...state, [action.type]: action.value };
 
     default: {

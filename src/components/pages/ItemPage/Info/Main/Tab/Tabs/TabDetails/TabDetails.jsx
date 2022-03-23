@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
@@ -34,14 +35,14 @@ const TabDetails = () => {
       <InfoProp label="Creator" annotations={creator.royalties + "% royalties"}>
         <UserContainerX>
           <img src={creator.avatar} alt="" />
-          <a href={creator.link}>{creator.name}</a>
+          <Link to={`/user/${creator.name}`}>{creator.name}</Link>
         </UserContainerX>
       </InfoProp>
 
       <InfoProp label="Owner">
         <UserContainerX>
           <img src={owner.avatar} alt="" />
-          <a href={owner.link}>{owner.name}</a>
+          <Link to={`/user/${owner.name}`}>{owner.name}</Link>
         </UserContainerX>
       </InfoProp>
 
@@ -112,7 +113,13 @@ const InfoPropX = styled(InfoProp)`
 `;
 
 const Wrapper = styled(SimpleBar)`
-height: 100%;
+  height: 100%;
+
+  a {
+    text-decoration: inherit;
+    color: inherit;
+  }
+
   ${InfoPropX}:nth-child(even) {
     background-color: var(--color-grey10);
   }

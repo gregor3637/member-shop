@@ -13,25 +13,26 @@ const Wrapped = styled.button`
   width: 100%;
   padding: 1rem 0;
 
-  background-color: var(--market-filters-button-action-color-enabled);
-  border: 1px solid var(--button-color-blue);
-  border-radius: var(--market-filters--button-action--border-radius);
-
-  outline: none;
-  color: var(--market-filters--button-action--color-active);
+  color: var(--action-button--color--active);
+  background-color: var(--action-button--background--active);
 
   cursor: pointer;
+  border: none;
+  border-radius: var(--action-button--border-radius);
+  
+  &:enabled {
+    background-color: var(--action-button--background--active);
+  }
 
   &:hover:enabled {
-    background-color: var(--button-color-blue);
-    color: var(--market-filters--button-action--color-hover);
+    background-color: var(--action-button--background--hover);
   }
 
   &:disabled {
     cursor: auto;
-    background-color: var(--market-filters--button-action--bgColor-disabled);
-    color: var(--market-filters--button-action--color-disabled);
-    border: 1px solid var(--marketplace-button-background);
+    background-color: var(--action-button--background--disabled);
+    color: var(--action-button--color--disabled);
+    /* border: 1px solid var(--marketplace-button-background); */
   }
 
   span {

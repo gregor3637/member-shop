@@ -3,7 +3,7 @@ import styled from "styled-components";
 import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
-import CollapsibleFilter from "../../../../General/Drawer/Drawer";
+import Drawer from "../../../../General/Drawer/Drawer";
 import Price from "./Filters/Price/Price";
 import SaleType from "./Filters/Status/SaleType";
 import Options from "./Filters/Options/Options";
@@ -32,10 +32,10 @@ const Filters = (props) => {
 
   return (
     <Wrapper>
-      <ScrollbarX forceVisible="y" autoHide={false}>
+      <ScrollbarX forceVisible="y" autoHide={true}>
         {Object.keys(menus).map((name) => {
           return (
-            <CollapsibleFilter
+            <Drawer
               label={name}
               icon={<CollectionsSVG />}
               key={name}
@@ -43,7 +43,7 @@ const Filters = (props) => {
               isOpen={name === openMenuLabel}
             >
               {menus[name]}
-            </CollapsibleFilter>
+            </Drawer>
           );
         })}
       </ScrollbarX>

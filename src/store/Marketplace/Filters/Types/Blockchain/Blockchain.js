@@ -15,7 +15,7 @@ const optionKeys = Object.keys(options);
 
 const assetCardConditionFulfilled = (assetCard, filterState) => {
   let selected = optionKeys.filter((o) => filterState.blockchain[o]);
-  return selected.includes(assetCard.summary.details.blockchain);
+  return selected.includes(assetCard.contract.blockchain);
 };
 
 const data = getFilterDataObject(

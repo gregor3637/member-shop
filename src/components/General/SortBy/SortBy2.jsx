@@ -34,7 +34,7 @@ const SortBy2 = ({ options, selectedOption, onOptionSelect }) => {
         <IconWrapperX>
           <SortSVG />
         </IconWrapperX>
-        <span>{selectedOption ? selectedOption : "SortByzzz"}</span>
+        <span>{selectedOption ? selectedOption : "Sort By"}</span>
         <DropdownArrow isOpen={isShown} />
         <DropDownX isOpen={isShown} ref={dropdownRef}>
           <OptionsX>

@@ -22,7 +22,7 @@ const Header = () => {
   return (
     <Wrapper>
       <BottomX>
-        <h2>{"Tsting Name is going"}</h2>
+        <h2>{itemCtx.general.name}</h2>
       </BottomX>
       <TopX>
         {match && (
@@ -93,15 +93,18 @@ const BottomX = styled.div`
   align-items: center;
 
   h2 {
+    padding: 0 2rem;
     font-size: 2rem;
     text-align: center;
+
+    word-break: break-word;
   }
 `;
 
 const Wrapper = styled.div`
   /* background: var(--test-r); */
   width: 100%;
-  padding: 0.5rem 1rem 0 1rem;
+  padding: 0.5rem 1rem 0.3rem 1rem;
 
   display: flex;
   flex-direction: column;

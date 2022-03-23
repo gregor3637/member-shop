@@ -29,7 +29,7 @@ const assetCardConditionFulfilled = (assetCard, filterState) => {
 
       return false;
     },
-    "Buy Now": (assetCard) => Boolean(assetCard.items),
+    "Buy Now": (assetCard) => Boolean(assetCard.price?.currency),
     "On Auction": (assetCard) => {
       let isOngoing =
         Boolean(assetCard.auction) &&

@@ -23,6 +23,8 @@ const PriceGroup = ({ context, contextName, label, dispatch }) => {
     const buttonText = `${context.currency}: ${prefixSign} ${context.min} ${middleSign} ${context.max}`;
     const img = currencyImageByName[context.currency];
 
+console.log('PriceGroup@context ', context);
+
     return (
       <Styled>
         <ActiveFilterGroupButton
@@ -36,7 +38,7 @@ const PriceGroup = ({ context, contextName, label, dispatch }) => {
           onClick={() => {
             dispatch({
               type: contextName,
-              selected: {
+              value: {
                 currency: "",
                 min: "",
                 max: "",

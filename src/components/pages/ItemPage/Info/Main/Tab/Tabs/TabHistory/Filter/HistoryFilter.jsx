@@ -29,11 +29,13 @@ const HistoryFilter = ({ className: version, onApplyFilter }) => {
   useEffect(() => {
     if (isShown === false) {
       setNewlySelectedFilters([]);
+      setTouchedFilters(false);
     }
   }, [isShown]);
 
   const dropdownClickHandle = (ev) => {
     const isDropdownClicked = dropdownRef.current.contains(ev.target);
+
     if (!isDropdownClicked) toggleShown();
   };
 
