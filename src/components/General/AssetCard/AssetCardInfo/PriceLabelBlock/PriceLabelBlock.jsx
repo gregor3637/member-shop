@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import CurrencyView from "../CurrencyView/CurrencyIcon";
+import CurrencyIcon from "../CurrencyView/CurrencyIcon";
 
 const PriceLabelBlock = ({ data }) => {
   let label, currency, amount;
@@ -28,22 +28,31 @@ const PriceLabelBlock = ({ data }) => {
 
   return (
     <Wrapper>
-      <div>{label}</div>
+      <LabelX>{label}</LabelX>
       <PriceX>
-        <CurrencyView currency={currency} />
+        <CurrencyIcon currency={currency} />
         <span>{amount}</span>
       </PriceX>
     </Wrapper>
   );
 };
 
+const LabelX = styled.span`
+  font-size: 1.2rem;
+`;
+
 const PriceX = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
+
+  span {
+    font-weight: 600;
+  }
 `;
 
 const Wrapper = styled.div`
+
   display: flex;
   flex-direction: column;
   align-items: end;

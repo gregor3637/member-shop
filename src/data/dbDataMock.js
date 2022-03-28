@@ -5,7 +5,7 @@ const singleItems = [
     id: 0,
 
     general: {
-      name: "CryptoPunk #97953123123123555559999921321asd",
+      name: "CryptoPunk #9795312312312355555999992135555599999213555559999921321asd",
       src: "https://lh3.googleusercontent.com/jQO3g8MZqUei2Cw8SAP3hD3xf7j0rM5QBNs14rSRsF5R6eUJs4F0TESuFPlBPC_fvFxr_6DdQAx8OvfsKXodIWkHAgv2fgOrpfSR=w286",
     },
 
@@ -80,7 +80,7 @@ const singleItems = [
 
     price: {
       //******* filter 'Sale Type.Buy Now'  depends on this prop (if object is null/undefined -> filter condition not met)
-      amount: 105, //******* filter 'Price.From' & 'Price.To'  depends on this prop
+      amount: 105.666666, //******* filter 'Price.From' & 'Price.To'  depends on this prop
       currency: "ETH", //******* filter 'Price.Currency' depends on this prop
       history: [
         {

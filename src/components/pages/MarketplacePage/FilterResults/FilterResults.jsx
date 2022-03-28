@@ -26,6 +26,7 @@ const WrapperX = styled.div`
   display: flex;
   flex-direction: column;
 
+  border: 1px solid var(--color-border);
   border-radius: var(--market-filters--outerWrapper-radius);
 `;
 

@@ -37,10 +37,13 @@ const Footer = () => {
 
 const InfoContainerX = styled.div`
   display: flex;
-  gap: 1rem;
 
-  & > div:not(:last-child) {
-    border-right: 1px solid var(--color-grey20);
+  & > div {
+    padding: 0 0.4rem;
+
+    &:not(:last-child) {
+      border-right: 1px solid var(--color-grey20);
+    }
   }
 `;
 

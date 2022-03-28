@@ -12,6 +12,7 @@ import Blockchain from "./Filters/Blockchain/Blockchain";
 import CollectionsNew from "./Filters/Collections/Collections";
 import AssetType from "./Filters/AssetType/AssetType";
 import CollectionsSVG from "../../../../../img/currency/CollectionsSVG";
+import { Link } from "react-router-dom";
 
 const menus = {
   Options: <Options />,
@@ -30,6 +31,9 @@ const Filters = (props) => {
     setOpenMenuLabel(openMenuLabel !== label ? label : "");
   };
 
+  //TODO detect all marketFilterContextUpdates
+  //and set url to them
+
   return (
     <Wrapper>
       <ScrollbarX forceVisible="y" autoHide={true}>
@@ -47,6 +51,17 @@ const Filters = (props) => {
           );
         })}
       </ScrollbarX>
+
+      <Link
+        to={{
+          pathname: `/trainer`,
+          state: {
+            instructor_id: ["abc", "bcd"],
+          },
+        }}
+      >
+        click here
+      </Link>
     </Wrapper>
   );
 };

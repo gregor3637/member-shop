@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import AuctionTime from "./AuctionTime/AuctionTime";
 import PriceLabelBlock from "./PriceLabelBlock/PriceLabelBlock";
 
 const AssetCardInfo = ({ className, data }) => {
@@ -14,22 +13,20 @@ const AssetCardInfo = ({ className, data }) => {
             <TitleX>{data.general.name}</TitleX>
           </Link>
         </TitleContainerX>
-        <InfoX>
-          <PriceLabelBlock data={data} />
-          {data.auction && <AuctionTime dateEnd={data.auction} />}
-        </InfoX>
+        <PriceLabelBlock data={data} />
       </MainX>
     </Wrapper>
   );
 };
 
-const InfoX = styled.div``;
-
-const TitleX = styled.p`
+const TitleX = styled.span`
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
+
   overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
 
   font-size: 1.2rem;
   font-weight: 500;
@@ -38,9 +35,10 @@ const TitleX = styled.p`
 const TitleContainerX = styled.div`
   flex: 1;
   min-width: 0;
+  padding-right: 1rem;
 
   a {
-    color: inherit; /* blue colors for links too */
+    color: inherit;
     text-decoration: inherit;
   }
 `;
@@ -50,11 +48,9 @@ const MainX = styled.div`
   flex: 1;
 
   display: flex;
-  /* justify-content: space-between; */
 `;
 
 const Wrapper = styled.div`
-  /* background: gold; */
   padding-top: 1.4rem;
 
   display: flex;

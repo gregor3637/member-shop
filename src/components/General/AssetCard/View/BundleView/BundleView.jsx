@@ -34,13 +34,13 @@ const BundleView = ({ data }) => {
           setPage={setPage}
           setInTransition={setInTransition}
         />
-        <Pagination
-          curremtPage={page}
-          totalPages={totalCount}
-          onPrev={handlePrevClick}
-          onNext={handleNextClick}
-        />
       </Link>
+      <Pagination
+        curremtPage={page}
+        totalPages={totalCount}
+        onPrev={handlePrevClick}
+        onNext={handleNextClick}
+      />
     </Wrapper>
   );
 };

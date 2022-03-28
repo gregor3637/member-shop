@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const ActionButton = ({ text, onClick, isDisabled = false }) => {
+const ActionButton = ({ text, onClick, className, isDisabled = false }) => {
   return (
-    <Wrapped onClick={onClick} disabled={isDisabled}>
+    <Wrapped className={className} onClick={onClick} disabled={isDisabled}>
       <span>{text}</span>
     </Wrapped>
   );

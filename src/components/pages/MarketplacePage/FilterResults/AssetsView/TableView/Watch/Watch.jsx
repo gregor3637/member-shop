@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { printify } from "../../../../../../../helpers/PrintifyNumbers";
 
+import { printify } from "../../../../../../../helpers/PrintifyNumbers";
 import StarSVG from "../../../../../../../img/svg/StarSVG";
 
 const Watched = ({ id, favoritesCount, className: version }) => {
@@ -14,13 +14,9 @@ const Watched = ({ id, favoritesCount, className: version }) => {
 
     if (favorites !== null) {
       const index = favorites.indexOf(id);
-      console.log('index ', index);
       isInLocalStorage = index > -1;
     }
 
-    console.log("id   ", id);
-    console.log("favorites   ", favorites);
-    console.log("isInLocalStorage  ", isInLocalStorage);
     return isInLocalStorage;
   });
 

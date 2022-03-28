@@ -5,6 +5,8 @@ import CurrencyView from "../AssetCardInfo/CurrencyView/CurrencyIcon";
 import LastBoughtPrice from "./LastBoughtPrice/LastBoughtPrice";
 import CollectionData from "./CollectionData/CollectionData";
 import Button from "../../Buttons/AssetCardActionButton/ColorfulButton/ColorfulButton";
+import ActionButton from "../../../pages/MarketplacePage/CommonElements/ActionButton/ActionButton";
+import AuctionTime from "../AssetCardInfo/AuctionTime/AuctionTime";
 
 const Footer = ({ data, className }) => {
   return (
@@ -16,15 +18,41 @@ const Footer = ({ data, className }) => {
             <CollectionData items={data.bundleItems} />
           </IconsX>
           <LastBoughtPrice data={data} />
+          {data.auction && <AuctionTime dateEnd={data.auction} />}
         </InfoX>
-        <ButtonsX className="asset-card--footer-buttons">
-          <Button label={"Bid"} isDisabled={!data.bids.isAllowed} />
-          <Button label={"Buy"} isDisabled={data.price.currency === ""} />
-        </ButtonsX>
+        <ButtonsContainerX className="asset-card--footer-buttons">
+          <ActionButton text={"Bid"} onClick={() => {}} isDisabled={!data.bids.isAllowed}/>
+          <ActionButton text={"Buy"} onClick={() => {}} isDisabled={!data.price.currency}/>
+        </ButtonsContainerX>
       </PaddingX>
     </Wrapper>
   );
 };
+
+const ButtonsContainerX = styled.div`
+  position: absolute;
+  padding: 0.8rem 1rem;
+
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  gap: 1.4rem;
+  justify-content: space-evenly;
+  align-items: center;
+
+  visibility: hidden;
+  background: var(--color-white);
+
+  & > button {
+    font-size: 1.6rem;
+    border-radius: 1.2rem;
+    padding: 0.5rem;
+  }
+
+  //'ButtonsContainerX display' is changed in 'AssetCard' on hover
+`;
 
 const IconsX = styled.div`
   display: flex;
@@ -41,32 +69,19 @@ const InfoX = styled.div`
   align-items: center;
 `;
 
-const ButtonsX = styled.div`
-  position: absolute;
-
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-
-  display: flex;
-  gap: 2rem;
-  justify-content: space-between;
-  align-items: center;
-
-  visibility: hidden;
-
-  //'ButtonsContainerX display' is changed in 'AssetCard' on hover
-`;
-
 const PaddingX = styled.div`
-  position: relative;
+  /* position: relative; */
   height: 100%;
-  margin: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
 `;
+
 const Wrapper = styled.div`
-  /* border-top: 3px solid var(--color-border); */
-  /* background: linear-gradient(rgba(226, 226, 226, 0.392) 0%, rgb(255, 255, 255) 20%); */
+  /* background: var(--test-r); */
+  /* border-top: 1px solid var(--color-border); */
+  /* background: linear-gradient(
+    rgba(226, 226, 226, 0.4) 0%,
+    rgb(255, 255, 255) 20%
+  ); */
 `;
 
 export default Footer;

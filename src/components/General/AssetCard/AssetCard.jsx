@@ -34,7 +34,8 @@ const InfoX = styled(AssetCardInfo)`
   flex: 0 0 6.4rem;
 `;
 const FooterX = styled(Footer)`
-  flex: 0 0 4rem;
+  margin-top: 0.5rem;
+  flex: 0 0 3.4rem;
 `;
 
 const PaddingX = styled.div`
@@ -46,6 +47,7 @@ const PaddingX = styled.div`
 `;
 
 const AssetCardWrapperX = styled.div`
+  position: relative;
   z-index: 2;
   background-color: var(--color-white);
   height: 100%;
@@ -68,6 +70,15 @@ const Wrapper = styled.div`
   flex-direction: column;
 
   transition: all 0.2s ease-in-out;
+  //--------------------------------------start
+  /* .asset-card--footer-buttons {
+    visibility: visible;
+  }
+
+  .asset-card--footer-info {
+    visibility: hidden;
+  } */
+  //--------------------------------------end
 
   &:hover {
     /* transform: translateY(-1px); */

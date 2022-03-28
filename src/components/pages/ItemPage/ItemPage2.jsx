@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 import useHttp from "../../../hooks/useHttp";
 import { getSingleCard } from "../../../lib/api";
-import Promotion from "../MarketplacePage/Promotion/Promotion";
 import ItemView from "./ItemView/ItemView";
 import Info from "./Info/Info";
 import ItemCardContext2 from "../../../store/Item/ItemCardContext2";

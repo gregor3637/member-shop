@@ -17,6 +17,7 @@ const Buy = ({ priceData }) => {
 };
 
 const Wrapper = styled.div`
+  /* background-color: var(--test-r); */
   flex: 1;
 
   display: flex;

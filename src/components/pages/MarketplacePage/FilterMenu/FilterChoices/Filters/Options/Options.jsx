@@ -16,9 +16,13 @@ const Options = (props) => {
         type: "options",
         value: event.currentTarget.dataset.label,
       });
+
+      //TODO url change ? 
     },
     [dispatch]
   );
+    
+
 
   return (
     <Wrapper>

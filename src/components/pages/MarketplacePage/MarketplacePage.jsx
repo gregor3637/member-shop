@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { FiltersContextProvider } from "../../../hooks/Market/FiltersContext/FiltersContext";
 import FilterOptions from "./FilterMenu/FilterMenu";
-import Promotion from "./Promotion/Promotion";
+import Billboard from "./Billboard/Billboard";
 import FilterResults from "./FilterResults/FilterResults";
 
 const MarketplacePage = (props) => {
@@ -12,7 +12,7 @@ const MarketplacePage = (props) => {
       <FiltersContextProvider>
         <LeftPanelX>
           <FilterOptions />
-          <Promotion />
+          <Billboard />
         </LeftPanelX>
 
         <FilterResults />

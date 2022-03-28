@@ -15,7 +15,7 @@ const CountdownTimer = ({ timeData }) => {
 };
 
 const Wrapper = styled.div`
-  /* background-color: green; */
+/* background-color: var(--test-y); */
 
   flex: 1;
 
