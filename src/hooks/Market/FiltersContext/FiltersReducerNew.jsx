@@ -1,7 +1,7 @@
 import filtersData from "../../../store/Marketplace/Filters/FiltersData";
 
 const initialState = Object.keys(filtersData).reduce((acc, filterName) => {
-  acc[filterName] = filtersData[filterName].value;
+  acc[filterName] = filtersData[filterName].reducerInitValues;
   return acc;
 }, {});
 
@@ -12,11 +12,26 @@ const reducerMethods = Object.keys(filtersData).reduce(
   },
   {
     reset: (state, action) => {
-      if (!action.state) return initialState;
+      if (!action.value) return initialState;
+
+      console.log("xxxxxxxxx action.value ", action.value);
+      console.log(
+        "xxxxxxxxx initialState[action.value] ",
+        initialState[action.value]
+      );
+      console.log("xxxxxxxxx initialState ", initialState);
 
       return {
         ...state,
-        [action.state]: initialState[action.state],
+        [action.value]: initialState[action.value],
+      };
+    },
+    urlDerivedState: (state, action) => {
+      if (!action.value) return initialState;
+
+      return {
+        ...state,
+        ...action.value,
       };
     },
     default: (state, action) => {
@@ -29,6 +44,7 @@ const reducerMethods = Object.keys(filtersData).reduce(
 
 const reducer = (state, action) => {
   let reducerFn = reducerMethods[action.type] ?? reducerMethods["default"];
+
   let result = reducerFn(state, action);
 
   return result;

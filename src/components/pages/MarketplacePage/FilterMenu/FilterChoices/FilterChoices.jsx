@@ -4,25 +4,19 @@ import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
 import Drawer from "../../../../General/Drawer/Drawer";
-import Price from "./Filters/Price/Price";
-import SaleType from "./Filters/Status/SaleType";
-import Options from "./Filters/Options/Options";
-import Category from "./Filters/Category/Category";
-import Blockchain from "./Filters/Blockchain/Blockchain";
-import CollectionsNew from "./Filters/Collections/Collections";
-import AssetType from "./Filters/AssetType/AssetType";
 import CollectionsSVG from "../../../../../img/currency/CollectionsSVG";
-import { Link } from "react-router-dom";
 
-const menus = {
-  Options: <Options />,
-  Collections: <CollectionsNew />,
-  Blockchain: <Blockchain />,
-  Category: <Category />,
-  "Asset Type": <AssetType />,
-  "Sale Type": <SaleType />,
-  Price: <Price />,
-};
+import filtersData from "../../../../../store/Marketplace/Filters/FiltersData";
+
+// const menus = {
+//   Options: <Options />,
+//   Collections: <CollectionsNew />,
+//   Blockchain: <Blockchain />,
+//   Category: <Category />,
+//   "Asset Type": <AssetType />,
+//   "Sale Type": <SaleType />,
+//   Price: <Price />,
+// };
 
 const Filters = (props) => {
   const [openMenuLabel, setOpenMenuLabel] = useState("");
@@ -37,7 +31,7 @@ const Filters = (props) => {
   return (
     <Wrapper>
       <ScrollbarX forceVisible="y" autoHide={true}>
-        {Object.keys(menus).map((name) => {
+        {Object.keys(filtersData).map((name) => {
           return (
             <Drawer
               label={name}
@@ -46,22 +40,11 @@ const Filters = (props) => {
               onClick={clickHandler}
               isOpen={name === openMenuLabel}
             >
-              {menus[name]}
+              {filtersData[name].filterMenuComponent}
             </Drawer>
           );
         })}
       </ScrollbarX>
-
-      <Link
-        to={{
-          pathname: `/trainer`,
-          state: {
-            instructor_id: ["abc", "bcd"],
-          },
-        }}
-      >
-        click here
-      </Link>
     </Wrapper>
   );
 };

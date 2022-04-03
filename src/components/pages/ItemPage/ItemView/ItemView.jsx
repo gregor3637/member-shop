@@ -1,27 +1,95 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
+import SimpleBar from "simplebar-react";
+import "simplebar/dist/simplebar.min.css";
 
-const ItemView = ({ imgSrc }) => {
+import ItemCardContext2 from "../../../../store/Item/ItemCardContext2";
+import BundleItem from "./BundleItem/BundleItem";
+import Count from "./Count/Count";
+
+const ItemView = ({ footerHeight }) => {
+  const ctx = useContext(ItemCardContext2);
+  const [mainViewSource, setMainViewSource] = useState(ctx.general.src);
+  const [currentSelectedIndex, setCurrentSelectedIndex] = useState(0);
+
+  const elementClickHandler = (elData, i) => {
+    setCurrentSelectedIndex(Number(i));
+    setMainViewSource(elData.general.src);
+  };
+
   return (
     <Wrapper>
       <InnerX>
         <div>
-          <img
-            // src="https://static.turbosquid.com/Preview/2019/11/16__17_52_47/CoverImage.jpg9988E0CD-074F-4988-BD5A-8A75FB46C8F3Large.jpg"
-            // src="https://img.rarible.com/prod/image/upload/t_big/prod-itemImages/0x26fd3e176c260e7fef019966622419dabfebb299:147/b2947afd"
-            // src="https://media.sketchfab.com/models/86fd6cec31e347289571a039852c02ed/thumbnails/d5826ebcceac4a36a2e2c1382506ab39/5da9b4d3987f4c7396a4ffe179a149bf.jpeg"
-            src={imgSrc}
-            alt=""
-          />
+          <img src={mainViewSource} alt="" />
         </div>
       </InnerX>
+
+      {ctx.bundleItems && (
+        <Count
+          total={ctx.bundleItems.length}
+          current={currentSelectedIndex + 1}
+        />
+      )}
+      {ctx.bundleItems && (
+        <BundleContainerX style={{ height: footerHeight + "px" }}>
+          <ScrollbarX>
+            <div>
+              {ctx.bundleItems.map((elData, i) => {
+                console.log("i ", i);
+                return (
+                  <BundleItemX
+                    key={i}
+                    index={i}
+                    itemData={elData}
+                    onClick={() => elementClickHandler(elData, i)}
+                  />
+                );
+              })}
+            </div>
+          </ScrollbarX>
+        </BundleContainerX>
+      )}
     </Wrapper>
   );
 };
 
+const BundleItemX = styled(BundleItem)`
+  margin-left: 1rem;
+`;
+
+const ScrollbarX = styled(SimpleBar)`
+  height: 100%;
+  width: 100%;
+
+  .simplebar-content {
+    height: 100%;
+    display: flex;
+
+    & > div {
+      display: flex;
+      margin: 0 auto;
+      align-items: center;
+
+      ${BundleItemX}:first-of-type {
+        margin-left: 0;
+      }
+    }
+  }
+`;
+
+const BundleContainerX = styled.div`
+  width: 100%;
+  padding: 0 2rem;
+
+  display: flex;
+
+  border-top: 1px solid var(--color-border);
+`;
+
 const InnerX = styled.div`
   width: 100%;
-  height: 100%;
+  flex: 1;
 
   div {
     max-width: 100%; //---- important
@@ -44,7 +112,9 @@ const InnerX = styled.div`
 `;
 
 const Wrapper = styled.div`
+  position: relative;
   background: var(--color-white);
+  /* background: var(--test-r); */
   flex: 1;
   height: 100%;
 

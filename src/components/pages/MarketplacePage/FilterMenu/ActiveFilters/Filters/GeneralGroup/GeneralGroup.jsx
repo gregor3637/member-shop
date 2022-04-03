@@ -14,7 +14,7 @@ const GeneralGroup = ({ context, contextName, label, dispatch }) => {
       <ActiveFilterGroupButton
         label={label}
         onClick={() => {
-          dispatch({ type: "reset", state: contextName });
+          dispatch({ type: "reset", value: contextName });
         }}
       />
 

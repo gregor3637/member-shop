@@ -45,3 +45,9 @@ export const toggleItemInArray = (state, action) => {
 
   return obj;
 };
+
+export const extractInitialValuePerKey = (obj) =>
+  Object.keys(obj).reduce((acc, key) => {
+    acc[key] = obj[key].initValue;
+    return acc;
+  }, {});

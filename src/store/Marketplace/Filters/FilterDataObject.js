@@ -1,15 +1,43 @@
-export default function getFilterDataObject(
-  value,
-  getIsFilterActive,
-  assetCardConditionFulfilled,
+export default function getFilterDataObject({
+  isFilterRelevantBasedOnSubState,
+  isFilterConditionsFilfillingItem,
   getActiveSubfiltersCount,
-  reducerFn
-) {
+  reducerFn,
+  reducerInitValues,
+  filterMenuComponent,
+  activeFilterComponentFunc,
+  deriveUrlSearchPropsFromSubState,
+  deriveSubStateFromSearchParamsWithSamePrimaryProp,
+}) {
+  if (!!!isFilterRelevantBasedOnSubState)
+    throw new Error("FilterDataObject | isFilterRelevantBasedOnSubState ");
+  if (!!!isFilterConditionsFilfillingItem)
+    throw new Error("FilterDataObject | isFilterConditionsFilfillingItem ");
+  if (!!!getActiveSubfiltersCount)
+    throw new Error("FilterDataObject | getActiveSubfiltersCount ");
+  if (!!!reducerFn) throw new Error("FilterDataObject | reducerFn ");
+  if (!!!reducerInitValues)
+    throw new Error("FilterDataObject | reducerInitValues");
+  if (!!!filterMenuComponent)
+    throw new Error("FilterDataObject | filterMenuComponent ");
+  if (!!!activeFilterComponentFunc)
+    throw new Error("FilterDataObject | activeFilterComponentFunc ");
+  if (!!!deriveUrlSearchPropsFromSubState)
+    throw new Error("FilterDataObject | deriveUrlSearchPropsFromSubState ");
+  if (!!!deriveSubStateFromSearchParamsWithSamePrimaryProp)
+    throw new Error(
+      "FilterDataObject | deriveSubStateFromSearchParamsWithSamePrimaryProp 0"
+    );
+
   return {
-    value,
-    getIsFilterActive,
-    assetCardConditionFulfilled,
+    isFilterRelevantBasedOnSubState, //isFilterRelevantBasedOnState
+    isFilterConditionsFilfillingItem,
     getActiveSubfiltersCount,
     reducerFn,
+    reducerInitValues,
+    filterMenuComponent,
+    activeFilterComponentFunc,
+    deriveUrlSearchPropsFromSubState,
+    deriveSubStateFromSearchParamsWithSamePrimaryProp,
   };
 }

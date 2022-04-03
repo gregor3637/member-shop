@@ -1,66 +1,20 @@
 import React from "react";
 import styled from "styled-components";
-import AssetTypeGroup from "./AssetTypeGroup/AssetTypeGroup";
 
-import GeneralGroup from "./GeneralGroup/GeneralGroup";
-import PriceGroup from "./PriceGroup/PriceGroup";
+import filtersData from "../../../../../../store/Marketplace/Filters/FiltersData";
 
-const Filters = ({
-  state: {
-    options,
-    blockchain,
-    category,
-    assetType,
-    saleType,
-    price,
-    collections,
-  },
-  dispatch,
-}) => {
+const Filters = ({ state, dispatch }) => {
   return (
     <Wrapper>
-      <GeneralGroup
-        context={Object.keys(options).filter((x) => options[x])}
-        contextName="options"
-        label="Optionssz"
-        dispatch={dispatch}
-      />
-      <GeneralGroup
-        context={Object.keys(blockchain).filter((x) => blockchain[x])}
-        contextName="blockchain"
-        label="Blockchain"
-        dispatch={dispatch}
-      />
-      <GeneralGroup
-        context={Object.keys(category).filter((x) => category[x])}
-        contextName="category"
-        label="Category"
-        dispatch={dispatch}
-      />
-      <GeneralGroup
-        context={Object.keys(saleType).filter((x) => saleType[x])}
-        contextName="saleType"
-        label="Sale Type"
-        dispatch={dispatch}
-      />
-      <GeneralGroup
-        context={collections}
-        contextName="collections"
-        label="Collections"
-        dispatch={dispatch}
-      />
-      <PriceGroup
-        context={price}
-        contextName="price"
-        label="Price"
-        dispatch={dispatch}
-      />
-      <AssetTypeGroup
-        context={Object.keys(assetType).filter((x) => assetType[x])}
-        contextName="assetType"
-        label="AssetType"
-        dispatch={dispatch}
-      />
+      {Object.keys(filtersData).map((filterName, i) => {
+        const fData = filtersData[filterName];
+        const subState = state[filterName];
+        return (
+          <React.Fragment key={i}>
+            {fData.activeFilterComponentFunc(subState, dispatch)}
+          </React.Fragment>
+        );
+      })}
     </Wrapper>
   );
 };

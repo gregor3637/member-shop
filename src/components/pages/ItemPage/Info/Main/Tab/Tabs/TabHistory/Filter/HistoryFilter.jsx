@@ -5,7 +5,6 @@ import useOnClickOutsideHandler from "../../../../../../../../../hooks/useOnClic
 import useToggle from "../../../../../../../../../hooks/useToggle";
 import SortSVG from "../../../../../../../../../img/currency/SortSVG";
 import DropdownArrow from "../../../../../../../../General/Arrow/DropdownArrow";
-import MarketSortBy from "../../../../../../../../General/SortBy/MarketSortBy";
 import TickButton from "../../../../../../../../General/SortBy/TickButton/TickButton";
 import ActionButton from "../../../../../../../MarketplacePage/CommonElements/ActionButton/ActionButton";
 import DropDown from "../../../../../../../MarketplacePage/CommonElements/DropDown/DropDown";

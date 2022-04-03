@@ -11,6 +11,7 @@ const ActionButton = ({ text, onClick, className, isDisabled = false }) => {
 
 const Wrapped = styled.button`
   width: 100%;
+  height: 4rem;
   padding: 1rem 0;
 
   color: var(--action-button--color--active);

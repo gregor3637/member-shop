@@ -17,3 +17,22 @@
 
 // only Categories ('art')
 // https://opensea.io/assets?search[resultModel]=ASSETS&search[categories][0]=art
+
+
+
+/*
+
+
+
+^\?.*[^&]\&
+[^\?|&](.*?)[$&]
+
+[^&|\?](.*?)[$&|\n]
+[^?](.*?)(&|\n)
+
+  /search.+?(&|$)/gim
+
+
+
+
+*/

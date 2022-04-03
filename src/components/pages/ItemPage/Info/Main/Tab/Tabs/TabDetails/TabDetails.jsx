@@ -6,7 +6,6 @@ import "simplebar/dist/simplebar.min.css";
 
 import ItemCardContext2 from "../../../../../../../../store/Item/ItemCardContext2";
 import InfoProp from "./InfoProp/InfoProp";
-import SummaryDetails from "./SummaryDetails/SummaryDetails";
 
 const TabDetails = () => {
   const {

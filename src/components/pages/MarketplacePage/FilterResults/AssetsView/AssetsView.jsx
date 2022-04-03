@@ -1,18 +1,13 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 
 import useMarketPreferenceContext from "../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
 import assetsAPI from "../../../../../data/dbDataMock";
 import CardsView from "./CardsView/CardsView";
 import TableView from "./TableView/TableView";
-import {
-  filterAssetCards,
-  markSelectedFilters,
-} from "../../../../../lib/HelperFuncs/Filter_2";
+import { eligibleItemsByFilterState } from "../../../../../lib/HelperFuncs/Filter";
 import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import { sortByType } from "../../../../../lib/HelperFuncs/Sort";
-import useLocalStorage2 from "../../../../../hooks/useLocalStorage2";
 import useLocalStorage_Event from "../../../../../hooks/useLocalStorage_Event";
-import useLocalStorageNonString from "../../../../../hooks/useLocalStorageNonString";
 
 const hasQueryInAssetNameOrProjectName = (asset, query) => {
   return (
@@ -27,7 +22,7 @@ const AssetsView = () => {
 
   const searchQueryToLowerCase = preferenceState.searchQuery.toLowerCase();
 
-  const { storedValue, setStoredValue } = useLocalStorage_Event("favorites");
+  const { storedValue } = useLocalStorage_Event("favorites");
 
   let assetCards = useMemo(() => {
     return !preferenceState.showFavoritesOnly
@@ -39,23 +34,21 @@ const AssetsView = () => {
     hasQueryInAssetNameOrProjectName(x, searchQueryToLowerCase)
   );
 
-  const activeFilters = markSelectedFilters(filtersState);
-  const filteredAssetCards = filterAssetCards(
+  const eligibleItems = eligibleItemsByFilterState(
     assetCards,
-    activeFilters,
     filtersState
-  );
-  
-  filteredAssetCards.sort(sortByType[preferenceState.sortingOption]);
+  ).sort(sortByType[preferenceState.sortingOption]);
+
+  console.log("av | eligibleItems ", eligibleItems);
 
   const { displayType } = preferenceState;
 
   return (
     <>
       {(displayType === "Card" || displayType === "") && (
-        <CardsView data={filteredAssetCards} />
+        <CardsView data={eligibleItems} />
       )}
-      {displayType === "Table" && <TableView data={filteredAssetCards} />}
+      {displayType === "Table" && <TableView data={eligibleItems} />}
     </>
   );
 };

@@ -1,31 +1,32 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
+import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import ToggleButton from "../../../../../components/pages/MarketplacePage/CommonElements/ToggleButton/ToggleButton";
 
-const Category = (props) => {
+const FilterMenuSaleType = (props) => {
   const {
-    state: { category },
-    dispatch: updateMarkedFilters,
+    state: { saleType },
+    dispatch,
   } = useMarketFiltersContext();
+
   const buttonClickHandle = useCallback(
     (event) => {
-      updateMarkedFilters({
-        type: "category",
+      dispatch({
+        type: "saleType",
         value: event.currentTarget.dataset.label,
       });
     },
-    [updateMarkedFilters]
+    [dispatch]
   );
 
   return (
-    <Styled>
-      {Object.keys(category).map((key) => {
+    <Wrapper>
+      {Object.keys(saleType).map((key) => {
         return (
           <ToggleButton
             key={key}
-            isActive={category[key]}
+            isActive={saleType[key]}
             dataLabel={key}
             onClick={buttonClickHandle}
           >
@@ -33,11 +34,11 @@ const Category = (props) => {
           </ToggleButton>
         );
       })}
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   padding: 2rem 0;
 
   display: flex;
@@ -45,4 +46,4 @@ const Styled = styled.div`
   grid-gap: 1rem;
 `;
 
-export default Category;
+export default FilterMenuSaleType;

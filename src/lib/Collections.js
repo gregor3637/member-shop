@@ -1,8 +1,3 @@
-const priceCurrency = ["ETH", "BTC", "USDC", "USDT"];
-const status = ["Has Offers", "New", "Buy Now", "On Auction"];
-const chains = ["Ethereum", "Polygon", "Klaytn"];
-const historyType = ["Mint", "Transfer", "List", "Sale", "Bid", "BidCancel"];
-
 const collections = [
   {
     id: 0,

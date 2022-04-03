@@ -1,20 +1,25 @@
-import { getTruthyKeysCount, hasTruthyOrNonEmptyArrayOrObject } from "../../CommonConditions/CommonConditions";
-import { toggleBoolInObject } from "../../CommonConditions/CommonReducerMethods";
+import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import {
+  getTruthyKeysCount,
+  hasTruthyOrNonEmptyArrayOrObject,
+} from "../../CommonConditions/CommonConditions";
+import {
+  extractInitialValuePerKey,
+  toggleBoolInObject,
+} from "../../CommonConditions/CommonReducerMethods";
 import getFilterDataObject from "../../FilterDataObject";
+import FilterMenuSaleType from "./FilterMenuSaleType";
 
-const options = {
-  "Has Offers": false,
-  New: false,
-  "Buy Now": false,
-  "On Auction": false,
-};
-
-const optionKeys = Object.keys(options);
-
-const assetCardConditionFulfilled = (assetCard, filterState) => {
-  const filterTypes = {
-    "Has Offers": (assetCard) => assetCard.bids.isAllowed,
-    New: (assetCard, days = 10) => {
+const optionsData = {
+  "Has Offers": {
+    initValue: false,
+    urlLabel: "HAS_OFFERS",
+    getFilterCondition: (assetCard) => assetCard.bids.isAllowed,
+  },
+  New: {
+    initValue: false,
+    urlLabel: "NEW",
+    getFilterCondition: (assetCard, days = 10) => {
       const currentListing =
         assetCard.listings?.[assetCard.listings.length - 1];
 
@@ -29,8 +34,16 @@ const assetCardConditionFulfilled = (assetCard, filterState) => {
 
       return false;
     },
-    "Buy Now": (assetCard) => Boolean(assetCard.price?.currency),
-    "On Auction": (assetCard) => {
+  },
+  "Buy Now": {
+    initValue: false,
+    urlLabel: "BUY_NOW",
+    getFilterCondition: (assetCard) => Boolean(assetCard.price?.currency),
+  },
+  "On Auction": {
+    initValue: false,
+    urlLabel: "ON_AUCTION",
+    getFilterCondition: (assetCard) => {
       let isOngoing =
         Boolean(assetCard.auction) &&
         new Date(assetCard.auction).getTime() - new Date(Date.now()).getTime() >
@@ -38,21 +51,70 @@ const assetCardConditionFulfilled = (assetCard, filterState) => {
 
       return isOngoing;
     },
-  };
+  },
+};
 
+const optionKeys = Object.keys(optionsData);
+
+const optionsDataKeyByUrlLabel = optionKeys.reduce((acc, key) => {
+  acc[optionsData[key].urlLabel] = key;
+  return acc;
+}, {});
+
+const isFilterConditionsFilfillingItem = (assetCard, filterState) => {
   let selectedTypes = optionKeys.filter((key) => filterState.saleType[key]);
-  let isMinCriteriaMet = selectedTypes.some((t) => filterTypes[t](assetCard));
+  let isMinCriteriaMet = selectedTypes.some((t) => {
+    const condition = optionsData[t].getFilterCondition;
+    return condition(assetCard);
+  });
 
   return isMinCriteriaMet;
 };
 
-const data = getFilterDataObject(
-  options,
-  hasTruthyOrNonEmptyArrayOrObject,
-  assetCardConditionFulfilled,
-  getTruthyKeysCount,
-  toggleBoolInObject
-);
+const activeFilters = (subFilterState, dispatch) => {
+  return (
+    <GeneralGroup
+      context={Object.keys(subFilterState).filter((x) => subFilterState[x])}
+      contextName="saleType"
+      label="Sale Type"
+      dispatch={dispatch}
+    />
+  );
+};
 
+const deriveUrlSearchPropsFromSubState = (subState) => {
+  const searchProps = Object.entries(subState)
+    .filter(([k, v]) => !!v)
+    .map(([k, v], i) => {
+      const val = optionsData[k].urlLabel;
+      return `search[saleType][${i}]=${val}`;
+    })
+    ?.join("&");
 
-export default data;
+  return searchProps;
+};
+
+const deriveSubStateFromSearchParamsWithSamePrimaryProp = (searchProps) => {
+  let price = searchProps.reduce((acc, cur) => {
+    const urlLabel = cur.split("=")[1];
+    let key = optionsDataKeyByUrlLabel[urlLabel];
+    acc[key] = true;
+    return acc;
+  }, {});
+
+  return price;
+};
+
+let data = {
+  isFilterRelevantBasedOnSubState: hasTruthyOrNonEmptyArrayOrObject,
+  isFilterConditionsFilfillingItem,
+  getActiveSubfiltersCount: getTruthyKeysCount,
+  reducerFn: toggleBoolInObject,
+  reducerInitValues: extractInitialValuePerKey(optionsData),
+  filterMenuComponent: <FilterMenuSaleType />,
+  activeFilterComponentFunc: activeFilters,
+  deriveUrlSearchPropsFromSubState,
+  deriveSubStateFromSearchParamsWithSamePrimaryProp,
+};
+
+export default getFilterDataObject(data);

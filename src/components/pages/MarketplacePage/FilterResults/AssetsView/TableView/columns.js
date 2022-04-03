@@ -1,5 +1,3 @@
-import useLocalStorage from "../../../../../../hooks/useLocalStorage";
-
 import BundleButton from "./BundleButton/BundleButton";
 import MoreButton from "../../../../../General/Buttons/MoreButton/MoreButton";
 import View from "./View/View";
@@ -41,13 +39,14 @@ const columns = (tableData) => {
       ),
     },
     {
-      Header: "Namee",
+      Header: "Name",
       accessor: "general.name",
+      className: "name-column",
       canHideColumn: true,
     },
     {
       Header: "Project Name",
-      accessor: "general.project.name",
+      accessor: "project.name",
       canHideColumn: true,
     },
 

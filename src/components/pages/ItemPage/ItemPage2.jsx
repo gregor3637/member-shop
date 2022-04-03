@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
@@ -9,6 +9,7 @@ import Info from "./Info/Info";
 import ItemCardContext2 from "../../../store/Item/ItemCardContext2";
 
 const ItemPage2 = (props) => {
+  const [footerHeight, setFooterHeight] = useState("");
   const { quoteId } = useParams();
   const {
     sendRequest,
@@ -33,11 +34,10 @@ const ItemPage2 = (props) => {
     <ItemCardContext2.Provider value={loadedAssetCardData}>
       <Wrapper>
         <LeftPanelX>
-          <Info assetData={loadedAssetCardData} />
-          {/* <Promotion /> */}
+          <Info setFooterHeight={setFooterHeight} />
         </LeftPanelX>
 
-        <ItemView imgSrc={loadedAssetCardData.general.src} />
+        <ItemView footerHeight={footerHeight} />
       </Wrapper>
     </ItemCardContext2.Provider>
   );
@@ -48,13 +48,11 @@ const LeftPanelX = styled.div`
   top: 9rem; //1rem from Wrapper.padding // 8rem from Header
   width: 34rem;
   height: calc(100vh - 8rem - 2rem); //8rem Header, 2rem for padding.bot.top
-  margin-right: 1rem;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
 `;
 
 const Wrapper = styled.div`
@@ -66,6 +64,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 1rem;
 `;
 
 export default ItemPage2;

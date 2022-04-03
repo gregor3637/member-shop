@@ -1,10 +1,10 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
+import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import ToggleButton from "../../../../../components/pages/MarketplacePage/CommonElements/ToggleButton/ToggleButton";
 
-const AssetType = (props) => {
+const FilterMenuAssetType = (props) => {
   const {
     state: { assetType },
     dispatch: updateMarkedFilters,
@@ -59,4 +59,4 @@ const Styled = styled.div`
   grid-gap: 1rem;
 `;
 
-export default AssetType;
+export default FilterMenuAssetType;

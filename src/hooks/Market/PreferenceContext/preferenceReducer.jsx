@@ -1,10 +1,10 @@
-const emptyState = {
-  displayType: "",
-  searchQuery: "",
-  sortingOption: "",
-  tableColumns: {},
-  showFavoritesOnly: false,
-};
+// const emptyState = {
+//   displayType: "",
+//   searchQuery: "",
+//   sortingOption: "",
+//   tableColumns: {},
+//   showFavoritesOnly: false,
+// };
 
 const dummyState = {
   // displayType: "Table",

@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Watched from "../../../../../../../MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
-import Bid from "../../../../../Footer/Bid/Bid";
-import Buy from "../../../../../Footer/Buy/Buy";
-import CountdownTimer from "../../../../../Footer/CountdownTimer/CountdownTimer";
 import AuctionTime from "../../../../../../../../General/AssetCard/AssetCardInfo/AuctionTime/AuctionTime";
-import CurrencyIcon from "../../../../../../../../General/AssetCard/AssetCardInfo/CurrencyView/CurrencyIcon";
 import CurrencyView from "./CurrencyView/CurrencyView";
 
 const CompactAssetItem = (props, ref) => {

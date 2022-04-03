@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import VerifiedIcon from "../../../../../../../../../img/currency/VerifiedIcon.svg";
+import VerifiedIcon from "../../../../../../../../img/currency/VerifiedIcon.svg";
 
 const FilteredButton = (props, ref) => {
   const { data, handleElementClick } = props;

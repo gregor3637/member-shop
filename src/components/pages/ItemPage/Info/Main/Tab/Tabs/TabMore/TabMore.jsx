@@ -5,7 +5,6 @@ import "simplebar/dist/simplebar.min.css";
 
 import { useGetAssetItemsAlike } from "../../../../../../../../hooks/Item/useGetAssetItemsAlike";
 import LoadingSpinner from "../../../../../../../General/LoadingSpinner/LoadingSpinner";
-import CompactAssetItem from "./CompactAssetItem/CompactAssetItem";
 import PageElements from "./PageElements/PageElements";
 
 const TabMore = ({ assetCardsId }) => {
@@ -14,7 +13,7 @@ const TabMore = ({ assetCardsId }) => {
   //2 if scroll beyond N element, load second batch of N elements
   //3 do the step 2 until no more elements to load
 
-  const { setPage, hasMore, status, entries, error } = useGetAssetItemsAlike(
+  const { setPage, hasMore, status, entries } = useGetAssetItemsAlike(
     5,
     assetCardsId
   );

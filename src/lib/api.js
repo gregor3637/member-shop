@@ -1,4 +1,3 @@
-import axios from "axios";
 import trendingData from "../data/dbTrendingDataMock";
 import assetCardsData from "../data/dbDataMock";
 import collectionsDummy from "./Collections";

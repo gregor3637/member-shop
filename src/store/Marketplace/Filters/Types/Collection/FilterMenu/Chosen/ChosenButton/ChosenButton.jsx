@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import Checkmark from "../../../../../../../../General/Checkmark/Checkmark";
+import Checkmark from "../../../../../../../../components/General/Checkmark/Checkmark";
 
 const index = ({ label, handleElementClick }) => {
   return (

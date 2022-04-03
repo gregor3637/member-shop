@@ -8,7 +8,7 @@ export function useGetAssetItemsAlike(itemsPerPage, assetCardsId) {
   const [page, setPage] = useState(0);
   const [hasMore, setHasMore] = useState(assetCardsId.length > itemsPerPage);
   const [entries, setEntries] = useState([]);
-  const [idOfRelatedItems, setIdOfRelatedItems] = useState(assetCardsId);
+  const [idOfRelatedItems] = useState(assetCardsId);
 
   const {
     sendRequest,

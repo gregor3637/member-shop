@@ -3,11 +3,9 @@ import styled from "styled-components";
 
 const PriceInput = ({ value, onChange, placeholder }) => {
   const handleChange = (e) => {
-    // let value = e.target.value.replace(/\D/g, "");
-    let value = e.target.value.replace(/[^0-9.]/g, "");
-    onChange(value);
+    let inputVal = e.target.value.replace(/[^0-9.]/g, "");
+    onChange(inputVal);
   };
-
 
   return (
     <InputX value={value} onChange={handleChange} placeholder={placeholder} />
@@ -22,9 +20,9 @@ const InputX = styled.input`
   border: 1px solid var(--market-filters--price--input-price--border-color);
   border-radius: var(--market-filters--price--input-price--border-radius);
   color: var(--market-filters--price--input-price--placeholder-color);
-  
+
   text-align: center;
-  
+
   &::placeholder {
     color: var(--market-filters--price--input-price--placeholder-color);
     opacity: 1; /* Firefox */

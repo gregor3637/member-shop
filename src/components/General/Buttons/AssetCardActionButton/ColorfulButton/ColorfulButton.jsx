@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import AssetCardActionButton from "../AssetCardActionButton";
 
 const ColorfulButton = (props) => {
   return <Wrapper>{props.label}</Wrapper>;

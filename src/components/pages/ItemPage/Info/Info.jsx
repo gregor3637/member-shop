@@ -1,19 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-import MarketSortBy from "../../../General/SortBy/MarketSortBy";
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 
-const Info = () => {
+const Info = ({setFooterHeight}) => {
   return (
     <Wrapper>
       <div id="backdrop-info"></div>
       <div id="overlay-info"></div>
       <Header />
       <Main />
-      <Footer />
+      <Footer setFooterHeight={setFooterHeight}/>
     </Wrapper>
   );
 };

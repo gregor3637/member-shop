@@ -101,7 +101,7 @@ const ItemCardContext2 = React.createContext({
   listings: [], //******* filter 'Sale Type.New'  depends on last entry (if it was within N-days)
 
   itemActivity: [],
-  bundleItems: isUndefined,
+  bundleItems: undefined,
 });
 
 export default ItemCardContext2;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Bundles } from "../../../../../../../../data/dbDataMock";
+import { bundleItemsCollection } from "../../../../../../../../data/dbDataMock";
 
 function SubRows({ row, rowProps, visibleColumns, data, loading }) {
   if (loading) {
@@ -45,7 +45,7 @@ function SubRowAsync({ row, rowProps, visibleColumns }) {
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
-      let data = Bundles[0].bundleItems;
+      let data = bundleItemsCollection[0].bundleItems;
       console.log("data ", data);
       setData(data);
       // setData(makeData(3));

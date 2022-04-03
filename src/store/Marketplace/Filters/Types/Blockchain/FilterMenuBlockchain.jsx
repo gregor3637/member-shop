@@ -1,12 +1,12 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
-import EthereumImg from "../../../../../../../img/currency/Ether.png";
-import KlaytnImg from "../../../../../../../img/currency/klaytn.png";
-import PolygonImg from "../../../../../../../img/currency/polygon.svg";
+import EthereumImg from "../../../../../img/currency/Ether.png";
+import KlaytnImg from "../../../../../img/currency/klaytn.png";
+import PolygonImg from "../../../../../img/currency/polygon.svg";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import ToggleButton from "../../../../CommonElements/ToggleButton/ToggleButton";
+import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import ToggleButton from "../../../../../components/pages/MarketplacePage/CommonElements/ToggleButton/ToggleButton";
 
 const chainsData = {
   Ethereum: {
@@ -20,7 +20,7 @@ const chainsData = {
   },
 };
 
-const Blockchain = () => {
+const FilterMenuBlockchain = () => {
   const {
     state: { blockchain },
     dispatch: updateMarkedFilters,
@@ -110,4 +110,4 @@ const Wrapper = styled.div`
   grid-gap: 1rem;
 `;
 
-export default Blockchain;
+export default FilterMenuBlockchain;

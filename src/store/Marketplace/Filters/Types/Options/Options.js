@@ -1,37 +1,92 @@
+import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import FilterMenuOptions from "./FilterMenuOptions";
 import {
   getTruthyKeysCount,
   hasTruthyOrNonEmptyArrayOrObject,
 } from "../../CommonConditions/CommonConditions";
-import { toggleBoolInObject } from "../../CommonConditions/CommonReducerMethods";
+import {
+  extractInitialValuePerKey,
+  toggleBoolInObject,
+} from "../../CommonConditions/CommonReducerMethods";
 import getFilterDataObject from "../../FilterDataObject";
 
-const options = {
-  "Verified only": false,
-  "Show NSFW": false,
-  "Show lazy minted": false,
+const optionsData = {
+  "Verified only": {
+    initValue: false,
+    urlLabel: "VERIFIED_ONLY",
+    getFilterCondition: (assetCard) => assetCard.project.isVerified,
+  },
+  "Show NSFW": {
+    initValue: false,
+    urlLabel: "SHOW_NSFW",
+    getFilterCondition: (assetCard) => assetCard.summary.isNSFW,
+  },
+  "Show lazy minted": {
+    initValue: false,
+    urlLabel: "SHOW_LAZY_MINTED",
+    getFilterCondition: (assetCard) => assetCard.summary.isLazyMinted,
+  },
 };
 
-const optionKeys = Object.keys(options);
+const optionKeys = Object.keys(optionsData);
 
-const assetCardConditionFulfilled = (assetCard, filterState) => {
-  const filterTypes = {
-    "Verified only": (assetCard) => assetCard.project.isVerified,
-    "Show NSFW": (assetCard) => assetCard.project.isNSFW,
-    "Show lazy minted": (assetCard) => assetCard.summary.isLazyMinted,
-  };
+const optionsDataKeyByUrlLabel = optionKeys.reduce((acc, key) => {
+  acc[optionsData[key].urlLabel] = key;
+  return acc;
+}, {});
 
-  let selectedOptions = optionKeys.filter((x) => filterState.options[x]);
-  let isMinCriteriaMet = selectedOptions.some((o) => filterTypes[o](assetCard));
+const isFilterConditionsFilfillingItem = (item, state) => {
+  let isFulfilled = optionKeys
+    .filter((x) => state.options[x])
+    .some((n) => optionsData[n].getFilterCondition(item));
 
-  return isMinCriteriaMet;
+  return isFulfilled;
 };
 
-const data = getFilterDataObject(
-  options,
-  hasTruthyOrNonEmptyArrayOrObject,
-  assetCardConditionFulfilled,
-  getTruthyKeysCount,
-  toggleBoolInObject
-);
+const activeFilters = (subFilterState, dispatch) => {
+  return (
+    <GeneralGroup
+      context={Object.keys(subFilterState).filter((x) => subFilterState[x])}
+      contextName="options"
+      label="Optionssz"
+      dispatch={dispatch}
+    />
+  );
+};
 
-export default data;
+const deriveUrlSearchPropsFromSubState = (subState) => {
+  const searchProps = Object.entries(subState)
+    .filter(([k, v]) => !!v)
+    .map(([k, v], i) => {
+      const val = optionsData[k].urlLabel;
+      return `search[options][${i}]=${val}`;
+    })
+    ?.join("&");
+
+  return searchProps;
+};
+
+const deriveSubStateFromSearchParamsWithSamePrimaryProp = (searchProps) => {
+  let price = searchProps.reduce((acc, cur) => {
+    const urlLabel = cur.split("=")[1];
+    let key = optionsDataKeyByUrlLabel[urlLabel];
+    acc[key] = true;
+    return acc;
+  }, {});
+
+  return price;
+};
+
+let data = {
+  isFilterRelevantBasedOnSubState: hasTruthyOrNonEmptyArrayOrObject,
+  isFilterConditionsFilfillingItem,
+  getActiveSubfiltersCount: getTruthyKeysCount,
+  reducerFn: toggleBoolInObject,
+  reducerInitValues: extractInitialValuePerKey(optionsData),
+  filterMenuComponent: <FilterMenuOptions />,
+  activeFilterComponentFunc: activeFilters,
+  deriveUrlSearchPropsFromSubState,
+  deriveSubStateFromSearchParamsWithSamePrimaryProp,
+};
+
+export default getFilterDataObject(data);

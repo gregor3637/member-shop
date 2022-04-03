@@ -16,21 +16,19 @@ const currencyImageByName = {
 };
 
 const PriceGroup = ({ context, contextName, label, dispatch }) => {
-  if (context.min || context.max) {
-    const prefixSign = context.min ? (context.max ? "" : ">") : "<";
-    const middleSign = context.min && context.max ? "-" : "";
+  if (context.minValue || context.maxValue) {
+    const prefixSign = context.minValue ? (context.maxValue ? "" : ">") : "<";
+    const middleSign = context.minValue && context.maxValue ? "-" : "";
 
-    const buttonText = `${context.currency}: ${prefixSign} ${context.min} ${middleSign} ${context.max}`;
+    const buttonText = `${context.currency}: ${prefixSign} ${context.minValue} ${middleSign} ${context.maxValue}`;
     const img = currencyImageByName[context.currency];
-
-console.log('PriceGroup@context ', context);
 
     return (
       <Styled>
         <ActiveFilterGroupButton
           label={label}
           onClick={() => {
-            dispatch({ type: "reset", state: contextName });
+            dispatch({ type: "reset", value: contextName });
           }}
         />
 
@@ -40,8 +38,8 @@ console.log('PriceGroup@context ', context);
               type: contextName,
               value: {
                 currency: "",
-                min: "",
-                max: "",
+                minValue: "",
+                maxValue: "",
               },
             });
           }}

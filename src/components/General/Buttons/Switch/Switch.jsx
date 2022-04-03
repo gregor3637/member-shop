@@ -1,10 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 const Switch = ({ isChecked }) => {
-  const [checked, setChecked] = useState(true);
-
-  console.log("isChecked ", isChecked);
   return (
     <Wrapper>
       <label className="switch">

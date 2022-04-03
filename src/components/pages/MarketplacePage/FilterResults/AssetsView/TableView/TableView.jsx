@@ -9,6 +9,7 @@ import SubRowAsync from "./LazySubComponents/SubRowAsync/SubRowAsync";
 import useLocalStorage from "../../../../../../hooks/useLocalStorage";
 
 const TableView = ({ data }) => {
+  // eslint-disable-next-line
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
   const { dispatch } = useMarketPreferenceContext();
   const columns = useMemo(() => columnsData(), []);
@@ -114,6 +115,7 @@ const TableView = ({ data }) => {
 
 const Wrapper = styled.div`
   overflow-x: auto;
+  /* background-color: var(--test-y); */
 
   table {
     font-family: Arial, Helvetica, sans-serif;
@@ -126,9 +128,8 @@ const Wrapper = styled.div`
 
   table td,
   table th {
-    /* background-color: var(--color-white); */
     border-top: 1px solid #ddd;
-    padding: 10px 0;
+    padding: 1rem 0.5rem;
   }
 
   table td {
@@ -136,6 +137,7 @@ const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: start;
+    /* background: var(--test-r); */
   }
 
   table tr:nth-child(even) {
@@ -148,7 +150,7 @@ const Wrapper = styled.div`
 
   table th,
   tfoot td {
-    padding: 1.6rem 0;
+    padding: 1.6rem 0.5rem;
     text-align: left;
     background-color: var(--color-white);
     color: var(--color-black);
@@ -156,7 +158,6 @@ const Wrapper = styled.div`
 
   .bundle-column {
     text-align: center;
-    /* background: var(--test-r); */
     justify-content: center;
   }
   .image-column {
@@ -179,6 +180,10 @@ const Wrapper = styled.div`
     justify-content: left;
     /* text-align: center; */
     padding: 0 20px;
+  }
+
+  .name-column {
+    word-break: break-word;
   }
 `;
 

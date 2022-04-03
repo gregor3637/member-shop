@@ -10,12 +10,15 @@ export const isObjectOrArray = (v) => typeof v === "object" && v !== null;
 export const objectHasFunctionWithName = (fnName, fnHolder) =>
   fnHolder.hasOwnProperty(fnName) && typeof fnHolder[fnName] !== "function";
 
-export const hasTruthyOrNonEmptyArrayOrObject = (state) =>
-  Object.values(flatter(state, { safe: true }))
-    .filter((x) => {
-      return !isObjectOrArray(x) || !isEmptyObject(x);
-    })
-    .findIndex((x) => x || typeof x === "number") > -1;
+export const hasTruthyOrNonEmptyArrayOrObject = (state) => {
+  return (
+    Object.values(flatter(state, { safe: true }))
+      .filter((x) => {
+        return !isObjectOrArray(x) || !isEmptyObject(x);
+      })
+      .findIndex((x) => x || typeof x === "number") > -1
+  );
+};
 
 export const getTruthyKeys = (obj) => {
   //empty 'array' or 'object' is treated like a falsy

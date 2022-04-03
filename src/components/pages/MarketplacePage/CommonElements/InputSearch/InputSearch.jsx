@@ -94,16 +94,6 @@ const ContainerX = styled.div`
   justify-content: start;
 `;
 
-const SearchDivX = styled.div`
-  display: flex;
-  padding-left: 1rem;
-  padding-right: 0.5rem;
-
-  svg {
-    font-size: 2.5rem;
-  }
-`;
-
 const ButtonClear = styled.button`
   position: absolute;
   right: 1rem;

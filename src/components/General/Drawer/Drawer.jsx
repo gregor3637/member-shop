@@ -56,10 +56,6 @@ const SvgWrapperX = styled.div`
   }
 `;
 
-const DropdownArrowX = styled(DropdownArrow)`
-  padding-right: 1rem;
-`;
-
 const ContentX = styled.div`
   /* background: var(--test-y); */
 

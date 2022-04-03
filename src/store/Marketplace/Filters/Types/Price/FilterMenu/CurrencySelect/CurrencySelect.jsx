@@ -1,8 +1,8 @@
 import React, { useCallback } from "react";
 import styled from "styled-components";
 
-import useToggle from "../../../../../../../../hooks/useToggle";
-import useOnClickOutsideHandler from "../../../../../../../../hooks/useOnClickOutsideHandler";
+import useToggle from "../../../../../../../hooks/useToggle";
+import useOnClickOutsideHandler from "../../../../../../../hooks/useOnClickOutsideHandler";
 
 const CurrencySelect = ({ currency, setCurrency, currencyOptions }) => {
   const [isShown, toggleShown] = useToggle(false);

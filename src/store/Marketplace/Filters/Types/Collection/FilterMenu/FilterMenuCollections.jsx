@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 
-import { useCollectionSearch_3333 } from "../../../../../../../hooks/Market/useCollectionSearch";
-import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import InputSearch from "../../../../CommonElements/InputSearch/InputSearch";
-import ActionButton from "../../../../CommonElements/ActionButton/ActionButton";
+import { useCollectionSearch_3333 } from "../../../../../../hooks/Market/useCollectionSearch";
+import useMarketFiltersContext from "../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import InputSearch from "../../../../../../components/pages/MarketplacePage/CommonElements/InputSearch/InputSearch";
+import ActionButton from "../../../../../../components/pages/MarketplacePage/CommonElements/ActionButton/ActionButton";
 import Chosen from "./Chosen/Chosen";
 import Filtered from "./Filtered/Filtered";
 
@@ -16,7 +16,7 @@ const toggleItemInArray = (arr, value) => {
     : [...arr, value];
 };
 
-const CollectionsNew = () => {
+const FilterMenuCollections = () => {
   const [query, setQuery] = useState("");
   const [pageNumber, setPageNumber] = useState(0);
   const { state, dispatch } = useMarketFiltersContext();
@@ -154,4 +154,4 @@ const Wrapper = styled.div`
   justify-content: flex-end;
 `;
 
-export default CollectionsNew;
+export default FilterMenuCollections;

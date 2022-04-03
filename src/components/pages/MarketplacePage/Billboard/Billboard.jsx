@@ -1,11 +1,9 @@
-import React, { useState, useMemo, useEffect, useCallback } from "react";
+import React, { useState, useMemo, useEffect } from "react";
 import styled from "styled-components";
 import { clamp } from "lodash";
 
 import PromotionNavigation from "./PromotionNavigation/PromotionNavigation";
 import useHttp from "../../../../hooks/useHttp";
-import advancedTrading from "./AdvancedTrading/AdvancedTrading";
-import trending from "./Trending/Trending";
 import { getPromotionData } from "../../../../lib/apiPromotion";
 import Promotion from "./Types/Promotion/Promotion";
 import Gift from "./Types/Gift/Gift";
@@ -21,12 +19,7 @@ const Billboard = () => {
   const types = useMemo(() => Object.keys(promotionTypes), []);
   const [page, setPage] = useState(0);
 
-  const {
-    sendRequest,
-    status,
-    data: loadedData,
-    error,
-  } = useHttp(getPromotionData);
+  const { sendRequest } = useHttp(getPromotionData);
 
   useEffect(() => {
     sendRequest();

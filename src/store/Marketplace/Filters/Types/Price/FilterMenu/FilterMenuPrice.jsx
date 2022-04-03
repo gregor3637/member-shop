@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import EthereumImg from "../../../../../../../img/currency/Ether.png";
-import BitcoinImg from "../../../../../../../img/currency/BTC.svg";
-import USDTImg from "../../../../../../../img/currency/USDT.svg";
+import EthereumImg from "../../../../../../img/currency/Ether.png";
+import BitcoinImg from "../../../../../../img/currency/BTC.svg";
+import USDTImg from "../../../../../../img/currency/USDT.svg";
 
-import useMarketFiltersContext from "../../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
-import ActionButton from "../../../../CommonElements/ActionButton/ActionButton";
+import useMarketFiltersContext from "../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
+import ActionButton from "../../../../../../components/pages/MarketplacePage/CommonElements/ActionButton/ActionButton";
 import PriceInput from "./PriceInput/PriceInput";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
 
@@ -29,7 +29,7 @@ const currencyOptions = {
   },
 };
 
-const Price = () => {
+const FilterMenuPrice = () => {
   const { state, dispatch: dispatchNewPriceInfo } = useMarketFiltersContext();
   const { price } = state;
 
@@ -38,12 +38,12 @@ const Price = () => {
   const [maxPrice, setMaxPrice] = useState("");
 
   useEffect(() => {
-    if (!price.min && !price.max) {
+    if (!price.minValue && !price.maxValue) {
       setCurrency(Object.keys(currencyOptions)[0]);
     }
 
-    setMinPrice(price.min);
-    setMaxPrice(price.max);
+    setMinPrice(price.minValue);
+    setMaxPrice(price.maxValue);
   }, [price]);
 
   const handleApply = () => {
@@ -51,8 +51,8 @@ const Price = () => {
       type: "price",
       value: {
         currency,
-        min: minPrice,
-        max: maxPrice,
+        minValue: minPrice,
+        maxValue: maxPrice,
       },
     });
   };
@@ -64,7 +64,7 @@ const Price = () => {
 
   const areButtonsDisabled =
     !(minPrice || maxPrice) ||
-    (minPrice === price.min && maxPrice === price.max);
+    (minPrice === price.minValue && maxPrice === price.maxValue);
 
   return (
     <Wrapper>
@@ -132,4 +132,4 @@ const Wrapper = styled.div`
   gap: 2rem;
 `;
 
-export default Price;
+export default FilterMenuPrice;

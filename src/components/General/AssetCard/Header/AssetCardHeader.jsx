@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 import Watched from "../../../pages/MarketplacePage/FilterResults/AssetsView/TableView/Watch/Watch";
-import LikesButton from "../../Buttons/LikesButton";
 
 const AssetCardHeader = ({
   data: {
@@ -67,11 +66,6 @@ const LinkX = styled(Link)`
     overflow: hidden;
     text-overflow: ellipsis;
   }
-`;
-
-const LikesButtonX = styled(LikesButton)`
-  overflow: hidden;
-  width: min-content;
 `;
 
 const InnerWrapperX = styled.div`

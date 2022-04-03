@@ -20,7 +20,7 @@ const Tab_More = ({ id }) => {
   };
 
   return (
-    <Styled>
+    <Wrapper>
       <Grid>
         {entries.map((el, i) => {
           return <ShopCardNew key={i} data={el} />;
@@ -31,11 +31,11 @@ const Tab_More = ({ id }) => {
       )}
 
       {isPending && (
-        <Styled>
+        <Wrapper>
           <LoadingSpinnerX />
-        </Styled>
+        </Wrapper>
       )}
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -74,7 +74,7 @@ const LoadingSpinnerX = styled(LoadingSpinner)`
   margin-top: 2rem;
 `;
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   margin: 2rem 0;
 
   display: flex;

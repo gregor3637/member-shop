@@ -37,7 +37,7 @@ const singleItems = [
 
     socialMedia: {
       stats: {
-        favorites: 11111115,
+        favorites: 111111111111,
         views: 1112,
       },
       links: {
@@ -622,7 +622,7 @@ const singleItems = [
   },
 ];
 
-export const Bundles = [
+const bundles = [
   //BUNDLE item #1 option #1
   {
     id: 104,
@@ -634,8 +634,7 @@ export const Bundles = [
 
     project: {
       name: "Crypto Punks", //******* filter 'Collections' depends ot his prop
-      isNSFW: false,
-      isVerified: true, //******* filter 'Options.Verified only' depends ot his prop
+      isVerified: false, //******* filter 'Options.Verified only' depends ot his prop
       link: "link to site",
     },
 
@@ -674,7 +673,7 @@ export const Bundles = [
     },
 
     summary: {
-      isNSFW: false, //******* filter 'Options.NFTW' depends ot his prop
+      isNSFW: true, //******* filter 'Options.NFTW' depends ot his prop
       isLazyMinted: false, //******* filter 'Options.Show Lazy Minted' depends ot his prop
       category: ["Football"], //******* filter Category depends ot his prop
       properties: {
@@ -805,10 +804,18 @@ export const Bundles = [
       {
         count: 1,
         ...singleItems[0],
+        general: {
+          ...singleItems[0].general,
+          src: "https://media.sketchfab.com/models/86fd6cec31e347289571a039852c02ed/thumbnails/d5826ebcceac4a36a2e2c1382506ab39/5da9b4d3987f4c7396a4ffe179a149bf.jpeg",
+        },
       },
       {
         count: 1,
         ...singleItems[0],
+        general: {
+          ...singleItems[0].general,
+          src: "https://static.turbosquid.com/Preview/2019/11/16__17_52_47/CoverImage.jpg9988E0CD-074F-4988-BD5A-8A75FB46C8F3Large.jpg",
+        },
       },
     ],
 
@@ -828,8 +835,25 @@ export const Bundles = [
   },
 ];
 
+const bundleItemsCollection = [
+  {
+    ...bundles[0],
+    bundleItems: [
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+      ...bundles[0]["bundleItems"],
+    ],
+  },
+];
+
 let singleBundleData = [];
 singleBundleData = [...singleItems];
-singleBundleData = [...singleItems, ...Bundles];
+singleBundleData = [...singleItems, ...bundleItemsCollection];
 
 export default singleBundleData;
+export { bundleItemsCollection };

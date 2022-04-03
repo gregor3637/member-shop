@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import Tippy from "@tippyjs/react";
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import AssetCardActionButton from "../../../../../General/Buttons/AssetCardActionButton/AssetCardActionButton";
 import ReportModal from "../../../../../General/Modal/Report/ReportModal";
 import ShareModalOverlay from "../../../../../General/Modal/ShareModalOverlay";

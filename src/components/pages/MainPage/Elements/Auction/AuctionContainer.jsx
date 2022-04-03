@@ -9,7 +9,6 @@ import { faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 import AuctionItem from "./AuctionItem";
 import Slider from "react-slick";
-import { useRef } from "react";
 
 function Arrow(props) {
   let className = props.type === "next" ? "nextArrow" : "prevArrow";
@@ -42,6 +41,7 @@ const AuctionContainer = ({ items }) => {
     sliderItems = sliderItems.concat(emptyItems);
   }
 
+  // eslint-disable-next-line
   var settings = {
     // fade: true,
     responsive: [
@@ -75,7 +75,6 @@ const AuctionContainer = ({ items }) => {
       },
     ],
   };
-
 
   const settingsForFade = {
     dots: false,

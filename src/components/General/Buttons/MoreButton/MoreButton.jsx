@@ -43,7 +43,7 @@ const MoreButton = ({ id, className, isBuyActive, isBidActive }) => {
 
           <AssetCardActionButton onClick={detailsHandler} label={"Details"} />
           <AssetCardActionButton onClick={onShareHandler} label={"Share"} />
-          <AssetCardActionButton onClick={onShareHandler} label={"Report"} />
+          <AssetCardActionButton onClick={onReportHandler} label={"Report"} />
         </TippyContentX>
       }
       onCreate={setInstance}
