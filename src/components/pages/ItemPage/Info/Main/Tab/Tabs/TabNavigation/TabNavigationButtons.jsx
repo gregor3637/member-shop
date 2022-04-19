@@ -4,24 +4,35 @@ import { useRouteMatch } from "react-router-dom";
 
 import NavigationButton from "../../NavigationButton/NavigationButton";
 
+import RestoreIcon from "@mui/icons-material/Restore";
+import CollectionsSVG from "../../../../../../../../img/svg/Drawer/CollectionsSVG";
+import SellOutlinedIcon from "@mui/icons-material/SellOutlined";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+
+const menuIcons = {
+  details: <InfoOutlinedIcon />,
+  bids: <SellOutlinedIcon />,
+  history: <RestoreIcon />,
+  more: <CollectionsSVG />,
+};
+
 const TabNavigationButtons = () => {
   let { url } = useRouteMatch();
 
   return (
     <Wrapper>
       <ul>
-        <li>
-          <NavigationButton urlPath={`${url}/details`} label={"Details"} />
-        </li>
-        <li>
-          <NavigationButton urlPath={`${url}/bids`} label={"Bids"} />
-        </li>
-        <li>
-          <NavigationButton urlPath={`${url}/history`} label={"History"} />
-        </li>
-        <li>
-          <NavigationButton urlPath={`${url}/more`} label={"More"} />
-        </li>
+        {Object.keys(menuIcons).map((key) => {
+          return (
+            <li key={key}>
+              <NavigationButton
+                urlPath={`${url}/${key}`}
+                label={key}
+                icon={menuIcons[key]}
+              />
+            </li>
+          );
+        })}
       </ul>
     </Wrapper>
   );

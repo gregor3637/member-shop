@@ -35,7 +35,6 @@ const WrapperX = styled.div`
 
 const BidsX = styled.div`
   width: 100%;
-  /* background: var(--test-g); */
 
   ${ItemBidXOverride} {
     margin-left: auto;

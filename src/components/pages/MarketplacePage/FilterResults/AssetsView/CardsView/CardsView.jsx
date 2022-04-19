@@ -13,9 +13,9 @@ const CardsView = ({ data, className }) => {
   return (
     <Wrapper>
       <ContentX className={gridTemplateColumnStyle}>
-        {data.map((data) => {
-          return <AssetCard key={data.id} data={data} />;
-        })}
+        {data.map((data) => (
+          <AssetCard key={data.id} data={data} />
+        ))}
       </ContentX>
     </Wrapper>
   );
@@ -26,21 +26,28 @@ const ContentX = styled.div`
 
   flex: 1;
   width: 100%;
+  min-width: 86rem;
   height: 100%;
 
   overflow: auto;
 
   display: grid;
-  justify-content: space-between;
-  justify-content: space-between;
   justify-items: center;
   gap: 2rem;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
 
-  &.small-grid {
-    grid-template-columns: repeat(3, minmax(100px, 1fr));
+  /* &.small-grid { */
+  /* grid-template-columns: repeat(3, minmax(100px, 1fr)); */
+  /* } */
+
+  /* &.large-grid {
+    grid-template-columns: repeat(5, minmax(100px, 1fr));
+  } */
+
+  @media (min-width: 1550px) {
+    grid-template-columns: repeat(4, minmax(100px, 1fr));
   }
-
-  &.large-grid {
+  @media (min-width: 1800px) {
     grid-template-columns: repeat(5, minmax(100px, 1fr));
   }
 `;

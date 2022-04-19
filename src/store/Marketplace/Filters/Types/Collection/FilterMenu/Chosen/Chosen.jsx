@@ -8,11 +8,11 @@ const Chosen = ({ elements, handleElementClick }) => {
     <>
       {elements.length > 0 && (
         <Wrapped>
-          {elements.map((label) => {
+          {elements.map((name) => {
             return (
               <ChosenButton
-                key={label}
-                label={label}
+                key={name}
+                name={name}
                 handleElementClick={handleElementClick}
               />
             );

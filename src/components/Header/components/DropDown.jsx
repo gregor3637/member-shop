@@ -8,12 +8,12 @@ const DropDown = (props) => {
       content={props.content}
       // onCreate={setInstance}
       arrow={false}
-      interactive
+      interactive={true}
       appendTo="parent"
       placement="bottom-start"
       offset={[0, 0]}
       // showOnInit={true}
-      trigger="click"
+      // trigger="click"
       hideOnClick
     >
       {props.children}

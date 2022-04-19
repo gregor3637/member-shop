@@ -60,7 +60,6 @@ const ButtonsContainerX = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* background: var(--test-r); */
   height: 100%;
   overflow: hidden;
   margin: 0 1rem;

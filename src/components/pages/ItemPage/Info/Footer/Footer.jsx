@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React, { useContext,  useRef, useState } from "react";
 import styled from "styled-components";
 
 import ItemCardContext2 from "../../../../../store/Item/ItemCardContext2";
@@ -6,21 +6,23 @@ import ActionButton from "../../../MarketplacePage/CommonElements/ActionButton/A
 import CountdownTimer from "./CountdownTimer/CountdownTimer";
 import Bid from "./Bid/Bid";
 import Buy from "./Buy/Buy";
+import BuyModal from "../../../../General/Modal/Buy/BuyModal";
+import useOnComponentMount from "../../../../../hooks/useOnComponentMount";
 
-const Footer = ({setFooterHeight}) => {
+const Footer = ({ setFooterHeight }) => {
   const itemCtx = useContext(ItemCardContext2);
-  const buyHandle = () => {};
+  const [showBuyModal, setShowBuyModal] = useState(false);
   const bidHandle = () => {};
 
   const footerRef = useRef();
 
-  useEffect(() => {
-    console.log('footerRef.current.offsetHeight ', footerRef.current.offsetHeight);
-    setFooterHeight(footerRef.current.offsetHeight)
-  }, [])
+  useOnComponentMount(() => {
+    setFooterHeight(footerRef.current.offsetHeight);
+  });
 
   return (
     <Wrapper ref={footerRef}>
+      {showBuyModal && <BuyModal itemData={itemCtx} onClose={() => setShowBuyModal(false)} />}
       <InfoContainerX>
         <Bid bidData={itemCtx.bids} />
         <Buy priceData={itemCtx.price} />
@@ -34,7 +36,7 @@ const Footer = ({setFooterHeight}) => {
         />
         <ActionButton
           text={"Buy"}
-          onClick={buyHandle}
+          onClick={() => setShowBuyModal(true)}
           isDisabled={!itemCtx.price}
         />
       </ButtonContainerX>
@@ -55,14 +57,12 @@ const InfoContainerX = styled.div`
 `;
 
 const ButtonContainerX = styled.div`
-  /* background: var(--test-r); */
   display: flex;
   justify-content: center;
   gap: 2rem;
 `;
 
 const Wrapper = styled.div`
-  /* background: var(--test-y); */
   padding: 1.5rem 2rem;
 
   flex-basis: min-content;

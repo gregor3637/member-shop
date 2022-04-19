@@ -16,7 +16,6 @@ const BundleItem = ({ itemData, onClick, index, className: version }) => {
 };
 
 const Wrapper = styled.div`
-  background-color: var(--test-r);
   color: white;
 
   height: 8rem;

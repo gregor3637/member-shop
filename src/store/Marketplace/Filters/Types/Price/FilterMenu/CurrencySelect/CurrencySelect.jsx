@@ -3,8 +3,14 @@ import styled from "styled-components";
 
 import useToggle from "../../../../../../../hooks/useToggle";
 import useOnClickOutsideHandler from "../../../../../../../hooks/useOnClickOutsideHandler";
+import DropdownArrow from "../../../../../../../components/General/Arrow/DropdownArrow";
 
-const CurrencySelect = ({ currency, setCurrency, currencyOptions }) => {
+const CurrencySelect = ({
+  className: version,
+  currency,
+  setCurrency,
+  currencyOptions,
+}) => {
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
     toggleShown();
@@ -17,10 +23,13 @@ const CurrencySelect = ({ currency, setCurrency, currencyOptions }) => {
   };
 
   return (
-    <Wrapper ref={ref}>
+    <Wrapper ref={ref} className={version}>
       <SelectedX className={isShown ? "active" : ""} onClick={toggleShown}>
-        {currencyOptions[currency].currencyImg}
-        {currency}
+        <CurrencyDataX>
+          {currencyOptions[currency].currencyImg}
+          {currency}
+        </CurrencyDataX>
+        <DropdownArrow isOpen={isShown} />
       </SelectedX>
       <OptionWrapperX className={isShown ? "open" : ""}>
         {Object.keys(currencyOptions).map((currency) => {
@@ -60,6 +69,8 @@ const OptionWrapperX = styled.div`
   position: absolute;
   top: 100%;
 
+  z-index: 5;
+
   display: none;
   width: 100%;
   padding: 1rem 0.5rem;
@@ -73,12 +84,20 @@ const OptionWrapperX = styled.div`
   }
 `;
 
+const CurrencyDataX = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
 const SelectedX = styled.div`
   width: 100%;
-  padding: 1rem 1rem;
+  height: 100%;
+  padding: 0 1.4rem 0 1rem;
+  height: 4rem;
 
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   border: 1px solid var(--market-filters--price--currency-select--border-color);
   border-radius: var(--market-filters--price--input-price--border-radius);

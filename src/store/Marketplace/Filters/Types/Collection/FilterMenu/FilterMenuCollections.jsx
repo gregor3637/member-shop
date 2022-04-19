@@ -29,7 +29,7 @@ const FilterMenuCollections = () => {
   );
 
   const dbItemsNotPresentInReducerState = dbItems.filter(
-    (elem) => !selectedCollections.includes(elem.label)
+    (elem) => !selectedCollections.includes(elem.name)
   );
 
   const handleInput = (ev) => {
@@ -53,11 +53,12 @@ const FilterMenuCollections = () => {
     setSelectedCollections(state.collections);
   };
 
-  const handleFilteredElementClick = (label) => {
-    setSelectedCollections(toggleItemInArray(selectedCollections, label));
+  const handleFilteredElementClick = (name) => {
+    console.log('handleFilteredElementClick name ', name);
+    setSelectedCollections(toggleItemInArray(selectedCollections, name));
   };
-  const handleChosenElementClick = (label) => {
-    setSelectedCollections(toggleItemInArray(selectedCollections, label));
+  const handleChosenElementClick = (name) => {
+    setSelectedCollections(toggleItemInArray(selectedCollections, name));
   };
 
   useEffect(() => {

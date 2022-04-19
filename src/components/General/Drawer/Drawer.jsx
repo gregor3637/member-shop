@@ -46,6 +46,10 @@ const SvgWrapperX = styled.div`
   justify-content: center;
   align-items: center;
 
+  svg {
+    fill: var(--color-black);
+  }
+
   &.open {
     background: var(--button-color-blue);
     border: 1px solid var(--color-none);
@@ -57,8 +61,6 @@ const SvgWrapperX = styled.div`
 `;
 
 const ContentX = styled.div`
-  /* background: var(--test-y); */
-
   padding: 0 2rem 1rem 3rem;
   z-index: 5;
 
@@ -78,6 +80,7 @@ const ContentX = styled.div`
 const LabelX = styled.div`
   font-weight: 700;
   font-size: 1.6rem;
+  text-transform: capitalize;
 `;
 
 const AnnotationX = styled.div`

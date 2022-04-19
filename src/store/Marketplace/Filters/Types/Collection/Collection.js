@@ -1,10 +1,13 @@
 import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import CollectionsSVG from "../../../../../img/svg/Drawer/CollectionsSVG";
 import { hasTruthyOrNonEmptyArrayOrObject } from "../../CommonConditions/CommonConditions";
 import { toggleItemInArray } from "../../CommonConditions/CommonReducerMethods";
 import getFilterDataObject from "../../FilterDataObject";
 import FilterMenuCollections from "./FilterMenu/FilterMenuCollections";
 
 const isFilterConditionsFilfillingItem = (item, filterState) => {
+  console.log('---------- filterState.collections ', filterState.collections);
+  console.log('---------- item.project.name ', item.project.name);
   let isMinCriteriaMet = filterState.collections.includes(item.project.name);
   return isMinCriteriaMet;
 };
@@ -21,8 +24,6 @@ const reducerFn = (state, action) => {
 };
 
 const activeFilters = (subFilterState, dispatch) => {
-  console.log("******************");
-  console.log("collections | subFilterState ", subFilterState);
   return (
     <GeneralGroup
       context={subFilterState}
@@ -62,6 +63,7 @@ let data = {
   reducerFn,
   reducerInitValues: [],
   filterMenuComponent: <FilterMenuCollections />,
+  filterIcon: <CollectionsSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

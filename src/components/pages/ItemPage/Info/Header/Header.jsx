@@ -84,7 +84,6 @@ const TopX = styled.div`
 `;
 
 const BottomX = styled.div`
-  /* background: var(--test-g); */
   width: 100%;
   padding-bottom: 0.3rem;
 
@@ -102,7 +101,6 @@ const BottomX = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* background: var(--test-r); */
   width: 100%;
   padding: 0.5rem 1rem 0.3rem 1rem;
 

@@ -6,7 +6,7 @@ const SectionStyled = styled.section`
 `;
 
 const ContainerStyled = styled.div`
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
 `;
 

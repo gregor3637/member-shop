@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom";
 
 import useHttp from "../../../hooks/useHttp";
 import { getSingleCard } from "../../../lib/api";
-import ItemView from "./ItemView/ItemView";
+import ItemViewContainer from "./ItemView/ItemViewContainer";
 import Info from "./Info/Info";
 import ItemCardContext2 from "../../../store/Item/ItemCardContext2";
 
-const ItemPage2 = (props) => {
+const ItemPage2 = () => {
   const [footerHeight, setFooterHeight] = useState("");
   const { quoteId } = useParams();
   const {
@@ -22,10 +22,6 @@ const ItemPage2 = (props) => {
     sendRequest(quoteId);
   }, [sendRequest, quoteId]);
 
-  if (status === "pending") {
-    return <div>loading...</div>;
-  }
-
   if (error) {
     return <p>{error}</p>;
   }
@@ -34,10 +30,10 @@ const ItemPage2 = (props) => {
     <ItemCardContext2.Provider value={loadedAssetCardData}>
       <Wrapper>
         <LeftPanelX>
-          <Info setFooterHeight={setFooterHeight} />
+          <Info status={status} setFooterHeight={setFooterHeight} />
         </LeftPanelX>
 
-        <ItemView footerHeight={footerHeight} />
+        <ItemViewContainer status={status} footerHeight={footerHeight} />
       </Wrapper>
     </ItemCardContext2.Provider>
   );

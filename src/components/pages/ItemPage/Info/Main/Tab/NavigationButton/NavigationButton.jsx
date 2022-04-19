@@ -2,22 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
-import CollectionsSVG from "../../../../../../../img/currency/CollectionsSVG";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosRoundedIcon from "@mui/icons-material/ArrowBackIosRounded";
 
 const NavigationButton = ({
   urlPath,
   label,
+  icon,
   isOpen = false,
   isForwards = true,
 }) => {
   return (
     <LabelX to={urlPath} className={isOpen ? "active" : ""}>
       <InfoX>
-        <SvgWrapperX className={isOpen ? "open" : ""}>
-          <CollectionsSVG />
-        </SvgWrapperX>
+        <SvgWrapperX className={isOpen ? "open" : ""}>{icon}</SvgWrapperX>
         <span>{label}</span>
       </InfoX>
       {isForwards ? (
@@ -30,7 +28,7 @@ const NavigationButton = ({
 };
 
 const SvgWrapperX = styled.div`
-  border-radius: 50%;
+  border-radius: 1rem;
   border: 1px solid var(--color-border);
 
   width: 4rem;
@@ -60,6 +58,7 @@ const InfoX = styled.div`
 
   span {
     font-weight: 700;
+    text-transform: capitalize;
   }
 `;
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import CurrencyView from "../AssetCardInfo/CurrencyView/CurrencyIcon";
@@ -6,22 +6,42 @@ import LastBoughtPrice from "./LastBoughtPrice/LastBoughtPrice";
 import CollectionData from "./CollectionData/CollectionData";
 import ActionButton from "../../../pages/MarketplacePage/CommonElements/ActionButton/ActionButton";
 import AuctionTime from "../AssetCardInfo/AuctionTime/AuctionTime";
+import BuyModal from "../../Modal/Buy/BuyModal";
+import BidModal from "../../Modal/Bid/BidModal";
+import BlockchainView from "../AssetCardInfo/BlockchainView/BlockchainView";
 
 const Footer = ({ data, className }) => {
+  const [showBuyModal, setShowBuyModal] = useState(false);
+  const [showBidModal, setShowBidModal] = useState(false);
   return (
     <Wrapper className={"asset-card--footer " + className}>
+      {showBuyModal && (
+        <BuyModal itemData={data} onClose={() => setShowBuyModal(false)} />
+      )}
+      {showBidModal && (
+        <BidModal itemData={data} onClose={() => setShowBidModal(false)} />
+      )}
+
       <PaddingX>
         <InfoX className="asset-card--footer-info">
           <IconsX>
-            {data.price && <CurrencyView currency={data.price.currency} />}
+            <BlockchainView blockchain={data.contract.blockchain} />
             <CollectionData items={data.bundleItems} />
           </IconsX>
           <LastBoughtPrice data={data} />
           {data.auction && <AuctionTime dateEnd={data.auction} />}
         </InfoX>
         <ButtonsContainerX className="asset-card--footer-buttons">
-          <ActionButton text={"Bid"} onClick={() => {}} isDisabled={!data.bids.isAllowed}/>
-          <ActionButton text={"Buy"} onClick={() => {}} isDisabled={!data.price.currency}/>
+          <ActionButton
+            text={"Bid"}
+            onClick={() => setShowBidModal(true)}
+            isDisabled={!data.bids.isAllowed}
+          />
+          <ActionButton
+            text={"Buy"}
+            onClick={() => setShowBuyModal(true)}
+            isDisabled={!data.price.currency}
+          />
         </ButtonsContainerX>
       </PaddingX>
     </Wrapper>
@@ -69,13 +89,11 @@ const InfoX = styled.div`
 `;
 
 const PaddingX = styled.div`
-  /* position: relative; */
   height: 100%;
   padding: 0 1rem 1rem 1rem;
 `;
 
 const Wrapper = styled.div`
-  /* background: var(--test-r); */
   /* border-top: 1px solid var(--color-border); */
   /* background: linear-gradient(
     rgba(226, 226, 226, 0.4) 0%,

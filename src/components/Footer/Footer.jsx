@@ -7,7 +7,7 @@ import SocialLink from "../General/Buttons/SocialButtons/SocialLink";
 
 const Footer = (props) => {
   return (
-    <Styled>
+    <Wrapper>
       <Div>
         <Nav>
           <span>Marketplace</span>
@@ -52,7 +52,7 @@ const Footer = (props) => {
           </SocialNav>
         </ContactsDiv>
       </Div>
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -72,7 +72,7 @@ const ModifiedButton = styled(ButtonRounded)`
   }
 `;
 
-const Styled = styled.footer`
+const Wrapper = styled.footer`
   position: relative;
   margin-top:auto; 
 
@@ -115,6 +115,8 @@ const Nav = styled.nav`
   flex-direction: column;
 
   flex: 1;
+
+
 
   a,
   a:link,

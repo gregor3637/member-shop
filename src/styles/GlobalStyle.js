@@ -12,8 +12,8 @@ const GlobalStyle = createGlobalStyle`
         --font-countdownTimer: 'B612 Mono';
         --font-countdownTimerSecond: 'monospace';
 
-        --fontSize-dropdown: 1.8rem;
         --fontSize-navigation: 1.8rem;
+        --fontSize-dropdown: 1.4rem;
 
         --fontWeight-navigation: 600;
         --fontWeight-navigation: 600;
@@ -104,15 +104,15 @@ const GlobalStyle = createGlobalStyle`
         //-------------------------------
 
         
-        /* --test-g: #fff;
-        --test-y: #fff;
-        --test-r: #fff; */
 
         --test-g: #008000;
         --test-y: #ffff00;
         --test-r: #ff0000;
 
 
+        /* --test-g: #fff;
+        --test-y: #fff;
+        --test-r: #fff; */
         //#FF0000
         --primary-color: #007bff;
         --primary-color-light: #057FFF;

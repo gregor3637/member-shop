@@ -55,7 +55,7 @@ const ReportPopup = (props) => {
   };
 
   return (
-    <Styled>
+    <Wrapper>
       <CloseButtonX onClick={props.onClose}>
         <FAIcon icon={faTimes}></FAIcon>
       </CloseButtonX>
@@ -72,7 +72,7 @@ const ReportPopup = (props) => {
           {reportCaseComponents}
         </section>
       </FormX>
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -80,7 +80,7 @@ const SelectX = styled(Select)`
   font-size: 1.4rem;
 `;
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   position: fixed;
   z-index: 999;
   right: 50%;

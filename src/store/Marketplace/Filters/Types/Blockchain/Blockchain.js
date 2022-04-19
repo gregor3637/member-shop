@@ -1,4 +1,5 @@
 import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import BlockchainSVG from "../../../../../img/svg/Drawer/BlockchainSVG";
 import {
   getTruthyKeysCount,
   hasTruthyOrNonEmptyArrayOrObject,
@@ -19,9 +20,9 @@ const optionsData = {
     initValue: false,
     urlLabel: "POLYGON",
   },
-  Klaytn: {
+  Solana: {
     initValue: false,
-    urlLabel: "KLAYTN",
+    urlLabel: "SOLANA",
   },
 };
 
@@ -78,6 +79,7 @@ const data = {
   reducerFn: toggleBoolInObject,
   reducerInitValues: extractInitialValuePerKey(optionsData),
   filterMenuComponent: <FilterMenuBlockchain />,
+  filterIcon: <BlockchainSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

@@ -9,6 +9,7 @@ import {
   toggleBoolInObject,
 } from "../../CommonConditions/CommonReducerMethods";
 import getFilterDataObject from "../../FilterDataObject";
+import OptionsSVG from "../../../../../img/svg/Drawer/OptionsSVG";
 
 const optionsData = {
   "Verified only": {
@@ -84,6 +85,7 @@ let data = {
   reducerFn: toggleBoolInObject,
   reducerInitValues: extractInitialValuePerKey(optionsData),
   filterMenuComponent: <FilterMenuOptions />,
+  filterIcon: <OptionsSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

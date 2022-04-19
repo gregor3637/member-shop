@@ -9,13 +9,13 @@ const FilteredButton = (props, ref) => {
   return (
     <Wrapper
       ref={ref}
-      key={data.label}
-      onClick={() => handleElementClick(data.label)}
+      key={data.name}
+      onClick={() => handleElementClick(data.name)}
     >
       <CircleHolderX>
-        <img src={data.imgSrc} alt="" />
+        <img src={data.avatar} alt="" />
       </CircleHolderX>
-      <span>{data.label}</span>
+      <span>{data.name}</span>
       {data.isVerified && (
         <img src={VerifiedIcon} alt="" style={{ width: "2rem" }} />
       )}

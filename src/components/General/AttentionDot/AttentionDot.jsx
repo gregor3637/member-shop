@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-const Styled = styled.div`
+const AttentionDot = ({ radius, color, margin }) => {
+  return (
+    <Wrapper radius={radius + "px"} color={color} margin={margin}></Wrapper>
+  );
+};
+
+const Wrapper = styled.div`
   width: ${(props) => props.radius || "1rem"};
   height: ${(props) => props.radius || "1rem"};
   background-color: ${(props) => props.color || "1rem"};
@@ -20,9 +26,5 @@ const Styled = styled.div`
     }
   }
 `;
-
-const AttentionDot = ({ radius, color, margin}) => {
-  return <Styled radius={radius + "px"} color={color} margin={margin}></Styled>;
-};
 
 export default AttentionDot;

@@ -36,7 +36,6 @@ const ButtonX = styled.button`
 `;
 
 const Wrapper = styled.div`
-  /* background-color: var(--test-g); */
   margin-right: 2rem;
   margin-left: 1rem;
   height: 100%;

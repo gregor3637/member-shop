@@ -1,4 +1,5 @@
 import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import AssetTypeSVG from "../../../../../img/svg/Drawer/AssetTypeSVG";
 import {
   hasTruthyOrNonEmptyArrayOrObject,
   getTruthyKeysCount,
@@ -79,6 +80,7 @@ let data = {
   reducerFn: chooseOneInObject,
   reducerInitValues: extractInitialValuePerKey(optionsData),
   filterMenuComponent: <FilterMenuAssetType />,
+  filterIcon: <AssetTypeSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

@@ -59,7 +59,5 @@ export const deriveStateFromUrlSearchParams = (url) => {
           {}
         );
 
-  console.log("urlHelper | derivedState ", state);
-
   return state;
 };

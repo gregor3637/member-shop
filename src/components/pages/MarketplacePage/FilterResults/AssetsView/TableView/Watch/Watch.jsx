@@ -55,8 +55,6 @@ const Watched = ({ id, favoritesCount, className: version }) => {
 };
 
 const Wrapper = styled.div`
-  /* background: var(--test-g); */
-
   display: flex;
   flex-direction: row;
   align-items: center;

@@ -52,12 +52,6 @@ export function useCollectionSearch_3333(query, pageNumber) {
   const [items, setItems] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
-  // const debouncedReq = useBouncer((q, abort) => {
-  //   console.log("--------- Req throught useBouncer");
-  //   console.log(`query>${q}<`);
-  //   console.log(`query>`, q);
-  //   return getMarketplaceCollectionsBySubstrAtPage(q, 0, abort);
-  // }, 3000);
   const debouncedReq = useBouncer(
     getMarketplaceCollectionsBySubstrAtPage,
     3000

@@ -1,4 +1,5 @@
 import PriceGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/PriceGroup/PriceGroup";
+import PriceSVG from "../../../../../img/svg/Drawer/PriceSVG";
 import { extractInitialValuePerKey } from "../../CommonConditions/CommonReducerMethods";
 import getFilterDataObject from "../../FilterDataObject";
 import FilterMenuPrice from "./FilterMenu/FilterMenuPrice";
@@ -24,6 +25,9 @@ const optionsData = {
 const isFilterConditionsFilfillingItem = (item, state) => {
   if (!item.price) return false;
 
+
+  console.log('Price  state.price.currency', state.price.currency );
+  console.log('Price  item.price.currency', item.price.currency );
   const isSameCurrency = item.price.currency === state.price.currency;
 
   const isAmountEntered =
@@ -50,8 +54,6 @@ const reducerFn = (state, action) => {
     ...state,
     price: action.value,
   };
-
-  data.price["fofoofo"] = "zaza";
 
   data.price.currency = action.value.currency;
   data.price["minValue"] = action.value.minValue;
@@ -112,6 +114,7 @@ let data = {
   reducerFn,
   reducerInitValues,
   filterMenuComponent: <FilterMenuPrice />,
+  filterIcon: <PriceSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

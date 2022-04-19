@@ -17,7 +17,8 @@ export async function getPageItems(page, itemsPerPage) {
 
   const startingIndex = page * itemsPerPage;
   const endIndex = startingIndex + itemsPerPage;
-  const newEntries = trendingData.slice(startingIndex, endIndex);
+  // const newEntries = trendingData.slice(startingIndex, endIndex);
+  const newEntries = assetCardsData.slice(startingIndex, endIndex);
 
   return newEntries;
 }
@@ -83,15 +84,18 @@ export async function getIDsOfRelatedItems(searchedId) {
 }
 
 export async function getSingleCard(id, oldway = false) {
-  const response = await fetch(
-    `https://randomuser.me/api/?page=${1}&results=10`
-  );
+  // const response = await fetch(
+  //   `https://randomuser.me/api/?page=${1}&results=10`
+  // );
 
-  const data = await response.json();
+  // const data = await response.json();
 
-  if (!response.ok) {
-    throw new Error(data.message || "Could not get comments.");
-  }
+  // if (!response.ok) {
+  //   throw new Error(data.message || "Could not get comments.");
+  // }
+
+  
+  await new Promise((res) => setTimeout(res, 500));
 
   let searchedItem = null;
 
@@ -202,8 +206,10 @@ export async function getMarketplaceCollectionsBySubstr(
 ) {
   return new Promise((resolve, rej) => {
     let filtered = collectionsDummy.filter((el) => {
-      return el.label.toLowerCase().includes(inputValue.toLowerCase());
+      return el.name.toLowerCase().includes(inputValue.toLowerCase());
     });
+
+    console.log('api | filtered ', filtered);
 
     const startIndex = page * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
@@ -240,7 +246,7 @@ export async function getMarketplaceCollectionsBySubstrAtPage(
     //when we have real server, this 'then' is removed
     //and real server returns { data, hasMore }
     const filtered = collectionsDummy.filter((el) => {
-      return el.label.toLowerCase().includes(query.toLowerCase());
+      return el.name.toLowerCase().includes(query.toLowerCase());
     });
 
     const startIndex = page * itemsPerPage;

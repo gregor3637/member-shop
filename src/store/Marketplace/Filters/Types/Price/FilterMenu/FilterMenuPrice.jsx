@@ -1,33 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import EthereumImg from "../../../../../../img/currency/Ether.png";
-import BitcoinImg from "../../../../../../img/currency/BTC.svg";
-import USDTImg from "../../../../../../img/currency/USDT.svg";
-
 import useMarketFiltersContext from "../../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import ActionButton from "../../../../../../components/pages/MarketplacePage/CommonElements/ActionButton/ActionButton";
 import PriceInput from "./PriceInput/PriceInput";
 import CurrencySelect from "./CurrencySelect/CurrencySelect";
-
-//TODO: this will come from server ???
-const currencyOptions = {
-  ETH: {
-    value: "ETH",
-    label: "Ethereum (ETH)",
-    currencyImg: <img src={EthereumImg} alt="BTC" />,
-  },
-  BTC: {
-    value: "BTC",
-    label: "Bitcoin (BTC)",
-    currencyImg: <img src={BitcoinImg} alt="ETH" />,
-  },
-  USDT: {
-    value: "USDT",
-    label: "Tether (USDT)",
-    currencyImg: <img src={USDTImg} alt="USD" />,
-  },
-};
+import currencyOptions from "./CurrencyOptions/CurrencyOptions";
 
 const FilterMenuPrice = () => {
   const { state, dispatch: dispatchNewPriceInfo } = useMarketFiltersContext();

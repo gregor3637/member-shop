@@ -2,40 +2,36 @@ import React from "react";
 import styled from "styled-components";
 
 import ButtonRounded from "../../../../General/Buttons/ButtonRounded";
-import ShopCardNew from "../../../../General/Shop/ShopCardNew";
 import SectopmTrendingHeader from "./TrendingHeader";
 import useCardsDataChunk from "../../../../../hooks/useCardsDataChunk";
+import AssetCard from "../../../../General/AssetCard/AssetCard";
+import AssetCardFlexible from "../../../../General/AssetCard/AssetCardFlexible";
 
 const Trending = (props) => {
-  // const { setPage, isAllLoaded, status, entries, error } = useCardsDataChunk(
-  //   0,
-  //   8
-  // );
   const { setPage, isAllLoaded, status, error, entries } = useCardsDataChunk(
     0,
     8
   );
-  console.log("isAllLoaded " + isAllLoaded);
 
   const loadMoreCards = () => {
     setPage((prev) => prev + 1);
   };
 
   return (
-    <Styled>
+    <Wrapper>
       <SectopmTrendingHeader />
-      <Grid>
-        {entries.map((el, i) => {
-          return <ShopCardNew key={i} data={el} />;
-        })}
-      </Grid>
+      <GridX>
+        {entries.map((el, i) => (
+          <AssetCardFlexible key={i} data={el} />
+        ))}
+      </GridX>
       {error && <Error className="errorMsg">{error}</Error>}
       {!isAllLoaded && (
-        <ModifiedButton onClick={loadMoreCards}>
+        <ButtonRoundedX onClick={loadMoreCards}>
           {status === "pending" ? "Loading..." : "Load More"}
-        </ModifiedButton>
+        </ButtonRoundedX>
       )}
-    </Styled>
+    </Wrapper>
   );
 };
 
@@ -48,19 +44,19 @@ const Error = styled.p`
   font-weight: 600;
 `;
 
-const ModifiedButton = styled(ButtonRounded)`
+const ButtonRoundedX = styled(ButtonRounded)`
   margin-top: 3rem;
   padding: 1.2rem 1.8rem;
   justify-self: center;
 
-  border: 1px solid black;
+  border: 1px solid var(--color-grey40);;
   background-color: transparent;
 
   font-size: 1.8rem;
   font-weight: 600;
   color: var(--anchorTag-color-link);
 
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
 
   &:hover {
     background-color: var(--color-black);
@@ -68,14 +64,26 @@ const ModifiedButton = styled(ButtonRounded)`
   }
 `;
 
-const Grid = styled.div`
+const GridX = styled.div`
+  margin-top: 1rem;
+
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  row-gap: 4rem;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2rem;
   justify-items: center;
+
+  @media (max-width: 1800px) {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+  @media (max-width: 1550px) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  @media (max-width: 1350px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 `;
 
-const Styled = styled.div`
+const Wrapper = styled.div`
   display: grid;
 `;
 

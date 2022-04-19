@@ -4,19 +4,7 @@ import SimpleBar from "simplebar-react";
 import "simplebar/dist/simplebar.min.css";
 
 import Drawer from "../../../../General/Drawer/Drawer";
-import CollectionsSVG from "../../../../../img/currency/CollectionsSVG";
-
 import filtersData from "../../../../../store/Marketplace/Filters/FiltersData";
-
-// const menus = {
-//   Options: <Options />,
-//   Collections: <CollectionsNew />,
-//   Blockchain: <Blockchain />,
-//   Category: <Category />,
-//   "Asset Type": <AssetType />,
-//   "Sale Type": <SaleType />,
-//   Price: <Price />,
-// };
 
 const Filters = (props) => {
   const [openMenuLabel, setOpenMenuLabel] = useState("");
@@ -25,9 +13,6 @@ const Filters = (props) => {
     setOpenMenuLabel(openMenuLabel !== label ? label : "");
   };
 
-  //TODO detect all marketFilterContextUpdates
-  //and set url to them
-
   return (
     <Wrapper>
       <ScrollbarX forceVisible="y" autoHide={true}>
@@ -35,7 +20,7 @@ const Filters = (props) => {
           return (
             <Drawer
               label={name}
-              icon={<CollectionsSVG />}
+              icon={filtersData[name].filterIcon}
               key={name}
               onClick={clickHandler}
               isOpen={name === openMenuLabel}

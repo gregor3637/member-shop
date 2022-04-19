@@ -1,4 +1,5 @@
 import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import CategorySVG from "../../../../../img/svg/Drawer/CategorySVG";
 import {
   getTruthyKeys,
   getTruthyKeysCount,
@@ -82,6 +83,7 @@ const data = {
   reducerFn: toggleBoolInObject,
   reducerInitValues: extractInitialValuePerKey(optionsData),
   filterMenuComponent: <FilterMenuCategory />,
+  filterIcon: <CategorySVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

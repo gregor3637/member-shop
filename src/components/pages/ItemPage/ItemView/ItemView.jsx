@@ -7,7 +7,7 @@ import ItemCardContext2 from "../../../../store/Item/ItemCardContext2";
 import BundleItem from "./BundleItem/BundleItem";
 import Count from "./Count/Count";
 
-const ItemView = ({ footerHeight }) => {
+const ItemView = ({ status, footerHeight }) => {
   const ctx = useContext(ItemCardContext2);
   const [mainViewSource, setMainViewSource] = useState(ctx.general.src);
   const [currentSelectedIndex, setCurrentSelectedIndex] = useState(0);
@@ -18,7 +18,7 @@ const ItemView = ({ footerHeight }) => {
   };
 
   return (
-    <Wrapper>
+    <>
       <InnerX>
         <div>
           <img src={mainViewSource} alt="" />
@@ -36,7 +36,6 @@ const ItemView = ({ footerHeight }) => {
           <ScrollbarX>
             <div>
               {ctx.bundleItems.map((elData, i) => {
-                console.log("i ", i);
                 return (
                   <BundleItemX
                     key={i}
@@ -50,7 +49,7 @@ const ItemView = ({ footerHeight }) => {
           </ScrollbarX>
         </BundleContainerX>
       )}
-    </Wrapper>
+    </>
   );
 };
 
@@ -109,21 +108,6 @@ const InnerX = styled.div`
       border-radius: 1rem;
     }
   }
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  background: var(--color-white);
-  /* background: var(--test-r); */
-  flex: 1;
-  height: 100%;
-
-  overflow: clip;
-  display: flex;
-  flex-direction: column;
-
-  border: 1px solid var(--color-border);
-  border-radius: var(--market-filters--outerWrapper-radius);
 `;
 
 export default ItemView;

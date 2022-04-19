@@ -1,46 +1,52 @@
 import React from "react";
 import styled from "styled-components";
+import LoadingSpinner from "../../../General/LoadingSpinner/LoadingSpinner";
 
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Main from "./Main/Main";
 
-const Info = ({setFooterHeight}) => {
+const Info = ({ status, setFooterHeight }) => {
   return (
     <Wrapper>
-      <div id="backdrop-info"></div>
-      <div id="overlay-info"></div>
-      <Header />
-      <Main />
-      <Footer setFooterHeight={setFooterHeight}/>
+      {status === "pending" ? (
+        <LoadingWrapper>
+          <LoadingSpinner />
+        </LoadingWrapper>
+      ) : (
+        <>
+          <div id="backdrop-info"></div>
+          <div id="overlay-info"></div>
+          <Header />
+          <Main />
+          <Footer setFooterHeight={setFooterHeight} />
+        </>
+      )}
     </Wrapper>
   );
 };
 
+const LoadingWrapper = styled.div`
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 const Wrapper = styled.div`
   background-color: var(--color-white);
-  /* background-color: var(--test-g); */
   width: 100%;
   height: 100%;
   flex: 1;
   position: relative;
 
   #backdrop-info {
-    /* position: relative; */
-    /* width: 100%;
-    height: 100%; */
-
     background: var(--color-black);
     opacity: 0.5;
     z-index: 100;
   }
   #overlay-info {
-    /* position: relative; */
-    /* width: 100%;
-    height: 100%; */
-    /*
-    opacity: 0.5;
-    z-index: 110; */
     z-index: 800;
   }
 

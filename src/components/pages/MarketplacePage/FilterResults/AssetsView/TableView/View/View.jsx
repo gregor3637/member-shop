@@ -46,7 +46,9 @@ const Wrapper = styled(Link)`
   align-items: center;
 
   overflow: hidden;
-
+  
+  text-decoration: inherit;
+  
   span {
     flex-basis: 30%;
   }

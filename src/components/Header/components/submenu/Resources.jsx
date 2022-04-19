@@ -1,8 +1,12 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-import IMG from "../../../../img/header/navigation/allnfts-light.svg";
 import { LinkX, UlX, LiX } from "../StyleComponents";
+
+import YouTube from "../../../../img/SocialNetworkIcons/YouTube";
+import Discord from "../../../../img/SocialNetworkIcons/Discord";
+import Twitter from "../../../../img/SocialNetworkIcons/Twitter";
+import Instagram from "../../../../img/SocialNetworkIcons/Instagram";
 
 const Resources = (props) => {
   return (
@@ -17,34 +21,39 @@ const Resources = (props) => {
           <span>Docs</span>
         </LinkX>
       </LiX>
-      <LiXLocale>
-        <SocialContainer>
-          <SocialLink to="www.youtube.com">
-            <ImgX src={IMG} alt="" />
-          </SocialLink>
+      <LiModifiedX>
+        <SocialContainerX>
+          <SocialLinkX to="www.youtube.com">
+            <YouTube />
+          </SocialLinkX>
 
-          <SocialLink to="www.tweeter.com">
-            <ImgX src={IMG} alt="" />
-          </SocialLink>
+          <SocialLinkX to="www.twitter.com">
+            <Twitter />
+          </SocialLinkX>
 
-          <SocialLink to="www.instagram.com">
-            <ImgX src={IMG} alt="" />
-          </SocialLink>
+          <SocialLinkX to="www.instagram.com">
+            <Instagram />
+          </SocialLinkX>
 
-          <SocialLink to="www.discord.com">
-            <ImgX src={IMG} alt="" />
-          </SocialLink>
-        </SocialContainer>
-      </LiXLocale>
+          <SocialLinkX to="www.discord.com">
+            <Discord />
+          </SocialLinkX>
+        </SocialContainerX>
+      </LiModifiedX>
     </UlX>
   );
 };
 
-const SocialLink = styled(Link)`
+const SocialLinkX = styled(Link)`
   height: 2rem;
+  color: var(--color-grey40);
+
+  &:hover {
+    color: var(--color-black);
+  }
 `;
 
-const SocialContainer = styled.div`
+const SocialContainerX = styled.div`
   padding: 0 1rem;
   height: 100%;
 
@@ -52,6 +61,9 @@ const SocialContainer = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  color: red;
+  fill: red;
 `;
 
 const ImgX = styled.img`
@@ -62,7 +74,7 @@ const ImgX = styled.img`
   }
 `;
 
-const LiXLocale = styled(LiX)`
+const LiModifiedX = styled(LiX)`
   &:last-child:hover {
     box-shadow: none;
   }

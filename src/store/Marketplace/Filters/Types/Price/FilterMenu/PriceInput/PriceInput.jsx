@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
-const PriceInput = ({ value, onChange, placeholder }) => {
+const PriceInput = ({ className: version, value, onChange, placeholder }) => {
   const handleChange = (e) => {
     let inputVal = e.target.value.replace(/[^0-9.]/g, "");
     onChange(inputVal);
   };
 
   return (
-    <InputX value={value} onChange={handleChange} placeholder={placeholder} />
+    <InputX className={version} value={value} onChange={handleChange} placeholder={placeholder} />
   );
 };
 
 const InputX = styled.input`
   width: 100%;
-  padding: 1rem;
+  padding: 0 1rem;
+  height: 4rem;
 
   outline: none;
   border: 1px solid var(--market-filters--price--input-price--border-color);

@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 import Checkmark from "../../../../../../../../components/General/Checkmark/Checkmark";
 
-const index = ({ label, handleElementClick }) => {
+const index = ({ name, handleElementClick }) => {
   return (
-    <Wrapped onClick={() => handleElementClick(label)}>
+    <Wrapped onClick={() => handleElementClick(name)}>
       <CircleHolderX>
         <Checkmark />
       </CircleHolderX>
-      <span>{label}</span>
+      <span>{name}</span>
     </Wrapped>
   );
 };

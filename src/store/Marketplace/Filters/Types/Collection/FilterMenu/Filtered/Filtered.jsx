@@ -1,5 +1,6 @@
 import React, { useCallback, useRef } from "react";
 import styled from "styled-components";
+
 import FilteredButton from "./FilteredButton/FilteredButton";
 
 const Filtered = ({
@@ -18,7 +19,6 @@ const Filtered = ({
 
       observer.current = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          console.log("Is Visible");
           setPageNumber((prev) => prev + 1);
         }
       });
@@ -33,7 +33,7 @@ const Filtered = ({
     return (
       <FilteredButton
         ref={ref}
-        key={z.label}
+        key={z.name}
         data={z}
         handleElementClick={handleElementClick}
       />

@@ -5,6 +5,7 @@ export default function getFilterDataObject({
   reducerFn,
   reducerInitValues,
   filterMenuComponent,
+  filterIcon,
   activeFilterComponentFunc,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,
@@ -18,6 +19,8 @@ export default function getFilterDataObject({
   if (!!!reducerFn) throw new Error("FilterDataObject | reducerFn ");
   if (!!!reducerInitValues)
     throw new Error("FilterDataObject | reducerInitValues");
+  if (!!!filterIcon)
+    throw new Error("FilterDataObject | filterIcon ");
   if (!!!filterMenuComponent)
     throw new Error("FilterDataObject | filterMenuComponent ");
   if (!!!activeFilterComponentFunc)
@@ -36,6 +39,7 @@ export default function getFilterDataObject({
     reducerFn,
     reducerInitValues,
     filterMenuComponent,
+    filterIcon,
     activeFilterComponentFunc,
     deriveUrlSearchPropsFromSubState,
     deriveSubStateFromSearchParamsWithSamePrimaryProp,

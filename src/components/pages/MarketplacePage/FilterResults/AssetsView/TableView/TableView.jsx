@@ -115,7 +115,6 @@ const TableView = ({ data }) => {
 
 const Wrapper = styled.div`
   overflow-x: auto;
-  /* background-color: var(--test-y); */
 
   table {
     font-family: Arial, Helvetica, sans-serif;
@@ -133,11 +132,9 @@ const Wrapper = styled.div`
   }
 
   table td {
-    /* padding: 0 20px 0 0; */
     display: flex;
     align-items: center;
     justify-content: start;
-    /* background: var(--test-r); */
   }
 
   table tr:nth-child(even) {
@@ -161,11 +158,9 @@ const Wrapper = styled.div`
     justify-content: center;
   }
   .image-column {
-    /* background: var(--test-g); */
   }
 
   .watch-column {
-    /* background: var(--test-y); */
   }
 
   .bundle-item {
@@ -173,12 +168,9 @@ const Wrapper = styled.div`
   }
 
   .more-column {
-    /* background-color: var(--test-r); */
-
     display: flex;
     align-items: center;
     justify-content: left;
-    /* text-align: center; */
     padding: 0 20px;
   }
 

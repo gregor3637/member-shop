@@ -25,14 +25,24 @@ const AssetCardHeader = ({
           <ImgWrapperX>
             <img src={avatar} alt="avatar" />
           </ImgWrapperX>
-          <h2>{projectName}</h2>
+          <ProjectTitleX>{projectName}</ProjectTitleX>
         </LinkX>
 
-        <Watched id={id} favoritesCount={favorites} />
+        <WatchedX id={id} favoritesCount={favorites} />
       </InnerWrapperX>
     </Wrapper>
   );
 };
+
+const WatchedX = styled(Watched)`
+  flex-basis: max-content;
+`;
+
+const ProjectTitleX = styled.h2`
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+`;
 
 const ImgWrapperX = styled.div`
   width: 3.2rem;
@@ -50,22 +60,17 @@ const ImgWrapperX = styled.div`
 `;
 
 const LinkX = styled(Link)`
-  flex: 1;
-
   display: flex;
   align-items: center;
   gap: 0.5rem;
 
-  overflow: hidden; // min-width: 0;
+  min-width: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 
-  color: inherit; /* blue colors for links too */
+  color: inherit;
   text-decoration: inherit;
-
-  h2 {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 `;
 
 const InnerWrapperX = styled.div`
@@ -73,12 +78,12 @@ const InnerWrapperX = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
 `;
 
 const Wrapper = styled.header`
-  display: flex;
-  align-items: center;
+  width: 100%;
 `;
 
 export default AssetCardHeader;

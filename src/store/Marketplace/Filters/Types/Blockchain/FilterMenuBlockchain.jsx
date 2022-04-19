@@ -4,6 +4,7 @@ import styled from "styled-components";
 import EthereumImg from "../../../../../img/currency/Ether.png";
 import KlaytnImg from "../../../../../img/currency/klaytn.png";
 import PolygonImg from "../../../../../img/currency/polygon.svg";
+import Solana from "../../../../../img/currency/Solana";
 
 import useMarketFiltersContext from "../../../../../hooks/Market/FiltersContext/useMarketFiltersContext";
 import ToggleButton from "../../../../../components/pages/MarketplacePage/CommonElements/ToggleButton/ToggleButton";
@@ -15,8 +16,8 @@ const chainsData = {
   Polygon: {
     img: <img src={PolygonImg} alt="" />,
   },
-  Klaytn: {
-    img: <img src={KlaytnImg} alt="" />,
+  Solana: {
+    img: <Solana />,
   },
 };
 

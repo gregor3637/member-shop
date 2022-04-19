@@ -1,4 +1,5 @@
 import GeneralGroup from "../../../../../components/pages/MarketplacePage/FilterMenu/ActiveFilters/Filters/GeneralGroup/GeneralGroup";
+import SaleTypeSVG from "../../../../../img/svg/Drawer/SaleTypeSVG";
 import {
   getTruthyKeysCount,
   hasTruthyOrNonEmptyArrayOrObject,
@@ -44,10 +45,11 @@ const optionsData = {
     initValue: false,
     urlLabel: "ON_AUCTION",
     getFilterCondition: (assetCard) => {
-      let isOngoing =
-        Boolean(assetCard.auction) &&
-        new Date(assetCard.auction).getTime() - new Date(Date.now()).getTime() >
-          0;
+      // let isOngoing =
+      //   Boolean(assetCard.auction) &&
+      //   new Date(assetCard.auction).getTime() - new Date(Date.now()).getTime() >
+      //     0;
+      let isOngoing = Boolean(assetCard.auction);
 
       return isOngoing;
     },
@@ -112,6 +114,7 @@ let data = {
   reducerFn: toggleBoolInObject,
   reducerInitValues: extractInitialValuePerKey(optionsData),
   filterMenuComponent: <FilterMenuSaleType />,
+  filterIcon: <SaleTypeSVG />,
   activeFilterComponentFunc: activeFilters,
   deriveUrlSearchPropsFromSubState,
   deriveSubStateFromSearchParamsWithSamePrimaryProp,

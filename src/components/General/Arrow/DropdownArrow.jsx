@@ -22,7 +22,8 @@ const Styled = styled.div`
     transition: 0.3s ease;
 
     display: inline-block;
-    border-bottom: 10px solid var(--color-black);
+    /* border-bottom: 10px solid var(--color-black); */
+    border-bottom: 10px solid currentColor;
   }
 
   &:before {

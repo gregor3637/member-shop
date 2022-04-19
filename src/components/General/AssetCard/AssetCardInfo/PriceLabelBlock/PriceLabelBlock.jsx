@@ -45,6 +45,8 @@ const PriceX = styled.div`
   display: flex;
   align-items: center;
   justify-content: end;
+  gap: 2px;
+
 
   span {
     font-weight: 600;
@@ -52,7 +54,6 @@ const PriceX = styled.div`
 `;
 
 const Wrapper = styled.div`
-
   display: flex;
   flex-direction: column;
   align-items: end;

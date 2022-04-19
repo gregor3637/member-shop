@@ -24,7 +24,7 @@ const ImageSlider = ({ bundleItems, page, setPage, setInTransition }) => {
     <Wrapper>
       <Slider
         ref={sliderRef}
-        dots={true}
+        dots={false}
         arrows={false}
         infinite={false}
         speed={1000} //transition must be longer than 'transition animation' so we dont get glitches

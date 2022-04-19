@@ -39,8 +39,6 @@ const AssetsView = () => {
     filtersState
   ).sort(sortByType[preferenceState.sortingOption]);
 
-  console.log("av | eligibleItems ", eligibleItems);
-
   const { displayType } = preferenceState;
 
   return (

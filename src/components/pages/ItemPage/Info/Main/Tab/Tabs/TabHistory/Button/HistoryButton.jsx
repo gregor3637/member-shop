@@ -101,7 +101,6 @@ const TopX = styled.div`
 `;
 
 const InfoX = styled.div`
-  /* background: var(--test-r); */
   flex: 1;
   display: flex;
   flex-direction: column;
