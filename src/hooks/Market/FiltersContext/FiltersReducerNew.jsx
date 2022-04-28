@@ -13,14 +13,6 @@ const reducerMethods = Object.keys(filtersData).reduce(
   {
     reset: (state, action) => {
       if (!action.value) return initialState;
-
-      console.log("xxxxxxxxx action.value ", action.value);
-      console.log(
-        "xxxxxxxxx initialState[action.value] ",
-        initialState[action.value]
-      );
-      console.log("xxxxxxxxx initialState ", initialState);
-
       return {
         ...state,
         [action.value]: initialState[action.value],

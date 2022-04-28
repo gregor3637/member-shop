@@ -21,6 +21,10 @@ const optionsData = {
     initValue: false,
     urlLabel: "SPORTS",
   },
+  science: {
+    initValue: false,
+    urlLabel: "SCIENCE",
+  },
 };
 
 const optionKeys = Object.keys(optionsData);

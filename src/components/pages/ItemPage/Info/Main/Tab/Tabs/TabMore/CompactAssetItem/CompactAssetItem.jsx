@@ -9,7 +9,7 @@ const CompactAssetItem = (props, ref) => {
   const { data } = props;
   return (
     <Wrapper ref={ref}>
-      <LinkX to={`/itemTest/${data.id}`}>
+      <LinkX to={`/item/${data.id}`}>
         <ViewX src={data.general.src} alt="" />
       </LinkX>
 
@@ -26,7 +26,7 @@ const CompactAssetItem = (props, ref) => {
             favoritesCount={data.socialMedia.stats.favorites}
           />
         </HeaderX>
-        <MainX to={`/itemTest/${data.id}`}>
+        <MainX to={`/item/${data.id}`}>
           <NameContainerX>
             <NameX>{data.general.name}</NameX>
           </NameContainerX>

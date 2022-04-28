@@ -3,19 +3,15 @@ import styled from "styled-components";
 
 import TimerSingleIndicationContainer from "./TimerSingleIndicationContainer.jsx";
 
-const Styled = styled.div`
-  width: 100%;
-
-  flex: 0;
-  display: flex;
-
-  & > div:not(:first-child) {
-    padding-left: 0.5rem;
-  }
-`;
-
 const makeMeTwoDigits = (n) => {
   return (n < 10 ? "0" : "") + n;
+};
+
+const intervalCalc = {
+  days: (distanceLeft) => Math.floor(distanceLeft / (1000 * 60 * 60 * 24)),
+  hours: (distanceLeft) => Math.floor((distanceLeft / (1000 * 60 * 60)) % 24),
+  minutes: (distanceLeft) => Math.floor((distanceLeft / (1000 * 60)) % 60),
+  seconds: (distanceLeft) => Math.floor((distanceLeft / 1000) % 60),
 };
 
 const Timer = (props) => {
@@ -23,44 +19,44 @@ const Timer = (props) => {
   const [hours, setHours] = useState("00");
   const [minutes, setMinutes] = useState("00");
   const [seconds, setSeconds] = useState("00");
-
-  // let interval = useRef();
+  const [distanceLeft, setDistanceLeft] = useState(0);
 
   useEffect(() => {
+    const countdownDate = new Date(props.countDownDate).getTime();
+    let distance = countdownDate - new Date().getTime();
+
     let interval = null;
 
-    const startTimer = () => {
-      const countdownDate = new Date(props.countDownDate).getTime();
+    if (distance > 0) {
+      setDistanceLeft(distance);
 
       interval = setInterval(() => {
-        const now = new Date().getTime();
-        const distance = countdownDate - now;
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-        const minutes = Math.floor((distance / (1000 * 60)) % 60);
-        const seconds = Math.floor((distance / 1000) % 60);
+        distance = countdownDate - new Date().getTime();
+        setDistanceLeft(distance);
 
         if (distance < 0) {
-          clearInterval(interval.current);
-        } else {
-          setDays(makeMeTwoDigits(days));
-          setHours(makeMeTwoDigits(hours));
-          setMinutes(makeMeTwoDigits(minutes));
-          setSeconds(makeMeTwoDigits(seconds));
+          clearInterval(interval);
         }
       }, 1000);
-    };
+    } else {
+      setDistanceLeft(0);
+    }
 
-    startTimer();
     return () => {
       clearInterval(interval);
       interval = null;
     };
   }, [props.countDownDate]);
 
+  useEffect(() => {
+    setDays(makeMeTwoDigits(intervalCalc["days"](distanceLeft)));
+    setHours(makeMeTwoDigits(intervalCalc["hours"](distanceLeft)));
+    setMinutes(makeMeTwoDigits(intervalCalc["minutes"](distanceLeft)));
+    setSeconds(makeMeTwoDigits(intervalCalc["seconds"](distanceLeft)));
+  }, [distanceLeft]);
+
   return (
-    <Styled>
+    <Wrapper>
       <div>
         <TimerSingleIndicationContainer
           time={days}
@@ -85,7 +81,19 @@ const Timer = (props) => {
           provStyle={{ ...props.style }}
         ></TimerSingleIndicationContainer>
       </div>
-    </Styled>
+    </Wrapper>
   );
 };
+
+const Wrapper = styled.div`
+  width: 100%;
+
+  flex: 0;
+  display: flex;
+
+  & > div:not(:first-child) {
+    padding-left: 0.5rem;
+  }
+`;
+
 export default Timer;

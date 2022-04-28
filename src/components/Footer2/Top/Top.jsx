@@ -28,44 +28,25 @@ const Top = (props) => {
       <MobileApplicationLinksX>
         <span>Download the app to explore any NFTs</span>
         <div>
-          <img src={AppStorePng} alt="" />
-          <img src={GooglePlayPng} alt="" />
+          <a
+            href="https://www.apple.com/store"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={AppStorePng} alt="" />
+          </a>
+          <a
+            href="https://play.google.com/store/apps"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img src={GooglePlayPng} alt="" />
+          </a>
         </div>
       </MobileApplicationLinksX>
     </Wrapper>
   );
 };
-
-const SocialLinkX = styled.a`
-  width: 5rem;
-  height: 5rem;
-  background-color: none;
-
-  /* border: 1px solid var(--color-black); */
-  background: var(--color-grey20);
-  border-radius: 1rem;
-  color: var(--anchorTag-color-link);
-  color: var(--color-black);
-
-  cursor: pointer;
-
-  align-self: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  transition: all 0.4s ease;
-
-  &:hover {
-    background: var(--color-grey40);
-  }
-
-  svg {
-    width: 2rem;
-    height: 2rem;
-  }
-`;
 
 const IconsContainerX = styled.div`
   margin-top: 1rem;
@@ -107,6 +88,14 @@ const MobileApplicationLinksX = styled.div`
 
     display: flex;
     gap: 1rem;
+  }
+
+  a {
+    display: flex;
+
+    background: var(--color-none);
+    border: none;
+    cursor: pointer;
   }
 
   img {

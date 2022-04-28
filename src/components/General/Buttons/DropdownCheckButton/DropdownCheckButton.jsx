@@ -37,6 +37,8 @@ const Wrapper = styled.button`
   background: var(--color-none);
   cursor: pointer;
 
+  text-transform: capitalize;
+
   svg {
     /* color: var(--color-none); */
     /* color: red; */

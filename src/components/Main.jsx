@@ -1,52 +1,57 @@
-import React from "react";
+import React, { Suspense } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
 
-import ItemPage from "./pages/ItemPage/ItemPage";
+// import ItemPage from "./pages/ItemPage/ItemPage";
 import RequestsPage from "./pages/RequestsPage/RequestsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
+// import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
 import ItemPage2 from "./pages/ItemPage/ItemPage2";
 
+const MarketplacePage = React.lazy(() =>
+  import("./pages/MarketplacePage/MarketplacePage")
+);
 
 const Main = (props) => {
   return (
     <Styled>
-      <Switch>
-        <Route path="/" exact>
-          <MainPage />
-        </Route>
+      <Suspense fallback={<p>loading...</p>}>
+        <Switch>
+          <Route path="/" exact>
+            <MainPage />
+          </Route>
 
-        <Route path="/login">
-          <LoginPage />
-        </Route>
+          <Route path="/login">
+            <LoginPage />
+          </Route>
 
-        <Route path="/item/:quoteId">
+          {/* <Route path="/item/:quoteId">
           <ItemPage />
-        </Route>
+        </Route> */}
 
-        <Route path="/itemTest/:quoteId">
-          <ItemPage2 />
-        </Route>
+          <Route path="/item/:quoteId">
+            <ItemPage2 />
+          </Route>
 
-        <Route path="/requests/:data">
-          <RequestsPage />
-        </Route>
+          <Route path="/requests/:data">
+            <RequestsPage />
+          </Route>
 
-        <Route path="/requests/">
-          <RequestsPage />
-        </Route>
+          <Route path="/requests/">
+            <RequestsPage />
+          </Route>
 
-        <Route path="/marketplace">
-          <MarketplacePage />
-        </Route>
+          <Route path="/marketplace">
+            <MarketplacePage />
+          </Route>
 
-        <Route path="*">
-          <NotFoundPage />
-        </Route>
-      </Switch>
+          <Route path="*">
+            <NotFoundPage />
+          </Route>
+        </Switch>
+      </Suspense>
     </Styled>
   );
 };

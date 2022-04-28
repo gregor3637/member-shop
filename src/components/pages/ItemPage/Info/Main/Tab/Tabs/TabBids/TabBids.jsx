@@ -6,6 +6,7 @@ import "simplebar/dist/simplebar.min.css";
 import SortBy2 from "../../../../../../../General/SortBy/SortBy2";
 import ItemBid from "../../../../../Elements/Bid/ItemBid";
 import { sortMethods } from "../../../../../../../../helpers/ItemBidsTabSortingMethods";
+import SortSVG from "../../../../../../../../img/currency/SortSVG";
 
 let firstTime = true;
 
@@ -28,6 +29,7 @@ const TabBids = ({ bids }) => {
           options={Object.keys(sortMethods)}
           selectedOption={selectedOption}
           onOptionSelect={(val) => setSelectedOption(val)}
+          icon={<SortSVG />}
         />
       </SortingContainerX>
       <DivX>

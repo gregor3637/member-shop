@@ -27,7 +27,7 @@ const BundleView = ({ data }) => {
 
   return (
     <Wrapper>
-      <Link to={`itemTest/${data.id}`}>
+      <Link to={`item/${data.id}`}>
         <ImageSlider
           bundleItems={data.bundleItems}
           page={page}

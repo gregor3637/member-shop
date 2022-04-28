@@ -22,7 +22,7 @@ const Styled = styled.header`
   flex: 0 0 8rem;
   width: 100%;
 
-  z-index: 800;
+  z-index: 999;
 
   & > div {
     width: 100%;

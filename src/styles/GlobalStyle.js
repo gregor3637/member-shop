@@ -23,6 +23,9 @@ const GlobalStyle = createGlobalStyle`
 
         --side-panel-border-radius: 0.5rem;
 
+        /* --home-page--buttons--border-radius: 1rem; */
+        --home-page--buttons--border-radius: 9999px;
+
         //--------------------------------------------------------------
         //--------------------------------------------------------------
         //-------------------------market-filters-----------------------
@@ -108,11 +111,13 @@ const GlobalStyle = createGlobalStyle`
         --test-g: #008000;
         --test-y: #ffff00;
         --test-r: #ff0000;
+        --test-t: #ff00b3;
 
 
         /* --test-g: #fff;
         --test-y: #fff;
-        --test-r: #fff; */
+        --test-r: #fff; 
+        --test-t: #fff;*/
         //#FF0000
         --primary-color: #007bff;
         --primary-color-light: #057FFF;

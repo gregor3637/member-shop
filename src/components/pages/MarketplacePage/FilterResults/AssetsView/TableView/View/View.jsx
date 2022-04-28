@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const View = ({ id, src, count }) => {
   return (
-    <Wrapper to={`itemTest/${id}`}>
+    <Wrapper to={`item/${id}`}>
       <ImageHolderX>
         <img src={src} alt="nft view" />
       </ImageHolderX>

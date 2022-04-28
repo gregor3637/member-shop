@@ -1,6 +1,7 @@
 import trendingData from "../data/dbTrendingDataMock";
 import assetCardsData from "../data/dbDataMock";
 import collectionsDummy from "./Collections";
+import collectionsMockaroo from "../data/dbCollectionsDataMockaroo";
 
 export async function getPageItems(page, itemsPerPage) {
   // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
@@ -56,7 +57,7 @@ export async function getElementsById_inDbMockData(ids) {
   const newEntries = ids.map((searchedId) =>
     assetCardsData.find((x) => x.id === searchedId)
   );
-  
+
   return newEntries;
 }
 
@@ -94,7 +95,6 @@ export async function getSingleCard(id, oldway = false) {
   //   throw new Error(data.message || "Could not get comments.");
   // }
 
-  
   await new Promise((res) => setTimeout(res, 500));
 
   let searchedItem = null;
@@ -209,7 +209,7 @@ export async function getMarketplaceCollectionsBySubstr(
       return el.name.toLowerCase().includes(inputValue.toLowerCase());
     });
 
-    console.log('api | filtered ', filtered);
+    console.log("api | filtered ", filtered);
 
     const startIndex = page * itemsPerPage;
     const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
@@ -289,4 +289,15 @@ export async function getMarketplaceCollectionsBySubstrAtPage(
   //   console.log("api res | data", chunck);
   //   return { data: chunck, hasMore };
   // });
+}
+
+export async function getTopCollections() {
+  await new Promise((res) => setTimeout(res, 500));
+
+  //below code is used cause we are mocking 'res'/'CollectionDummy'
+  //when we have real server, this 'then' is removed
+  //and real server returns { data, hasMore }
+
+  const collections = collectionsMockaroo;
+  return collections;
 }

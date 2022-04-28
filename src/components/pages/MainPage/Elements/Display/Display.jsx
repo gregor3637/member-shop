@@ -232,14 +232,14 @@ const Display = (props) => {
               </div>
               <div className="timer">
                 <div className="annotation">Ending in</div>
-                <Timer
+                {/* <Timer
                   style={{
                     padding: "0.8rem",
                     fontSize: "2rem",
                     borderRadius: "1rem",
                   }}
                   countDownDate={"Dec 30, 2022 23:45:00"}
-                />
+                /> */}
               </div>
             </ProjectDetails>
             <ButtonsDiv>

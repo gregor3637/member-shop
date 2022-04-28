@@ -53,7 +53,6 @@ const ContentX = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* background-color: green; */
   flex: 1;
 `;
 

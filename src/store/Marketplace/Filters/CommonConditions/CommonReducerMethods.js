@@ -27,6 +27,15 @@ export const chooseOneInObject = (state, action) => {
     [action.type]: resetSubstate,
   };
 };
+export const selectOneFromArray = (state, action) => {
+  return {
+    ...state,
+    [action.type]: {
+      ...state[action.type],
+      selected: action.value,
+    },
+  };
+};
 
 export const toggleItemInArray = (state, action) => {
   let arr = state[action.type];

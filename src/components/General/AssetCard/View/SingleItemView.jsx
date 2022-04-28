@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const SingleItemView = ({ data }) => {
   return (
-    <LinkX to={`itemTest/${data.id}`}>
+    <LinkX to={`item/${data.id}`}>
       <img src={data.general.src} alt="avatar" />
     </LinkX>
   );
@@ -21,6 +21,7 @@ const LinkX = styled(Link)`
   img {
     width: 100%;
     height: 100%;
+    max-height: 27rem;
 
     border-radius: 2rem;
     object-fit: cover;

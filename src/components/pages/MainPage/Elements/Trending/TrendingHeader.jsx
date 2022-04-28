@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
+import useHomePageContext from "../../../../../hooks/HomePage/useHomePageContext";
 
 import AttentionDot from "../../../../General/AttentionDot/AttentionDot";
-import Switch from "../../../../General/Switch/Switch";
 import SwitchDynamic from "../../../../General/Switch/SwitchDynamic";
-import SectionHeadingLink from "../SectionHeadingLink";
 
 const SectopmTrendingHeader = () => {
-  const options = ["All", "Ethereum", "Solana"];
+  const {
+    state: { trendingAuction },
+    dispatch,
+  } = useHomePageContext();
+
+  const history = useHistory();
+  const handleOnClick = useCallback(
+    () => history.push("/marketplace"),
+    [history]
+  );
 
   return (
     <Wrapper>
@@ -15,12 +24,18 @@ const SectopmTrendingHeader = () => {
         <AttentionDot radius={10} color={"#f67d7d"} margin="0 1rem 0 0" />
         <h2>Trending Auctions</h2>
         <SwitchContainerX>
-          <SwitchDynamic options={options} />
+          <SwitchDynamic
+            selected={trendingAuction.selected}
+            options={trendingAuction.options}
+            onSelection={(v) => {
+              dispatch({ type: "trendingAuction", value: v })
+            }}
+          />
         </SwitchContainerX>
       </HeadStyled>
 
       <div>
-        <ButtonX>See all</ButtonX>
+        <ButtonX onClick={handleOnClick}>See all</ButtonX>
       </div>
     </Wrapper>
   );
@@ -31,16 +46,16 @@ const SwitchContainerX = styled.div`
 `;
 
 const ButtonX = styled.button`
-  border-radius: 1rem;
   padding: 0.6rem 1.2rem;
   height: auto;
 
-  border: 1px solid var(--color-grey20);
+  border: 1px solid var(--color-border);
+  border-radius: var(--home-page--buttons--border-radius);
   background: var(--color-none);
 
   cursor: pointer;
   font-weight: 600;
-  
+
   transition: all 0.2s ease;
 
   &:hover {
@@ -61,6 +76,8 @@ const HeadStyled = styled.div`
 `;
 
 const Wrapper = styled.div`
+  margin-bottom: 1rem;
+
   display: flex;
   justify-content: space-between;
   align-items: center;

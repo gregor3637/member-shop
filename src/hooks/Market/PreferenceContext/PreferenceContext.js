@@ -13,6 +13,7 @@ export const PreferenceContextProvider = ({ children }) => {
   );
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context
+  
   const value = { state, dispatch };
   return (
     <PreferenceContext.Provider value={value}>

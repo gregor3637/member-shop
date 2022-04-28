@@ -9,7 +9,7 @@ const AssetCardInfo = ({ className, data }) => {
     <Wrapper className={className}>
       <MainX>
         <TitleContainerX>
-          <Link to={`itemTest/${data.id}`}>
+          <Link to={`item/${data.id}`}>
             <TitleX>{data.general.name}</TitleX>
           </Link>
         </TitleContainerX>

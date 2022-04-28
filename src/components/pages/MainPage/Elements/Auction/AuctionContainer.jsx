@@ -19,10 +19,15 @@ function Arrow(props) {
     ) : (
       <FontAwesomeIcon icon={faCaretLeft} className="icon"></FontAwesomeIcon>
     );
+
+  const isDisabled =
+    (props.type === "next" && props.currentSlide === props.slideCount - 1) ||
+    (props.type === "prev" && props.currentSlide === 0);
+
   return (
-    <span className={className} onClick={props.onClick}>
+    <button className={className} onClick={props.onClick} disabled={isDisabled}>
       {char}
-    </span>
+    </button>
   );
 }
 
@@ -141,12 +146,20 @@ const Wrapper = styled.div`
     svg {
       margin-right: -0.6rem;
     }
+
+    &:disabled {
+      background: red;
+    }
   }
 
   .prevArrow {
     left: -1.5rem;
     svg {
       margin-left: -0.6rem;
+    }
+
+    &:disabled {
+      background: red;
     }
   }
 

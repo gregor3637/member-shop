@@ -2,6 +2,8 @@ import BundleButton from "./BundleButton/BundleButton";
 import MoreButton from "../../../../../General/Buttons/MoreButton/MoreButton";
 import View from "./View/View";
 import Watched from "./Watch/Watch";
+import BuyModal from "../../../../../General/Modal/Buy/BuyModal";
+import More from "./More/More";
 
 const columns = (tableData) => {
   return [
@@ -52,7 +54,7 @@ const columns = (tableData) => {
 
     {
       Header: "Blockchain",
-      accessor: "summary.details.blockchain",
+      accessor: "contract.blockchain",
       canHideColumn: true,
     },
     {
@@ -110,11 +112,7 @@ const columns = (tableData) => {
       Cell: (tableProps) => {
         const isBundleItem = tableProps.row.original.count;
         const component = !isBundleItem ? (
-          <MoreButton
-            id={tableProps.row.original.id}
-            isBidActive={tableProps.row.original.bids.isAllowed}
-            isBuyActive={tableProps.row.original.price.currency !== ""}
-          />
+          <More data={tableProps.row.original} />
         ) : null;
         return component;
       },

@@ -7,8 +7,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import AssetCardActionButton from "../AssetCardActionButton/AssetCardActionButton";
 import ColorfulButton from "../AssetCardActionButton/ColorfulButton/ColorfulButton";
+import BuyModal from "../../Modal/Buy/BuyModal";
 
-const MoreButton = ({ id, className, isBuyActive, isBidActive }) => {
+const MoreButton = ({ id, className: version, isBuyActive, isBidActive }) => {
   const history = useHistory();
   const [instance, setInstance] = useState(null);
   const [isTippyOpen, setIsTippyOpen] = useState(false);
@@ -25,12 +26,9 @@ const MoreButton = ({ id, className, isBuyActive, isBidActive }) => {
   const onShareHandler = () => {
     instance.hide();
     // setShowShare(true);
-
-    console.log("instance ", instance);
   };
 
-  const version = className;
-
+  
   return (
     <TippyX
       content={
@@ -44,6 +42,9 @@ const MoreButton = ({ id, className, isBuyActive, isBidActive }) => {
           <AssetCardActionButton onClick={detailsHandler} label={"Details"} />
           <AssetCardActionButton onClick={onShareHandler} label={"Share"} />
           <AssetCardActionButton onClick={onReportHandler} label={"Report"} />
+
+          {/* <BuyModal itemData={tableProps.row.original} onClose={() => {}} /> */}
+
         </TippyContentX>
       }
       onCreate={setInstance}

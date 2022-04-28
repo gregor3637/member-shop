@@ -4,12 +4,17 @@ import styled from "styled-components";
 import useOnClickOutsideHandler from "../../../hooks/useOnClickOutsideHandler";
 import useToggle from "../../../hooks/useToggle";
 
-import SortSVG from "../../../img/currency/SortSVG";
 import DropdownArrow from "../Arrow/DropdownArrow";
 import DropDown from "../../pages/MarketplacePage/CommonElements/DropDown/DropDown";
 import TickButton from "./TickButton/TickButton";
 
-const SortBy2 = ({ options, selectedOption, onOptionSelect }) => {
+const SortBy2 = ({
+  options,
+  selectedOption,
+  onOptionSelect,
+  icon = null,
+  className: version,
+}) => {
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
     toggleShown();
@@ -29,11 +34,9 @@ const SortBy2 = ({ options, selectedOption, onOptionSelect }) => {
   };
 
   return (
-    <WrapperX>
-      <ButtonX onClick={dropdownClickHandle} ref={outsideRef}>
-        <IconWrapperX>
-          <SortSVG />
-        </IconWrapperX>
+    <WrapperX className={version}>
+      <LabelContainerX onClick={dropdownClickHandle} ref={outsideRef}>
+        {icon && <IconWrapperX>{icon}</IconWrapperX>}
         <span>{selectedOption ? selectedOption : "Sort By"}</span>
         <DropdownArrow isOpen={isShown} />
         <DropDownX isOpen={isShown} ref={dropdownRef}>
@@ -50,13 +53,14 @@ const SortBy2 = ({ options, selectedOption, onOptionSelect }) => {
             })}
           </OptionsX>
         </DropDownX>
-      </ButtonX>
+      </LabelContainerX>
     </WrapperX>
   );
 };
 
 const DropDownX = styled(DropDown)`
   width: 100%;
+  min-width: max-content;
 `;
 
 const OptionsX = styled.div`
@@ -81,7 +85,7 @@ const IconWrapperX = styled.div`
   align-items: center;
 `;
 
-const ButtonX = styled.span`
+const LabelContainerX = styled.span`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -89,12 +93,10 @@ const ButtonX = styled.span`
   height: 3.6rem;
   padding: 0 1.6rem;
 
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--market-itemsWrapper-header-elements-border-radius);
 
   font-size: 1.4rem;
   font-weight: 400;
+  text-transform: capitalize;
 
   cursor: pointer;
 
@@ -105,11 +107,12 @@ const ButtonX = styled.span`
 `;
 
 const WrapperX = styled.div`
-  z-index: 999;
+  z-index: 990;
   /* background: var(--color-white); */
   position: relative;
   width: max-content;
   width: 100%;
+
 `;
 
 export default SortBy2;

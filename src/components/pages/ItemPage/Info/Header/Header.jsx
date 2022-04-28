@@ -14,7 +14,7 @@ const Header = () => {
   let location = useLocation();
   let { url } = useRouteMatch();
   const match = matchPath(location.pathname, {
-    path: "/itemTest/:quoteId/:tab",
+    path: "/item/:quoteId/:tab",
     exact: false,
     strict: false,
   });

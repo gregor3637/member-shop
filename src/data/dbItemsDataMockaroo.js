@@ -2,11 +2,12 @@ export default [
   {
     id: 1,
     general: {
-      name: "Franny 123456789 123456789 123456789 Franny 123456789 123456789 123456789",
-      src: "https://lh3.googleusercontent.com/tmDxtrM7y8dGsdMAZ-B598Y-GXkA_Eh0zOPhUMSKsKV71easUhB9_jlCUMMcgBgN0NlCNX6GqJR1HSnRW1_Qe3qrVgBmuMSQbsLUNw=w206",
+      name: "Franny",
+      // src: "https://lh3.googleusercontent.com/tmDxtrM7y8dGsdMAZ-B598Y-GXkA_Eh0zOPhUMSKsKV71easUhB9_jlCUMMcgBgN0NlCNX6GqJR1HSnRW1_Qe3qrVgBmuMSQbsLUNw=w206",
+      src: "https://public.nftstatic.com/static/nft/zipped/316b937f6ce043ca885aef2908984df9_zipped.png",
     },
     project: {
-      name: "BoredApeYachtClub bbbbbbbb 123 123 123 ",
+      name: "BoredApeYachtClub",
       isVerified: false,
       link: "https://huffingtonpost.com/imperdiet/sapien.js?consequat=vel&nulla=augue&nisl=vestibulum&nunc=ante&nisl=ipsum&duis=primis&bibendum=in&felis=faucibus&sed=orci&interdum=luctus&venenatis=et&turpis=ultrices&enim=posuere&blandit=cubilia&mi=curae&in=donec&porttitor=pharetra&pede=magna&justo=vestibulum&eu=aliquet&massa=ultrices&donec=erat&dapibus=tortor",
     },
@@ -22,7 +23,7 @@ export default [
           "https://lh3.googleusercontent.com/pU66bK-Npo4gnSqGWrLnet6u93bAzaUgpYs4T11Xv5bitmtNQitKldhBjk0FDHNYwt9nlOS3yefCB0pNOdgqBqeKyfuo1-g3jsg8WQ=s100",
       },
       creator: {
-        name: "Azuki",
+        name: "AzukiAzukiAzukiAzukiAzukiAzukiAzukiAzukiAzuki123AzukiAzukiAzukiAzukiAzukiAzukiAzukiAzukiAzuki123",
         link: "http://accuweather.com/nibh/in/hac/habitasse/platea/dictumst/aliquam.js?phasellus=mattis&in=nibh&felis=ligula&donec=nec&semper=sem&sapien=duis&a=aliquam&libero=convallis&nam=nunc&dui=proin&proin=at&leo=turpis&odio=a&porttitor=pede&id=posuere&consequat=nonummy&in=integer&consequat=non&ut=velit&nulla=donec&sed=diam&accumsan=neque&felis=vestibulum&ut=eget&at=vulputate&dolor=ut&quis=ultrices&odio=vel&consequat=augue&varius=vestibulum&integer=ante&ac=ipsum&leo=primis&pellentesque=in&ultrices=faucibus&mattis=orci&odio=luctus&donec=et&vitae=ultrices&nisi=posuere&nam=cubilia&ultrices=curae&libero=donec&non=pharetra&mattis=magna&pulvinar=vestibulum&nulla=aliquet&pede=ultrices&ullamcorper=erat&augue=tortor&a=sollicitudin&suscipit=mi&nulla=sit&elit=amet&ac=lobortis&nulla=sapien&sed=sapien&vel=non&enim=mi&sit=integer&amet=ac&nunc=neque&viverra=duis&dapibus=bibendum&nulla=morbi&suscipit=non&ligula=quam&in=nec&lacus=dui&curabitur=luctus&at=rutrum&ipsum=nulla&ac=tellus&tellus=in&semper=sagittis&interdum=dui&mauris=vel&ullamcorper=nisl&purus=duis&sit=ac&amet=nibh&nulla=fusce",
         avatar:
           "https://lh3.googleusercontent.com/Ju9CkWtV-1Okvf45wo8UctR-M9He2PjILP0oOvxE89AyiPPGtrR3gysu1Zgy0hjd2xKIgjJJtWIc0ybj4Vd7wv8t3pxDGHoJBzDB=s64",
@@ -47,7 +48,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Science",
+      category: ["art"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -89,8 +90,8 @@ export default [
               "https://lh3.googleusercontent.com/pU66bK-Npo4gnSqGWrLnet6u93bAzaUgpYs4T11Xv5bitmtNQitKldhBjk0FDHNYwt9nlOS3yefCB0pNOdgqBqeKyfuo1-g3jsg8WQ=s100",
           },
           type: "bid",
-          time: "05/18/2021 05:33:33",
-          amount: 971.13,
+          time: "05/18/2022 05:33:33",
+          amount: 971123.13,
           currency: "BUSD",
         },
         {
@@ -251,7 +252,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -294,7 +295,7 @@ export default [
               "https://lh3.googleusercontent.com/6CS0frnjPEpvJ8hE3OG6_TbJFEC5YYThnZMdLTTmW-Z91lyYAJkPA7-ou2uE-b_J-cBUBeqWkI4HYKHEiu2PAyCT6wkYKzoeCyuy=s100",
           },
           type: "bid",
-          time: "11/09/2021 10:55:55",
+          time: "11/01/2023 10:55:55",
           amount: 664.39,
           currency: "BUSD",
         },
@@ -437,7 +438,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Hat"], type: "Male" },
       stats: null,
       details: {
@@ -625,7 +626,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
@@ -841,7 +842,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Female" },
       stats: null,
       details: {
@@ -1001,7 +1002,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: false,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
@@ -1221,7 +1222,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Male" },
       stats: null,
       details: {
@@ -1398,7 +1399,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
@@ -1615,7 +1616,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: true,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -1827,7 +1828,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Other" },
       stats: null,
       details: {
@@ -2103,7 +2104,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Male" },
       stats: null,
       details: {
@@ -2360,7 +2361,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Male" },
       stats: null,
       details: {
@@ -2570,7 +2571,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
@@ -2717,7 +2718,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Female" },
       stats: null,
       details: {
@@ -2892,7 +2893,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Male" },
       stats: null,
       details: {
@@ -2937,7 +2938,7 @@ export default [
           },
           type: "bid",
           time: "08/07/2021 10:55:55",
-          amount: 569.14,
+          amount: 561329.14,
           currency: "BUSD",
         },
         {
@@ -3060,7 +3061,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Female" },
       stats: null,
       details: {
@@ -3201,7 +3202,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Female" },
       stats: null,
       details: {
@@ -3458,7 +3459,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: true,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
@@ -3676,7 +3677,7 @@ export default [
     summary: {
       isNSFW: false,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -3790,7 +3791,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Female" },
       stats: null,
       details: {
@@ -3981,7 +3982,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Art",
+      category: ["art"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -4101,7 +4102,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: false,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Hat"], type: "Other" },
       stats: null,
       details: {
@@ -4272,7 +4273,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Other" },
       stats: null,
       details: {
@@ -4447,7 +4448,7 @@ export default [
     summary: {
       isNSFW: true,
       isLazyMinted: true,
-      category: "Science",
+      category: ["science"],
       properties: { accessory: ["Glasses", "Wild", "Hat"], type: "Male" },
       stats: null,
       details: {
