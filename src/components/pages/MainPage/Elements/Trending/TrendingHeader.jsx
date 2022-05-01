@@ -35,7 +35,7 @@ const SectopmTrendingHeader = () => {
       </HeadStyled>
 
       <div>
-        <ButtonX onClick={handleOnClick}>See all</ButtonX>
+        <ButtonX onClick={handleOnClick}>See more</ButtonX>
       </div>
     </Wrapper>
   );

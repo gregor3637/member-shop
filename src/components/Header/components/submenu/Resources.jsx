@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 import { LinkX, UlX, LiX } from "../StyleComponents";
 
@@ -23,28 +22,30 @@ const Resources = (props) => {
       </LiX>
       <LiModifiedX>
         <SocialContainerX>
-          <SocialLinkX to="www.youtube.com">
+          
+          <SocialLinkX href={"https://www.youtube.com"}  target="_blank" rel="noreferrer" >
             <YouTube />
           </SocialLinkX>
 
-          <SocialLinkX to="www.twitter.com">
+          <SocialLinkX href={"https://www.twitter.com"}  target="_blank" rel="noreferrer" >
             <Twitter />
           </SocialLinkX>
 
-          <SocialLinkX to="www.instagram.com">
+          <SocialLinkX href={"https://www.instagram.com"}  target="_blank" rel="noreferrer" >
             <Instagram />
           </SocialLinkX>
 
-          <SocialLinkX to="www.discord.com">
+          <SocialLinkX href={"https://www.discord.com"}  target="_blank" rel="noreferrer" >
             <Discord />
           </SocialLinkX>
+
         </SocialContainerX>
       </LiModifiedX>
     </UlX>
   );
 };
 
-const SocialLinkX = styled(Link)`
+const SocialLinkX = styled.a`
   height: 2rem;
   color: var(--color-grey40);
 

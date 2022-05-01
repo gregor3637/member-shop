@@ -8,15 +8,15 @@ export default [{
     "floor": 29.07
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 1.01,
       "amount": 7955.24
     },
-    "weekly": {
+    "week": {
       "percentage": -20.37,
       "amount": 12755.29
     },
-    "monthly": {
+    "month": {
       "percentage": 61.0,
       "amount": 88439.07
     }
@@ -31,15 +31,15 @@ export default [{
     "floor": 11.36
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -95.33,
       "amount": 6255.55
     },
-    "weekly": {
+    "week": {
       "percentage": -75.69,
       "amount": 15822.62
     },
-    "monthly": {
+    "month": {
       "percentage": -26.2,
       "amount": 89723.41
     }
@@ -54,15 +54,15 @@ export default [{
     "floor": 90.24
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 99.49,
       "amount": 2846.99
     },
-    "weekly": {
+    "week": {
       "percentage": 65.24,
       "amount": 19628.67
     },
-    "monthly": {
+    "month": {
       "percentage": -59.47,
       "amount": 89199.8
     }
@@ -77,15 +77,15 @@ export default [{
     "floor": 22.59
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -1.91,
       "amount": 4319.04
     },
-    "weekly": {
+    "week": {
       "percentage": -73.65,
       "amount": 14098.07
     },
-    "monthly": {
+    "month": {
       "percentage": -75.94,
       "amount": 59773.96
     }
@@ -100,15 +100,15 @@ export default [{
     "floor": 20.14
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 38.74,
       "amount": 3918.2
     },
-    "weekly": {
+    "week": {
       "percentage": -91.43,
       "amount": 18483.44
     },
-    "monthly": {
+    "month": {
       "percentage": -70.59,
       "amount": 22711.11
     }
@@ -123,15 +123,15 @@ export default [{
     "floor": 82.4
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -80.62,
       "amount": 6987.53
     },
-    "weekly": {
+    "week": {
       "percentage": 92.54,
       "amount": 15506.17
     },
-    "monthly": {
+    "month": {
       "percentage": -43.35,
       "amount": 55299.05
     }
@@ -146,15 +146,15 @@ export default [{
     "floor": 99.67
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 20.36,
       "amount": 6108.71
     },
-    "weekly": {
+    "week": {
       "percentage": -0.07,
       "amount": 13159.54
     },
-    "monthly": {
+    "month": {
       "percentage": -27.28,
       "amount": 21894.42
     }
@@ -169,15 +169,15 @@ export default [{
     "floor": 37.89
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -96.93,
       "amount": 6589.97
     },
-    "weekly": {
+    "week": {
       "percentage": -84.88,
       "amount": 13880.65
     },
-    "monthly": {
+    "month": {
       "percentage": -47.02,
       "amount": 39363.05
     }
@@ -192,15 +192,15 @@ export default [{
     "floor": 48.9
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 58.05,
       "amount": 2440.64
     },
-    "weekly": {
+    "week": {
       "percentage": -59.94,
       "amount": 18228.55
     },
-    "monthly": {
+    "month": {
       "percentage": 13.77,
       "amount": 84333.63
     }
@@ -215,15 +215,15 @@ export default [{
     "floor": 86.16
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 86.75,
       "amount": 9458.44
     },
-    "weekly": {
+    "week": {
       "percentage": -83.03,
       "amount": 16308.03
     },
-    "monthly": {
+    "month": {
       "percentage": 23.83,
       "amount": 72135.36
     }
@@ -238,15 +238,15 @@ export default [{
     "floor": 94.1
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 73.85,
       "amount": 2376.28
     },
-    "weekly": {
+    "week": {
       "percentage": 48.7,
       "amount": 10444.27
     },
-    "monthly": {
+    "month": {
       "percentage": 75.42,
       "amount": 95380.62
     }
@@ -261,15 +261,15 @@ export default [{
     "floor": 54.25
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -68.24,
       "amount": 6365.47
     },
-    "weekly": {
+    "week": {
       "percentage": 53.31,
       "amount": 17713.66
     },
-    "monthly": {
+    "month": {
       "percentage": -88.76,
       "amount": 64646.23
     }
@@ -284,15 +284,15 @@ export default [{
     "floor": 55.49
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 61.32,
       "amount": 2301.94
     },
-    "weekly": {
+    "week": {
       "percentage": -76.92,
       "amount": 11810.54
     },
-    "monthly": {
+    "month": {
       "percentage": -98.43,
       "amount": 41267.45
     }
@@ -307,15 +307,15 @@ export default [{
     "floor": 11.15
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 38.33,
       "amount": 4243.84
     },
-    "weekly": {
+    "week": {
       "percentage": -20.62,
       "amount": 18560.63
     },
-    "monthly": {
+    "month": {
       "percentage": -61.41,
       "amount": 36320.51
     }
@@ -330,15 +330,15 @@ export default [{
     "floor": 55.39
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 99.9,
       "amount": 1597.68
     },
-    "weekly": {
+    "week": {
       "percentage": 82.64,
       "amount": 10198.35
     },
-    "monthly": {
+    "month": {
       "percentage": 46.5,
       "amount": 83000.72
     }
@@ -353,15 +353,15 @@ export default [{
     "floor": 39.92
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 17.1,
       "amount": 4777.2
     },
-    "weekly": {
+    "week": {
       "percentage": 78.76,
       "amount": 11836.9
     },
-    "monthly": {
+    "month": {
       "percentage": 13.01,
       "amount": 91153.91
     }
@@ -376,15 +376,15 @@ export default [{
     "floor": 5.13
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 74.12,
       "amount": 8749.98
     },
-    "weekly": {
+    "week": {
       "percentage": -10.26,
       "amount": 13989.68
     },
-    "monthly": {
+    "month": {
       "percentage": -56.82,
       "amount": 91685.43
     }
@@ -399,15 +399,15 @@ export default [{
     "floor": 56.02
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -1.02,
       "amount": 1795.23
     },
-    "weekly": {
+    "week": {
       "percentage": 79.29,
       "amount": 10708.81
     },
-    "monthly": {
+    "month": {
       "percentage": 24.71,
       "amount": 84851.94
     }
@@ -422,15 +422,15 @@ export default [{
     "floor": 64.5
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 41.8,
       "amount": 9877.29
     },
-    "weekly": {
+    "week": {
       "percentage": -42.6,
       "amount": 15636.61
     },
-    "monthly": {
+    "month": {
       "percentage": 55.82,
       "amount": 26310.88
     }
@@ -445,15 +445,15 @@ export default [{
     "floor": 87.46
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -19.71,
       "amount": 5349.71
     },
-    "weekly": {
+    "week": {
       "percentage": -18.91,
       "amount": 17615.65
     },
-    "monthly": {
+    "month": {
       "percentage": -37.02,
       "amount": 29272.56
     }
@@ -468,15 +468,15 @@ export default [{
     "floor": 85.65
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -59.61,
       "amount": 2983.28
     },
-    "weekly": {
+    "week": {
       "percentage": 59.7,
       "amount": 12155.11
     },
-    "monthly": {
+    "month": {
       "percentage": 9.64,
       "amount": 86725.72
     }
@@ -491,15 +491,15 @@ export default [{
     "floor": 74.08
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 11.72,
       "amount": 4771.27
     },
-    "weekly": {
+    "week": {
       "percentage": 62.15,
       "amount": 17068.03
     },
-    "monthly": {
+    "month": {
       "percentage": -32.44,
       "amount": 85477.0
     }
@@ -514,15 +514,15 @@ export default [{
     "floor": 80.77
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": -72.27,
       "amount": 7425.5
     },
-    "weekly": {
+    "week": {
       "percentage": -95.3,
       "amount": 11978.3
     },
-    "monthly": {
+    "month": {
       "percentage": -46.86,
       "amount": 83919.6
     }
@@ -537,15 +537,15 @@ export default [{
     "floor": 23.0
   },
   "change": {
-    "daily": {
+    "day": {
       "percentage": 17.89,
       "amount": 8106.25
     },
-    "weekly": {
+    "week": {
       "percentage": -98.39,
       "amount": 19579.67
     },
-    "monthly": {
+    "month": {
       "percentage": 51.31,
       "amount": 60224.35
     }

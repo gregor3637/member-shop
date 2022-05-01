@@ -18,6 +18,7 @@ const Wrapper = styled.div`
   position: relative;
 
   flex: 1;
+  max-height: 27rem;
 `;
 
 export default View;

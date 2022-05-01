@@ -2,12 +2,10 @@ import React, { Suspense } from "react";
 import styled from "styled-components";
 import { Route, Switch } from "react-router-dom";
 
-// import ItemPage from "./pages/ItemPage/ItemPage";
 import RequestsPage from "./pages/RequestsPage/RequestsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
-// import MarketplacePage from "./pages/MarketplacePage/MarketplacePage";
 import ItemPage2 from "./pages/ItemPage/ItemPage2";
 
 const MarketplacePage = React.lazy(() =>
@@ -26,10 +24,6 @@ const Main = (props) => {
           <Route path="/login">
             <LoginPage />
           </Route>
-
-          {/* <Route path="/item/:quoteId">
-          <ItemPage />
-        </Route> */}
 
           <Route path="/item/:quoteId">
             <ItemPage2 />

@@ -24,10 +24,16 @@ const LinkX = styled(Link)`
   color: inherit;
 
   span {
-    margin-left: 1rem;
+    margin-left: 0.6rem;
   }
   svg {
     font-size: 3rem;
+
+    border-radius: 9999px;
+    padding: 0.4rem;
+    background: var(--color-blue);
+
+    color: var(--color-white);
   }
 `;
 

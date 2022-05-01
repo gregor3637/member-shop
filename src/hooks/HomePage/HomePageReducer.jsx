@@ -1,13 +1,17 @@
 import { selectOneFromArray } from "../../store/Marketplace/Filters/CommonConditions/CommonReducerMethods";
 
 const initialState = {
-  category: {
+  categoryType: {
     options: ["all", "art", "sports"],
     selected: "all",
   },
-  timeHorizon: {
+  categoryTimeHorizon: {
     options: ["24 hours", "7 days", "30 days"],
     selected: "24 hours",
+  },
+  collectionsTimeHorizon: {
+    options: ["day", "week", "month"],
+    selected: "day",
   },
   trendingAuction: {
     options: ["all", "Ethereum", "Solana", "Polygon"],
@@ -17,10 +21,13 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "category":
+    case "categoryType":
       return selectOneFromArray(state, action);
 
-    case "timeHorizon":
+    case "categoryTimeHorizon":
+      return selectOneFromArray(state, action);
+      
+    case "collectionsTimeHorizon":
       return selectOneFromArray(state, action);
 
     case "trendingAuction":

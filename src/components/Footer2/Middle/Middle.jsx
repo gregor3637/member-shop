@@ -41,35 +41,35 @@ const Middle = (props) => {
       <NavContainerX>
         <NavX>
           <span>Marketplace</span>
-          <a href="abv.bg">All</a>
-          <a href="abv.bg">New</a>
-          <a href="abv.bg">Artists</a>
-          <a href="abv.bg">Settings</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">All</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">New</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Artists</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Settings</a>
         </NavX>
         <NavX>
           <span>My Account</span>
-          <a href="abv.bg">Profile</a>
-          <a href="abv.bg">Favorites</a>
-          <a href="abv.bg">My Collections</a>
-          <a href="abv.bg">Settings</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Profile</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Favorites</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">My Collections</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Settings</a>
         </NavX>
         <NavX>
           <span>Earn &#38; Give</span>
-          <a href="abv.bg">Become a partner</a>
-          <a href="abv.bg">Bug bounty</a>
-          <a href="abv.bg">Invest</a>
-          <a href="abv.bg">Gifts</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Become a partner</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Bug bounty</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Invest</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Gifts</a>
         </NavX>
         <NavX>
           {/* <div> */}
           <span>Company</span>
-          <a href="abv.bg">About</a>
-          <a href="abv.bg">Terms</a>
-          <a href="abv.bg" className="jobs">
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">About</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Terms</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer" className="jobs">
             Careers <div>18</div>
           </a>
-          <a href="abv.bg">Help center</a>
-          <a href="abv.bg">Privacy policy</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Help center</a>
+          <a target="_blank" href="https://abv.bg" rel="noreferrer">Privacy policy</a>
           {/* </div> */}
         </NavX>
       </NavContainerX>

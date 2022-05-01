@@ -11,25 +11,25 @@ const Footer = (props) => {
       <Div>
         <Nav>
           <span>Marketplace</span>
-          <a href="abv.bg">All</a>
-          <a href="abv.bg">New</a>
-          <a href="abv.bg">Artists</a>
-          <a href="abv.bg">Settings</a>
+          <a  href="https://abv.bg">All</a>
+          <a  href="https://abv.bg">New</a>
+          <a  href="https://abv.bg">Artists</a>
+          <a  href="https://abv.bg">Settings</a>
         </Nav>
         <Nav>
           <span>My Account</span>
-          <a href="abv.bg">Profile</a>
-          <a href="abv.bg">Favorites</a>
-          <a href="abv.bg">My Collections</a>
-          <a href="abv.bg">Settings</a>
+          <a  href="https://abv.bg">Profile</a>
+          <a  href="https://abv.bg">Favorites</a>
+          <a  href="https://abv.bg">My Collections</a>
+          <a  href="https://abv.bg">Settings</a>
         </Nav>
         <Nav>
           <span>Company</span>
-          <a href="abv.bg">About</a>
-          <a href="abv.bg">Terms</a>
-          <a href="abv.bg">Careers</a>
-          <a href="abv.bg">Help center</a>
-          <a href="abv.bg">Privacy policy</a>
+          <a  href="https://abv.bg">About</a>
+          <a  href="https://abv.bg">Terms</a>
+          <a  href="https://abv.bg">Careers</a>
+          <a  href="https://abv.bg">Help center</a>
+          <a  href="https://abv.bg">Privacy policy</a>
         </Nav>
         <ContactsDiv>
           <InputDiv>

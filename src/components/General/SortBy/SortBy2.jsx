@@ -112,7 +112,6 @@ const WrapperX = styled.div`
   position: relative;
   width: max-content;
   width: 100%;
-
 `;
 
 export default SortBy2;

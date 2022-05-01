@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import useWindowDimensions from "../../../../../../hooks/useWindowDimensions";
-import AssetCard from "../../../../../General/AssetCard/AssetCard";
+import AssetCardFlexible from "../../../../../General/AssetCard/AssetCardFlexible";
 
 const CardsView = ({ data, className }) => {
   const { width } = useWindowDimensions();
@@ -14,7 +14,7 @@ const CardsView = ({ data, className }) => {
     <Wrapper>
       <ContentX className={gridTemplateColumnStyle}>
         {data.map((data) => (
-          <AssetCard key={data.id} data={data} />
+          <AssetCardFlexible key={data.id} data={data} />
         ))}
       </ContentX>
     </Wrapper>
@@ -34,8 +34,9 @@ const ContentX = styled.div`
   display: grid;
   justify-items: center;
   gap: 2rem;
+  grid-template-rows: min-content;
   grid-template-columns: repeat(3, minmax(100px, 1fr));
-
+  
   /* &.small-grid { */
   /* grid-template-columns: repeat(3, minmax(100px, 1fr)); */
   /* } */

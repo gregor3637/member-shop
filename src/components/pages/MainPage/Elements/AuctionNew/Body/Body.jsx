@@ -11,7 +11,7 @@ let isFirstTine = true;
 
 const Body = (props) => {
   const {
-    state: { category, timeHorizon },
+    state: { categoryType,  categoryTimeHorizon },
   } = useHomePageContext();
   const [downloadedItems, setDownloadedItems] = useState(dbItemsDataMockaroo);
   const [showcaseItem, setShowcaseItem] = useState(null);
@@ -26,10 +26,10 @@ const Body = (props) => {
   useEffect(() => {
     if (!isFirstTine) {
       const items =
-        category.selected === "all"
+        categoryType.selected === "all"
           ? downloadedItems
           : downloadedItems.filter((x) =>
-              x.summary.category.includes(category.selected)
+              x.summary.category.includes(categoryType.selected)
             );
 
       let sorted = [...items]?.sort(sortAssetItemByHeighestFirstBid);
@@ -38,7 +38,7 @@ const Body = (props) => {
       setTopAuctions(sorted);
     }
     isFirstTine = false;
-  }, [category.selected, timeHorizon.selected, downloadedItems]);
+  }, [categoryType.selected, categoryTimeHorizon.selected, downloadedItems]);
 
   let body = <AbsentDataContainerX>No Items correspond to selected filters</AbsentDataContainerX>;
 

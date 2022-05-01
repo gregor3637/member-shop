@@ -125,10 +125,13 @@ const Wrapper = styled.div`
     border: 0;
   }
 
-  table td,
-  table th {
-    border-top: 1px solid #ddd;
+  table th,
+  table td {
     padding: 1rem 0.5rem;
+  }
+
+  table td {
+    border-top: 1px solid #ddd;
   }
 
   table td {

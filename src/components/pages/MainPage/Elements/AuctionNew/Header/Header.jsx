@@ -7,7 +7,7 @@ import useHomePageContext from "../../../../../../hooks/HomePage/useHomePageCont
 
 const Header = () => {
   const {
-    state: { category, timeHorizon },
+    state: { categoryType, categoryTimeHorizon },
     dispatch,
   } = useHomePageContext();
 
@@ -23,19 +23,19 @@ const Header = () => {
         <HeaderTitleX>Top</HeaderTitleX>
         <SwitchContainerX>
           <SortBy2X
-            options={category.options}
-            selectedOption={category.selected}
-            onOptionSelect={(val) => dispatch({ type: "category", value: val })}
+            options={categoryType.options}
+            selectedOption={categoryType.selected}
+            onOptionSelect={(val) => dispatch({ type: "categoryType", value: val })}
           />
         </SwitchContainerX>
         <h2>Auctions</h2>
         <HeaderTitleX>&nbsp; over last</HeaderTitleX>
         <SwitchContainerX>
           <SortBy2X
-            options={timeHorizon.options}
-            selectedOption={timeHorizon.selected}
+            options={categoryTimeHorizon.options}
+            selectedOption={categoryTimeHorizon.selected}
             onOptionSelect={(val) =>
-              dispatch({ type: "timeHorizon", value: val })
+              dispatch({ type: "categoryTimeHorizon", value: val })
             }
           />
         </SwitchContainerX>
