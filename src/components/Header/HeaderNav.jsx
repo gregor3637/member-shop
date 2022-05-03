@@ -5,21 +5,11 @@ import { NavLink } from "react-router-dom";
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 import Account from "./components/submenu/Account/Account";
 import Dropdown from "./components/DropDown";
-import Stats from "./components/submenu/Stats";
 import Marketplace from "./components/submenu/Marketplace";
 import Resources from "./components/submenu/Resources";
-import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
-import NewReleasesRoundedIcon from "@mui/icons-material/NewReleasesRounded";
-import AddCommentRoundedIcon from "@mui/icons-material/AddCommentRounded";
-import LightbulbCircleRoundedIcon from "@mui/icons-material/LightbulbCircleRounded";
-import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
-import AssistantOutlinedIcon from "@mui/icons-material/AssistantOutlined";
-import AssignmentLateOutlinedIcon from "@mui/icons-material/AssignmentLateOutlined";
 
 const HeaderNav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -66,7 +56,6 @@ const HeaderNav = () => {
           </NavLinkUserX>
           <NavLinkUserX to={"/notifications"}>
             <IconContainerX>
-              {/* <AssignmentLateOutlinedIcon /> */}
               <NewReleasesOutlinedIcon />
             </IconContainerX>
           </NavLinkUserX>
@@ -158,52 +147,14 @@ const UserContainerX2 = styled.div`
   svg {
     background: white;
     border-radius: 50%;
-
-    /* border-radius: 0;
-    color: white;
-    background: black; */
-
     transform: scale(0.8);
   }
-`;
-
-const UserContainerX = styled.div`
-  background: var(--color-black);
-
-  height: 100%;
-  height: 4.4rem;
-  padding: 0 2rem;
-
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-
-  border: none;
-  border-radius: 999px;
-
-  svg {
-    background: white;
-    border-radius: 50%;
-
-    border-radius: 0;
-    color: white;
-    background: black;
-
-    transform: scale(0.8);
-  }
-
-  color: white;
 `;
 
 const NavLinkUserX = styled(NavLink)`
   position: relative;
 
-  /* background: var(--color-grey20); */
   border-radius: 50%;
-  svg {
-    /* fill: var(--color-black);
-    background: var(--color-grey20); */
-  }
 
   &.active {
     background: var(--color-blue);

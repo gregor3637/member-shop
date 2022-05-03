@@ -85,16 +85,7 @@ const SocialContainerX = styled.div`
   fill: red;
 `;
 
-const ImgX = styled.img`
-  height: 2rem;
-
-  &:hover {
-    background-color: red;
-  }
-`;
-
 const LiModifiedX = styled(LiX)`
-  /* background: var(--test-g); */
   margin-top: 1rem;
   padding: 0;
 
