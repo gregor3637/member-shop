@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
-import Account from "./components/submenu/Account";
+import Account from "./components/submenu/Account/Account";
 import Dropdown from "./components/DropDown";
 import Stats from "./components/submenu/Stats";
 import Marketplace from "./components/submenu/Marketplace";
@@ -17,6 +17,9 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import NewReleasesRoundedIcon from "@mui/icons-material/NewReleasesRounded";
 import AddCommentRoundedIcon from "@mui/icons-material/AddCommentRounded";
 import LightbulbCircleRoundedIcon from "@mui/icons-material/LightbulbCircleRounded";
+import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
+import AssistantOutlinedIcon from '@mui/icons-material/AssistantOutlined';
+import AssignmentLateOutlinedIcon from '@mui/icons-material/AssignmentLateOutlined';
 
 const HeaderNav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -58,10 +61,12 @@ const HeaderNav = () => {
           <NavLinkX to={"/accout"}>
             <IconContainerX>
               <NotificationsNoneRoundedIcon />
+              <span>{5}</span>
             </IconContainerX>
           </NavLinkX>
           <NavLinkX to={"/accout"}>
             <IconContainerX>
+              {/* <AssignmentLateOutlinedIcon /> */}
               <NewReleasesOutlinedIcon />
             </IconContainerX>
           </NavLinkX>
@@ -121,6 +126,21 @@ const IconContainerX = styled.div`
     font-size: 3.5rem;
     color: white;
     color: black;
+  }
+
+  span {
+    position: absolute;
+    right: 0;
+    top: 2px;
+
+    font-size: 1.2rem;
+    color: var(--font-dark-color);
+    border-radius: 999px;
+
+    line-height: 100%;
+    /* border-radius: var(--market-filters--outerWrapper-radius); */
+    padding: 0.2rem 0.6rem;
+    background-color: var(--color-red-bright);
   }
 `;
 

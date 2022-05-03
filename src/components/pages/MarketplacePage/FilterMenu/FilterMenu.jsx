@@ -133,13 +133,13 @@ const STab = styled(Tab)`
     position: absolute;
     right: 0;
     top: 0;
-
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--font-dark-color);
+    border-radius: 999px;
 
     line-height: 100%;
     /* border-radius: var(--market-filters--outerWrapper-radius); */
-    padding: 0.2rem 0.4rem;
+    padding: 0.2rem 0.6rem;
     background-color: var(--color-red-bright);
   }
 `;

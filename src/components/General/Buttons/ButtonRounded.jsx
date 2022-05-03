@@ -1,7 +1,15 @@
 import React from "react";
 import styled from "styled-components";
 
-const ButtonRoundedStyled = styled.button`
+const ButtonRounded = (props) => {
+  return (
+    <Wrapper onClick={props.onClick} className={props.className}>
+      {props.children}
+    </Wrapper>
+  );
+};
+
+const Wrapper = styled.button`
   padding: 0.5rem 6rem;
 
   border: 0;
@@ -17,13 +25,5 @@ const ButtonRoundedStyled = styled.button`
 
   cursor: pointer;
 `;
-
-const ButtonRounded = (props) => {
-  return (
-    <ButtonRoundedStyled onClick={props.onClick} className={props.className}>
-      {props.children}
-    </ButtonRoundedStyled>
-  );
-};
 
 export default ButtonRounded;

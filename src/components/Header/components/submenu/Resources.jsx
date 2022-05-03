@@ -22,23 +22,37 @@ const Resources = (props) => {
       </LiX>
       <LiModifiedX>
         <SocialContainerX>
-          
-          <SocialLinkX href={"https://www.youtube.com"}  target="_blank" rel="noreferrer" >
+          <SocialLinkX
+            href={"https://www.youtube.com"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <YouTube />
           </SocialLinkX>
 
-          <SocialLinkX href={"https://www.twitter.com"}  target="_blank" rel="noreferrer" >
+          <SocialLinkX
+            href={"https://www.twitter.com"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Twitter />
           </SocialLinkX>
 
-          <SocialLinkX href={"https://www.instagram.com"}  target="_blank" rel="noreferrer" >
+          <SocialLinkX
+            href={"https://www.instagram.com"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Instagram />
           </SocialLinkX>
 
-          <SocialLinkX href={"https://www.discord.com"}  target="_blank" rel="noreferrer" >
+          <SocialLinkX
+            href={"https://www.discord.com"}
+            target="_blank"
+            rel="noreferrer"
+          >
             <Discord />
           </SocialLinkX>
-
         </SocialContainerX>
       </LiModifiedX>
     </UlX>
@@ -46,6 +60,7 @@ const Resources = (props) => {
 };
 
 const SocialLinkX = styled.a`
+  /* background: var(--test-r); */
   height: 2rem;
   color: var(--color-grey40);
 
@@ -56,6 +71,7 @@ const SocialLinkX = styled.a`
 
 const SocialContainerX = styled.div`
   padding: 0 1rem;
+  width: 100%;
   height: 100%;
 
   display: flex;
@@ -65,6 +81,7 @@ const SocialContainerX = styled.div`
 
   color: red;
   fill: red;
+
 `;
 
 const ImgX = styled.img`
@@ -76,8 +93,20 @@ const ImgX = styled.img`
 `;
 
 const LiModifiedX = styled(LiX)`
+  /* background: var(--test-g); */
+  margin-top: 1rem;
+  padding: 0;
+
+  border-top: 1px solid var(--color-grey40);
+  border-radius: 0;
+
   &:last-child:hover {
     box-shadow: none;
+  }
+
+  &:hover {
+    /* box-shadow: var(--boxShadow-dropdown); */
+    background: var(--color-none);
   }
 `;
 

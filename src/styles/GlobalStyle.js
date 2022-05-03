@@ -125,10 +125,12 @@ const GlobalStyle = createGlobalStyle`
         --color-white: #fff;
         --color-black: #000;
         --color-grey10: #f2f2f2;
+        --color-grey15: #eaeaea;
         --color-grey20: #e1e1e1;
         --color-grey40: #9e9e9e;
         --color-grey50: #777;
         --color-grey70: #505050;
+        --color-green: #008000;
         --color-red-pale: #f67d7d;
         --color-red-bright: #ff0000;
         --color-blue: #2081e2;

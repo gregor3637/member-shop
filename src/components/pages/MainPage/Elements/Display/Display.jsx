@@ -1,25 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
-import StarBorderOutlinedIcon from "@material-ui/icons/StarBorderOutlined";
-import AcUnitOutlinedIcon from "@material-ui/icons/AcUnitOutlined";
-
 import Tooltip from "../../../../General/Tooltip/Tooltip";
-import LinkHollow from "../../../../Links/LinkHollow";
-import ButtonRounded from "../../../../General/Buttons/ButtonRounded";
 import Timer from "../../../../General/Timer/Timer";
 import UserProfileCard from "../../../../General/User/UserProfileCard";
 import { getMainNewFeaturedItemData } from "../../../../../lib/api";
 import useHttp from "../../../../../hooks/useHttp";
 import useInit from "../../../../../hooks/useInit";
 import EthGrey from "../../../../../img/svg/GreyCurrencies/Ethereum";
+import { Link } from "react-router-dom";
+import BidModal from "../../../../General/Modal/Bid/BidModal";
 
 const Display = (props) => {
+  const [showBidModal, setShowBidModal] = useState(false);
   const { sendRequest, status, data, error } = useHttp(
     getMainNewFeaturedItemData
   );
 
   useInit(sendRequest);
+
+  const bidHandle = () => setShowBidModal(true);
 
   return (
     <Wrapper>
@@ -27,6 +27,9 @@ const Display = (props) => {
         <div>loading</div>
       ) : (
         <>
+          {showBidModal && (
+            <BidModal itemData={data} onClose={() => setShowBidModal(false)} />
+          )}
           <Background>
             <img
               src="https://public.nftstatic.com/static/nft/zipped/316b937f6ce043ca885aef2908984df9_zipped.png"
@@ -35,21 +38,19 @@ const Display = (props) => {
           </Background>
           <Div>
             <FeaturedX>
-              <div className="image">
+              <a href={`item/${data.id}`} className="image">
                 <img src={data.general.src} alt="" />
-              </div>
+              </a>
               <InfoX>
                 <GeneralInfoX>
                   <div>
                     <UserProfileCardModified data={data} />
                   </div>
-                  <Link href="https://www.abv.bg">
-                    <h2>{data.general.name}</h2>
-                  </Link>
+                  <h2>{data.general.name}</h2>
                 </GeneralInfoX>
                 <BidDetailsX>
                   <div className="bid">
-                    <div className="annotation">Current bid</div>
+                    <div className="annotation">Heighest bid</div>
                     <div className="bid__value">
                       <EthGrey />
                       <div>{data.bids.active[0].amount}</div>
@@ -57,7 +58,7 @@ const Display = (props) => {
                     </div>
                   </div>
                   <div className="timer">
-                    <div className="annotation">Ending in</div>
+                    <div className="annotation">Auction ends in</div>
                     <Timer
                       style={{
                         padding: "0.8rem",
@@ -68,10 +69,10 @@ const Display = (props) => {
                     />
                   </div>
                 </BidDetailsX>
-                <ButtonsDiv>
-                  <ModifiedButton>Bid</ModifiedButton>
-                  <LinkHollowX href={`item/${data.id}`}>See more</LinkHollowX>
-                </ButtonsDiv>
+                <ButtonsContainerX>
+                  <ButtonRoundedX onClick={bidHandle}>Place Bid</ButtonRoundedX>
+                  <LinkHollowX to={`item/${data.id}`}>See More</LinkHollowX>
+                </ButtonsContainerX>
               </InfoX>
             </FeaturedX>
           </Div>
@@ -81,22 +82,28 @@ const Display = (props) => {
   );
 };
 
-const LinkHollowX = styled.a`
-  padding: 0.5rem 5rem;
+const LinkHollowX = styled(Link)`
+  padding: 0.2rem 0;
+  width: 18rem;
 
   background-color: var(--color-white);
   border: 1px solid var(--color-black);
   border-radius: 1.6rem;
   box-shadow: none;
 
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-family: var(--font-primary);
   font-weight: 500;
+  text-decoration: none;
   color: var(--anchorTag-color-link);
 
   cursor: pointer;
 
-  transition: all 0.4s ease;
+  transition: all 0.2s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &:hover {
     background-color: none;
@@ -105,14 +112,35 @@ const LinkHollowX = styled.a`
   }
 `;
 
-const ModifiedButton = styled(ButtonRounded)`
-  padding: 0.5rem 11rem;
+const ButtonRoundedX = styled.button`
+  width: 18rem;
+  height: 6rem;
+  padding: 0.4rem 0;
 
-  transition: all 0.2s ease;
+  border: 0;
+  border-radius: 1.6rem;
+  box-shadow: none;
+
+  background-color: var(--button-black);
+
+  font-size: 2rem;
+  font-family: var(--font-primary);
+  font-weight: 500;
+  color: var(--color-white);
+
+  cursor: pointer;
+
+  transition: all 0.1s ease;
 
   &:hover {
     transform: translateY(-1px);
   }
+`;
+
+const ButtonsContainerX = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  gap: 2rem;
 `;
 
 const Background = styled.div`
@@ -256,26 +284,7 @@ const InfoX = styled.div`
   }
 `;
 
-const ButtonsDiv = styled.div`
-  display: flex;
-  justify-content: flex-start;
-
-  button:first-of-type {
-    margin-right: 4rem;
-  }
-`;
-
 const UserProfileCardModified = styled(UserProfileCard)``;
-
-const Link = styled.a`
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    text-decoration: none;
-    color: inherit;
-  }
-`;
 
 const Wrapper = styled.section`
   position: relative;

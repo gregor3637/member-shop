@@ -21,6 +21,7 @@ export const UlX = styled.ul`
   flex-direction: column;
 
   color: var(--color-black);
+
 `;
 
 export const LiX = styled.li`
@@ -28,13 +29,16 @@ export const LiX = styled.li`
   height: 6rem;
   padding: 0 1.5rem;
   background-color: rgba(0, 0, 0, 0);
+  border-radius: 1rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid var(--color-border);
+    /* border-bottom: 1px solid var(--color-border); */
   }
 
   &:hover {
-    box-shadow: var(--boxShadow-dropdown);
+    /* box-shadow: var(--boxShadow-dropdown); */
+    background: var(--color-grey10);
+
   }
 `;
 

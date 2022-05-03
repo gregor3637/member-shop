@@ -13,7 +13,7 @@ const DropDown = (props) => {
       placement="bottom-start"
       offset={[0, props.offset]}
       // showOnInit={true}
-      // trigger="click"
+      trigger="click"
       hideOnClick
     >
       {props.children}
