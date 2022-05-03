@@ -1,7 +1,7 @@
 const StarSVG = () => {
   return (
     <svg
-      fill="none"
+      fill="currentColor"
       height="24"
       viewBox="0 0 24 24"
       width="24"

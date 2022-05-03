@@ -17,9 +17,9 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 import NewReleasesRoundedIcon from "@mui/icons-material/NewReleasesRounded";
 import AddCommentRoundedIcon from "@mui/icons-material/AddCommentRounded";
 import LightbulbCircleRoundedIcon from "@mui/icons-material/LightbulbCircleRounded";
-import ErrorOutlineOutlinedIcon from '@mui/icons-material/ErrorOutlineOutlined';
-import AssistantOutlinedIcon from '@mui/icons-material/AssistantOutlined';
-import AssignmentLateOutlinedIcon from '@mui/icons-material/AssignmentLateOutlined';
+import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
+import AssistantOutlinedIcon from "@mui/icons-material/AssistantOutlined";
+import AssignmentLateOutlinedIcon from "@mui/icons-material/AssignmentLateOutlined";
 
 const HeaderNav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -52,24 +52,24 @@ const HeaderNav = () => {
       {isLoggedIn && (
         <UserContainerX2>
           <Dropdown content={<Account />} offset={"18"}>
-            <NavLinkX to={"/accout"}>
+            <NavLinkUserX to={"/accout"}>
               <IconContainerX>
                 <AccountCircleOutlinedIcon />
               </IconContainerX>
-            </NavLinkX>
+            </NavLinkUserX>
           </Dropdown>
-          <NavLinkX to={"/accout"}>
+          <NavLinkUserX to={"/feed"}>
             <IconContainerX>
               <NotificationsNoneRoundedIcon />
               <span>{5}</span>
             </IconContainerX>
-          </NavLinkX>
-          <NavLinkX to={"/accout"}>
+          </NavLinkUserX>
+          <NavLinkUserX to={"/notifications"}>
             <IconContainerX>
               {/* <AssignmentLateOutlinedIcon /> */}
               <NewReleasesOutlinedIcon />
             </IconContainerX>
-          </NavLinkX>
+          </NavLinkUserX>
           <CreateButtonX>Create</CreateButtonX>
         </UserContainerX2>
       )}
@@ -119,8 +119,6 @@ const IconContainerX = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-
-  /* background: white; */
 
   svg {
     font-size: 3.5rem;
@@ -197,6 +195,25 @@ const UserContainerX = styled.div`
   color: white;
 `;
 
+const NavLinkUserX = styled(NavLink)`
+  position: relative;
+
+  /* background: var(--color-grey20); */
+  border-radius: 50%;
+  svg {
+    /* fill: var(--color-black);
+    background: var(--color-grey20); */
+  }
+
+  &.active {
+    background: var(--color-blue);
+    svg {
+      fill: var(--color-white);
+      background: var(--color-blue);
+    }
+  }
+`;
+
 const NavLinkX = styled(NavLink)`
   position: relative;
 
@@ -215,7 +232,7 @@ const NavLinkX = styled(NavLink)`
   &.active {
     &::after {
       content: "";
-      background-color: orange;
+      background: var(--color-blue);
       cursor: pointer;
       display: block;
       height: 2px;
@@ -235,6 +252,9 @@ const NavMenuX = styled.div`
     display: flex;
     gap: 1.6rem;
     list-style-type: none;
+
+    li {
+    }
   }
 `;
 

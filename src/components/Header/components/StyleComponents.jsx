@@ -38,7 +38,6 @@ export const LiX = styled.li`
   &:hover {
     /* box-shadow: var(--boxShadow-dropdown); */
     background: var(--color-grey10);
-
   }
 `;
 

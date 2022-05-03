@@ -9,53 +9,55 @@ import Instagram from "../../../../img/SocialNetworkIcons/Instagram";
 
 const Resources = (props) => {
   return (
-    <UlX>
-      <LiX>
-        <LinkX to="/helppp">
-          <span>HelpCenter</span>
-        </LinkX>
-      </LiX>
-      <LiX>
-        <LinkX to="/docs">
-          <span>Docs</span>
-        </LinkX>
-      </LiX>
-      <LiModifiedX>
-        <SocialContainerX>
-          <SocialLinkX
-            href={"https://www.youtube.com"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <YouTube />
-          </SocialLinkX>
+    <Wrapper>
+      <UlX>
+        <LiX>
+          <LinkX to="/helppp">
+            <span>HelpCenter</span>
+          </LinkX>
+        </LiX>
+        <LiX>
+          <LinkX to="/docs">
+            <span>Docs</span>
+          </LinkX>
+        </LiX>
+        <LiModifiedX>
+          <SocialContainerX>
+            <SocialLinkX
+              href={"https://www.youtube.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <YouTube />
+            </SocialLinkX>
 
-          <SocialLinkX
-            href={"https://www.twitter.com"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Twitter />
-          </SocialLinkX>
+            <SocialLinkX
+              href={"https://www.twitter.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Twitter />
+            </SocialLinkX>
 
-          <SocialLinkX
-            href={"https://www.instagram.com"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Instagram />
-          </SocialLinkX>
+            <SocialLinkX
+              href={"https://www.instagram.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Instagram />
+            </SocialLinkX>
 
-          <SocialLinkX
-            href={"https://www.discord.com"}
-            target="_blank"
-            rel="noreferrer"
-          >
-            <Discord />
-          </SocialLinkX>
-        </SocialContainerX>
-      </LiModifiedX>
-    </UlX>
+            <SocialLinkX
+              href={"https://www.discord.com"}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Discord />
+            </SocialLinkX>
+          </SocialContainerX>
+        </LiModifiedX>
+      </UlX>
+    </Wrapper>
   );
 };
 
@@ -81,7 +83,6 @@ const SocialContainerX = styled.div`
 
   color: red;
   fill: red;
-
 `;
 
 const ImgX = styled.img`
@@ -108,6 +109,10 @@ const LiModifiedX = styled(LiX)`
     /* box-shadow: var(--boxShadow-dropdown); */
     background: var(--color-none);
   }
+`;
+
+const Wrapper = styled.div`
+  padding: 1rem 1rem 0 1rem;
 `;
 
 export default Resources;

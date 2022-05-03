@@ -7,26 +7,28 @@ import GrainOutlinedIcon from "@mui/icons-material/GrainOutlined";
 
 const Marketplace = () => {
   return (
-    <UlX>
-      <LiX>
-        <LinkModifiedX to="/marketplace">
-          <GrainOutlinedIcon />
-          <span>Browse</span>
-        </LinkModifiedX>
-      </LiX>
-      <LiX>
-        <LinkModifiedX to="/trending">
-          <InsightsOutlinedIcon />
-          <span>Trending</span>
-        </LinkModifiedX>
-      </LiX>
-      <LiX>
-        <LinkModifiedX to="/collections">
-          <AutoAwesomeMotionOutlinedIcon />
-          <span>Collections</span>
-        </LinkModifiedX>
-      </LiX>
-    </UlX>
+    <Wrapper>
+      <UlX>
+        <LiX>
+          <LinkModifiedX to="/marketplace">
+            <GrainOutlinedIcon />
+            <span>Browse</span>
+          </LinkModifiedX>
+        </LiX>
+        <LiX>
+          <LinkModifiedX to="/trending">
+            <InsightsOutlinedIcon />
+            <span>Trending</span>
+          </LinkModifiedX>
+        </LiX>
+        <LiX>
+          <LinkModifiedX to="/collections">
+            <AutoAwesomeMotionOutlinedIcon />
+            <span>Collections</span>
+          </LinkModifiedX>
+        </LiX>
+      </UlX>
+    </Wrapper>
   );
 };
 
@@ -44,9 +46,13 @@ const LinkModifiedX = styled(LinkX)`
   svg {
     /* color: var(--color-grey50); */
     transform: scale(1.6);
-    margin: 0 .6rem;
+    margin: 0 0.6rem;
     margin-right: 1.6rem;
   }
+`;
+
+const Wrapper = styled.div`
+  margin: 1rem;
 `;
 
 export default Marketplace;

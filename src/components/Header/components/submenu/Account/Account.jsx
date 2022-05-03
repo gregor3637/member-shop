@@ -2,8 +2,21 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import IMG from "../../../../../img/header/navigation/allnfts-light.svg";
-import { LinkX, UlX, LiX, ImgX } from "../../StyleComponents";
+import { LinkX, UlX, ImgX } from "../../StyleComponents";
+
 import WalletData from "./WalletData/WalletData";
+import SettingsIcon from "@mui/icons-material/Settings";
+import PersonIcon from "@mui/icons-material/Person";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import StarSVG from "../../../../../img/svg/StarSVG";
+import PlaylistAddCheckOutlinedIcon from "@mui/icons-material/PlaylistAddCheckOutlined";
+import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlined";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import StarHalfOutlinedIcon from "@mui/icons-material/StarHalfOutlined";
+import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import Switch from "../../../../General/Buttons/Switch/Switch";
 
 const Account = (props) => {
   const [nightMode, setNightMode] = useState(false);
@@ -16,38 +29,42 @@ const Account = (props) => {
     <Wrapper>
       <WalletData />
       <MenuX>
-        <UlX>
-          <LiX>
+        <ul>
+          <li>
             <LinkX to="/profile">
-              <ImgX src={IMG} alt="" />
+              <PermIdentityOutlinedIcon />
               <span>Profile</span>
             </LinkX>
-          </LiX>
-          <LiX>
-            <LinkX to="/favorites">
-              <ImgX src={IMG} alt="" />
+          </li>
+          <li>
+            <LinkX to="/favorites" className="favorites">
+              <StarSVG />
+              {/* <StarHalfOutlinedIcon /> */}
               <span>Favorites</span>
             </LinkX>
-          </LiX>
-          <LiX>
+          </li>
+          <li>
             <LinkX to="/collections">
-              <ImgX src={IMG} alt="" />
+              <PlaylistAddCheckOutlinedIcon />
               <span>My Collections</span>
             </LinkX>
-          </LiX>
-          <LiX>
+          </li>
+          <li>
             <LinkX to="/settings">
-              <ImgX src={IMG} alt="" />
+              <SettingsOutlinedIcon />
               <span>Settings</span>
             </LinkX>
-          </LiX>
-          <li>
-            <SwitchButtonX onClick={toggleThemeHandle}>
-              <ImgX src={IMG} alt="" />
-              <span>{nightMode ? "Night Mode" : "Light Mode"}</span>
+          </li>
+          <li onClick={toggleThemeHandle}>
+            <SwitchButtonX>
+              <span>
+                <DarkModeOutlinedIcon />
+                <span>Night Mode</span>
+              </span>
+              <Switch isChecked={nightMode} />
             </SwitchButtonX>
           </li>
-        </UlX>
+        </ul>
       </MenuX>
     </Wrapper>
   );
@@ -56,10 +73,9 @@ const Account = (props) => {
 const SwitchButtonX = styled.div`
   height: 6rem;
   width: 100%;
-  padding: 0 1.5rem;
 
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 
   cursor: pointer;
@@ -67,8 +83,8 @@ const SwitchButtonX = styled.div`
   font-size: var(--fontSize-dropdown);
   user-select: none;
 
-  &:hover {
-    box-shadow: var(--boxShadow-dropdown);
+  & > span {
+    display: flex;
   }
 `;
 
@@ -79,8 +95,51 @@ const MenuX = styled.div`
 const Wrapper = styled.div`
   padding: 1rem 1rem;
 
+  .favorites {
+    svg {
+      fill: var(--color-none);
+      /* color: var(--color-none); */
+      stroke: var(--color-black);
+      stroke-width: 2;
+    }
+  }
+
+  ul {
+    color: var(--color-black);
+  }
+
   li {
     list-style-type: none;
+    width: 100%;
+    height: 6rem;
+    padding: 0 1.5rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 1rem;
+
+    span {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    svg {
+      /* color: var(--color-grey50); */
+      /* transform: scale(1.6); */
+      width: max-content;
+      margin-right: 1rem;
+      width: 24px;
+      height: 24px;
+
+      background: var(--color-none);
+    }
+
+    &:not(:last-child) {
+      /* border-bottom: 1px solid var(--color-border); */
+    }
+
+    &:hover {
+      /* box-shadow: var(--boxShadow-dropdown); */
+      background: var(--color-grey10);
+    }
   }
 `;
 

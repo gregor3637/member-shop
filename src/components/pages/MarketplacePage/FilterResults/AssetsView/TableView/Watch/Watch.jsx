@@ -64,10 +64,12 @@ const Wrapper = styled.div`
   font-size: 1.4rem;
   cursor: pointer;
 
+
   svg {
     margin-right: 0.5rem;
     transform: scale(0.8);
     stroke: var(--color-border);
+    color: var(--color-none);
   }
 
   &:hover {
