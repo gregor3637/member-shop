@@ -14,7 +14,7 @@ const MarketplacePage = React.lazy(() =>
 
 const Main = (props) => {
   return (
-    <Styled>
+    <Wrapper>
       <Suspense fallback={<p>loading...</p>}>
         <Switch>
           <Route path="/" exact>
@@ -46,11 +46,11 @@ const Main = (props) => {
           </Route>
         </Switch>
       </Suspense>
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.main`
+const Wrapper = styled.main`
   background-color: white;
   flex: 1;
   flex-grow: 1;

@@ -85,6 +85,7 @@ const AuctionItemContainerX = styled.div`
   /* padding: 0 5px; */
   height: 10rem;
   overflow: hidden;
+  cursor: pointer;
 `;
 
 const ImageContainerX = styled.div`

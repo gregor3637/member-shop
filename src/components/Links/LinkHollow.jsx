@@ -3,13 +3,13 @@ import styled from "styled-components";
 
 const LinkHollow = (props) => {
   return (
-    <LinkHollowStyled style={props.style} className={props.className}>
+    <Wrapper style={props.style} className={props.className} >
       {props.children}
-    </LinkHollowStyled>
+    </Wrapper>
   );
 };
 
-const LinkHollowStyled = styled.a`
+const Wrapper = styled.a`
   background-color: none;
   border-radius: 1rem;
 

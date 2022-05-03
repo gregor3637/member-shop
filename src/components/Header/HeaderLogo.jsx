@@ -16,7 +16,6 @@ const HeaderLogo = (props) => {
 const LinkX = styled(Link)`
   display: flex;
   align-items: center;
-  padding-right: 15rem;
 
   font-size: 3rem;
   font-weight: 600;

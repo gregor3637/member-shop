@@ -7,35 +7,44 @@ import HeaderSearch from "./HeaderSearch";
 
 const Header = () => {
   return (
-    <Styled>
+    <Wrapper>
       <div>
-        <HeaderLogo />
-        <HeaderSearch />
-        <HeaderNav />
+        <InnerWrapperX>
+          <HeaderLogo />
+          <HeaderSearch />
+          <HeaderNav />
+        </InnerWrapperX>
       </div>
-    </Styled>
+    </Wrapper>
   );
 };
 
-const Styled = styled.header`
-  /* opacity: 0.1; */
+const InnerWrapperX = styled.div`
+
+  max-width: 1440px;
+  margin: 0 auto;
+  height: 8rem;
+  top: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+`;
+
+const Wrapper = styled.header`
   flex: 0 0 8rem;
   width: 100%;
 
-  z-index: 999;
-
   & > div {
     width: 100%;
-    height: 8rem;
-    top: 0;
-    padding: 0 2rem;
     position: fixed;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    padding: 0 2rem;
 
-    background-color: #fff;
+    background-color: var(--color-white);
     border-bottom: var(--line);
+
+    z-index: 999;
   }
 `;
 

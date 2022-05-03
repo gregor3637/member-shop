@@ -6,22 +6,23 @@ import useHomePageContext from "../../../../../../hooks/HomePage/useHomePageCont
 import SelectedIten from "../SelectedIten/SelectedIten";
 import AuctionsGrid from "../AuctionsGrid/AuctionsGrid";
 import sortAssetItemByHeighestFirstBid from "../../../../../../helpers/SortAssetItemByHeighestFirstBid";
+import useInit from "../../../../../../hooks/useInit";
 
 let isFirstTine = true;
 
-const Body = (props) => {
+const Body = () => {
   const {
-    state: { categoryType,  categoryTimeHorizon },
+    state: { categoryType, categoryTimeHorizon },
   } = useHomePageContext();
   const [downloadedItems, setDownloadedItems] = useState(dbItemsDataMockaroo);
   const [showcaseItem, setShowcaseItem] = useState(null);
   const [topAuctions, setTopAuctions] = useState([]);
 
-  useEffect(() => {
+  useInit(() => {
     setDownloadedItems(dbItemsDataMockaroo);
     setShowcaseItem(dbItemsDataMockaroo?.[0]);
     setTopAuctions(dbItemsDataMockaroo);
-  }, []);
+  });
 
   useEffect(() => {
     if (!isFirstTine) {
@@ -40,18 +41,20 @@ const Body = (props) => {
     isFirstTine = false;
   }, [categoryType.selected, categoryTimeHorizon.selected, downloadedItems]);
 
-  let body = <AbsentDataContainerX>No Items correspond to selected filters</AbsentDataContainerX>;
-
-  if (topAuctions?.length > 0) {
-    body = (
-      <>
-        <SelectedIten showcaseItemData={showcaseItem} />
-        <AuctionsGrid setSelected={setShowcaseItem} itemsData={topAuctions} />
-      </>
-    );
-  }
-
-  return <Wrapper>{body}</Wrapper>;
+  return (
+    <Wrapper>
+      {topAuctions?.length === 0 ? (
+        <AbsentDataContainerX>
+          No Items correspond to selected filters
+        </AbsentDataContainerX>
+      ) : (
+        <>
+          <SelectedIten showcaseItemData={showcaseItem} />
+          <AuctionsGrid setSelected={setShowcaseItem} itemsData={topAuctions} />
+        </>
+      )}
+    </Wrapper>
+  );
 };
 
 const AbsentDataContainerX = styled.div`

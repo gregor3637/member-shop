@@ -11,7 +11,7 @@ const DropDown = (props) => {
       interactive={true}
       appendTo="parent"
       placement="bottom-start"
-      offset={[0, 0]}
+      offset={[0, props.offset]}
       // showOnInit={true}
       // trigger="click"
       hideOnClick

@@ -5,7 +5,7 @@ const ButtonRoundedStyled = styled.button`
   padding: 0.5rem 6rem;
 
   border: 0;
-  border-radius: 1rem;
+  border-radius: 1.6rem;
   box-shadow: none;
 
   background-color: var(--button-black);

@@ -2,6 +2,7 @@ import trendingData from "../data/dbTrendingDataMock";
 import assetCardsData from "../data/dbDataMock";
 import collectionsDummy from "./Collections";
 import collectionsMockaroo from "../data/dbCollectionsDataMockaroo";
+import dbItemsDataMockaroo from "../data/dbItemsDataMockaroo";
 
 export async function getPageItems(page, itemsPerPage) {
   // const response = await fetch(`${FIREBASE_DOMAIN}/comments/${quoteId}.json`);
@@ -300,4 +301,10 @@ export async function getTopCollections() {
 
   const collections = collectionsMockaroo;
   return collections;
+}
+
+export async function getMainNewFeaturedItemData() {
+  await new Promise((res) => setTimeout(res, 500));
+
+  return dbItemsDataMockaroo[0];
 }

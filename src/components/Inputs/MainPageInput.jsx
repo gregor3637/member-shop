@@ -1,14 +1,18 @@
 import React from "react";
 import styled from "styled-components";
 
-const MainPageInputStyled = styled.input`
+const MainPageInput = (props) => {
+  return <MainPageInputX {...props} />;
+};
+
+const MainPageInputX = styled.input`
   height: 65%;
-  padding: 1rem 1rem;
+  padding: 1rem 1.4rem;
 
   flex: 1;
 
-  border: 1px solid var(--border-color);
-  border-radius: 1rem;
+  border: 1px solid var(--color-grey20);
+  border-radius: 9999px;
 
   font-family: inherit;
   font-size: 1.6rem;
@@ -17,12 +21,9 @@ const MainPageInputStyled = styled.input`
   transition: all 0.2s;
 
   &:focus {
-    border-color: var(--color-black);
+    border-color: var(--color-grey50);
+
+    outline: none;
   }
 `;
-
-const MainPageInput = (props) => {
-  return <MainPageInputStyled {...props} />;
-};
-
 export default MainPageInput;

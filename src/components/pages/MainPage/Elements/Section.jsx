@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const SectionStyled = styled.section`
+const Wrapper = styled.section`
   padding: 0 8rem var(--margin-section-bottom) 8rem;
+  padding: 0 2rem var(--margin-section-bottom) 2rem;
 `;
 
 const ContainerStyled = styled.div`
@@ -12,9 +13,9 @@ const ContainerStyled = styled.div`
 
 const Section = (props) => {
   return (
-    <SectionStyled>
+    <Wrapper>
       <ContainerStyled>{props.children}</ContainerStyled>
-    </SectionStyled>
+    </Wrapper>
   );
 };
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
-import MainPageInputStyled from "../Inputs/MainPageInput";
+import MainPageInput from "../Inputs/MainPageInput";
 
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
 import CancelOutlinedIcon from "@material-ui/icons/CancelOutlined";
@@ -30,12 +30,12 @@ const HeaderSearch = (props) => {
   let closeIcon = <CancelOutlinedIcon />;
 
   return (
-    <HeaderSearchStyled className={"search "}>
+    <HeaderSearchX className={"search "}>
       <ContainerX>
         <SearchDivX>
           <SearchOutlinedIcon />
         </SearchDivX>
-        <MainPageInputStyled
+        <MainPageInput
           style={{ paddingLeft: "4rem", paddingRight: "3rem" }}
           type="text"
           placeholder="Search items, collections and accounts"
@@ -48,13 +48,13 @@ const HeaderSearch = (props) => {
           <ButtonClear onClick={onClearInputHandler}>{closeIcon}</ButtonClear>
         )}
       </ContainerX>
-    </HeaderSearchStyled>
+    </HeaderSearchX>
   );
 };
 
 const ContainerX = styled.div`
   position: relative;
-  max-width: 700px;
+  /* max-width: 700px; */
   flex: 1;
 
   overflow: hidden;
@@ -90,7 +90,7 @@ const ButtonClear = styled.button`
   }
 `;
 
-const HeaderSearchStyled = styled.div`
+const HeaderSearchX = styled.div`
   width: 100%;
   height: 100%;
 

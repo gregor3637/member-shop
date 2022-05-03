@@ -25,7 +25,7 @@ const TabBids = ({ bids }) => {
   return (
     <Wrapper>
       <SortingContainerX>
-        <SortBy2
+        <SortBy2X
           options={Object.keys(sortMethods)}
           selectedOption={selectedOption}
           onOptionSelect={(val) => setSelectedOption(val)}
@@ -42,6 +42,12 @@ const TabBids = ({ bids }) => {
     </Wrapper>
   );
 };
+
+const SortBy2X = styled(SortBy2)`
+  border: 1px solid var(--color-grey20);
+  border-radius: 1rem;
+`;
+
 
 const ItemBidXOverride = styled(ItemBid)`
   border-bottom: 1px solid var(--color-grey20);

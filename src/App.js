@@ -14,28 +14,6 @@ function App() {
     <WrapperX>
       <Header />
       <Main />
-
-      {/* <ContainerX>
-        <HeaderX>header</HeaderX>
-        <OuterX>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-          <div>x</div>
-        </OuterX>
-        <FooterX>footer</FooterX>
-      </ContainerX> */}
     </WrapperX>
   );
 }
