@@ -1,12 +1,12 @@
 import React from "react";
 
-import reducer from "./HomePageReducer";
+import reducer from "./TrendingPageReducer";
 
-const HomePageContext = React.createContext({
+const TrendingPageContext = React.createContext({
   state: reducer.initialState,
 });
 
-export const HomePageContextProvider = ({ children }) => {
+export const TrendingPageContextProvider = ({ children }) => {
   const [state, dispatch] = React.useReducer(
     reducer.reducer,
     reducer.initialState
@@ -14,13 +14,12 @@ export const HomePageContextProvider = ({ children }) => {
   // NOTE: you *might* need to memoize this value
   // Learn more in http://kcd.im/optimize-context
 
-  console.log('ho reducer ', reducer);
   const value = { state, dispatch };
   return (
-    <HomePageContext.Provider value={value}>
+    <TrendingPageContext.Provider value={value}>
       {children}
-    </HomePageContext.Provider>
+    </TrendingPageContext.Provider>
   );
 };
 
-export default HomePageContext;
+export default TrendingPageContext;

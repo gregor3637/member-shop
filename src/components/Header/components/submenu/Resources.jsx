@@ -62,7 +62,6 @@ const Resources = (props) => {
 };
 
 const SocialLinkX = styled.a`
-  /* background: var(--test-r); */
   height: 2rem;
   color: var(--color-grey40);
 

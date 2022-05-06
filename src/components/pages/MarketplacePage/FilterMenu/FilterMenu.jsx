@@ -27,6 +27,8 @@ const FilterMenu = () => {
   const history = useHistory();
   const location = useLocation();
 
+  console.log(" FilterMenu dispatch ", dispatch);
+
   useOnComponentMount(() => {
     let derivedState = deriveStateFromUrlSearchParams(location.search);
     dispatch({ type: "urlDerivedState", value: derivedState });

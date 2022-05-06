@@ -34,7 +34,7 @@ const SortBy2 = ({
   };
 
   return (
-    <WrapperX className={version}>
+    <WrapperX className={`${isShown ? "open" : ""} ${version}`}>
       <LabelContainerX onClick={dropdownClickHandle} ref={outsideRef}>
         {icon && <IconWrapperX>{icon}</IconWrapperX>}
         <span>{selectedOption ? selectedOption : "Sort By"}</span>
@@ -86,13 +86,13 @@ const IconWrapperX = styled.div`
 `;
 
 const LabelContainerX = styled.span`
+  flex: 1;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  height: 3.6rem;
   padding: 0 1.6rem;
-
 
   font-size: 1.4rem;
   font-weight: 400;
@@ -108,10 +108,16 @@ const LabelContainerX = styled.span`
 
 const WrapperX = styled.div`
   z-index: 990;
-  /* background: var(--color-white); */
   position: relative;
   width: max-content;
   width: 100%;
+
+  display: flex;
+  /* justify-content: space-between; */
+
+  &.open {
+    z-index: 992;
+  }
 `;
 
 export default SortBy2;

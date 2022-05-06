@@ -23,6 +23,12 @@ function App() {
 
 const ScrollbarX = styled(SimpleBar)`
   height: 100%;
+  width: 100%;
+
+  .simplebar-content {
+    height: 100%;
+    width: 100%;
+  }
 `;
 
 const WrapperX = styled.div`

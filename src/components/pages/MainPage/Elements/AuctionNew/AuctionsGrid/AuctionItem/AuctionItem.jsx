@@ -9,8 +9,6 @@ const AuctionItem = ({ num }) => {
   );
 };
 
-const Wrapper = styled.div`
-  background-color: var(--test-t);
-`;
+const Wrapper = styled.div``;
 
 export default AuctionItem;

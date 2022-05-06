@@ -60,10 +60,10 @@ const PercentageIncreaseX = styled.div`
   align-self: end;
 
   &.alert {
-    color: red;
+    color: var(--color-red-bright);
   }
   &.success {
-    color: #008300;
+    color: var(--color-green);
   }
 `;
 
@@ -138,7 +138,6 @@ const PositionX = styled.div`
 `;
 
 const Wrapper = styled.div`
-  /* background-color: var(--test-r); */
   padding: 1rem 0;
 
   display: flex;

@@ -1,29 +1,25 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { useExpanded, useFlexLayout, useSortBy, useTable } from "react-table";
 
-import columnsData from "./columns";
-import metamorphoseToTableData from "./columnData";
-import useMarketPreferenceContext from "../../../../../../hooks/Market/PreferenceContext/useMarketPreferenceContext";
-import SubRowAsync from "./LazySubComponents/SubRowAsync/SubRowAsync";
-import useLocalStorage from "../../../../../../hooks/useLocalStorage";
+import useHttp from "../../../../hooks/useHttp";
+import { getCollections } from "../../../../lib/api_Trending";
+import trendingColumns from "./TrendingColumns";
+import collections from "../../../../data/dbTrendingPageCollectionsData";
 
-const TableView = ({ data }) => {
-  // eslint-disable-next-line
-  const [favorites, setFavorites] = useLocalStorage("favorites", []);
-  const { dispatch } = useMarketPreferenceContext();
-  const columns = useMemo(() => columnsData(), []);
-  data = useMemo(() => metamorphoseToTableData(data), [data]);
+const Table = ({}) => {
+  const columns = useMemo(() => trendingColumns(), []);
+  let data = useMemo(() => collections, []);
 
-  const defaultColumn = React.useMemo(
-    () => ({
-      // When using the useFlexLayout:
-      minWidth: 30, // minWidth is only used as a limit for resizing
-      width: 70, // width is used for both the flex-basis and flex-grow
-      maxWidth: 150, // maxWidth is only used as a limit for resizing
-    }),
-    []
-  );
+  // const defaultColumn = React.useMemo(
+  //   () => ({
+  //     // When using the useFlexLayout:
+  //     minWidth: 50, // minWidth is only used as a limit for resizing
+  //     width: 200, // width is used for both the flex-basis and flex-grow
+  //     maxWidth: 250, // maxWidth is only used as a limit for resizing
+  //   }),
+  //   []
+  // );
 
   const {
     getTableProps,
@@ -37,27 +33,12 @@ const TableView = ({ data }) => {
     {
       columns,
       data,
-      defaultColumn,
+      // defaultColumn,
     },
     useSortBy,
     useExpanded,
     useFlexLayout
   );
-
-  const renderRowSubComponent = React.useCallback(
-    ({ row, rowProps, visibleColumns }) => (
-      <SubRowAsync
-        row={row}
-        rowProps={rowProps}
-        visibleColumns={visibleColumns}
-      />
-    ),
-    []
-  );
-
-  useEffect(() => {
-    dispatch({ type: "tableColumns", value: allColumns });
-  }, [allColumns, dispatch]);
 
   return (
     <Wrapper>
@@ -101,9 +82,6 @@ const TableView = ({ data }) => {
                     );
                   })}
                 </tr>
-                {/* We could pass anything into this */}
-                {row.isExpanded &&
-                  renderRowSubComponent({ row, rowProps, visibleColumns })}
               </React.Fragment>
             );
           })}
@@ -114,9 +92,11 @@ const TableView = ({ data }) => {
 };
 
 const Wrapper = styled.div`
-  overflow-x: auto;
+  background-color: var(--test-r);
 
   table {
+    background: var(--test-y);
+
     font-family: Arial, Helvetica, sans-serif;
     border-collapse: collapse;
     width: 100%;
@@ -125,64 +105,43 @@ const Wrapper = styled.div`
     border: 0;
   }
 
-  table th,
-  table td {
-    padding: 1rem 0.5rem;
-  }
-
-  table td {
-    border-top: 1px solid #ddd;
-  }
-
   table td {
     display: flex;
     align-items: center;
     justify-content: start;
   }
 
-  table tr:nth-child(even) {
-    /* background-color: #f2f2f2; */
-  }
+  /* .trending-th-id,
+  .trending-td-id {
+    background: var(--test-r);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  } */
 
-  table tr:hover {
-    /* background-color: #ddd; */
-  }
+  /* .trending-td-collections,
+  .trending-th-collections {
+      background: var(--test-g);
+      width: max-content;
+      flex-basis: max-content;
+  } */
+  /* 
+  table th,
+  table td {
+    text-align: right;
+    height: 5rem;
+    border-bottom: 1px solid var(--color-grey40);
+  } */
 
   table th,
-  tfoot td {
-    padding: 1.6rem 0.5rem;
+  table td {
+    height: 5rem;
     text-align: left;
     background-color: var(--color-white);
     color: var(--color-black);
-  }
-
-  .bundle-column {
-    text-align: center;
-    justify-content: center;
-  }
-  .image-column {
-  }
-
-  .watch-column {
-  }
-
-  .bundle-item {
-    background-color: #ececec;
-  }
-
-  .auction-column {
-  }
-
-  .more-column {
-    display: flex;
-    align-items: center;
-    justify-content: left;
-    padding: 0 20px;
-  }
-
-  .name-column {
-    word-break: break-word;
+    border-bottom: 1px solid var(--color-grey40);
   }
 `;
 
-export default TableView;
+export default Table;

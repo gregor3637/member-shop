@@ -81,6 +81,7 @@ const columns = (tableData) => {
     {
       Header: "Auction",
       accessor: "auction",
+      className: "auction-column",
       canHideColumn: true,
       // Cell: ({ value }) => {
       //   return format(new Date(value), "dd/MM/yyyy");

@@ -52,6 +52,7 @@ const Wrapper = styled.div`
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: capitalize;
+    width: max-content;
   }
 
   /* HIDE RADIO */
@@ -84,7 +85,6 @@ const Wrapper = styled.div`
     color: var(--color-grey50);
   }
 
-  /* background: var(--test-r); */
   height: 3.6rem;
 `;
 

@@ -7,6 +7,7 @@ import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import ItemPage2 from "./pages/ItemPage/ItemPage2";
+import TrendingPage from "./pages/TrendingPage/TrendingPage";
 
 const MarketplacePage = React.lazy(() =>
   import("./pages/MarketplacePage/MarketplacePage")
@@ -14,8 +15,8 @@ const MarketplacePage = React.lazy(() =>
 
 const Main = (props) => {
   return (
-    <Wrapper>
-      <Suspense fallback={<p>loading...</p>}>
+    <Suspense fallback={<p>loading...</p>}>
+      <Wrapper>
         <Switch>
           <Route path="/" exact>
             <MainPage />
@@ -37,6 +38,10 @@ const Main = (props) => {
             <RequestsPage />
           </Route>
 
+          <Route path="/trending/">
+            <TrendingPage />
+          </Route>
+
           <Route path="/marketplace">
             <MarketplacePage />
           </Route>
@@ -45,8 +50,8 @@ const Main = (props) => {
             <NotFoundPage />
           </Route>
         </Switch>
-      </Suspense>
-    </Wrapper>
+      </Wrapper>
+    </Suspense>
   );
 };
 

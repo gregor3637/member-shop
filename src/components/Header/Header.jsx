@@ -20,7 +20,6 @@ const Header = () => {
 };
 
 const InnerWrapperX = styled.div`
-
   max-width: 1440px;
   margin: 0 auto;
   height: 8rem;
@@ -33,6 +32,7 @@ const InnerWrapperX = styled.div`
 `;
 
 const Wrapper = styled.header`
+  /* opacity: 0.1; */
   flex: 0 0 8rem;
   width: 100%;
 

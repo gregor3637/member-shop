@@ -7,8 +7,8 @@
 // };
 
 const dummyState = {
-  // displayType: "Table",
-  displayType: "Card",
+  displayType: "Table",
+  // displayType: "Card",
   searchQuery: "",
   sortingOption: "",
   tableColumns: [],
