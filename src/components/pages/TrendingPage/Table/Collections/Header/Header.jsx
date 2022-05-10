@@ -114,8 +114,8 @@ const Wrapper = styled.div`
   border-bottom: 1px solid var(--color-grey40);
 
   @media (max-width: 1350px) {
-    /* display: none; */
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden; */
   }
 
   .sortable {

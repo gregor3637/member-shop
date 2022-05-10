@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 import Timer from "../../../../../General/Timer/Timer";
 
 const ShowCaseAction = ({ showcaseItemData }) => {

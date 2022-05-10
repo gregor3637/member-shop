@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ellipsysMiddleText } from "../../../../../../../helpers/EllipsysMiddleText";
 
 const OfferBalance = ({ balance }) => {
   return (

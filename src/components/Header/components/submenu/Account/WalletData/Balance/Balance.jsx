@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ellipsysMiddleText } from "../../../../../../../helpers/EllipsysMiddleText";
+import { printifyWalletAddress } from "../../../../../../../helpers/PrintifyWalletAddress";
 
 const Balance = ({balance, address}) => {
 
@@ -9,7 +9,7 @@ const Balance = ({balance, address}) => {
       <TopX>
         <TopLeftX>Balance</TopLeftX>
         <TopRightX>
-          <span>{ellipsysMiddleText(address)}</span>
+          <span>{printifyWalletAddress(address)}</span>
           <div></div>
         </TopRightX>
       </TopX>

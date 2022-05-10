@@ -1,5 +1,7 @@
-import React, { useMemo } from "react";
+import React from "react";
 import styled from "styled-components";
+import { printifyWalletAddress } from "../../../../../helpers/PrintifyWalletAddress";
+
 import useToggle from "../../../../../hooks/useToggle";
 import CurrencyIcon from "../../../../General/AssetCard/AssetCardInfo/CurrencyView/CurrencyIcon";
 
@@ -7,13 +9,12 @@ const Column = ({
   className: version,
   id,
   name,
+  walletAddress,
   avatar,
+  creatorsSupported,
+  boughtNFTs,
   currency,
-  volume,
-  percentageChange,
-  floorPrice,
-  owners,
-  items,
+  totalSpent,
 }) => {
   const [isMoreInfoShown, toggleMoreInfoShown] = useToggle(false);
 
@@ -23,28 +24,25 @@ const Column = ({
     <Wrapper className={version}>
       <AboveWidthX>
         <InfoX>
-          <CollectionX className="y-centered">
+          <CreatorX className="y-centered">
             <div>{id}</div>
             <div>
               <img src={avatar} alt="" />
             </div>
-            <div>{name}</div>
-          </CollectionX>
-          <VolumeX className="y-centered">
-            {currencyIcon} {volume}
-          </VolumeX>
-          <PercentageChange
-            className={`${
-              percentageChange < 0 ? "alert" : "success"
-            } disposable y-centered`}
-          >
-            {percentageChange} %
-          </PercentageChange>
-          <FloorPriceX className="disposable y-centered">
-            {currencyIcon} {floorPrice}
-          </FloorPriceX>
-          <OwnersX className="disposable y-centered">{owners}</OwnersX>
-          <ItemsX className="disposable y-centered">{items}</ItemsX>
+            <div>
+              {name !== "" ? name : printifyWalletAddress(walletAddress)}
+            </div>
+          </CreatorX>
+          <CreatorsSupportedX className="disposable y-centered">
+            {creatorsSupported}
+          </CreatorsSupportedX>
+          <BoughtNFTs className="disposable y-centered">
+            {boughtNFTs}
+          </BoughtNFTs>
+          <TotalSpentX className="y-centered">
+            {currencyIcon}
+            {totalSpent}
+          </TotalSpentX>
         </InfoX>
         <InfoButtonX onClick={toggleMoreInfoShown}>
           <div>Info</div>
@@ -52,30 +50,18 @@ const Column = ({
       </AboveWidthX>
       {isMoreInfoShown && (
         <InfoContainerX>
-          <PercentageChange>
+          <CreatorsSupportedX>
             <div>
-              <p>Change %</p>
-              <p>{percentageChange} %</p>
+              <p>Creators Supported</p>
+              <p>{creatorsSupported} %</p>
             </div>
-          </PercentageChange>
-          <FloorPriceX>
+          </CreatorsSupportedX>
+          <BoughtNFTs>
             <div>
-              <p>Floor Price</p>
-              <p>{percentageChange} %</p>
+              <p>NFTs bought</p>
+              <p>{boughtNFTs}</p>
             </div>
-          </FloorPriceX>
-          <OwnersX>
-            <div>
-              <p>Owners</p>
-              <p>{owners}</p>
-            </div>
-          </OwnersX>
-          <ItemsX>
-            <div>
-              <p>Items</p>
-              <p>{items}</p>
-            </div>
-          </ItemsX>
+          </BoughtNFTs>
         </InfoContainerX>
       )}
     </Wrapper>
@@ -132,22 +118,22 @@ const InfoButtonX = styled.button`
   }
 `;
 
-const ItemsX = styled.div`
+const BoughtNFTs = styled.div`
   flex: 0 0 15rem;
 
   display: flex;
   justify-content: flex-end;
 `;
 
-const OwnersX = styled.div`
+const TotalSpentX = styled.div`
   flex: 0 0 15rem;
 
   display: flex;
   justify-content: flex-end;
 `;
 
-const FloorPriceX = styled.div`
-  flex: 0 0 15rem;
+const CreatorsSupportedX = styled.div`
+  flex: 0 0 20rem;
 
   display: flex;
   justify-content: flex-end;
@@ -174,7 +160,7 @@ const VolumeX = styled.div`
   justify-content: flex-end;
 `;
 
-const CollectionX = styled.div`
+const CreatorX = styled.div`
   flex: 0 0 40rem;
 
   gap: 1rem;
@@ -190,6 +176,10 @@ const CollectionX = styled.div`
 
     display: flex;
     border-radius: 50%;
+  }
+
+  @media (max-width: 700px) {
+    flex-basis: 20rem;
   }
 `;
 

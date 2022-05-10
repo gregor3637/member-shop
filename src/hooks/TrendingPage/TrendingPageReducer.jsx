@@ -14,8 +14,8 @@ const initialState = {
     selected:"all blockchains",
   },
   type: {
-    options: ["collection", "creators", "collectors", "auctions"],
-    selected: "collection",
+    options: ["collections", "creators", "collectors", "auctions"],
+    selected: "collections",
   },
 };
 

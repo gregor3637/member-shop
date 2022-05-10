@@ -186,11 +186,14 @@ const NavLinkX = styled(NavLink)`
       background: var(--color-blue);
       cursor: pointer;
       display: block;
-      height: 2px;
+      height: 4px;
       left: 0px;
       bottom: 0px;
       position: absolute;
       width: 100%;
+
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
     }
   }
 `;

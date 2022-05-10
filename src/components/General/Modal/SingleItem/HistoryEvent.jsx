@@ -6,7 +6,7 @@ import FAIcon from "../../FAIcon/FAIcon";
 import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 
-import { ellipsysMiddleText } from "../../../../helpers/EllipsysMiddleText";
+import { printifyWalletAddress } from "../../../../helpers/PrintifyWalletAddress";
 import { capitalizeFirstLetter } from "../../../../helpers/CapitalizeFirstLetter";
 
 const HistoryEvent = ({ data, onClose }) => {
@@ -32,7 +32,7 @@ const HistoryEvent = ({ data, onClose }) => {
                 <ImgWrapperX>
                   <img src={data.from.src} alt="avatar" />
                 </ImgWrapperX>
-                <span>{ellipsysMiddleText(data.from.address)}</span>
+                <span>{printifyWalletAddress(data.from.address)}</span>
               </AccountX>
             )) ||
               "null"}
@@ -45,7 +45,7 @@ const HistoryEvent = ({ data, onClose }) => {
               <ImgWrapperX>
                 <img src={data.to.src} alt="avatar" />
               </ImgWrapperX>
-              <span>{ellipsysMiddleText(data.to.address)}</span>
+              <span>{printifyWalletAddress(data.to.address)}</span>
             </AccountX>
           </div>
         </TransactionX>

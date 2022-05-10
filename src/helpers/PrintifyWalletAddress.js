@@ -1,4 +1,4 @@
-export const ellipsysMiddleText = (
+export const printifyWalletAddress = (
   str,
   ellipsisAboveCount = 10,
   startingChars = 6,

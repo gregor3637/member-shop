@@ -1,22 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 import { TrendingPageContextProvider } from "../../../hooks/TrendingPage/TrendingPageContext";
-import useHttp2 from "../../../hooks/useHttp2";
-import useInit from "../../../hooks/useInit";
-import { getCollections } from "../../../lib/api_Trending";
 import Preferences from "./Preferences/Preferences";
-import Table2 from "./Table/Table2";
+import TableCollections from "./Table/Collections/TableCollections";
+import Table_Creators from "./Table/Creators/TableCreators";
+import Table from "./Table/Table";
+// import Table2 from "./Table/Table2";
 
 const TrendingPage = (props) => {
-  const {
-    sendRequest,
-    data: tableItems,
-    error,
-    status,
-  } = useHttp2(getCollections, true, []);
+  //decide what api we will use based on the 'Type'
+  //on change of api resend
+  // const {
+  //   sendRequest,
+  //   data: tableItems,
+  //   error,
+  //   status,
+  // } = useHttp2(getCollections, true, []);
 
-  useInit(sendRequest);
+  // useInit(sendRequest);
 
   return (
     <TrendingPageContextProvider>
@@ -27,7 +29,7 @@ const TrendingPage = (props) => {
             The top NFTs ranked by volume, floor price and other statistics.
           </h3>
           <Preferences />
-          <Table2 collectionsData={tableItems} />
+          <Table />
         </ContainerX>
       </Wrapper>
     </TrendingPageContextProvider>
@@ -35,7 +37,6 @@ const TrendingPage = (props) => {
 };
 
 const ContainerX = styled.div`
-  height: 100%;
   max-width: 1440px;
   margin: 0 auto;
 
