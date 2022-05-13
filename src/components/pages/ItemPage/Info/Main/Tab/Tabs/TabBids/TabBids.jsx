@@ -46,6 +46,8 @@ const TabBids = ({ bids }) => {
 const SortBy2X = styled(SortBy2)`
   border: 1px solid var(--color-grey20);
   border-radius: 1rem;
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
 `;
 
 

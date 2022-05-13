@@ -3,23 +3,9 @@ import styled from "styled-components";
 
 import { TrendingPageContextProvider } from "../../../hooks/TrendingPage/TrendingPageContext";
 import Preferences from "./Preferences/Preferences";
-import TableCollections from "./Table/Collections/TableCollections";
-import Table_Creators from "./Table/Creators/TableCreators";
 import Table from "./Table/Table";
-// import Table2 from "./Table/Table2";
 
 const TrendingPage = (props) => {
-  //decide what api we will use based on the 'Type'
-  //on change of api resend
-  // const {
-  //   sendRequest,
-  //   data: tableItems,
-  //   error,
-  //   status,
-  // } = useHttp2(getCollections, true, []);
-
-  // useInit(sendRequest);
-
   return (
     <TrendingPageContextProvider>
       <Wrapper>

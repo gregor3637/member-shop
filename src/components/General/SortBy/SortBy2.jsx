@@ -78,6 +78,7 @@ const IconWrapperX = styled.div`
 
   svg {
     transform: scale(1.2);
+    fill: currentColor;
   }
 
   display: flex;
@@ -94,7 +95,6 @@ const LabelContainerX = styled.span`
 
   padding: 0 1.6rem;
 
-  font-size: 1.4rem;
   font-weight: 400;
   text-transform: capitalize;
 
@@ -112,8 +112,7 @@ const WrapperX = styled.div`
   width: max-content;
   width: 100%;
 
-  display: flex;
-  /* justify-content: space-between; */
+  /* display: flex; */
 
   &.open {
     z-index: 992;

@@ -67,6 +67,9 @@ const SortBy2X = styled(SortBy2)`
   height: 5rem;
   padding: 0 1rem;
 
+  display: flex;
+  font-size: 1.6rem;
+
   border: 1px solid var(--color-grey20);
   border-radius: 1rem;
 `;
