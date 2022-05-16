@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage/LoginPage";
 import ItemPage2 from "./pages/ItemPage/ItemPage2";
 import TrendingPage from "./pages/TrendingPage/TrendingPage";
 import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
+import ActivityPage from "./pages/ActivityPage/ActivityPage";
 
 const MarketplacePage = React.lazy(() =>
   import("./pages/MarketplacePage/MarketplacePage")
@@ -45,6 +46,10 @@ const Main = (props) => {
 
           <Route path="/collections/">
             <CollectionsPage />
+          </Route>
+
+          <Route path="/activity/">
+            <ActivityPage />
           </Route>
 
           <Route path="/marketplace">

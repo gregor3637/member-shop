@@ -24,7 +24,7 @@ const HeaderNav = () => {
             </Dropdown>
           </li>
           <li>
-            <NavLinkX to={"/about"}>About</NavLinkX>
+            <NavLinkX to={"/activity"}>Activity</NavLinkX>
           </li>
           <li>
             <Dropdown content={<Resources />}>

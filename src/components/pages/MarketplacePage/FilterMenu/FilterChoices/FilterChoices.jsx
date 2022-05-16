@@ -6,7 +6,7 @@ import "simplebar/dist/simplebar.min.css";
 import Drawer from "../../../../General/Drawer/Drawer";
 import filtersData from "../../../../../store/Marketplace/Filters/FiltersData";
 
-const Filters = (props) => {
+const FilterChoices = (props) => {
   const [openMenuLabel, setOpenMenuLabel] = useState("");
 
   const clickHandler = (label) => {
@@ -43,4 +43,4 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-export default Filters;
+export default FilterChoices;

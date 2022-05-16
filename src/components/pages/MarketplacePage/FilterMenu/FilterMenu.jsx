@@ -27,8 +27,6 @@ const FilterMenu = () => {
   const history = useHistory();
   const location = useLocation();
 
-  console.log(" FilterMenu dispatch ", dispatch);
-
   useOnComponentMount(() => {
     let derivedState = deriveStateFromUrlSearchParams(location.search);
     dispatch({ type: "urlDerivedState", value: derivedState });
@@ -49,37 +47,37 @@ const FilterMenu = () => {
   }, 0);
 
   return (
-    <STabs
+    <TabsX
       selectedTabClassName="is-selected"
       selectedTabPanelClassName="is-selected"
       forceRenderTabPanel
     >
-      <STabList>
-        <STab>
+      <TabListX>
+        <TabX>
           <div>Filters</div>
-        </STab>
-        <STab>
+        </TabX>
+        <TabX>
           <div>
             Active Filters
             {activeFiltersCount > 0 && <span>{activeFiltersCount}</span>}
           </div>
-        </STab>
-      </STabList>
-      <STabPanel>
+        </TabX>
+      </TabListX>
+      <TabPanelX>
         <FilterChoices />
-      </STabPanel>
-      <STabPanel>
+      </TabPanelX>
+      <TabPanelX>
         <ActiveFilters
           state={state}
           dispatch={dispatch}
           activeFiltersCount={activeFiltersCount}
         />
-      </STabPanel>
-    </STabs>
+      </TabPanelX>
+    </TabsX>
   );
 };
 
-const STabs = styled(Tabs)`
+const TabsX = styled(Tabs)`
   width: 100%;
   /* height: 60rem; */
   flex: 1;
@@ -90,7 +88,7 @@ const STabs = styled(Tabs)`
   font-size: 1.2rem;
 `;
 
-const STab = styled(Tab)`
+const TabX = styled(Tab)`
   z-index: 20;
 
   background-color: var(--color-white);
@@ -146,24 +144,24 @@ const STab = styled(Tab)`
   }
 `;
 
-const STabList = styled(TabList)`
+const TabListX = styled(TabList)`
   list-style-type: none;
   padding-bottom: 4px;
   padding-left: 0;
   padding-right: 0;
   display: flex;
 
-  ${STab}:first-of-type {
+  ${TabX}:first-of-type {
     border-top-left-radius: var(--market-filters--outerWrapper-radius);
     border-left: 1px solid var(--color-border);
   }
-  ${STab}:last-of-type {
+  ${TabX}:last-of-type {
     border-top-right-radius: var(--market-filters--outerWrapper-radius);
     border-right: 1px solid var(--color-border);
   }
 `;
 
-const STabPanel = styled(TabPanel)`
+const TabPanelX = styled(TabPanel)`
   z-index: 10;
 
   display: none;
