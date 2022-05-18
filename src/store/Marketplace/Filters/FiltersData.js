@@ -16,4 +16,7 @@ const filtersData = {
   price: price,
 };
 
+console.log('111 filtersData ', filtersData);
+console.log('111 option ', option);
+
 export default filtersData;

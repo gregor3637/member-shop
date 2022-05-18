@@ -1,5 +1,9 @@
 import filtersData from "../../../store/Marketplace/Filters/FiltersData";
 
+console.log('--------- filtersData ', filtersData);
+
+
+
 const initialState = Object.keys(filtersData).reduce((acc, filterName) => {
   acc[filterName] = filtersData[filterName].reducerInitValues;
   return acc;

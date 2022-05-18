@@ -1,39 +1,34 @@
 import React from "react";
 import styled from "styled-components";
 
-import { FiltersContextProvider } from "../../../hooks/Market/FiltersContext/FiltersContext";
 import FilterOptions from "./FilterMenu/FilterMenu";
 import Billboard from "./Billboard/Billboard";
-import FilterResults from "./FilterResults/FilterResults";
+import Menu from "../../General/SeparationOutlookComponents/Menu";
+import Display from "../../General/SeparationOutlookComponents/Display";
+import PreferenceSettings from "./FilterResults/PreferenceSettings/PreferenceSettings";
+import AssetsView from "./FilterResults/AssetsView/AssetsView";
+import { FiltersContextProvider } from "../../../hooks/Market/FiltersContext/FiltersContext";
+import { PreferenceContextProvider } from "../../../hooks/Market/PreferenceContext/PreferenceContext";
 
 const MarketplacePage = (props) => {
   return (
     <Wrapper>
       <FiltersContextProvider>
-        <LeftPanelX>
+        <Menu>
           <FilterOptions />
           <Billboard />
-        </LeftPanelX>
+        </Menu>
 
-        <FilterResults />
+        <Display>
+          <PreferenceContextProvider>
+            <PreferenceSettings />
+            <AssetsView />
+          </PreferenceContextProvider>
+        </Display>
       </FiltersContextProvider>
     </Wrapper>
   );
 };
-
-const LeftPanelX = styled.div`
-  position: sticky;
-  top: 9rem; //1rem from Wrapper.padding // 8rem from Header
-  width: 34rem;
-  height: calc(100vh - 8rem - 2rem); //8rem Header, 2rem for padding.bot.top
-  margin-right: 1rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
-`;
 
 const Wrapper = styled.div`
   background-color: var(--marketplace-button-background);

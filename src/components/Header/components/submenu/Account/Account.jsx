@@ -17,6 +17,7 @@ import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import StarHalfOutlinedIcon from "@mui/icons-material/StarHalfOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import Switch from "../../../../General/Buttons/Switch/Switch";
+import PowerSettingsNewIcon from "@mui/icons-material/PowerSettingsNew";
 
 const Account = (props) => {
   const [nightMode, setNightMode] = useState(false);
@@ -43,12 +44,12 @@ const Account = (props) => {
               <span>Favorites</span>
             </LinkX>
           </li>
-          <li>
+          {/* <li>
             <LinkX to="/collections">
               <PlaylistAddCheckOutlinedIcon />
               <span>My Collections</span>
             </LinkX>
-          </li>
+          </li> */}
           <li>
             <LinkX to="/settings">
               <SettingsOutlinedIcon />
@@ -62,6 +63,14 @@ const Account = (props) => {
                 <span>Night Mode</span>
               </span>
               <Switch isChecked={nightMode} />
+            </SwitchButtonX>
+          </li>
+          <li>
+            <SwitchButtonX>
+              <span>
+                <PowerSettingsNewIcon />
+                <span>Disconnect</span>
+              </span>
             </SwitchButtonX>
           </li>
         </ul>

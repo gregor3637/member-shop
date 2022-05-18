@@ -10,6 +10,8 @@ import ItemPage2 from "./pages/ItemPage/ItemPage2";
 import TrendingPage from "./pages/TrendingPage/TrendingPage";
 import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
 import ActivityPage from "./pages/ActivityPage/ActivityPage";
+import AccountPage from "./pages/AccountPage/AccountPage";
+import SettingsPage from "./pages/SettingsPage/SettingsPage";
 
 const MarketplacePage = React.lazy(() =>
   import("./pages/MarketplacePage/MarketplacePage")
@@ -54,6 +56,14 @@ const Main = (props) => {
 
           <Route path="/marketplace">
             <MarketplacePage />
+          </Route>
+
+          <Route path="/accout" exact>
+            <AccountPage />
+          </Route>
+
+          <Route path="/accout/settings">
+            <SettingsPage />
           </Route>
 
           <Route path="*">
