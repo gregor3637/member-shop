@@ -42,7 +42,7 @@ const HeaderNav = () => {
       {isLoggedIn && (
         <UserContainerX2>
           <Dropdown content={<Account />} offset={"18"}>
-            <NavLinkUserX to={"/accout"}>
+            <NavLinkUserX to={"/accout/settings"}>
               <IconContainerX>
                 <AccountCircleOutlinedIcon />
               </IconContainerX>
