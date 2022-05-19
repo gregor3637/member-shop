@@ -10,6 +10,7 @@ import useInit from "../../../../../hooks/useInit";
 import EthGrey from "../../../../../img/svg/GreyCurrencies/Ethereum";
 import { Link } from "react-router-dom";
 import BidModal from "../../../../General/Modal/Bid/BidModal";
+import RandomTime from "../../../../../helpers/RandomTime";
 
 const Display = (props) => {
   const [showBidModal, setShowBidModal] = useState(false);
@@ -17,6 +18,7 @@ const Display = (props) => {
     getMainNewFeaturedItemData
   );
 
+  const countdownTime = RandomTime();
   useInit(sendRequest);
 
   const bidHandle = () => setShowBidModal(true);
@@ -65,7 +67,8 @@ const Display = (props) => {
                         fontSize: "1.2rem",
                         borderRadius: "1rem",
                       }}
-                      countDownDate={data.bids.active[0].time}
+                      countDownDate={countdownTime}
+                      // countDownDate={data.bids.active[0].time}
                     />
                   </div>
                 </BidDetailsX>

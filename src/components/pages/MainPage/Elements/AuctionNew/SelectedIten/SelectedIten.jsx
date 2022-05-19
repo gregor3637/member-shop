@@ -3,9 +3,13 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import Timer from "../../../../../General/Timer/Timer";
+import RandomTime from "../../../../../../helpers/RandomTime";
 
 const ShowCaseAction = ({ showcaseItemData }) => {
   let output = null;
+
+  
+  const countdownTime = RandomTime();
 
   if (showcaseItemData) {
     output = (
@@ -38,7 +42,8 @@ const ShowCaseAction = ({ showcaseItemData }) => {
                 borderRadius: "1rem",
               }}
               // countDownDate={"Dec 30, 2022 23:45:00"}
-              countDownDate={showcaseItemData.bids.active[0].time}
+              // countDownDate={showcaseItemData.bids.active[0].time}
+              countDownDate={countdownTime}
             />
           </TimerContainer>
         </FooterX>

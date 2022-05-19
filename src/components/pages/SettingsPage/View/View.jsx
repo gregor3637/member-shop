@@ -15,7 +15,7 @@ const getView = (tab) => {
     notFound: <NotFound />,
   };
 
-  return options[tab] || options["notFound"];
+  return options[tab] || options[!tab ? "profile" : "notFound"];
 };
 
 const View = () => {
