@@ -1,23 +1,21 @@
 import React from "react";
 
-// import Menu from "./Menu/Menu";
-// import View from "./View/View";
-// import MenuView from "../../General/SeparationOutlookComponents/MenuView/MenuView";
-// import Billboard from "../MarketplacePage/Billboard/Billboard";
-
+import MenuView from "../../General/Outlook/MenuView/MenuView";
+import Billboard from "../MarketplacePage/Billboard/Billboard";
+import Menu from './Menu/Menu';
+import View from "./View/View";
 
 const SettingsPage = (props) => {
   return (
-      <>das</>
-    // <MenuView>
-    //   <section name="menu">
-    //     <Menu />
-    //     <Billboard />
-    //   </section>
-    //   <section name="view">
-    //     <View />
-    //   </section>
-    // </MenuView>
+    <MenuView>
+      <section name="menu">
+        <Menu />
+        <Billboard />
+      </section>
+      <section name="view">
+        <View />
+      </section>
+    </MenuView>
   );
 };
 
