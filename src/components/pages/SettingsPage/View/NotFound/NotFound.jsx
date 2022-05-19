@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NotFoundPage from "../../../NotFoundPage/NotFoundPage";
 
-const Alerts = (props) => {
+const NotFound = (props) => {
   return (
     <Wrapper>
       <NotFoundPage />
@@ -14,4 +14,4 @@ const Wrapper = styled.div`
   height: 100%;
 `;
 
-export default Alerts;
+export default NotFound;

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 
 import AccountBalanceWalletOutlinedIcon from "@material-ui/icons/AccountBalanceWalletOutlined";
 import Account from "./components/submenu/Account/Account";
@@ -13,6 +13,11 @@ import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 
 const HeaderNav = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const history = useHistory();
+
+  const handleOnSubmit = () => {
+    history.push(`/create`);
+  };
 
   return (
     <Wrapper>
@@ -59,7 +64,7 @@ const HeaderNav = () => {
               <NewReleasesOutlinedIcon />
             </IconContainerX>
           </NavLinkUserX>
-          <CreateButtonX>Create</CreateButtonX>
+          <CreateButtonX onClick={handleOnSubmit}>Create</CreateButtonX>
         </UserContainerX2>
       )}
     </Wrapper>

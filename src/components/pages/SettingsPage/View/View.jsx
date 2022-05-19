@@ -5,15 +5,17 @@ import styled from "styled-components";
 import User from "./User/User";
 import Notifications from "./Notifications/Notifications";
 import Alerts from "./Alerts/Alerts";
+import NotFound from "./NotFound/NotFound";
 
 const getView = (tab) => {
   const options = {
     profile: <User />,
-    notifications: <Notifications />,
-    alerts: <Alerts />,
+    // notifications: <Notifications />,
+    // alerts: <Alerts />,
+    notFound: <NotFound />,
   };
 
-  return options[tab] || options["profile"];
+  return options[tab] || options["notFound"];
 };
 
 const View = () => {

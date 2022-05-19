@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
@@ -22,12 +22,6 @@ const initialValues = {
     instagram: "",
   },
 };
-
-const selectOptions = [
-  { label: "FraudulentActivity", value: "Fraudulent Activity" },
-  { label: "Copyright", value: "Copyright infrigement" },
-  { label: "Explicit", value: "Explicit and sensitive content" },
-];
 
 const validationSchema = Yup.object({
   username: Yup.string().required("Required"),
@@ -54,12 +48,13 @@ const User = (props) => {
 
   return (
     <Wrapper>
-      <h3>Profile Settings</h3>
+      <h2>Profile Settings</h2>
       <Formik
         onSubmit={onSubmit}
         initialValues={initialValues}
         validationSchema={validationSchema}
         enableReinitialize
+        isInitialValid={false}
       >
         {(formik) => {
           return (
@@ -86,13 +81,13 @@ const User = (props) => {
                 placeholder={"Enter email"}
               />
 
-              {/* <FormikControl
+              <FormikControl
                 control="input"
                 type="text"
                 label="Wallet Address"
                 name="walletAddress"
-              /> */}
-              {/* <SocialMediaX>
+              />
+              <SocialMediaX>
                 <h3>Add links to your social media profiles.</h3>
                 <InputURL
                   title="Website"
@@ -114,10 +109,9 @@ const User = (props) => {
                   name="links.facebook"
                   placeholder={"Facebook Username"}
                 />
-              </SocialMediaX> */}
-              {formik.isValid && <div>das</div>}
+              </SocialMediaX>
               <FormButtonX type="submit" disabled={!formik.isValid}>
-                Submit 
+                Submit
               </FormButtonX>
             </Form>
           );
@@ -153,6 +147,11 @@ const FormButtonX = styled(FormButton)`
 `;
 
 const Wrapper = styled.div`
+  & > h2 {
+    font-size: 3rem;
+    text-align: center;
+  }
+
   form {
     & > div {
       margin: 1.6rem 0;
