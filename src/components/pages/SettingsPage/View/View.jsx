@@ -16,7 +16,7 @@ const getView = (tab) => {
   return options[tab] || options["profile"];
 };
 
-const View = (props) => {
+const View = () => {
   const { search } = useLocation();
   const queryParams = new URLSearchParams(search);
   const tab = queryParams.get("tab");
@@ -25,7 +25,10 @@ const View = (props) => {
 };
 
 const Wrapper = styled.div`
-  background-color: green;
+  min-width: 60rem;
+  margin: 0 auto;
+  padding: 2rem;
+
   flex: 1;
 `;
 

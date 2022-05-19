@@ -1,8 +1,7 @@
 import React from "react";
 import { Field } from "formik";
 
-function Input(props) {
-  const { name, ...rest } = props;
+function Input({ name, ...rest }) {
   return <Field id={name} name={name} {...rest} />;
 }
 

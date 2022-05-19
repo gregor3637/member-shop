@@ -9,7 +9,7 @@ const selectOptions = {
   default: { value: "default", label: "-" },
   TrustAndSafety: {
     value: "TrustAndSafety",
-    label: "Trust & Safety Reoirt",
+    label: "Trust & Safety Report",
   },
   MyCollectionAndItems: {
     value: "MyCollectionAndItems",
@@ -36,17 +36,8 @@ const RequestsPage = (props) => {
     setFormData(RequestControl(selectedOpts.value));
   };
 
-  // const onSubmit = (value, onSubmitProps) => {
-  //   console.log("---------OnSubmit --> ", value);
-  //   // const wholeFormData = { ...value, reportType };
-
-  //   setTimeout(() => {
-  //     onSubmitProps.setSubmitting(false);
-  //   }, 2000);
-  // };
-
   return (
-    <Styled>
+    <WrapperX>
       <h1>Submit a request</h1>
       <DivX>
         <label htmlFor="">How can we help?</label>
@@ -58,12 +49,12 @@ const RequestsPage = (props) => {
         />
       </DivX>
       {formData}
-    </Styled>
+    </WrapperX>
   );
 };
 
-const Styled = styled.div`
-  background-color: var(--background-light-color);
+const WrapperX = styled.div`
+  /* background-color: var(--background-light-color); */
   width: 80rem;
   height: 100%;
   margin: 0 auto;

@@ -11,9 +11,14 @@ import DatePicker from "./components/DatePicker";
 import TextError from "./components/TextError";
 import SelectInput from "./components/SelectInput";
 
-function FormikControl(props) {
-  const { control, label, name, instructions, ...rest } = props;
-
+function FormikControl({
+  className: version,
+  control,
+  label,
+  name,
+  instructions,
+  ...rest
+}) {
   let component = null;
   switch (control) {
     case "input":
@@ -49,12 +54,12 @@ function FormikControl(props) {
   }
 
   return (
-    <DivX>
+    <Wrapper className={version}>
       <LabelX htmlFor={name}>{label}</LabelX>
       {component}
       {instructions && <PX>{instructions}</PX>}
       <ErrorMessage name={name} component={TextError} />
-    </DivX>
+    </Wrapper>
   );
 }
 
@@ -62,12 +67,20 @@ const PX = styled.p`
   font-size: 1.2rem;
 `;
 const LabelX = styled.label`
-  color: violet;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-black);
 `;
 
-const DivX = styled.div`
+const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+
+  .error {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-red-pale);
+  }
 `;
 
 export default FormikControl;

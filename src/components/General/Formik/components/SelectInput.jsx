@@ -12,9 +12,7 @@ function SelectInput({ label, options, ...props }) {
     setValue(val);
   };
 
-  
   useEffect(() => {
-    console.log(field);  
     if (field.value && field.value.length > 0) {
       const values = field.value.map((o) => o.value);
       setValue(values);

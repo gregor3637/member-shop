@@ -6,34 +6,34 @@ import * as Yup from "yup";
 import FormikControl from "../../../General/Formik/FormikControl";
 import FormButton from "../../../General/Buttons/FormButton";
 
+const initialValues = {
+  email: "",
+  subject: "",
+  type: [],
+  fakeItemUrl: "",
+  originalItemUrl: "",
+  description: "",
+};
+
+const selectOptions = [
+  { label: "FraudulentActivity", value: "Fraudulent Activity" },
+  { label: "Copyright", value: "Copyright infrigement" },
+  { label: "Explicit", value: "Explicit and sensitive content" },
+];
+
+initialValues.email = "TrustAndSafety@abv.bg";
+initialValues.subject = "TrustAndSafety subject";
+
+const validationSchema = Yup.object({
+  email: Yup.string().email("Invalid Email Format").required("Required"),
+  subject: Yup.string().required("Required"),
+  type: Yup.array().min(1, "Required at least one"),
+});
+
 const TrustAndSafety = (props) => {
   const onSubmit = (value, onSubmitProps) => {
     console.log("---------OnSubmit TrustAndSafety--> ", value);
   };
-
-  const initialValues = {
-    email: "",
-    subject: "",
-    type: [],
-    fakeItemUrl: "",
-    originalItemUrl: "",
-    description: "",
-  };
-
-  const selectOptions = [
-    { label: "FraudulentActivity", value: "Fraudulent Activity" },
-    { label: "Copyright", value: "Copyright infrigement" },
-    { label: "Explicit", value: "Explicit and sensitive content" },
-  ];
-
-  initialValues.email = "TrustAndSafety@abv.bg";
-  initialValues.subject = "TrustAndSafety subject";
-
-  const validationSchema = Yup.object({
-    email: Yup.string().email("Invalid Email Format").required("Required"),
-    subject: Yup.string().required("Required"),
-    type: Yup.array().min(1, "Required at least one"),
-  });
 
   return (
     <Formik
