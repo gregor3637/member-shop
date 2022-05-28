@@ -7,8 +7,7 @@ import MenuOption from "./MenuOption/MenuOption";
 
 const menus = [
   "profile",
-  "notifications",
-  "alerts",
+  "messaging",
   "offers",
   "earnings",
   "account support",

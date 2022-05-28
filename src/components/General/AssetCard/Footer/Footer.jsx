@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import CurrencyView from "../AssetCardInfo/CurrencyView/CurrencyIcon";
 import LastBoughtPrice from "./LastBoughtPrice/LastBoughtPrice";
 import CollectionData from "./CollectionData/CollectionData";
 import ActionButton from "../../../pages/MarketplacePage/CommonElements/ActionButton/ActionButton";

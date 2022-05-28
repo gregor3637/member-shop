@@ -45,7 +45,7 @@ const TrustAndSafety = (props) => {
       {(formik) => {
         return (
           <Form>
-            <FormikControl
+             <FormikControl
               control="input"
               type="email"
               label="Your email address"
@@ -83,10 +83,10 @@ const TrustAndSafety = (props) => {
               label="Description"
               instructions="Please enter as many details as you can."
               name="description"
-            />
+            /> 
             <FormButtonX
               type="submit"
-              disabled={!formik.isValid || formik.isSubmitting}
+              // disabled={!formik.isValid || formik.isSubmitting}
             >
               Submit
             </FormButtonX>

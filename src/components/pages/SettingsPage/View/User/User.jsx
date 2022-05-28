@@ -147,6 +147,7 @@ const FormButtonX = styled(FormButton)`
 `;
 
 const Wrapper = styled.div`
+  /* background: var(--test-r); */
   & > h2 {
     font-size: 3rem;
     text-align: center;

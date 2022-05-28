@@ -3,15 +3,16 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 import User from "./User/User";
-import Notifications from "./Notifications/Notifications";
 import Alerts from "./Alerts/Alerts";
+import Alerts2 from "./Alerts/Alerts2";
 import NotFound from "./NotFound/NotFound";
+import Earnings from "./Earnings/Earnings";
 
 const getView = (tab) => {
   const options = {
     profile: <User />,
-    // notifications: <Notifications />,
-    // alerts: <Alerts />,
+    messaging: <Alerts2 />,
+    earnings: <Earnings />,
     notFound: <NotFound />,
   };
 
@@ -23,12 +24,17 @@ const View = () => {
   const queryParams = new URLSearchParams(search);
   const tab = queryParams.get("tab");
 
-  return <Wrapper>{getView(tab)}</Wrapper>;
+  return (
+    <>
+      <Wrapper>{getView(tab)}</Wrapper>
+    </>
+  );
 };
 
 const Wrapper = styled.div`
+  /* background: var(--test-y); */
   min-width: 60rem;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   padding: 2rem;
 
   flex: 1;

@@ -37,7 +37,7 @@ function FormikControl({
       break;
 
     case "radio":
-      component = <RadioButton name={name} label={label} {...rest} />;
+      component = <RadioButton name={name}  {...rest} />;
       break;
 
     case "checkbox":

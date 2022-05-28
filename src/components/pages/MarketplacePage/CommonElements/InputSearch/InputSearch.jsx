@@ -6,6 +6,7 @@ import CloseIcon from "@material-ui/icons/Close";
 import LoadingSpinner from "../../../../General/LoadingSpinner/LoadingSpinner";
 
 const InputSearch = ({
+  className: version,
   inputVal,
   onInput,
   onClear,
@@ -13,12 +14,13 @@ const InputSearch = ({
   isLoading,
 }) => {
   return (
-    <Wrapper className={"search "}>
+    <Wrapper className={`search ${version}`}>
       <ContainerX>
-        <PrefixIconWrapperX>
+        <PrefixIconWrapperX htmlFor="search-input">
           {!isLoading ? <SearchOutlinedIcon /> : <LoadingSpinnerX />}
         </PrefixIconWrapperX>
         <InputX
+          id="search-input"
           type="text"
           placeholder={placeholder || "Search"}
           onChange={onInput}
@@ -34,7 +36,7 @@ const InputSearch = ({
   );
 };
 
-const PrefixIconWrapperX = styled.div`
+const PrefixIconWrapperX = styled.label`
   flex-shrink: 0;
 
   width: 40px;

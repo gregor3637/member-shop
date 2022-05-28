@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { Field, ErrorMessage } from "formik";
 import TextError from "./components/TextError";
 
-const InputURL = ({ title, titleIcon, description, name, ...rest }) => {
+const InputURL = ({ className: version, title, titleIcon, description, name, ...rest }) => {
   return (
-    <Wrapper>
+    <Wrapper className={version}>
       <DisplayInfoX>
         <LabelX htmlFor={name}>
           <div>

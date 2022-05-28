@@ -1,9 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import { Field } from "formik";
 
-function RadioButton(props) {
-  const { name, options, ...rest } = props;
-
+const NotificationSettingsRadioButton = ({ label, name, options, ...rest }) => {
   return (
     <Field name={name} {...rest}>
       {({ field }) => {
@@ -24,6 +23,10 @@ function RadioButton(props) {
       }}
     </Field>
   );
-}
+};
 
-export default RadioButton;
+const Wrapper = styled.div`
+  background-color: green;
+`;
+
+export default NotificationSettingsRadioButton;
