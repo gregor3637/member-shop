@@ -2,17 +2,20 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import User from "./User/User";
-import Alerts from "./Alerts/Alerts";
-import Alerts2 from "./Alerts/Alerts2";
+import Profile from "./Profile/Profile";
+import Messaging from "./Messaging/Messaging";
+import Messaging2 from "./Messaging/Messaging2";
 import NotFound from "./NotFound/NotFound";
 import Earnings from "./Earnings/Earnings";
+import AccountSupport from "./AccountSupport/AccountSupport";
 
 const getView = (tab) => {
   const options = {
-    profile: <User />,
-    messaging: <Alerts2 />,
+    profile: <Profile />,
+    // messaging: <Messaging />,
+    messaging: <Messaging2 />,
     earnings: <Earnings />,
+    "account support": <AccountSupport />,
     notFound: <NotFound />,
   };
 

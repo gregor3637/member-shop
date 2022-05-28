@@ -3,18 +3,17 @@ import styled from "styled-components";
 
 import useOnClickOutsideHandler from "../../../hooks/useOnClickOutsideHandler";
 import useToggle from "../../../hooks/useToggle";
-
-import DropdownArrow from "../Arrow/DropdownArrow";
 import DropDown from "../../pages/MarketplacePage/CommonElements/DropDown/DropDown";
-import TickButton from "./TickButton/TickButton";
+import DropdownArrow from "../Arrow/DropdownArrow";
+import TickButton from "../SortBy/TickButton/TickButton";
 
-const SortBy2 = ({
+const Select = ({
   options,
   selectedOption,
   onOptionSelect,
   icon = null,
   className: version,
-  label = "Sort By22"
+  label = "Sort By22",
 }) => {
   const [isShown, toggleShown] = useToggle(false);
   const outsideClickHandler = useCallback(() => {
@@ -120,4 +119,4 @@ const WrapperX = styled.div`
   }
 `;
 
-export default SortBy2;
+export default Select;

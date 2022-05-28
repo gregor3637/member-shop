@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import DropdownArrow from "../Arrow/DropdownArrow";
 
-const Drawer = ({
+const DrawerProfileSettings = ({
   isOpen,
   onClick,
   label,
@@ -16,7 +16,7 @@ const Drawer = ({
 
   return (
     <Wrapper className={version}>
-      <ViewX onClick={() => onClick(label)} className="toggle-container">
+      <ViewX onClick={() => onClick(label)} className="drawer-toggler">
         <InfoX>
           <SvgWrapperX className={isOpen ? "open" : ""}>{icon}</SvgWrapperX>
           <div>
@@ -26,42 +26,25 @@ const Drawer = ({
         </InfoX>
         <DropdownArrow isOpen={isOpen} />
       </ViewX>
-      <ContentX className={isOpen ? "open" : ""}>{children}</ContentX>
+      <ContentX className={isOpen ? "drawer-content open" : "drawer-content"}>
+        {children}
+      </ContentX>
     </Wrapper>
   );
 };
 
 const SvgWrapperX = styled.div`
-  z-index: 5;
-  border-radius: 1rem;
-  /* border-radius: 50%; */
-  border: 1px solid var(--color-border);
-
-  width: 4rem;
-  height: 4rem;
-
-  background: var(--color-white);
-
   display: flex;
   justify-content: center;
   align-items: center;
 
   svg {
-    fill: var(--color-black);
-  }
-
-  &.open {
-    background: var(--button-color-blue);
-    border: 1px solid var(--color-none);
-
-    svg {
-      fill: var(--color-white);
-    }
+    font-size: 3rem;
+    color: var(--color-grey50);
   }
 `;
 
 const ContentX = styled.div`
-  padding: 0 2rem 1rem 3rem;
   z-index: 5;
 
   display: block;
@@ -115,7 +98,8 @@ const ViewX = styled.span`
 `;
 
 const Wrapper = styled.div`
+  /* background: var(--test-g); */
   width: 100%;
 `;
 
-export default Drawer;
+export default DrawerProfileSettings;

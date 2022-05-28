@@ -25,9 +25,9 @@ const radioOptions = [
   { key: "none", value: "none" },
 ];
 
-const Alerts2 = (props) => {
+const Messaging2 = (props) => {
   const onSubmit = (value, onSubmitProps) => {
-    console.log("---------Alerts2 OnSubmit --> ", value);
+    console.log("---------Messaging2 OnSubmit --> ", value);
   };
 
   return (
@@ -119,6 +119,9 @@ const NotificationsContainerX = styled.div`
 `;
 
 const Wrapper = styled.div`
+  max-width: 60rem;
+  margin: 0 auto;
+
   & > h2 {
     margin-bottom: 1.6rem;
 
@@ -127,4 +130,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Alerts2;
+export default Messaging2;

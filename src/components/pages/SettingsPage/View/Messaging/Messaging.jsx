@@ -34,9 +34,9 @@ const validationSchema = Yup.object({
   checkboxOptions: Yup.array().required("Required"),
 });
 
-const Alerts = (props) => {
+const Messaging = (props) => {
   const onSubmit = (value, onSubmitProps) => {
-    console.log("---------OnSubmit TransactionError--> ", value);
+    console.log("--------- Messaging OnSubmit TransactionError--> ", value);
   };
 
   return (
@@ -131,4 +131,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default Alerts;
+export default Messaging;

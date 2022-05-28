@@ -90,8 +90,8 @@ const HeaderX = styled.div`
     }
   }
 `;
-
 const Wrapper = styled.div`
+  align-self: start;
   flex: 1;
 
   border: 1px solid var(--color-grey20);

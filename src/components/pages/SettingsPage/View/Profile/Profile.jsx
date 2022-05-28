@@ -39,7 +39,7 @@ const validationSchema = Yup.object({
   // }),
 });
 
-const User = (props) => {
+const Profile = (props) => {
   const onSubmit = (value, onSubmitProps) => {
     console.log("---------OnSubmit TrustAndSafety--> ", value);
   };
@@ -148,6 +148,10 @@ const FormButtonX = styled(FormButton)`
 
 const Wrapper = styled.div`
   /* background: var(--test-r); */
+
+  max-width: 60rem;
+  margin: 0 auto;
+
   & > h2 {
     font-size: 3rem;
     text-align: center;
@@ -168,4 +172,4 @@ const Wrapper = styled.div`
   }
 `;
 
-export default User;
+export default Profile;
