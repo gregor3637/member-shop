@@ -12,7 +12,7 @@ import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneR
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
 
 const HeaderNav = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const history = useHistory();
 
   const handleOnSubmit = () => {
@@ -40,9 +40,16 @@ const HeaderNav = () => {
       </NavMenuX>
 
       {!isLoggedIn && (
-        <LogInButtonX>
-          Connect Wallet <AccountBalanceWalletOutlinedIcon />
-        </LogInButtonX>
+        <LogInDivX>
+          <ul>
+            <li>
+              <NavLinkX to={"/signUp"}>Sign Up</NavLinkX>
+            </li>
+            <li>
+              <NavLinkX to={"/login"}>Log In</NavLinkX>
+            </li>
+          </ul>
+        </LogInDivX>
       )}
       {isLoggedIn && (
         <UserContainerX2>
@@ -83,15 +90,13 @@ const CreateButtonX = styled.button`
   cursor: pointer;
 `;
 
-const LogInButtonX = styled.button`
+const LogInDivX = styled.div`
   width: max-content;
   height: 4.6rem;
   padding: 0 1.4rem;
 
   display: flex;
   align-items: center;
-  line-height: 0;
-  gap: 0.5rem;
 
   background: var(--color-white);
 
@@ -106,6 +111,20 @@ const LogInButtonX = styled.button`
 
   svg {
     font-size: 2.6rem;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    list-style-type: none;
+
+    li {
+      color: inherit;
+      font-weight: var(--fontWeight-navigation);
+      text-decoration: none;
+    }
   }
 `;
 

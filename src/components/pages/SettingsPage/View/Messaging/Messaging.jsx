@@ -15,7 +15,7 @@ const checkboxOptions = [
   {
     key: "Item Sold",
     value: "cOption1",
-    hint: "When someone purchased one of your items",
+    hint: "When someone purchased one of your items 111",
   },
   {
     key: "Bid Activity",

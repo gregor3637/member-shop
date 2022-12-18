@@ -6,6 +6,8 @@ import RequestsPage from "./pages/RequestsPage/RequestsPage";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 import MainPage from "./pages/MainPage/MainPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
+import LoginCredentialsPage from "./pages/LoginCredentialsPage/LoginCredentialsPage";
+import SignupPage from "./pages/SignupPage/SignupPage";
 import ItemPage2 from "./pages/ItemPage/ItemPage2";
 import TrendingPage from "./pages/TrendingPage/TrendingPage";
 import CollectionsPage from "./pages/CollectionsPage/CollectionsPage";
@@ -26,7 +28,11 @@ const Main = (props) => {
           </Route>
 
           <Route path="/login">
-            <LoginPage />
+            <LoginCredentialsPage />
+          </Route>
+
+          <Route path="/signup">
+            <SignupPage />
           </Route>
 
           <Route path="/item/:quoteId">

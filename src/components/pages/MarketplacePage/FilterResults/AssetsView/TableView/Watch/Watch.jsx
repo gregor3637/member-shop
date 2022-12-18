@@ -48,7 +48,7 @@ const Watched = ({ id, favoritesCount, className: version }) => {
       {/* {isSelected && <StarRoundedIcon />}
       {!isSelected && <StarBorderRoundedIcon />} */}
 
-      <StarSVG />
+      {/* <StarSVG /> */}
       <span>{favoritesCount}</span>
     </Wrapper>
   );

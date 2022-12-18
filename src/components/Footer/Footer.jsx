@@ -45,10 +45,9 @@ const Footer = (props) => {
             <br />
           </InputDiv>
           <SocialNav>
-            <SocialLink style={{ marginRight: "1rem" }} icon="fb" />
             <SocialLink style={{ marginRight: "1rem" }} icon="tw" />
             <SocialLink style={{ marginRight: "1rem" }} icon="in" />
-            <SocialLink style={{ marginRight: "1rem" }} icon="email" />
+            {/* <SocialLink style={{ marginRight: "1rem" }} icon="email" /> */}
           </SocialNav>
         </ContactsDiv>
       </Div>

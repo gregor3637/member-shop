@@ -41,7 +41,6 @@ const other = {
   },
   tel: {
     name: "Telegram",
-
     icon: <Telegram />,
   },
   yt: {

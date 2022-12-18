@@ -10,7 +10,7 @@ const menus = [
   "messaging",
   "offers",
   "earnings",
-  "account support",
+  "account supportt",
 ];
 
 const Menu = (props) => {

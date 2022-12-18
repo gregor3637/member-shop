@@ -5,15 +5,17 @@ import styled from "styled-components";
 import Profile from "./Profile/Profile";
 import Messaging from "./Messaging/Messaging";
 import Messaging2 from "./Messaging/Messaging2";
-import NotFound from "./NotFound/NotFound";
+import Offers from "./Offers/Offers";
 import Earnings from "./Earnings/Earnings";
 import AccountSupport from "./AccountSupport/AccountSupport";
+import NotFound from "./NotFound/NotFound";
 
 const getView = (tab) => {
   const options = {
     profile: <Profile />,
     // messaging: <Messaging />,
     messaging: <Messaging2 />,
+    offers: <Offers />,
     earnings: <Earnings />,
     "account support": <AccountSupport />,
     notFound: <NotFound />,

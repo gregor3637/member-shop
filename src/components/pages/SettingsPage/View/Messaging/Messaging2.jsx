@@ -44,7 +44,7 @@ const Messaging2 = (props) => {
             <Form>
               <RadioTest
                 title={"Item Sold"}
-                description={"When someone purchased one of your items"}
+                description={"When someone purchased one of your items 11"}
                 name="soldItemNotice"
                 options={radioOptions}
               />
