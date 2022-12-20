@@ -1,13 +1,87 @@
-import React from "react";
+import React, { useState } from "react";
+import { useReducer } from "react";
 import styled from "styled-components";
 
 import Footer from "../../Footer/Footer";
 import InputTextField from "../MarketplacePage/CommonElements/InputTextField/InputTextField";
 
 const SignupPage = (props) => {
+  const [isAuthLoading, setIsAuthLoading] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const [error, setError] = useState(null);
+
+  const initialValues = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    repeatPassword: "",
+    isConsenting: false,
+  };
+
+  const [formValues, setFormValues] = useReducer(
+    (curVals, newVals) => ({ ...curVals, ...newVals }),
+    initialValues
+  );
+
+  const { firstName, lastName, email, password, repeatPassword, isConsenting } =
+    formValues;
+
+  function handleFormChanges(ev) {
+    const { name, value } = ev.target;
+    console.log("name", name);
+    console.log("value", value);
+    setFormValues({ [name]: value });
+  }
+
+  const signupHandler = (event, authData) => {
+    event.preventDefault();
+    console.log('***** 11');
+    setIsAuthLoading(true);
+
+    fetch("http://localhost:8080/auth/signup", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        password,
+        repeatPassword,
+        isConsenting,
+      }),
+    })
+      .then((res) => {
+        if (res.status === 422) {
+          throw new Error(
+            "Validation failed. Make sure the email address isn't used yet!"
+          );
+        }
+        if (res.status !== 200 && res.status !== 201) {
+          console.log("Error!");
+          throw new Error("Creating a user failed!");
+        }
+        return res.json();
+      })
+      .then((resData) => {
+        console.log('*****************resData',resData);
+        setIsAuth(true);
+        setIsAuthLoading(false);
+        // this.props.history.replace("/");
+      })
+      .catch((err) => {
+        console.log(err);
+        setIsAuth(false);
+        setIsAuthLoading(false);
+        setError(err);
+      });
+  };
+
   return (
     <>
-      <WrapperX>
+      <WrapperX onSubmit={signupHandler}>
         <ContentX>
           <div>
             <h1>Create an account</h1>
@@ -17,37 +91,55 @@ const SignupPage = (props) => {
             <UserInputTextFieldsX>
               <NamesContainerX>
                 <span>
-                  <label for="first-name">First name*</label>
+                  <label htmlFor="firstName">First namee*</label>
                   <InputTextField
                     type="text"
-                    id="first-name"
-                    name="first-name"
+                    id="firstName"
+                    name="firstName"
+                    value={firstName}
+                    onChange={handleFormChanges}
                   />
                 </span>
                 <span>
-                  <label for="last-name">Last name*</label>
-                  <InputTextField type="text" id="last-name" name="last-name" />
+                  <label htmlFor="lastName">Last name*</label>
+                  <InputTextField
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    value={lastName}
+                    onChange={handleFormChanges}
+                  />
                 </span>
               </NamesContainerX>
               <LoginCredentialsX>
                 <span>
-                  <label for="email">Email*</label>
-                  <InputTextField type="text" id="email" name="email" />
+                  <label htmlFor="email">Email*</label>
+                  <InputTextField
+                    type="text"
+                    id="email"
+                    name="email"
+                    value={email}
+                    onChange={handleFormChanges}
+                  />
                 </span>
                 <span>
-                  <label for="password">Password*</label>
+                  <label htmlFor="password">Password*</label>
                   <InputTextField
                     type="password"
                     id="password"
                     name="password"
+                    value={password}
+                    onChange={handleFormChanges}
                   />
                 </span>
                 <span>
-                  <label for="re-password">Repeat password*</label>
+                  <label htmlFor="repeatPassword">Repeat password*</label>
                   <InputTextFieldX
                     type="password"
-                    id="re-password"
-                    name="re-password"
+                    id="repeatPassword"
+                    name="repeatPassword"
+                    value={repeatPassword}
+                    onChange={handleFormChanges}
                   />
                 </span>
               </LoginCredentialsX>
@@ -57,9 +149,11 @@ const SignupPage = (props) => {
                 <div>
                   <CheckboxX
                     type="checkbox"
-                    id="confirmation"
-                    name="confirmation"
+                    id="isConsenting"
+                    name="isConsenting"
                     className="checkbox"
+                    value={isConsenting}
+                    onChange={handleFormChanges}
                   />
                 </div>
               </div>
@@ -72,7 +166,7 @@ const SignupPage = (props) => {
             </ConfirmationX>
           </UserInputFieldsX>
           <ButtonContainerX>
-            <button>Create free Account</button>
+            <button type="submit">Create free Account</button>
           </ButtonContainerX>
         </ContentX>
       </WrapperX>
@@ -98,7 +192,7 @@ const InputTextFieldX = styled(InputTextField)`
 `;
 
 const ConfirmationX = styled.div`
-    margin-top: 2rem;
+  margin-top: 2rem;
 
   display: flex;
   gap: 1rem;
@@ -175,15 +269,13 @@ const ContentX = styled.div`
   padding: 2rem 4rem 3rem 4rem;
   margin: auto auto;
 
-
   border: 1px solid var(--color-grey20);
   border-radius: 1rem;
-  `;
+`;
 
 const WrapperX = styled.form`
-    width: 100%;
+  width: 100%;
   height: 100%;
-
 
   display: flex;
   align-items: center;

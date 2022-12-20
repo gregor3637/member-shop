@@ -9,7 +9,7 @@ const InputTextField = ({
   id,
   name,
   type,
-  onInput = () => {},
+  onChange = () => {},
   onClear,
   placeholder,
   isLoading,
@@ -22,7 +22,7 @@ const InputTextField = ({
           type={type}
           name={name}
           placeholder={placeholder || ""}
-          onChange={onInput}
+          onChange={onChange}
           value={inputVal}
         />
       </ContainerX>
