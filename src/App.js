@@ -5,18 +5,28 @@ import "simplebar/dist/simplebar.min.css";
 
 import Header from "./components/Header/Header";
 import Main from "./components/Main";
+import { AuthContextProvider } from "./store/AuthContext";
 
 function App() {
   useEffect(() => {
     document.documentElement.className = "light-theme";
   }, []);
 
+  const logoutHandler = () => {
+    // this.setState({ isAuth: false, token: null });
+    localStorage.removeItem("token");
+    localStorage.removeItem("expiryDate");
+    localStorage.removeItem("userId");
+  };
+
   return (
     <ScrollbarX forceVisible="y" autoHide={true}>
-      <WrapperX>
-        <Header />
-        <Main />
-      </WrapperX>
+      <AuthContextProvider>
+        <WrapperX>
+          <Header />
+          <Main />
+        </WrapperX>
+      </AuthContextProvider>
     </ScrollbarX>
   );
 }

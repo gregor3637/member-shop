@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 
 import IMG from "../../../../../img/header/navigation/allnfts-light.svg";
@@ -16,10 +16,13 @@ import ManageAccountsOutlinedIcon from "@mui/icons-material/ManageAccountsOutlin
 import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
 import StarHalfOutlinedIcon from "@mui/icons-material/StarHalfOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 import Switch from "../../../../General/Buttons/Switch/Switch";
+import AuthContext from "../../../../../store/AuthContext";
 
 const Account = (props) => {
   const [nightMode, setNightMode] = useState(false);
+  const { onLogout } = useContext(AuthContext);
 
   const toggleThemeHandle = () => {
     setNightMode((oldValue) => !oldValue);
@@ -62,6 +65,14 @@ const Account = (props) => {
                 <span>Night Mode</span>
               </span>
               <Switch isChecked={nightMode} />
+            </SwitchButtonX>
+          </li>
+          <li onClick={onLogout}>
+            <SwitchButtonX>
+              <span>
+                <LogoutIcon />
+                <span>Logout</span>
+              </span>
             </SwitchButtonX>
           </li>
         </ul>

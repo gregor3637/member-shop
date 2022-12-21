@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import styled from "styled-components";
 import { NavLink, useHistory } from "react-router-dom";
 
@@ -10,9 +10,10 @@ import Resources from "./components/submenu/Resources";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
 import NotificationsNoneRoundedIcon from "@mui/icons-material/NotificationsNoneRounded";
 import NewReleasesOutlinedIcon from "@mui/icons-material/NewReleasesOutlined";
+import AuthContext from "../../store/AuthContext";
 
 const HeaderNav = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { isLoggedIn } = useContext(AuthContext);
   const history = useHistory();
 
   const handleOnSubmit = () => {
